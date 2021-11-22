@@ -7,10 +7,14 @@ package UI;
 
 import DuAnDAO.NhanVienDAO;
 import Entity.NhanVien;
+import Helper.DialogHelper;
 import Helper.RandomStringExmple;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.PasswordAuthentication;
@@ -52,7 +56,6 @@ public class QuenMatKhau extends javax.swing.JDialog {
         txtMatKhauMoi = new javax.swing.JPasswordField();
         lblTime = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        btnDoiMkSDT = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         txtMaNV = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -60,10 +63,11 @@ public class QuenMatKhau extends javax.swing.JDialog {
         btnThoat = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        btnGui = new javax.swing.JButton();
+        btnGuiEmail = new javax.swing.JButton();
         btnXacNhan = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         lblHome = new javax.swing.JLabel();
+        btnGuiSDT = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -86,28 +90,12 @@ public class QuenMatKhau extends javax.swing.JDialog {
         lblTime.setFont(new java.awt.Font("Monospaced", 0, 24)); // NOI18N
         lblTime.setForeground(new java.awt.Color(130, 145, 239));
         lblTime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTime.setText("120");
-        jPanel1.add(lblTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 110, 40));
+        lblTime.setText("270");
+        jPanel1.add(lblTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 70, 40));
 
         jLabel6.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         jLabel6.setText("Mã code");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
-
-        btnDoiMkSDT.setBackground(new java.awt.Color(130, 145, 239));
-        btnDoiMkSDT.setFont(new java.awt.Font("Monospaced", 2, 12)); // NOI18N
-        btnDoiMkSDT.setForeground(new java.awt.Color(130, 145, 239));
-        btnDoiMkSDT.setText("Đổi mật khẩu bằng SDT");
-        btnDoiMkSDT.setBorder(null);
-        btnDoiMkSDT.setContentAreaFilled(false);
-        btnDoiMkSDT.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnDoiMkSDT.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        btnDoiMkSDT.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnDoiMkSDT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDoiMkSDTActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnDoiMkSDT, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, 160, 40));
 
         jLabel7.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         jLabel7.setText("Mã nhân viên");
@@ -154,19 +142,19 @@ public class QuenMatKhau extends javax.swing.JDialog {
         jLabel4.setText("Đổi mật khẩu bằng email");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 390, 20));
 
-        btnGui.setBackground(new java.awt.Color(130, 145, 239));
-        btnGui.setFont(new java.awt.Font("Monospaced", 1, 16)); // NOI18N
-        btnGui.setForeground(new java.awt.Color(255, 255, 255));
-        btnGui.setText("Gửi mã");
-        btnGui.setContentAreaFilled(false);
-        btnGui.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnGui.setOpaque(true);
-        btnGui.addActionListener(new java.awt.event.ActionListener() {
+        btnGuiEmail.setBackground(new java.awt.Color(130, 145, 239));
+        btnGuiEmail.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        btnGuiEmail.setForeground(new java.awt.Color(255, 255, 255));
+        btnGuiEmail.setText("Email");
+        btnGuiEmail.setContentAreaFilled(false);
+        btnGuiEmail.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuiEmail.setOpaque(true);
+        btnGuiEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuiActionPerformed(evt);
+                btnGuiEmailActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGui, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 130, 40));
+        jPanel1.add(btnGuiEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 80, 40));
 
         btnXacNhan.setBackground(new java.awt.Color(130, 145, 239));
         btnXacNhan.setFont(new java.awt.Font("Monospaced", 1, 16)); // NOI18N
@@ -199,6 +187,20 @@ public class QuenMatKhau extends javax.swing.JDialog {
         });
         jPanel1.add(lblHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, 40));
 
+        btnGuiSDT.setBackground(new java.awt.Color(130, 145, 239));
+        btnGuiSDT.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        btnGuiSDT.setForeground(new java.awt.Color(255, 255, 255));
+        btnGuiSDT.setText("Số điện thoại");
+        btnGuiSDT.setContentAreaFilled(false);
+        btnGuiSDT.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuiSDT.setOpaque(true);
+        btnGuiSDT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuiSDTActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnGuiSDT, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 140, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -218,10 +220,6 @@ public class QuenMatKhau extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnDoiMkSDTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoiMkSDTActionPerformed
-        this.SDT();
-    }//GEN-LAST:event_btnDoiMkSDTActionPerformed
-
     private void btnThoatMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThoatMouseEntered
 
     }//GEN-LAST:event_btnThoatMouseEntered
@@ -231,13 +229,12 @@ public class QuenMatKhau extends javax.swing.JDialog {
     }//GEN-LAST:event_btnThoatMouseExited
 
     private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
+        exit();
     }//GEN-LAST:event_btnThoatActionPerformed
 
-    private void btnGuiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuiActionPerformed
-        this.sendCode();
-    }//GEN-LAST:event_btnGuiActionPerformed
+    private void btnGuiEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuiEmailActionPerformed
+        this.sendCodeEmail();
+    }//GEN-LAST:event_btnGuiEmailActionPerformed
 
     private void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed
         this.changePass();
@@ -246,6 +243,10 @@ public class QuenMatKhau extends javax.swing.JDialog {
     private void lblHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHomeMouseClicked
         cancel();
     }//GEN-LAST:event_lblHomeMouseClicked
+
+    private void btnGuiSDTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuiSDTActionPerformed
+        sendCodeSDT();
+    }//GEN-LAST:event_btnGuiSDTActionPerformed
 
     /**
      * @param args the command line arguments
@@ -291,8 +292,8 @@ public class QuenMatKhau extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDoiMkSDT;
-    private javax.swing.JButton btnGui;
+    private javax.swing.JButton btnGuiEmail;
+    private javax.swing.JButton btnGuiSDT;
     private javax.swing.JButton btnThoat;
     private javax.swing.JButton btnXacNhan;
     private javax.swing.JLabel jLabel1;
@@ -329,7 +330,7 @@ public class QuenMatKhau extends javax.swing.JDialog {
                     lblTime.setText(String.valueOf(--x));
                     testTime = true;
                 } else {
-                    lblTime.setText("120");
+                    lblTime.setText("270");
                     testTime = false;
                     timer.stop();
                 }
@@ -360,10 +361,10 @@ public class QuenMatKhau extends javax.swing.JDialog {
     }
 
     public void sendCodeToEmail() {
-        code = new RandomStringExmple().randomAlphaNumeric(8);
+        code = new RandomStringExmple().randomAlphaNumeric(4);
         String to = getEmailByID();
-        String emailGui = "phiphung123bt@gmail.com";
-        String passGui = "khuyethung250902";
+        String emailGui = "vuthien130902@gmail.com";
+        String passGui = "phuonglinh1309";
         String subject = "Đây là mã code để đổi mật khẩu" + "\nVui lòng nhập trong vòng 120 giây";
         try {
             Properties p = new Properties();
@@ -389,13 +390,51 @@ public class QuenMatKhau extends javax.swing.JDialog {
 
             JOptionPane.showMessageDialog(this, "Kiểm tra mã code tại email");
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
-    public void sendCode() {
+    public void sendCodeEmail() {
         if (checkExistID()) {
             runClock();
             sendCodeToEmail();
+        }
+    }
+
+    public String getSDTByID() {
+        String maNV = txtMaNV.getText();
+        return dao.selectSDTByID(maNV).getSoDT();
+    }
+
+    public void sendCodeToSDT() {
+        try {
+            String maNV = txtMaNV.getText();
+            String to = getSDTByID();
+            System.out.println(to);
+            code = new RandomStringExmple().randomAlphaNumeric(6);
+            String str = "" + code + "";
+            String str2 = str.replaceAll("\\s", "+");
+            URL url = new URL("http://192.168.1.4:8080/v1/sms/send/?phone=" + to + "&message=" + str2 + "");
+            InputStream i = null;
+            JOptionPane.showMessageDialog(this, "Thanh cong");
+            try {
+                i = url.openStream();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            if (i != null) {
+
+            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void sendCodeSDT() {
+        if (checkExistID()) {
+            runClock();
+            sendCodeToSDT();
         }
     }
 
@@ -441,14 +480,16 @@ public class QuenMatKhau extends javax.swing.JDialog {
         txtMatKhauMoi.setEnabled(testTime);
         txtXacNhanMK.setEnabled(testTime);
         btnXacNhan.setEnabled(testTime);
-        btnGui.setEnabled(!testTime);
+        btnGuiEmail.setEnabled(!testTime);
         txtMaNV.setEnabled(!testTime);
         if (!testTime) {
-            btnGui.setBackground(new Color(130, 145, 239));
+            btnGuiEmail.setBackground(new Color(130, 145, 239));
+            btnGuiSDT.setBackground(new Color(130, 145, 239));
             btnXacNhan.setBackground(new Color(128, 128, 128));
         } else {
             btnXacNhan.setBackground(new Color(130, 145, 239));
-            btnGui.setBackground(new Color(128, 128, 128));
+            btnGuiEmail.setBackground(new Color(128, 128, 128));
+            btnGuiSDT.setBackground(new Color(128, 128, 128));
         }
     }
 
@@ -456,10 +497,10 @@ public class QuenMatKhau extends javax.swing.JDialog {
         this.dispose();
         new Home().setVisible(true);
     }
-
-    public void SDT() {
-        this.dispose();
-        new QuenMKSDT(null, true).setVisible(true);
+    
+    void exit() {
+        if (DialogHelper.confirm(this, "Bạn có muốn thoát khỏi ứng dụng không?")) {
+            System.exit(0);
+        }
     }
-
 }

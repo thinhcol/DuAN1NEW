@@ -146,8 +146,8 @@ public class DangNhap extends javax.swing.JDialog {
         btnAI.setBackground(new java.awt.Color(255, 255, 255));
         btnAI.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         btnAI.setForeground(new java.awt.Color(102, 102, 255));
-        btnAI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnAI.setText("Đăng nhập bằng khuôn mặt");
+        btnAI.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnAI.setText(" Đăng nhập bằng khuôn mặt");
         btnAI.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAI.setOpaque(true);
         btnAI.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -161,7 +161,7 @@ public class DangNhap extends javax.swing.JDialog {
                 btnAIMouseExited(evt);
             }
         });
-        jPanel1.add(btnAI, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 170, -1));
+        jPanel1.add(btnAI, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 180, -1));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 153));
         jLabel4.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
@@ -176,8 +176,8 @@ public class DangNhap extends javax.swing.JDialog {
         btnQrCode.setBackground(new java.awt.Color(255, 255, 255));
         btnQrCode.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         btnQrCode.setForeground(new java.awt.Color(102, 102, 255));
-        btnQrCode.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnQrCode.setText("Đăng nhập bằng QR Code");
+        btnQrCode.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnQrCode.setText(" Đăng nhập bằng QR Code");
         btnQrCode.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnQrCode.setOpaque(true);
         btnQrCode.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -191,7 +191,7 @@ public class DangNhap extends javax.swing.JDialog {
                 btnQrCodeMouseExited(evt);
             }
         });
-        jPanel1.add(btnQrCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 170, -1));
+        jPanel1.add(btnQrCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 180, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
