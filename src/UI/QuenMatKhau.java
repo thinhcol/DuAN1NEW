@@ -365,7 +365,7 @@ public class QuenMatKhau extends javax.swing.JDialog {
         String to = getEmailByID();
         String emailGui = "vuthien130902@gmail.com";
         String passGui = "phuonglinh1309";
-        String subject = "Đây là mã code để đổi mật khẩu" + "\nVui lòng nhập trong vòng 120 giây";
+        String subject = "Đây là mã code để đổi mật khẩu" + "\nVui lòng nhập trong vòng 270 giây";
         try {
             Properties p = new Properties();
             p.put("mail.smtp.auth", "true");
@@ -411,12 +411,12 @@ public class QuenMatKhau extends javax.swing.JDialog {
             String maNV = txtMaNV.getText();
             String to = getSDTByID();
             System.out.println(to);
-            code = new RandomStringExmple().randomAlphaNumeric(6);
+            code = new RandomStringExmple().randomAlphaNumeric(4);
             String str = "" + code + "";
             String str2 = str.replaceAll("\\s", "+");
-            URL url = new URL("http://192.168.1.4:8080/v1/sms/send/?phone=" + to + "&message=" + str2 + "");
+            URL url = new URL("http://192.168.1.2:8080/v1/sms/send/?phone=" + to + "&message=" + str2 + "");
             InputStream i = null;
-            JOptionPane.showMessageDialog(this, "Thanh cong");
+            JOptionPane.showMessageDialog(this, "Mã code được gửi thành công. \n Vui lòng kiểm tra số điện thoại");
             try {
                 i = url.openStream();
             } catch (Exception e) {
@@ -497,7 +497,7 @@ public class QuenMatKhau extends javax.swing.JDialog {
         this.dispose();
         new Home().setVisible(true);
     }
-    
+
     void exit() {
         if (DialogHelper.confirm(this, "Bạn có muốn thoát khỏi ứng dụng không?")) {
             System.exit(0);

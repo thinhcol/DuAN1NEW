@@ -5,6 +5,11 @@
  */
 package UI;
 
+import DuAnDAO.NhanVienDAO;
+import Helper.DialogHelper;
+import Helper.ShareHelper;
+import java.awt.Color;
+
 /**
  *
  * @author ASUS
@@ -17,6 +22,7 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
     public DoiMatKhauJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        init();
     }
 
     /**
@@ -28,21 +34,244 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlForm = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblChucNang = new javax.swing.JLabel();
+        lblSlogan = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblDangNhap = new javax.swing.JLabel();
+        txtMaNV = new javax.swing.JTextField();
+        lblMK = new javax.swing.JLabel();
+        txtMatKhau = new javax.swing.JPasswordField();
+        lblNewMK = new javax.swing.JLabel();
+        txtMatKhauMoi = new javax.swing.JPasswordField();
+        lblXNMK = new javax.swing.JLabel();
+        txtXacNhanMKM = new javax.swing.JPasswordField();
+        btnXacNhan = new javax.swing.JButton();
+        btnThoat = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
+        setUndecorated(true);
+
+        pnlForm.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/changePass.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jLabel2.setBackground(new java.awt.Color(51, 93, 114));
+        jLabel2.setOpaque(true);
+
+        lblChucNang.setBackground(new java.awt.Color(0, 0, 153));
+        lblChucNang.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        lblChucNang.setForeground(new java.awt.Color(153, 43, 31));
+        lblChucNang.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblChucNang.setText("ĐỔI MẬT KHẨU");
+
+        lblSlogan.setFont(new java.awt.Font("Monospaced", 2, 14)); // NOI18N
+        lblSlogan.setForeground(new java.awt.Color(0, 0, 255));
+        lblSlogan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSlogan.setText("Cai nghiện hôm nay - Cuộc sống ngày mai");
+
+        lblName.setBackground(new java.awt.Color(0, 0, 153));
+        lblName.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        lblName.setForeground(new java.awt.Color(0, 0, 153));
+        lblName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblName.setText("Xin chào ! Chúng tôi là Euphoria");
+
+        lblDangNhap.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblDangNhap.setForeground(new java.awt.Color(223, 86, 38));
+        lblDangNhap.setText("Tên đăng nhập");
+
+        txtMaNV.setEditable(false);
+        txtMaNV.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        txtMaNV.setForeground(new java.awt.Color(0, 102, 51));
+
+        lblMK.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblMK.setForeground(new java.awt.Color(223, 86, 38));
+        lblMK.setText("Mật khẩu hiện tại");
+
+        txtMatKhau.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+
+        lblNewMK.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblNewMK.setForeground(new java.awt.Color(223, 86, 38));
+        lblNewMK.setText("Mật khẩu mới");
+
+        txtMatKhauMoi.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+
+        lblXNMK.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblXNMK.setForeground(new java.awt.Color(223, 86, 38));
+        lblXNMK.setText("Xác nhận mật khẩu mới");
+
+        txtXacNhanMKM.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+
+        btnXacNhan.setBackground(new java.awt.Color(51, 0, 153));
+        btnXacNhan.setFont(new java.awt.Font("Monospaced", 1, 16)); // NOI18N
+        btnXacNhan.setForeground(new java.awt.Color(255, 255, 255));
+        btnXacNhan.setText("XÁC NHẬN");
+        btnXacNhan.setContentAreaFilled(false);
+        btnXacNhan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnXacNhan.setOpaque(true);
+        btnXacNhan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnXacNhanMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnXacNhanMouseExited(evt);
+            }
+        });
+        btnXacNhan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXacNhanActionPerformed(evt);
+            }
+        });
+
+        btnThoat.setBackground(new java.awt.Color(51, 0, 153));
+        btnThoat.setFont(new java.awt.Font("Monospaced", 1, 16)); // NOI18N
+        btnThoat.setForeground(new java.awt.Color(255, 255, 255));
+        btnThoat.setText("THOÁT");
+        btnThoat.setContentAreaFilled(false);
+        btnThoat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnThoat.setOpaque(true);
+        btnThoat.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnThoatMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnThoatMouseExited(evt);
+            }
+        });
+        btnThoat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThoatActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlFormLayout = new javax.swing.GroupLayout(pnlForm);
+        pnlForm.setLayout(pnlFormLayout);
+        pnlFormLayout.setHorizontalGroup(
+            pnlFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlFormLayout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlFormLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlFormLayout.createSequentialGroup()
+                                .addGroup(pnlFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(pnlFormLayout.createSequentialGroup()
+                                        .addComponent(btnXacNhan, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                                        .addComponent(btnThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lblMK)
+                                    .addComponent(lblNewMK)
+                                    .addComponent(lblXNMK, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtMaNV)
+                                    .addComponent(txtMatKhau)
+                                    .addComponent(txtMatKhauMoi)
+                                    .addComponent(txtXacNhanMKM))
+                                .addGap(18, 18, 18)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblDangNhap)))
+                    .addComponent(lblChucNang, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSlogan, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        pnlFormLayout.setVerticalGroup(
+            pnlFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlFormLayout.createSequentialGroup()
+                .addGroup(pnlFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlFormLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(lblSlogan))
+                    .addComponent(lblName))
+                .addGap(20, 20, 20)
+                .addComponent(lblChucNang)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblDangNhap)
+                .addGap(5, 5, 5)
+                .addComponent(txtMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(lblMK)
+                .addGap(5, 5, 5)
+                .addComponent(txtMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(lblNewMK)
+                .addGap(5, 5, 5)
+                .addComponent(txtMatKhauMoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(lblXNMK)
+                .addGap(5, 5, 5)
+                .addComponent(txtXacNhanMKM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(pnlFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnXacNhan, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(pnlFormLayout.createSequentialGroup()
+                .addGroup(pnlFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(pnlForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(pnlForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnThoatActionPerformed
+
+    private void btnThoatMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThoatMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnThoatMouseExited
+
+    private void btnThoatMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThoatMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnThoatMouseEntered
+
+    private void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed
+        doiMatKhau();   
+    }//GEN-LAST:event_btnXacNhanActionPerformed
+
+    private void btnXacNhanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXacNhanMouseExited
+        btnXacNhan.setForeground(new Color(255, 255, 255));
+        btnXacNhan.setBackground(new Color(51,0,153));
+    }//GEN-LAST:event_btnXacNhanMouseExited
+
+    private void btnXacNhanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXacNhanMouseEntered
+        btnXacNhan.setForeground(new Color(231, 255, 1));
+        btnXacNhan.setBackground(new Color(247, 149, 157));
+    }//GEN-LAST:event_btnXacNhanMouseEntered
 
     /**
      * @param args the command line arguments
@@ -70,6 +299,7 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
             java.util.logging.Logger.getLogger(DoiMatKhauJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -87,5 +317,49 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnThoat;
+    private javax.swing.JButton btnXacNhan;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblChucNang;
+    private javax.swing.JLabel lblDangNhap;
+    private javax.swing.JLabel lblMK;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblNewMK;
+    private javax.swing.JLabel lblSlogan;
+    private javax.swing.JLabel lblXNMK;
+    private javax.swing.JPanel pnlForm;
+    private javax.swing.JTextField txtMaNV;
+    private javax.swing.JPasswordField txtMatKhau;
+    private javax.swing.JPasswordField txtMatKhauMoi;
+    private javax.swing.JPasswordField txtXacNhanMKM;
     // End of variables declaration//GEN-END:variables
+
+    NhanVienDAO dao=new NhanVienDAO();
+    public void init(){
+        txtMaNV.setText(ShareHelper.user.getMaNV());
+    }
+    
+    public void doiMatKhau(){
+        txtXacNhanMKM.setBackground(Color.white);
+        txtMatKhau.setBackground(Color.white);
+        String matKhau=new String(txtMatKhau.getPassword());
+        String matKhauMoi=new String(txtMatKhauMoi.getPassword());
+        String xacNhanMKM=new String(txtXacNhanMKM.getPassword());
+        if(matKhau.equals(ShareHelper.user.getMatKhau())){
+            if(matKhauMoi.equals(xacNhanMKM)){
+                ShareHelper.user.setMatKhau(matKhauMoi);
+                dao.update(ShareHelper.user);
+                DialogHelper.alert(this, "Đổi mật khẩu thành công!!");
+                this.dispose();
+            }else{
+                txtXacNhanMKM.setBackground(Color.pink);
+                DialogHelper.alert(this, "Mật khẩu xác nhận không trùng mật khẩu");
+            }
+        }else{
+            txtMatKhau.setBackground(Color.pink);
+            DialogHelper.alert(this, "Mật khẩu cũ nhập không chính xác!");
+        }
+    }
 }

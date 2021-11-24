@@ -5,6 +5,7 @@
  */
 package UI;
 
+import Helper.DialogHelper;
 import Helper.ShareHelper;
 import java.awt.Color;
 import java.awt.Frame;
@@ -35,9 +36,10 @@ public class Home extends javax.swing.JFrame {
         setMenu();
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 20, 20));
         if (ShareHelper.isLogin()) {
-            lblNameNV.setText(ShareHelper.user.getHoTen());
+            txtMaNV.setText(ShareHelper.user.getMaNV());
+            txtTenNV.setText(ShareHelper.user.getHoTen());
         } else if (ShareHelper.isLogin1()) {
-            lblNameNV.setText(ShareHelper.nguoidung.getHoten());
+            lblMaNV.setText(ShareHelper.nguoidung.getHoten());
             pnlPhong.setVisible(false);
             pnlQuanLyNhanVien.setVisible(false);
 //            pnlTN.setVisible(false);
@@ -59,6 +61,7 @@ public class Home extends javax.swing.JFrame {
         btnThoat = new javax.swing.JButton();
         btnMinimize = new javax.swing.JButton();
         btnMenu = new javax.swing.JButton();
+        btnDoiMK = new javax.swing.JLabel();
         pnlBody = new javax.swing.JPanel();
         pnlTrangChu = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -127,8 +130,12 @@ public class Home extends javax.swing.JFrame {
         btnHoatDong = new javax.swing.JButton();
         lblHoatDong = new javax.swing.JLabel();
         pnlAvatar = new keeptoo.KGradientPanel();
+        jPanel1 = new javax.swing.JPanel();
         lblAvatar = new javax.swing.JLabel();
-        lblNameNV = new javax.swing.JLabel();
+        lblMaNV = new javax.swing.JLabel();
+        lblTenNV = new javax.swing.JLabel();
+        txtMaNV = new javax.swing.JLabel();
+        txtTenNV = new javax.swing.JLabel();
         pnlThanNhan = new javax.swing.JPanel();
         btnThanNhan = new javax.swing.JButton();
         lblThanNhan = new javax.swing.JLabel();
@@ -222,12 +229,21 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        btnDoiMK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_password_reset_25px.png"))); // NOI18N
+        btnDoiMK.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDoiMKMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlHeadingLayout = new javax.swing.GroupLayout(pnlHeading);
         pnlHeading.setLayout(pnlHeadingLayout);
         pnlHeadingLayout.setHorizontalGroup(
             pnlHeadingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHeadingLayout.createSequentialGroup()
                 .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnDoiMK)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnMinimize)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -238,6 +254,7 @@ public class Home extends javax.swing.JFrame {
             .addComponent(btnThoat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnMinimize, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnDoiMK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pnlBody.setBackground(new java.awt.Color(255, 0, 51));
@@ -1142,33 +1159,60 @@ public class Home extends javax.swing.JFrame {
         pnlAvatar.setkEndColor(new java.awt.Color(204, 204, 204));
         pnlAvatar.setkStartColor(new java.awt.Color(255, 255, 255));
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblAvatar.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
         lblAvatar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAvatar.setText("AVATAR");
         lblAvatar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.add(lblAvatar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 83, 110));
 
-        lblNameNV.setText("Văn Anh Tài");
+        lblMaNV.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        lblMaNV.setText("Mã đăng nhập");
+
+        lblTenNV.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        lblTenNV.setText("Tên đăng nhập");
+
+        txtMaNV.setFont(new java.awt.Font("Monospaced", 1, 15)); // NOI18N
+        txtMaNV.setForeground(new java.awt.Color(102, 102, 255));
+        txtMaNV.setText("Mã đăng nhập");
+        txtMaNV.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
+        txtTenNV.setFont(new java.awt.Font("Monospaced", 1, 15)); // NOI18N
+        txtTenNV.setForeground(new java.awt.Color(102, 102, 255));
+        txtTenNV.setText("Tên đăng nhập");
+        txtTenNV.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout pnlAvatarLayout = new javax.swing.GroupLayout(pnlAvatar);
         pnlAvatar.setLayout(pnlAvatarLayout);
         pnlAvatarLayout.setHorizontalGroup(
             pnlAvatarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAvatarLayout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(lblAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(pnlAvatarLayout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addComponent(lblNameNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlAvatarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblMaNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblTenNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtMaNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtTenNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         pnlAvatarLayout.setVerticalGroup(
             pnlAvatarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAvatarLayout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addComponent(lblNameNV)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblAvatar, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap()
+                .addGroup(pnlAvatarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlAvatarLayout.createSequentialGroup()
+                        .addComponent(lblMaNV)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtMaNV)
+                        .addGap(15, 15, 15)
+                        .addComponent(lblTenNV)
+                        .addGap(7, 7, 7)
+                        .addComponent(txtTenNV)))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pnlThanNhan.setBackground(new java.awt.Color(209, 209, 209));
@@ -1226,8 +1270,8 @@ public class Home extends javax.swing.JFrame {
         pnlMenuLayout.setVerticalGroup(
             pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMenuLayout.createSequentialGroup()
-                .addComponent(pnlAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
                 .addComponent(pnlHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(pnlQuanLy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1623,7 +1667,7 @@ public class Home extends javax.swing.JFrame {
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
         // TODO add your handling code here:
-        logoff();
+        exit();
     }//GEN-LAST:event_btnMenuActionPerformed
 
     private void kGradientPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel3MouseClicked
@@ -1663,6 +1707,10 @@ public class Home extends javax.swing.JFrame {
         pnlThanNhan.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_btnThanNhanActionPerformed
 
+    private void btnDoiMKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDoiMKMouseClicked
+        doiMK();
+    }//GEN-LAST:event_btnDoiMKMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1700,6 +1748,7 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDichVu;
+    private javax.swing.JLabel btnDoiMK;
     private javax.swing.JButton btnGioiThieu;
     private javax.swing.JButton btnHoaDon;
     private javax.swing.JButton btnHoatDong;
@@ -1727,6 +1776,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
@@ -1745,8 +1795,9 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel lblHoaDon;
     private javax.swing.JLabel lblHoatDong;
     private javax.swing.JLabel lblHome;
-    private javax.swing.JLabel lblNameNV;
+    private javax.swing.JLabel lblMaNV;
     private javax.swing.JLabel lblQuanLy;
+    private javax.swing.JLabel lblTenNV;
     private javax.swing.JLabel lblThanNhan;
     private keeptoo.KGradientPanel pnlAvatar;
     private javax.swing.JPanel pnlBody;
@@ -1778,6 +1829,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel pnlThanNhan;
     private javax.swing.JPanel pnlThongTin;
     private javax.swing.JPanel pnlTrangChu;
+    private javax.swing.JLabel txtMaNV;
+    private javax.swing.JLabel txtTenNV;
     // End of variables declaration//GEN-END:variables
     private void init() {
         setLocationRelativeTo(null);
@@ -1922,14 +1975,16 @@ public class Home extends javax.swing.JFrame {
         pnlQuanLyItem.setVisible(true);
         pnlQuanLyItem.setEnabled(true);
     }
-
-    void openLogin() {
-        new DangNhap(null, true).setVisible(true);
+    
+    void doiMK(){
+        new DoiMatKhauJDialog(this, true).setVisible(true);
     }
 
-    void logoff() {
-        ShareHelper.clear();
-        this.openLogin();
+    void exit() {
+        if (DialogHelper.confirm(this, "Bạn có muốn đăng xuất khỏi ứng dụng không?")) {
+            this.dispose();
+            new Home().setVisible(true);
+        }
     }
 
 }
