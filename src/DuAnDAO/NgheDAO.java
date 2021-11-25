@@ -51,6 +51,11 @@ public class NgheDAO {
         List<Nghe> list = SelectBySQL(sql, id);
         return list.size() > 0 ? list.get(0) : null;
     }
+    
+    public List<Nghe> selectByKeyword(String keyword,String keyword1,String keyword2) {
+        String sql = "SELECT * FROM Nghe WHERE TenNghe LIKE ? or MaNghe LIKE ? or MoTa LIKE ?";
+        return SelectBySQL(sql,"%" + keyword + "%","%" + keyword1 + "%","%" + keyword2 + "%");      
+    }
 
     protected List<Nghe> SelectBySQL(String sql, Object... args) {
         List<Nghe> list = new ArrayList<>();

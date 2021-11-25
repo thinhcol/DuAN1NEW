@@ -74,7 +74,11 @@ public class BenhNhanDAO {
         List<BenhNhan> list = selectBySql(selectByID, id);
         return list;
     }
-
+     
+    public List<BenhNhan> selectByKeyword(String keyword,String keyword1,String keyword2) {
+        String sql = "SELECT * FROM BenhNhan WHERE HoTen LIKE ? or MaBN LIKE ? or MaPhong LIKE ?";
+        return selectBySql(sql,"%" + keyword + "%","%" + keyword1 + "%","%" + keyword2 + "%");      
+    }
 
     protected List<BenhNhan> selectBySql(String sql, Object... args) {
         List<BenhNhan> list = new ArrayList<BenhNhan>();

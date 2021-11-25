@@ -414,7 +414,7 @@ public class QuenMatKhau extends javax.swing.JDialog {
             code = new RandomStringExmple().randomAlphaNumeric(4);
             String str = "" + code + "";
             String str2 = str.replaceAll("\\s", "+");
-            URL url = new URL("http://192.168.1.2:8080/v1/sms/send/?phone=" + to + "&message=" + str2 + "");
+            URL url = new URL("http://192.168.1.7:8080/v1/sms/send/?phone=" + to + "&message=" + str2 + "");
             InputStream i = null;
             JOptionPane.showMessageDialog(this, "Mã code được gửi thành công. \n Vui lòng kiểm tra số điện thoại");
             try {
@@ -493,9 +493,9 @@ public class QuenMatKhau extends javax.swing.JDialog {
         }
     }
 
-    public void cancel() {
+    void cancel() {
         this.dispose();
-        new Home().setVisible(true);
+        new DangNhap(null, true).setVisible(true);
     }
 
     void exit() {

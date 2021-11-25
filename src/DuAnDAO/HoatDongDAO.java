@@ -49,6 +49,11 @@ public class HoatDongDAO {
         return list.size() > 0 ? list.get(0) : null;
     }
     
+    public List<HoatDong> selectByKeyword(String keyword,String keyword1,String keyword2) {
+        String sql = "SELECT * FROM HoatDong WHERE TenHT LIKE ? or MaHD LIKE ? or GhiChu LIKE ?";
+        return SelectBySQL(sql,"%" + keyword + "%","%" + keyword1 + "%","%" + keyword2 + "%");      
+    }
+    
     protected List<HoatDong> SelectBySQL(String sql, Object... args) {
         List<HoatDong> list = new ArrayList<>();
         try {

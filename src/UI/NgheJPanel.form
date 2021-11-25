@@ -25,15 +25,10 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jLabel40" alignment="0" max="32767" attributes="0"/>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                      <Component id="jTextField25" min="-2" pref="395" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
@@ -53,9 +48,8 @@
                           </Group>
                           <Component id="jSeparator6" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane14" min="-2" pref="921" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="btnNew" min="-2" pref="90" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -64,7 +58,7 @@
                               <Component id="btnUpdate" min="-2" pref="101" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnDelete" min="-2" pref="95" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
+                              <EmptySpace pref="111" max="32767" attributes="0"/>
                               <Component id="btnFirst" min="-2" pref="95" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnPrev" min="-2" pref="95" max="-2" attributes="0"/>
@@ -73,10 +67,17 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnLast" min="-2" pref="95" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jScrollPane14" max="32767" attributes="0"/>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                      <Component id="txtTimKiem" min="-2" pref="395" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -85,13 +86,13 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jLabel48" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="jTextField25" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="txtTimKiem" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -107,7 +108,7 @@
                           <Component id="jLabel51" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane2" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jSeparator6" min="-2" pref="10" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane14" min="-2" pref="467" max="-2" attributes="0"/>
@@ -120,12 +121,12 @@
                       <Component id="btnUpdate" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="btnDelete" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="btnNext" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="btnPrev" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="btnFirst" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="btnLast" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="btnNext" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="btnPrev" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="btnFirst" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
+              <EmptySpace pref="188" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -170,12 +171,15 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField25">
+    <Component class="javax.swing.JTextField" name="txtTimKiem">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Monospaced" size="13" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTimKiemKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel50">
       <Properties>

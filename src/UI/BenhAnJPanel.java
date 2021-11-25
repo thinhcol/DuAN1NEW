@@ -58,7 +58,7 @@ public class BenhAnJPanel extends javax.swing.JPanel {
         jLabel26 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel28 = new javax.swing.JLabel();
-        jTextField18 = new javax.swing.JTextField();
+        txtTimKiem = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtBieuHien = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -75,7 +75,7 @@ public class BenhAnJPanel extends javax.swing.JPanel {
         btnPrev = new javax.swing.JButton();
         btnNext = new javax.swing.JButton();
         btnLast = new javax.swing.JButton();
-        cbxTenBN = new javax.swing.JComboBox<>();
+        cbxTenBN = new javax.swing.JComboBox<String>();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -102,8 +102,13 @@ public class BenhAnJPanel extends javax.swing.JPanel {
 
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_search_more_35px.png"))); // NOI18N
 
-        jTextField18.setFont(new java.awt.Font("Monospaced", 1, 36)); // NOI18N
-        jTextField18.setMaximumSize(new java.awt.Dimension(500, 600));
+        txtTimKiem.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        txtTimKiem.setMaximumSize(new java.awt.Dimension(500, 600));
+        txtTimKiem.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTimKiemKeyReleased(evt);
+            }
+        });
 
         txtBieuHien.setColumns(20);
         txtBieuHien.setRows(5);
@@ -371,7 +376,7 @@ public class BenhAnJPanel extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel28)
                         .addGap(0, 0, 0)
-                        .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -382,7 +387,7 @@ public class BenhAnJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -554,6 +559,11 @@ public class BenhAnJPanel extends javax.swing.JPanel {
         this.edit();
     }//GEN-LAST:event_btnNextActionPerformed
 
+    private void txtTimKiemKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKiemKeyReleased
+        this.load();
+        this.clear();
+    }//GEN-LAST:event_txtTimKiemKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
@@ -576,11 +586,11 @@ public class BenhAnJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField jTextField18;
     private javax.swing.JTable tblBenhAn;
     private javax.swing.JTextArea txtBieuHien;
     private javax.swing.JTextArea txtDieuTri;
     private javax.swing.JTextArea txtGhiChu;
+    private javax.swing.JTextField txtTimKiem;
     // End of variables declaration//GEN-END:variables
     int index = 0;
     BenhAnDAO dao = new BenhAnDAO();
@@ -591,7 +601,11 @@ public class BenhAnJPanel extends javax.swing.JPanel {
             DefaultTableModel model = (DefaultTableModel) tblBenhAn.getModel();
             model.setRowCount(0);
             try {
-                List<BenhAn> list = dao.select();
+                String keyword = txtTimKiem.getText();
+                String keyword1 = txtTimKiem.getText();
+                String keyword2 = txtTimKiem.getText();
+                List<BenhAn> list = dao.selectByKeyword(keyword, keyword1, keyword2);
+                //List<BenhAn> list = dao.select();
                 for (BenhAn cd : list) {
                     Object[] row = {
                         cd.getMaBN(),

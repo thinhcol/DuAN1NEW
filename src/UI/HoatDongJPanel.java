@@ -26,7 +26,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         initComponents();
         this.load();
         this.setStatus(true);
-          if (ShareHelper.isLogin1()) {
+        if (ShareHelper.isLogin1()) {
             btnInsert.setVisible(false);
             btnUpdate.setVisible(false);
             btnDelete.setVisible(false);
@@ -51,7 +51,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         jLabel67 = new javax.swing.JLabel();
         jSeparator9 = new javax.swing.JSeparator();
         jLabel68 = new javax.swing.JLabel();
-        jTextField40 = new javax.swing.JTextField();
+        txtTimKiem = new javax.swing.JTextField();
         btnNew = new javax.swing.JButton();
         btnInsert = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
@@ -81,7 +81,12 @@ public class HoatDongJPanel extends javax.swing.JPanel {
 
         jLabel68.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_search_more_35px.png"))); // NOI18N
 
-        jTextField40.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtTimKiem.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtTimKiem.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTimKiemKeyReleased(evt);
+            }
+        });
 
         btnNew.setBackground(new java.awt.Color(255, 255, 255));
         btnNew.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
@@ -163,7 +168,15 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             new String [] {
                 "Mã hoạt động", "Tên hoạt động", "Ghi chú"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblHoatDong.setFocusable(false);
         tblHoatDong.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tblHoatDong.setRowHeight(30);
@@ -299,7 +312,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel68)
                         .addGap(0, 0, 0)
-                        .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jSeparator9)
@@ -343,7 +356,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -448,7 +461,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnLastMouseExited
 
     private void tblHoatDongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHoatDongMouseClicked
-        if (evt.getClickCount() == 1) {
+        if (evt.getClickCount() == 2) {
             this.index = tblHoatDong.rowAtPoint(evt.getPoint());
             if (this.index >= 0) {
                 this.edit();
@@ -492,6 +505,11 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         this.edit();
     }//GEN-LAST:event_btnLastActionPerformed
 
+    private void txtTimKiemKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKiemKeyReleased
+        this.load();
+        this.clear();
+    }//GEN-LAST:event_txtTimKiemKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
@@ -509,10 +527,10 @@ public class HoatDongJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JTextField jTextField40;
     private javax.swing.JTable tblHoatDong;
     private javax.swing.JTextArea txtGhiChu;
     private javax.swing.JTextField txtTenHD;
+    private javax.swing.JTextField txtTimKiem;
     // End of variables declaration//GEN-END:variables
 
     int index = 0;
@@ -522,7 +540,11 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblHoatDong.getModel();
         model.setRowCount(0);
         try {
-            List<HoatDong> list = dao.select();
+            String keyword = txtTimKiem.getText();
+            String keyword1 = txtTimKiem.getText();
+            String keyword2 = txtTimKiem.getText();
+            List<HoatDong> list = dao.selectByKeyword(keyword, keyword1, keyword2);
+            //List<HoatDong> list = dao.select();
             for (HoatDong cd : list) {
                 Object[] row = {
                     cd.getMaHoatDong(),
@@ -535,7 +557,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
         }
     }
-    
+
     void setModel(HoatDong model) {
         txtTenHD.setText(model.getTenHoatDong());
         txtGhiChu.setText(model.getGhichu());
@@ -548,7 +570,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         model.setGhichu(txtGhiChu.getText());
         return model;
     }
-    
+
     void insert() {
         HoatDong model = getModel();
         try {
@@ -578,7 +600,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         btnNext.setEnabled(!insertable && last);
         btnLast.setEnabled(!insertable && last);
     }
-    
+
     void edit() {
         try {
             int maHD = (int) tblHoatDong.getValueAt(this.index, 0);

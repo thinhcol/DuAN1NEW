@@ -14,6 +14,8 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -38,6 +40,12 @@ public class Home extends javax.swing.JFrame {
         if (ShareHelper.isLogin()) {
             txtMaNV.setText(ShareHelper.user.getMaNV());
             txtTenNV.setText(ShareHelper.user.getHoTen());
+            lblAvatar.setToolTipText(ShareHelper.user.getHinh());
+            ImageIcon icon = ShareHelper.read(ShareHelper.user.getHinh());
+            Image im = icon.getImage();
+            Image image = im.getScaledInstance(lblAvatar.getWidth(), lblAvatar.getHeight(), im.SCALE_SMOOTH);
+            ImageIcon icon1 = new ImageIcon(image);
+            lblAvatar.setIcon(icon1);
         } else if (ShareHelper.isLogin1()) {
             lblMaNV.setText(ShareHelper.nguoidung.getHoten());
             pnlPhong.setVisible(false);
@@ -136,6 +144,7 @@ public class Home extends javax.swing.JFrame {
         lblTenNV = new javax.swing.JLabel();
         txtMaNV = new javax.swing.JLabel();
         txtTenNV = new javax.swing.JLabel();
+        lblDongHo = new javax.swing.JLabel();
         pnlThanNhan = new javax.swing.JPanel();
         btnThanNhan = new javax.swing.JButton();
         lblThanNhan = new javax.swing.JLabel();
@@ -1163,25 +1172,28 @@ public class Home extends javax.swing.JFrame {
 
         lblAvatar.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
         lblAvatar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAvatar.setText("AVATAR");
         lblAvatar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.add(lblAvatar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 83, 110));
 
-        lblMaNV.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        lblMaNV.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         lblMaNV.setText("Mã đăng nhập");
 
-        lblTenNV.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        lblTenNV.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         lblTenNV.setText("Tên đăng nhập");
 
         txtMaNV.setFont(new java.awt.Font("Monospaced", 1, 15)); // NOI18N
         txtMaNV.setForeground(new java.awt.Color(102, 102, 255));
         txtMaNV.setText("Mã đăng nhập");
-        txtMaNV.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         txtTenNV.setFont(new java.awt.Font("Monospaced", 1, 15)); // NOI18N
         txtTenNV.setForeground(new java.awt.Color(102, 102, 255));
         txtTenNV.setText("Tên đăng nhập");
-        txtTenNV.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
+        lblDongHo.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        lblDongHo.setForeground(new java.awt.Color(153, 0, 204));
+        lblDongHo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDongHo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_alarm_clock_25px_1.png"))); // NOI18N
+        lblDongHo.setText("10:55 PM");
 
         javax.swing.GroupLayout pnlAvatarLayout = new javax.swing.GroupLayout(pnlAvatar);
         pnlAvatar.setLayout(pnlAvatarLayout);
@@ -1189,30 +1201,35 @@ public class Home extends javax.swing.JFrame {
             pnlAvatarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAvatarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlAvatarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblMaNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTenNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtMaNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtTenNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblDongHo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pnlAvatarLayout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)
+                        .addGroup(pnlAvatarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblMaNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblTenNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtMaNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtTenNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         pnlAvatarLayout.setVerticalGroup(
             pnlAvatarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAvatarLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(5, 5, 5)
                 .addGroup(pnlAvatarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlAvatarLayout.createSequentialGroup()
                         .addComponent(lblMaNV)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(0, 0, 0)
                         .addComponent(txtMaNV)
                         .addGap(15, 15, 15)
                         .addComponent(lblTenNV)
-                        .addGap(7, 7, 7)
+                        .addGap(0, 0, 0)
                         .addComponent(txtTenNV)))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblDongHo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pnlThanNhan.setBackground(new java.awt.Color(209, 209, 209));
@@ -1790,6 +1807,7 @@ public class Home extends javax.swing.JFrame {
     private keeptoo.KGradientPanel kGradientPanel7;
     private javax.swing.JLabel lblAvatar;
     private javax.swing.JLabel lblDichVu;
+    private javax.swing.JLabel lblDongHo;
     private javax.swing.JLabel lblGioiThieu;
     private javax.swing.JLabel lblHinh;
     private javax.swing.JLabel lblHoaDon;
@@ -1833,6 +1851,14 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel txtTenNV;
     // End of variables declaration//GEN-END:variables
     private void init() {
+        new Timer(1000, new ActionListener() {
+            SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss a");
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                lblDongHo.setText(format.format(new Date()));
+            }
+        }).start();
         setLocationRelativeTo(null);
         new ChaoJdialog(this, true).setVisible(true);
         new DangNhap(this, true).setVisible(true);
@@ -1975,8 +2001,8 @@ public class Home extends javax.swing.JFrame {
         pnlQuanLyItem.setVisible(true);
         pnlQuanLyItem.setEnabled(true);
     }
-    
-    void doiMK(){
+
+    void doiMK() {
         new DoiMatKhauJDialog(this, true).setVisible(true);
     }
 

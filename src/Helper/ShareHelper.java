@@ -96,4 +96,12 @@ public class ShareHelper {
     public static boolean isManager() {
         return ShareHelper.isLogin() && user.isChucVu();
     }
+    
+    public static String hidePass(String mk){
+        String retun = "";
+        for (int i = 0; i < mk.length(); i++) {
+            retun += "*";
+        }
+        return retun;
+    }
 }

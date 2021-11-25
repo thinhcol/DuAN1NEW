@@ -18,6 +18,7 @@ import java.util.List;
  * @author Admin
  */
 public class PhongDAO {
+
     public void insert(Phong model) {
         String sql = "INSERT INTO Phong (MaPhong,MaNV,Gia,Hinh) VALUES ( ?, ?, ?, ?)";
         JdbcHelper.executeUpdate(sql,
@@ -35,20 +36,29 @@ public class PhongDAO {
                 model.getHinh(),
                 model.getMaPhong());
     }
+
     public void delete(String id) {
         String sql = "DELETE FROM Phong WHERE Phong=?";
         JdbcHelper.executeUpdate(sql, id);
     }
-      public List<Phong> select() {
+
+    public List<Phong> select() {
         String sql = "SELECT * FROM Phong";
         return SelectBySQL(sql);
     }
-       public Phong findById(String id) {
+
+    public Phong findById(String id) {
         String sql = "SELECT * FROM Phong WHERE MaPhong=?";
         List<Phong> list = SelectBySQL(sql, id);
         return list.size() > 0 ? list.get(0) : null;
     }
-        protected List<Phong> SelectBySQL(String sql, Object... args) {
+
+    public List<Phong> selectByKeyword(String keyword,String keyword1,String keyword2) {
+        String sql = "SELECT * FROM Phong WHERE Gia LIKE ? or MaNV LIKE ? or MaPhong LIKE ?";
+        return SelectBySQL(sql,"%" + keyword + "%","%" + keyword1 + "%","%" + keyword2 + "%");      
+    }
+    
+    protected List<Phong> SelectBySQL(String sql, Object... args) {
         List<Phong> list = new ArrayList<>();
         try {
             ResultSet rs = null;
@@ -74,7 +84,7 @@ public class PhongDAO {
         model.setMaNV(rs.getString("MaNV"));
         model.setGia(rs.getDouble("Gia"));
         model.setHinh(rs.getString("Hinh"));
-        
+
         return model;
     }
 }

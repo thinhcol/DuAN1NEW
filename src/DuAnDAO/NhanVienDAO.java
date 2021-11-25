@@ -82,6 +82,11 @@ public class NhanVienDAO {
         }
         return list.get(0);
     }
+    
+    public List<NhanVien> selectByKeyword(String keyword,String keyword1,String keyword2) {
+        String sql = "SELECT * FROM NhanVien WHERE HoTen LIKE ? or MaNV LIKE ? or SDT LIKE ?";
+        return selectBySql(sql,"%" + keyword + "%","%" + keyword1 + "%","%" + keyword2 + "%");      
+    }
 
     protected List<NhanVien> selectBySql(String sql, Object... args) {
         List<NhanVien> list = new ArrayList<NhanVien>();

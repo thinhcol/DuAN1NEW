@@ -97,7 +97,7 @@ public class DangNhap extends javax.swing.JDialog {
                 btnDangNhapActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDangNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 170, 30));
+        jPanel1.add(btnDangNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 170, 30));
 
         btnQuenMK.setBackground(new java.awt.Color(255, 255, 255));
         btnQuenMK.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
@@ -117,7 +117,7 @@ public class DangNhap extends javax.swing.JDialog {
                 btnQuenMKMouseExited(evt);
             }
         });
-        jPanel1.add(btnQuenMK, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 110, -1));
+        jPanel1.add(btnQuenMK, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 110, -1));
 
         btnThoat.setBackground(new java.awt.Color(255, 255, 255));
         btnThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_delete_24px_1.png"))); // NOI18N
@@ -161,7 +161,7 @@ public class DangNhap extends javax.swing.JDialog {
                 btnAIMouseExited(evt);
             }
         });
-        jPanel1.add(btnAI, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 180, -1));
+        jPanel1.add(btnAI, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 180, -1));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 153));
         jLabel4.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
@@ -191,7 +191,7 @@ public class DangNhap extends javax.swing.JDialog {
                 btnQrCodeMouseExited(evt);
             }
         });
-        jPanel1.add(btnQrCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 180, -1));
+        jPanel1.add(btnQrCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 180, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
