@@ -41,7 +41,7 @@
                           <Component id="txtpass" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="btnClear" max="32767" attributes="0"/>
@@ -61,15 +61,20 @@
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="409" max="-2" attributes="0"/>
-                              <Component id="btnFirst" min="-2" pref="95" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnPrev" min="-2" pref="95" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnNext" min="-2" pref="95" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnLast" min="-2" pref="95" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="btnFirst" min="-2" pref="95" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnPrev" min="-2" pref="95" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnNext" min="-2" pref="95" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnLast" min="-2" pref="95" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="btnExcel1" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Component id="jScrollPane7" min="-2" pref="1022" max="-2" attributes="0"/>
+                          <Component id="jScrollPane7" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
@@ -122,7 +127,7 @@
                           <Component id="txtEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="jScrollPane7" min="-2" pref="540" max="-2" attributes="0"/>
+                  <Component id="jScrollPane7" alignment="0" min="-2" pref="540" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -141,6 +146,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnUpdate" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="btnDelete" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="btnExcel1" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="57" max="32767" attributes="0"/>
           </Group>
@@ -613,6 +619,24 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="txtpass">
+    </Component>
+    <Component class="javax.swing.JButton" name="btnExcel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Monospaced" size="13" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Excel"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder/>
+          </Border>
+        </Property>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="opaque" type="boolean" value="true"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

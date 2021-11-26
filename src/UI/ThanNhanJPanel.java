@@ -21,6 +21,7 @@ import Helper.ShareHelper;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.Date;
@@ -30,7 +31,15 @@ import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
+import org.apache.poi.ss.usermodel.BorderStyle;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  *
@@ -52,7 +61,107 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
     int index = 0;
     ThanNhanDAO dao = new ThanNhanDAO();
     BenhNhanDAO bndao = new BenhNhanDAO();
+     XSSFWorkbook workbook;
 
+    private CellStyle headerCellStyle() {
+        CellStyle cellStyle = workbook.createCellStyle();
+        cellStyle.setAlignment(org.apache.poi.ss.usermodel.HorizontalAlignment.CENTER);
+        cellStyle.setVerticalAlignment(org.apache.poi.ss.usermodel.VerticalAlignment.CENTER);
+        cellStyle.setBorderBottom(BorderStyle.THICK);
+        cellStyle.setBorderLeft(BorderStyle.THICK);
+        cellStyle.setBorderRight(BorderStyle.THICK);
+        cellStyle.setBorderTop(BorderStyle.THICK);
+
+        org.apache.poi.ss.usermodel.Font font = workbook.createFont();
+        font.setBold(true);
+        font.setFontName("Times New Roman");
+        font.setFontHeight((short) 350);
+        cellStyle.setFont(font);
+        return cellStyle;
+    }
+
+    private CellStyle coCellStyle() {
+        CellStyle cellStyle = workbook.createCellStyle();
+        cellStyle.setAlignment(org.apache.poi.ss.usermodel.HorizontalAlignment.CENTER);
+        cellStyle.setVerticalAlignment(org.apache.poi.ss.usermodel.VerticalAlignment.CENTER);
+        cellStyle.setBorderBottom(BorderStyle.THIN);
+        cellStyle.setBorderLeft(BorderStyle.THICK);
+        cellStyle.setBorderRight(BorderStyle.THICK);
+        cellStyle.setBorderTop(BorderStyle.THIN);
+        org.apache.poi.ss.usermodel.Font font = workbook.createFont();
+        font.setFontName("Times New Roman");
+        font.setFontHeight((short) 250);
+        cellStyle.setFont(font);
+        return cellStyle;
+    }
+
+    void excel() {
+        JFileChooser chooser = new JFileChooser();
+        chooser.setDialogTitle("Save as");
+        FileNameExtensionFilter f = new FileNameExtensionFilter("xls", "xlsx");
+        FileOutputStream out = null;
+        chooser.setFileFilter(f);
+        int excel = chooser.showSaveDialog(null);
+        if (excel == JFileChooser.APPROVE_OPTION) {
+            try {
+                workbook = new XSSFWorkbook();
+                XSSFSheet spreadsheet1 = workbook.createSheet("Danh sách thân nhân");
+                XSSFRow rows1 = null;
+                Cell cells1 = null;
+                CellStyle cs = headerCellStyle();
+                CellStyle csc = coCellStyle();
+                rows1 = spreadsheet1.createRow((short) 1);
+                rows1.setHeight((short) 500);
+                cells1 = rows1.createCell(0, CellType.STRING);
+                cells1.setCellValue("Thông tin thân nhân");
+                rows1 = spreadsheet1.createRow((short) 2);
+                rows1.setHeight((short) 500);
+                cells1 = rows1.createCell(0, CellType.STRING);
+                cells1.setCellValue("Mã thân nhân");
+                cells1.setCellStyle(cs);
+                cells1 = rows1.createCell(1, CellType.STRING);
+                cells1.setCellValue("Mã bệnh nhân");
+                cells1.setCellStyle(cs);
+                cells1 = rows1.createCell(2, CellType.STRING);
+                cells1.setCellValue("Họ và tên");
+                cells1.setCellStyle(cs);
+                cells1 = rows1.createCell(3, CellType.STRING);
+                cells1.setCellValue("Email");
+                cells1.setCellStyle(cs);
+                
+                List<ThanNhan> list = dao.selectAll();
+                for (int i = 0; i < list.size(); i++) {
+                    ThanNhan dt = list.get(i);
+                    rows1 = spreadsheet1.createRow((short) 3 + i);
+                    rows1.setHeight((short) 500);
+                    cells1 = rows1.createCell(0);
+                    cells1.setCellValue(dt.getMatn());
+                    cells1.setCellStyle(csc);
+                    cells1 = rows1.createCell(1);
+                    cells1.setCellValue(dt.getMabn());
+                    cells1.setCellStyle(csc);
+                    cells1 = rows1.createCell(2);
+                    cells1.setCellValue(dt.getHoten());
+                    cells1.setCellStyle(csc);
+                    cells1 = rows1.createCell(3);
+                    cells1.setCellValue(dt.getEmail());
+                    cells1.setCellStyle(csc);
+                    
+                }
+                for (int i = 0; i < 4; i++) {
+                    spreadsheet1.autoSizeColumn(i);
+                }
+                out = new FileOutputStream(chooser.getSelectedFile() + ".xlsx");
+                workbook.write(out);
+                out.close();
+                JOptionPane.showMessageDialog(this, "Xuất file thành công");
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Vui lòng chọn ổ đĩa");
+        }
+    }
     void load() {
         DefaultTableModel model = (DefaultTableModel) tblGridView.getModel();
         model.setRowCount(0);
@@ -61,7 +170,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
             for (ThanNhan bn : list) {
                 Object[] row = {
                     bn.getMatn(),
-                    bn.getPass(),
+                    ShareHelper.hidePass(bn.getPass()),
                     bn.getHoten(),
                     bn.getEmail(),
                     bn.getMabn()
@@ -218,6 +327,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
         lblEmailThanNhan1 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         txtpass = new javax.swing.JPasswordField();
+        btnExcel1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -471,6 +581,13 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
 
         txtEmail.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
 
+        btnExcel1.setBackground(new java.awt.Color(255, 255, 255));
+        btnExcel1.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnExcel1.setText("Excel");
+        btnExcel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnExcel1.setContentAreaFilled(false);
+        btnExcel1.setOpaque(true);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -493,7 +610,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
                             .addComponent(txtHoten)
                             .addComponent(txtpass))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -508,14 +625,17 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(409, 409, 409)
-                                .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 1022, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(btnExcel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane7)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 1236, Short.MAX_VALUE)
                         .addComponent(jLabel16)
@@ -569,7 +689,8 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExcel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -709,6 +830,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClear;
     private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnExcel1;
     private javax.swing.JButton btnFirst;
     private javax.swing.JButton btnInsert;
     private javax.swing.JButton btnLast;

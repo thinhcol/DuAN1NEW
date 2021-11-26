@@ -6,6 +6,18 @@
 package UI;
 
 import java.awt.Color;
+import java.io.FileOutputStream;
+import java.util.List;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import org.apache.poi.ss.usermodel.BorderStyle;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  *
@@ -52,6 +64,7 @@ public class CTHoatDongJPanel extends javax.swing.JPanel {
         btnXoaBN4 = new javax.swing.JButton();
         btnXoaBN1 = new javax.swing.JButton();
         btnXoaBN2 = new javax.swing.JButton();
+        btnExcel = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(1400, 875));
@@ -241,6 +254,26 @@ public class CTHoatDongJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnExcel.setBackground(new java.awt.Color(255, 255, 255));
+        btnExcel.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnExcel.setText("Excel");
+        btnExcel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnExcel.setContentAreaFilled(false);
+        btnExcel.setOpaque(true);
+        btnExcel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnExcelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnExcelMouseExited(evt);
+            }
+        });
+        btnExcel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcelActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -275,13 +308,16 @@ public class CTHoatDongJPanel extends javax.swing.JPanel {
                                     .addComponent(btnCapNhatDV, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
                                     .addComponent(btnXoaDV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnXoaBN3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnXoaBN4, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnXoaBN1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnXoaBN2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnXoaBN3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnXoaBN4, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnXoaBN1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnXoaBN2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(btnExcel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(jScrollPane14)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -333,7 +369,8 @@ public class CTHoatDongJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnThemDV, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnXoaDV, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnXoaDV, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(209, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -410,9 +447,22 @@ public class CTHoatDongJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnXoaBN2MouseExited
 
+    private void btnExcelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExcelMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExcelMouseEntered
+
+    private void btnExcelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExcelMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExcelMouseExited
+
+    private void btnExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExcelActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCapNhatDV;
+    private javax.swing.JButton btnExcel;
     private javax.swing.JButton btnNewDV;
     private javax.swing.JButton btnThemDV;
     private javax.swing.JButton btnXoaBN1;
@@ -436,5 +486,121 @@ public class CTHoatDongJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField44;
     private javax.swing.JTable tblDichVu;
     // End of variables declaration//GEN-END:variables
-
+//       XSSFWorkbook workbook;
+//    private CellStyle headerCellStyle() {
+//        CellStyle cellStyle = workbook.createCellStyle();
+//        cellStyle.setAlignment(org.apache.poi.ss.usermodel.HorizontalAlignment.CENTER);
+//        cellStyle.setVerticalAlignment(org.apache.poi.ss.usermodel.VerticalAlignment.CENTER);
+//        cellStyle.setBorderBottom(BorderStyle.THICK);
+//        cellStyle.setBorderLeft(BorderStyle.THICK);
+//        cellStyle.setBorderRight(BorderStyle.THICK);
+//        cellStyle.setBorderTop(BorderStyle.THICK);
+//
+//        org.apache.poi.ss.usermodel.Font font = workbook.createFont();
+//        font.setBold(true);
+//        font.setFontName("Times New Roman");
+//        font.setFontHeight((short) 350);
+//        cellStyle.setFont(font);
+//        return cellStyle;
+//    }
+//
+//    private CellStyle coCellStyle() {
+//        CellStyle cellStyle = workbook.createCellStyle();
+//        cellStyle.setAlignment(org.apache.poi.ss.usermodel.HorizontalAlignment.CENTER);
+//        cellStyle.setVerticalAlignment(org.apache.poi.ss.usermodel.VerticalAlignment.CENTER);
+//        cellStyle.setBorderBottom(BorderStyle.THIN);
+//        cellStyle.setBorderLeft(BorderStyle.THICK);
+//        cellStyle.setBorderRight(BorderStyle.THICK);
+//        cellStyle.setBorderTop(BorderStyle.THIN);
+//        org.apache.poi.ss.usermodel.Font font = workbook.createFont();
+//        font.setFontName("Times New Roman");
+//        font.setFontHeight((short) 250);
+//        cellStyle.setFont(font);
+//        return cellStyle;
+//    }
+//    void excel(){
+//         JFileChooser chooser = new JFileChooser();
+//        chooser.setDialogTitle("Save as");
+//        FileNameExtensionFilter f = new FileNameExtensionFilter("xls", "xlsx");
+//        FileOutputStream out = null;
+//        chooser.setFileFilter(f);
+//        int excel = chooser.showSaveDialog(null);
+//        if (excel == JFileChooser.APPROVE_OPTION) {
+//            try {
+//                workbook = new XSSFWorkbook();
+//                XSSFSheet spreadsheet1 = workbook.createSheet("Danh sách chuyên đề");
+//                XSSFRow rows1 = null;
+//                Cell cells1 = null;
+//                CellStyle cs = headerCellStyle();
+//                CellStyle csc = coCellStyle();
+//                rows1 = spreadsheet1.createRow((short) 1);
+//                rows1.setHeight((short) 500);
+//                cells1 = rows1.createCell(0, CellType.STRING);
+//                cells1.setCellValue("Thông tin khoa học");
+//                rows1 = spreadsheet1.createRow((short) 2);
+//                rows1.setHeight((short) 500);
+//                cells1 = rows1.createCell(0, CellType.STRING);
+//                cells1.setCellValue("Mã khóa học");
+//                cells1.setCellStyle(cs);
+//                cells1 = rows1.createCell(1, CellType.STRING);
+//                cells1.setCellValue("Chuyên đề");
+//                cells1.setCellStyle(cs);
+//                cells1 = rows1.createCell(2, CellType.STRING);
+//                cells1.setCellValue("Thời lượng");
+//                cells1.setCellStyle(cs);
+//                cells1 = rows1.createCell(3, CellType.STRING);
+//                cells1.setCellValue("Học phí");
+//                cells1.setCellStyle(cs);
+//                cells1 = rows1.createCell(4, CellType.STRING);
+//                cells1.setCellValue("Ngày khai giảng");
+//                cells1.setCellStyle(cs);
+//                cells1 = rows1.createCell(5, CellType.STRING);
+//                cells1.setCellValue("Nhân viên nhập thông tin");
+//                cells1.setCellStyle(cs);
+//                cells1 = rows1.createCell(6, CellType.STRING);
+//                cells1.setCellValue("Ngày tạo");
+//                cells1.setCellStyle(cs);
+//                List<> list = dao.select();
+//                for (int i = 0; i < list.size(); i++) {
+//                    KhoaHoc dt = list.get(i);
+//                    rows1 = spreadsheet1.createRow((short) 3 + i);
+//                    rows1.setHeight((short) 500);
+//                    cells1 = rows1.createCell(0);
+//                    cells1.setCellValue(dt.getMaKH());
+//                    cells1.setCellStyle(csc);
+//                    cells1 = rows1.createCell(1);
+//                    cells1.setCellValue(dt.getMaCD());
+//                    cells1.setCellStyle(csc);
+//                    cells1 = rows1.createCell(2);
+//                    cells1.setCellValue(dt.getThoiLuong());
+//                    cells1.setCellStyle(csc);
+//                    cells1.setCellStyle(csc);
+//                    cells1 = rows1.createCell(3);
+//                    cells1.setCellValue(dt.getHocPhi());
+//                    cells1.setCellStyle(csc);
+//                    cells1 = rows1.createCell(4);
+//                    cells1.setCellValue(DateHelper.toString(dt.getNgayKG()));
+//                    cells1.setCellStyle(csc);
+//                    cells1 = rows1.createCell(5);
+//                    cells1.setCellValue(dt.getMaNV());
+//                    cells1.setCellStyle(csc);
+//                    cells1 = rows1.createCell(6);
+//                    cells1.setCellValue(DateHelper.toString(dt.getNgayTao()));
+//                    cells1.setCellStyle(csc);
+//                }
+//                for (int i = 0; i < 7; i++) {
+//                    spreadsheet1.autoSizeColumn(i);
+//                }
+//                out = new FileOutputStream(chooser.getSelectedFile() + ".xlsx");
+//                workbook.write(out);
+//                out.close();
+//                JOptionPane.showMessageDialog(this, "Xuất file thành công");
+//            } catch (Exception e) {
+//                System.out.println(e);
+//            }
+//        } else {
+//            JOptionPane.showMessageDialog(this, "Vui lòng chọn ổ đĩa");
+//        }
+//    }
+    
 }

@@ -58,6 +58,14 @@ public class DichVuCTDAO {
         }
         return list.get(0);
     }
+    public DichVuCT selectByHD(Integer key, Date ngayBD, Date ngayKT) {
+        String selectByMaBN = "select * from DichVuCT where MaBN = ? and NgayDK>= ? and NgayDK <= ? order by NgayDK asc";
+        List<DichVuCT> list = this.selectBySql(selectByMaBN, key, ngayBD, ngayKT);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list.get(0);
+    }
 
     protected List<DichVuCT> selectBySql(String sql, Object... args) {
         List<DichVuCT> list = new ArrayList<DichVuCT>();
@@ -90,4 +98,5 @@ public class DichVuCTDAO {
         List<DichVuCT> list = this.selectBySql(selectByMaBN, key, ngayBD, ngayKT);
         return list;
     }
+    
 }

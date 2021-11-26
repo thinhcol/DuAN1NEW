@@ -6,6 +6,7 @@
 package UI;
 
 import Helper.DialogHelper;
+import Helper.MapHelper;
 import Helper.ShareHelper;
 import java.awt.Color;
 import java.awt.Frame;
@@ -16,6 +17,7 @@ import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javafx.embed.swing.JFXPanel;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -107,6 +109,7 @@ public class Home extends javax.swing.JFrame {
         pnlQuanLyHoatDong = new javax.swing.JPanel();
         pnlThongTin = new javax.swing.JPanel();
         pnlQuanLyTN = new javax.swing.JPanel();
+        pnlDiaChi = new javax.swing.JPanel();
         pnlMenu = new javax.swing.JPanel();
         pnlQuanLyItem = new javax.swing.JPanel();
         pnlQuanLyBenhNhan = new javax.swing.JPanel();
@@ -325,6 +328,11 @@ public class Home extends javax.swing.JFrame {
         );
 
         kGradientPanel1.setkEndColor(new java.awt.Color(102, 255, 204));
+        kGradientPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                kGradientPanel1MouseClicked(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Monospaced", 1, 48)); // NOI18N
         jLabel6.setText("Địa điểm");
@@ -746,6 +754,19 @@ public class Home extends javax.swing.JFrame {
         );
 
         pnlBody.add(pnlQuanLyTN, "card13");
+
+        javax.swing.GroupLayout pnlDiaChiLayout = new javax.swing.GroupLayout(pnlDiaChi);
+        pnlDiaChi.setLayout(pnlDiaChiLayout);
+        pnlDiaChiLayout.setHorizontalGroup(
+            pnlDiaChiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1652, Short.MAX_VALUE)
+        );
+        pnlDiaChiLayout.setVerticalGroup(
+            pnlDiaChiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1445, Short.MAX_VALUE)
+        );
+
+        pnlBody.add(pnlDiaChi, "card14");
 
         pnlMenu.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1728,6 +1749,40 @@ public class Home extends javax.swing.JFrame {
         doiMK();
     }//GEN-LAST:event_btnDoiMKMouseClicked
 
+    private void kGradientPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel1MouseClicked
+        // TODO add your handling code here:
+        HideMenu();
+        map();
+        pnlBody.removeAll();
+        pnlBody.add(pnlDiaChi);
+        pnlBody.repaint();
+        pnlBody.revalidate();
+
+        lblHome.setBackground(new Color(209, 209, 209));
+        lblQuanLy.setBackground(new Color(209, 209, 209));
+        lblGioiThieu.setBackground(new Color(209, 209, 209));
+        lblDichVu.setBackground(new Color(209, 209, 209));
+        lblHoaDon.setBackground(new Color(209, 209, 209));
+        lblHoatDong.setBackground(new Color(209, 209, 209));
+        lblThanNhan.setBackground(new Color(153, 153, 153));
+
+        btnHome.setForeground(new Color(0, 0, 0));
+        btnQuanLy.setForeground(new Color(0, 0, 0));
+        btnGioiThieu.setForeground(new Color(0, 0, 0));
+        btnDichVu.setForeground(new Color(0, 0, 0));
+        btnHoaDon.setForeground(new Color(0, 0, 0));
+        btnHoatDong.setForeground(new Color(0, 0, 0));
+        btnThanNhan.setForeground(new Color(1, 156, 246));
+
+        pnlHome.setBackground(new Color(209, 209, 209));
+        pnlQuanLy.setBackground(new Color(209, 209, 209));
+        pnlGioiThieu.setBackground(new Color(209, 209, 209));
+        pnlDichVu.setBackground(new Color(209, 209, 209));
+        pnlHoaDon.setBackground(new Color(209, 209, 209));
+        pnlHoatDong.setBackground(new Color(209, 209, 209));
+        pnlThanNhan.setBackground(new Color(255, 255, 255));
+    }//GEN-LAST:event_kGradientPanel1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1819,6 +1874,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel lblThanNhan;
     private keeptoo.KGradientPanel pnlAvatar;
     private javax.swing.JPanel pnlBody;
+    private javax.swing.JPanel pnlDiaChi;
     private javax.swing.JPanel pnlDichVu;
     private javax.swing.JPanel pnlForm;
     private javax.swing.JPanel pnlGioiThieu;
@@ -1873,6 +1929,7 @@ public class Home extends javax.swing.JFrame {
     };
 
     void setMenu() {
+
         lblHinh.setBounds(0, 0, 824, 762);
         SetImageSize(2);
         tm = new Timer(1000, new ActionListener() {
@@ -1889,6 +1946,15 @@ public class Home extends javax.swing.JFrame {
 
         tm.start();
 
+    }
+
+
+    public void map() {
+          
+        pnlDiaChi = new MapHelper();
+        pnlBody.add(pnlDiaChi);
+        pnlBody.removeAll();
+        pnlBody.validate();
     }
 
     public void AI() {
@@ -1945,12 +2011,7 @@ public class Home extends javax.swing.JFrame {
         pnlBody.validate();
     }
 
-    public void HoaDonCT() {
-        pnlHoaDonCT = new ChiTietHDJPanel();
-        pnlBody.add(pnlHoaDonCT);
-        pnlBody.removeAll();
-        pnlBody.validate();
-    }
+    
 
     public void DichVu() {
         pnlQuanLyDV = new DichVuJPanel();

@@ -9,12 +9,24 @@ import DuAnDAO.BenhAnDAO;
 import DuAnDAO.BenhNhanDAO;
 import Entity.BenhAn;
 import Entity.BenhNhan;
+import Helper.DateHelper;
 import Helper.DialogHelper;
 import Helper.ShareHelper;
 import java.awt.Color;
+import java.io.FileOutputStream;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
+import org.apache.poi.ss.usermodel.BorderStyle;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  *
@@ -39,6 +51,107 @@ public class BenhAnJPanel extends javax.swing.JPanel {
             btnInsert.setVisible(true);
             btnUpdate.setVisible(true);
             btnDelete.setVisible(true);
+        }
+    }
+    XSSFWorkbook workbook;
+
+    private CellStyle headerCellStyle() {
+        CellStyle cellStyle = workbook.createCellStyle();
+        cellStyle.setAlignment(org.apache.poi.ss.usermodel.HorizontalAlignment.CENTER);
+        cellStyle.setVerticalAlignment(org.apache.poi.ss.usermodel.VerticalAlignment.CENTER);
+        cellStyle.setBorderBottom(BorderStyle.THICK);
+        cellStyle.setBorderLeft(BorderStyle.THICK);
+        cellStyle.setBorderRight(BorderStyle.THICK);
+        cellStyle.setBorderTop(BorderStyle.THICK);
+
+        org.apache.poi.ss.usermodel.Font font = workbook.createFont();
+        font.setBold(true);
+        font.setFontName("Times New Roman");
+        font.setFontHeight((short) 350);
+        cellStyle.setFont(font);
+        return cellStyle;
+    }
+
+    private CellStyle coCellStyle() {
+        CellStyle cellStyle = workbook.createCellStyle();
+        cellStyle.setAlignment(org.apache.poi.ss.usermodel.HorizontalAlignment.CENTER);
+        cellStyle.setVerticalAlignment(org.apache.poi.ss.usermodel.VerticalAlignment.CENTER);
+        cellStyle.setBorderBottom(BorderStyle.THIN);
+        cellStyle.setBorderLeft(BorderStyle.THICK);
+        cellStyle.setBorderRight(BorderStyle.THICK);
+        cellStyle.setBorderTop(BorderStyle.THIN);
+        org.apache.poi.ss.usermodel.Font font = workbook.createFont();
+        font.setFontName("Times New Roman");
+        font.setFontHeight((short) 250);
+        cellStyle.setFont(font);
+        return cellStyle;
+    }
+
+    void excel() {
+        JFileChooser chooser = new JFileChooser();
+        chooser.setDialogTitle("Save as");
+        FileNameExtensionFilter f = new FileNameExtensionFilter("xls", "xlsx");
+        FileOutputStream out = null;
+        chooser.setFileFilter(f);
+        int excel = chooser.showSaveDialog(null);
+        if (excel == JFileChooser.APPROVE_OPTION) {
+            try {
+                workbook = new XSSFWorkbook();
+                XSSFSheet spreadsheet1 = workbook.createSheet("Danh sách bệnh án");
+                XSSFRow rows1 = null;
+                Cell cells1 = null;
+                CellStyle cs = headerCellStyle();
+                CellStyle csc = coCellStyle();
+                rows1 = spreadsheet1.createRow((short) 1);
+                rows1.setHeight((short) 500);
+                cells1 = rows1.createCell(0, CellType.STRING);
+                cells1.setCellValue("Thông tin bệnh án");
+                rows1 = spreadsheet1.createRow((short) 2);
+                rows1.setHeight((short) 500);
+                cells1 = rows1.createCell(0, CellType.STRING);
+                cells1.setCellValue("Mã bệnh án");
+                cells1.setCellStyle(cs);
+                cells1 = rows1.createCell(1, CellType.STRING);
+                cells1.setCellValue("Mã bệnh nhân");
+                cells1.setCellStyle(cs);
+                cells1 = rows1.createCell(2, CellType.STRING);
+                cells1.setCellValue("Cách điều trị");
+                cells1.setCellStyle(cs);
+                cells1 = rows1.createCell(3, CellType.STRING);
+                cells1.setCellValue("Ghi chú");
+                cells1.setCellStyle(cs);
+           
+                List<BenhAn> list = dao.select();
+                for (int i = 0; i < list.size(); i++) {
+                    BenhAn dt = list.get(i);
+                    rows1 = spreadsheet1.createRow((short) 3 + i);
+                    rows1.setHeight((short) 500);
+                    cells1 = rows1.createCell(0);
+                    cells1.setCellValue(dt.getMaBA());
+                    cells1.setCellStyle(csc);
+                    cells1 = rows1.createCell(1);
+                    cells1.setCellValue(dt.getMaBN());
+                    cells1.setCellStyle(csc);
+                    cells1 = rows1.createCell(2);
+                    cells1.setCellValue(dt.getCachdt());
+                    cells1.setCellStyle(csc);
+                    cells1 = rows1.createCell(3);
+                    cells1.setCellValue(dt.getGhichu());
+                    cells1.setCellStyle(csc);
+                    
+                }
+                for (int i = 0; i < 4; i++) {
+                    spreadsheet1.autoSizeColumn(i);
+                }
+                out = new FileOutputStream(chooser.getSelectedFile() + ".xlsx");
+                workbook.write(out);
+                out.close();
+                JOptionPane.showMessageDialog(this, "Xuất file thành công");
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Vui lòng chọn ổ đĩa");
         }
     }
 
@@ -75,7 +188,8 @@ public class BenhAnJPanel extends javax.swing.JPanel {
         btnPrev = new javax.swing.JButton();
         btnNext = new javax.swing.JButton();
         btnLast = new javax.swing.JButton();
-        cbxTenBN = new javax.swing.JComboBox<String>();
+        cbxTenBN = new javax.swing.JComboBox<>();
+        btnExcel = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -331,6 +445,18 @@ public class BenhAnJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnExcel.setBackground(new java.awt.Color(255, 255, 255));
+        btnExcel.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnExcel.setText("Excel");
+        btnExcel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnExcel.setContentAreaFilled(false);
+        btnExcel.setOpaque(true);
+        btnExcel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcelActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -365,13 +491,16 @@ public class BenhAnJPanel extends javax.swing.JPanel {
                                     .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
                                     .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 304, Short.MAX_VALUE)
-                                .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(btnExcel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel28)
@@ -411,10 +540,6 @@ public class BenhAnJPanel extends javax.swing.JPanel {
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -422,8 +547,16 @@ public class BenhAnJPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(96, Short.MAX_VALUE))
+                            .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -564,9 +697,15 @@ public class BenhAnJPanel extends javax.swing.JPanel {
         this.clear();
     }//GEN-LAST:event_txtTimKiemKeyReleased
 
+    private void btnExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcelActionPerformed
+        // TODO add your handling code here:
+        excel();
+    }//GEN-LAST:event_btnExcelActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnExcel;
     private javax.swing.JButton btnFirst;
     private javax.swing.JButton btnInsert;
     private javax.swing.JButton btnLast;
@@ -720,7 +859,7 @@ public class BenhAnJPanel extends javax.swing.JPanel {
                 DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
                 e.printStackTrace();
             }
-        }else if (ShareHelper.isLogin1()) {
+        } else if (ShareHelper.isLogin1()) {
             cbxTenBN.setEnabled(false);
         }
 
