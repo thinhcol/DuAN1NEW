@@ -15,7 +15,11 @@ public class DichVu {
     private String TenDV;
     private String MoTa;
     private double Gia;
-
+    
+    @Override
+    public String toString(){
+        return TenDV;
+    }
     public int getMaDV() {
         return MaDV;
     }

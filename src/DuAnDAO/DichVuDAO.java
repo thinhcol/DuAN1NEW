@@ -19,7 +19,7 @@ public class DichVuDAO{
     
     String insert = "INSERT INTO DichVu VALUES (?, ?, ?)";
     String delete = "DELETE FROM DichVu WHERE MaDV like ?";
-    String update = "UPDATE DichVu SET TenDV=?, MoTa=?, Gia=? ,WHERE MaDV=?";
+    String update = "UPDATE DichVu SET TenDV=?, MoTa=?, Gia=? WHERE MaDV=?";
     String selectAll = "SELECT * FROM DichVu";
     String selectByID = "SELECT * FROM DichVu WHERE MaDV=?";
 
@@ -74,5 +74,8 @@ public class DichVuDAO{
             throw new RuntimeException(e);
         }
     }
-    
+    public List<DichVu> selectByKeyword(String keyword) {
+        String sql = "select * from DichVu where TenDV like ? or Gia like ? or MaDV like ?";
+        return this.selectBySql(sql, "%" + keyword + "%", "%" + keyword + "%", "%" + keyword + "%");
+    }
 }

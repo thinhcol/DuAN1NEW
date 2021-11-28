@@ -64,6 +64,7 @@ public class DangNhap extends javax.swing.JDialog {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, 30));
 
         txtMaNV.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        txtMaNV.setText("ThienVD");
         txtMaNV.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(204, 204, 204)));
         jPanel1.add(txtMaNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 230, 30));
 
@@ -74,6 +75,7 @@ public class DangNhap extends javax.swing.JDialog {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 380, -1));
 
         txtMatKhau.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        txtMatKhau.setText("123");
         txtMatKhau.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(204, 204, 204)));
         jPanel1.add(txtMatKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 230, 30));
 

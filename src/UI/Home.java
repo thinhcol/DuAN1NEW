@@ -1916,7 +1916,7 @@ public class Home extends javax.swing.JFrame {
             }
         }).start();
         setLocationRelativeTo(null);
-        new ChaoJdialog(this, true).setVisible(true);
+//        new ChaoJdialog(this, true).setVisible(true);
         new DangNhap(this, true).setVisible(true);
     }
 

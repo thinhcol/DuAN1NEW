@@ -20,7 +20,7 @@ public class DichVuCTDAO {
 
     String insert = "INSERT INTO DichVuCT VALUES (?, ?, ?, ?)";
     String delete = "DELETE FROM DichVuCT WHERE MaDVCT like ?";
-    String update = "UPDATE DichVuCT SET MaDV=?, MaBN=?, NgayDK = ?, GhiChu=? , WHERE MaDVCT =?";
+    String update = "UPDATE DichVuCT SET MaDV=?, MaBN=?, NgayDK = ?, GhiChu=? WHERE MaDVCT =?";
     String selectAll = "SELECT * FROM DichVuCT";
     String selectByID = "SELECT * FROM DichVuCT WHERE MaDVCT=?";
 
@@ -97,6 +97,22 @@ public class DichVuCTDAO {
         String selectByMaBN = "select * from DichVuCT where MaBN = ? and NgayDK>= ? and NgayDK <= ? order by NgayDK asc";
         List<DichVuCT> list = this.selectBySql(selectByMaBN, key, ngayBD, ngayKT);
         return list;
+    }
+
+    public List<DichVuCT> selectByMaDV(Integer maDV) {
+        String sql = "select * from DichVuCT where MaDV like ?";
+        List<DichVuCT> list = this.selectBySql(sql, maDV);
+        return list;
+    }
+
+//    public List<DichVuCT> selectByKeyword(String keyword) {
+//        String sql = "select * from DichVuCT where MaDV like ? or MaBN like ? or NgayDK like ?";
+//        return this.selectBySql(sql, "%" + keyword + "%", "%" + keyword + "%", "%" + keyword + "%");
+//    }
+
+    public List<DichVuCT> selectByMaBNAndDV(int maBN, int maDV) {
+        String sql = "select * from DichVuCT where MaBN like ? and MaDV like ?";
+        return this.selectBySql(sql, maBN, maDV);
     }
     
 }
