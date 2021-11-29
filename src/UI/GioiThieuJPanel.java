@@ -27,7 +27,7 @@ public class GioiThieuJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBox1 = new javax.swing.JComboBox<String>();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         pnlDichVu = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -41,7 +41,7 @@ public class GioiThieuJPanel extends javax.swing.JPanel {
         jTextArea3 = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setBackground(new java.awt.Color(1, 156, 246));
         setMaximumSize(new java.awt.Dimension(1900, 890));

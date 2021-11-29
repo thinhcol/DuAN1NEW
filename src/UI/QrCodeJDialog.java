@@ -145,7 +145,7 @@ public class QrCodeJDialog extends javax.swing.JDialog implements Runnable, Thre
 
     private void btnDangNhapMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDangNhapMouseExited
         btnDangNhap.setForeground(new Color(255, 255, 255));
-        btnDangNhap.setBackground(new Color(51,0,153));
+        btnDangNhap.setBackground(new Color(51, 0, 153));
     }//GEN-LAST:event_btnDangNhapMouseExited
 
     private void btnThoatMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThoatMouseEntered
@@ -234,7 +234,6 @@ public class QrCodeJDialog extends javax.swing.JDialog implements Runnable, Thre
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
             Result result = null;
             BufferedImage image = null;
 
@@ -243,38 +242,30 @@ public class QrCodeJDialog extends javax.swing.JDialog implements Runnable, Thre
                     continue;
                 }
             }
-
             LuminanceSource source = new BufferedImageLuminanceSource(image);
             BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
-
             try {
                 result = new MultiFormatReader().decode(bitmap);
-
             } catch (NotFoundException e) {
-
             }
-
             if (result != null) {
                 lblMaNV.setText(result.getText());
             }
         } while (true);
     }
-
     @Override
     public Thread newThread(Runnable r) {
         Thread t = new Thread(r, "My Thread");
         t.setDaemon(true);
         return t;
     }
-
-    NhanVienDAO dao = new NhanVienDAO();
-
+   NhanVienDAO dao = new NhanVienDAO();
     void login() {
         String manv = lblMaNV.getText();
         try {
             NhanVien nhanVien = dao.selectByID(manv);
             if (nhanVien != null) {
-                ShareHelper.user = nhanVien;              
+                ShareHelper.user = nhanVien;
                 DialogHelper.alert(this, "Đăng nhập thành công!");
                 this.dispose();
                 webcam.close();

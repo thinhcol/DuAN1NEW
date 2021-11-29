@@ -3,15 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/JAVA_NETBEAN/DuAN1NEW/src/Helper/CheckHelper.java</file>
-            <file>file:/D:/JAVA_NETBEAN/DuAN1NEW/src/DuAnDAO/DichVuCTDAO.java</file>
-            <file>file:/D:/JAVA_NETBEAN/DuAN1NEW/src/Entity/DichVu.java</file>
-            <file>file:/D:/JAVA_NETBEAN/DuAN1NEW/src/UI/Home.java</file>
-            <file>file:/D:/JAVA_NETBEAN/DuAN1NEW/src/Entity/BenhNhan.java</file>
-            <file>file:/D:/JAVA_NETBEAN/DuAN1NEW/src/DuAnDAO/DichVuDAO.java</file>
-            <file>file:/D:/JAVA_NETBEAN/DuAN1NEW/src/UI/BenhAnJPanel.java</file>
-            <file>file:/D:/JAVA_NETBEAN/DuAN1NEW/src/UI/HoaDonJPanel.java</file>
-            <file>file:/D:/JAVA_NETBEAN/DuAN1NEW/src/UI/DichVuJPanel.java</file>
+            <file>file:/C:/FPT/1/DuAn/src/UI/KhuonMatJDialog.java</file>
+            <file>file:/C:/FPT/1/DuAn/src/Helper/MapHelper.java</file>
+            <file>file:/C:/FPT/1/DuAn/src/UI/ThongKe.java</file>
+            <file>file:/C:/FPT/1/DuAn/src/UI/Map.java</file>
+            <file>file:/C:/FPT/1/DuAn/src/UI/DangKyKhuonMat.java</file>
+            <file>file:/C:/FPT/1/DuAn/src/UI/Home.java</file>
         </group>
     </open-files>
 </project-private>

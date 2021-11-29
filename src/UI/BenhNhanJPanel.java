@@ -465,8 +465,8 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         lblHinh = new javax.swing.JLabel();
         pnlQuanLyLichSu = new javax.swing.JPanel();
-        btnLichSu = new javax.swing.JButton();
         btnExcel = new javax.swing.JButton();
+        btnLichSu = new javax.swing.JButton();
         pnlLichSu = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -612,6 +612,11 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
 
         txtTimKiem.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
         txtTimKiem.setMaximumSize(new java.awt.Dimension(100, 100));
+        txtTimKiem.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTimKiemKeyReleased(evt);
+            }
+        });
 
         tblGridView.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         tblGridView.setModel(new javax.swing.table.DefaultTableModel(
@@ -779,39 +784,15 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        btnLichSu.setBackground(new java.awt.Color(255, 255, 255));
-        btnLichSu.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
-        btnLichSu.setText("Lịch Sử");
-        btnLichSu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnLichSu.setContentAreaFilled(false);
-        btnLichSu.setFocusPainted(false);
-        btnLichSu.setOpaque(true);
-        btnLichSu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnLichSuMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnLichSuMouseExited(evt);
-            }
-        });
-        btnLichSu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLichSuActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout pnlQuanLyLichSuLayout = new javax.swing.GroupLayout(pnlQuanLyLichSu);
         pnlQuanLyLichSu.setLayout(pnlQuanLyLichSuLayout);
         pnlQuanLyLichSuLayout.setHorizontalGroup(
             pnlQuanLyLichSuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnLichSu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 250, Short.MAX_VALUE)
         );
         pnlQuanLyLichSuLayout.setVerticalGroup(
             pnlQuanLyLichSuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlQuanLyLichSuLayout.createSequentialGroup()
-                .addContainerGap(36, Short.MAX_VALUE)
-                .addComponent(btnLichSu, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+            .addGap(0, 98, Short.MAX_VALUE)
         );
 
         btnExcel.setBackground(new java.awt.Color(255, 255, 255));
@@ -831,6 +812,27 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
         btnExcel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExcelActionPerformed(evt);
+            }
+        });
+
+        btnLichSu.setBackground(new java.awt.Color(255, 255, 255));
+        btnLichSu.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnLichSu.setText("Lịch Sử");
+        btnLichSu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnLichSu.setContentAreaFilled(false);
+        btnLichSu.setFocusPainted(false);
+        btnLichSu.setOpaque(true);
+        btnLichSu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnLichSuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnLichSuMouseExited(evt);
+            }
+        });
+        btnLichSu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLichSuActionPerformed(evt);
             }
         });
 
@@ -892,8 +894,10 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(309, 309, 309)
-                                        .addComponent(btnExcel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                        .addGap(308, 308, 308)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(btnLichSu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(btnExcel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                             .addComponent(jScrollPane7)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel16)
@@ -967,7 +971,9 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(66, 66, 66)
                         .addComponent(pnlQuanLyLichSu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnLichSu, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         setLayout.add(jPanel2, "card2");
@@ -1153,6 +1159,12 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         excel();
     }//GEN-LAST:event_btnExcelActionPerformed
+
+    private void txtTimKiemKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKiemKeyReleased
+        // TODO add your handling code here:
+        this.load();
+        this.clear();
+    }//GEN-LAST:event_txtTimKiemKeyReleased
 
     public void LichSu() {
         int id = (int) tblGridView.getValueAt(index, 0);

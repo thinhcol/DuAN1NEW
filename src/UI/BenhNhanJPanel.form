@@ -88,7 +88,7 @@
                                           </Group>
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
                                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                               <Component id="btnInsert" min="-2" pref="101" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
@@ -103,8 +103,11 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="btnUpdate" min="-2" pref="101" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="309" max="-2" attributes="0"/>
-                                              <Component id="btnExcel" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="308" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="btnLichSu" max="32767" attributes="0"/>
+                                                  <Component id="btnExcel" max="32767" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -205,7 +208,9 @@
                               <Component id="pnlQuanLyLichSu" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="69" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnLichSu" min="-2" pref="35" max="-2" attributes="0"/>
+                      <EmptySpace pref="27" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -454,6 +459,9 @@
                   <Dimension value="[100, 100]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTimKiemKeyReleased"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane7">
               <AuxValues>
@@ -883,45 +891,15 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnLichSu" alignment="1" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="250" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="36" max="32767" attributes="0"/>
-                          <Component id="btnLichSu" min="-2" pref="35" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      </Group>
+                      <EmptySpace min="0" pref="98" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JButton" name="btnLichSu">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Monospaced" size="13" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="L&#x1ecb;ch S&#x1eed;"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder/>
-                      </Border>
-                    </Property>
-                    <Property name="contentAreaFilled" type="boolean" value="false"/>
-                    <Property name="focusPainted" type="boolean" value="false"/>
-                    <Property name="opaque" type="boolean" value="true"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnLichSuMouseEntered"/>
-                    <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnLichSuMouseExited"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLichSuActionPerformed"/>
-                  </Events>
-                </Component>
-              </SubComponents>
             </Container>
             <Component class="javax.swing.JButton" name="btnExcel">
               <Properties>
@@ -944,6 +922,30 @@
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnExcelMouseEntered"/>
                 <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnExcelMouseExited"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcelActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnLichSu">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Monospaced" size="13" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="L&#x1ecb;ch S&#x1eed;"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder/>
+                  </Border>
+                </Property>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+                <Property name="focusPainted" type="boolean" value="false"/>
+                <Property name="opaque" type="boolean" value="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnLichSuMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnLichSuMouseExited"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLichSuActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

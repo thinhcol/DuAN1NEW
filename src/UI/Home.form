@@ -23,13 +23,7 @@
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="ff" green="ff" red="ff" type="rgb"/>
     </Property>
-    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1400, 800]"/>
-    </Property>
     <Property name="undecorated" type="boolean" value="true"/>
-    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1400, 800]"/>
-    </Property>
     <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[1400, 800]"/>
     </Property>
@@ -81,8 +75,9 @@
               <Group type="102" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   <Component id="pnlMenu" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                  <Component id="pnlBody" min="-2" pref="1652" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="pnlBody" min="-2" pref="1640" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Component id="pnlHeading" max="32767" attributes="0"/>
           </Group>
@@ -94,9 +89,9 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="pnlBody" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                           <Component id="pnlMenu" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="515" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -224,6 +219,9 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="0" red="ff" type="rgb"/>
             </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[1640, 850]"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pnlBodyMouseClicked"/>
@@ -263,7 +261,7 @@
                                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="0" pref="64" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="52" max="32767" attributes="0"/>
                               </Group>
                               <Component id="jPanel9" max="32767" attributes="0"/>
                           </Group>
@@ -317,7 +315,7 @@
                                   <Component id="jPanel9" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="83" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
@@ -395,7 +393,7 @@
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblHinh" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblHinh" alignment="0" pref="784" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
@@ -578,6 +576,9 @@
                       <Color blue="ff" green="cc" red="0" type="rgb"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="kGradientPanel5MouseClicked"/>
+                  </Events>
 
                   <Layout>
                     <DimensionLayout dim="0">
@@ -756,7 +757,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1445" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1369" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -776,12 +777,12 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1652" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1640" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1445" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1369" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -801,12 +802,12 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1652" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1640" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1445" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1369" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -826,12 +827,12 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1652" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1640" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1445" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1369" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -851,12 +852,12 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1652" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1640" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1445" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1369" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -876,12 +877,12 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1652" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1640" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1445" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1369" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -901,12 +902,12 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1652" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1640" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1445" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1369" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -926,12 +927,12 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1652" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1640" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1445" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1369" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -951,12 +952,12 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1652" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1640" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1445" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1369" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -976,12 +977,12 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1652" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1640" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1445" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1369" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -996,35 +997,67 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1652" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1640" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1445" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1369" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="pnlDiaChi">
+            <Container class="javax.swing.JPanel" name="pnlThongKe">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                  <CardConstraints cardName="card14"/>
+                  <CardConstraints cardName="card15"/>
                 </Constraint>
               </Constraints>
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1652" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1640" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1445" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1369" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel2">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                  <CardConstraints cardName="card15"/>
+                </Constraint>
+              </Constraints>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                          <Component id="map1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="926" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
+                          <Component id="map1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="727" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="UI.Map" name="map1">
+                </Component>
+              </SubComponents>
             </Container>
           </SubComponents>
         </Container>
@@ -1032,6 +1065,9 @@
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[247, 850]"/>
             </Property>
           </Properties>
 
@@ -1074,7 +1110,7 @@
                       <Component id="pnlHoatDong" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Component id="pnlThanNhan" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="228" max="32767" attributes="0"/>
+                      <EmptySpace pref="164" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

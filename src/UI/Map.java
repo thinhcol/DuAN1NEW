@@ -23,7 +23,7 @@ public class Map extends javax.swing.JPanel {
         jPanel1.removeAll();
         jPanel1.add(jPanel2);
         jPanel1.repaint();
-        jPanel1.revalidate();
+        
     }
 
     /**
@@ -38,19 +38,20 @@ public class Map extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
 
+        setMaximumSize(new java.awt.Dimension(640, 480));
+        setMinimumSize(new java.awt.Dimension(640, 480));
+        setPreferredSize(new java.awt.Dimension(640, 480));
+
+        jPanel1.setMaximumSize(new java.awt.Dimension(640, 480));
+        jPanel1.setMinimumSize(new java.awt.Dimension(640, 480));
+        jPanel1.setPreferredSize(new java.awt.Dimension(640, 480));
         jPanel1.setLayout(new java.awt.CardLayout());
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 540, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
-        );
-
+        jPanel2.setMaximumSize(new java.awt.Dimension(640, 480));
+        jPanel2.setMinimumSize(new java.awt.Dimension(640, 480));
+        jPanel2.setPreferredSize(new java.awt.Dimension(640, 480));
+        jPanel2.setRequestFocusEnabled(false);
+        jPanel2.setLayout(new java.awt.BorderLayout());
         jPanel1.add(jPanel2, "card2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
