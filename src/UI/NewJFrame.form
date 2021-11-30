@@ -90,7 +90,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="UI.Map" name="map3">
+                <Component class="UI.MapJpanel" name="map3">
                 </Component>
               </SubComponents>
             </Container>
@@ -116,7 +116,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="UI.Map" name="map2">
+            <Component class="UI.MapJpanel" name="map2">
             </Component>
           </SubComponents>
         </Container>

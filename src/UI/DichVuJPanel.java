@@ -57,7 +57,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
         btnXoaDV = new javax.swing.JButton();
         jScrollPane12 = new javax.swing.JScrollPane();
         tblDichVu = new javax.swing.JTable();
-        pnlDichVu1 = new javax.swing.JPanel();
+        pnlDichVuCT = new javax.swing.JPanel();
         jSeparator10 = new javax.swing.JSeparator();
         jLabel73 = new javax.swing.JLabel();
         btnNewVDCT = new javax.swing.JButton();
@@ -71,8 +71,8 @@ public class DichVuJPanel extends javax.swing.JPanel {
         jScrollPane16 = new javax.swing.JScrollPane();
         txtGhiChu = new javax.swing.JTextArea();
         txtNgayDangKi = new com.toedter.calendar.JDateChooser();
-        cboTenDichVu = new javax.swing.JComboBox<>();
-        cboTenBN = new javax.swing.JComboBox<>();
+        cboTenDichVu = new javax.swing.JComboBox<String>();
+        cboTenBN = new javax.swing.JComboBox<String>();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(1400, 875));
@@ -284,7 +284,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
                     .addContainerGap(95, Short.MAX_VALUE)))
         );
 
-        pnlDichVu1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204)));
+        pnlDichVuCT.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204)));
 
         jLabel73.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
         jLabel73.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_orcid_35px.png"))); // NOI18N
@@ -401,35 +401,35 @@ public class DichVuJPanel extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout pnlDichVu1Layout = new javax.swing.GroupLayout(pnlDichVu1);
-        pnlDichVu1.setLayout(pnlDichVu1Layout);
-        pnlDichVu1Layout.setHorizontalGroup(
-            pnlDichVu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlDichVu1Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlDichVuCTLayout = new javax.swing.GroupLayout(pnlDichVuCT);
+        pnlDichVuCT.setLayout(pnlDichVuCTLayout);
+        pnlDichVuCTLayout.setHorizontalGroup(
+            pnlDichVuCTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDichVuCTLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlDichVu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlDichVuCTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane13)
                     .addComponent(jSeparator10, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDichVu1Layout.createSequentialGroup()
-                        .addGroup(pnlDichVu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDichVuCTLayout.createSequentialGroup()
+                        .addGroup(pnlDichVuCTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel76)
                             .addComponent(jLabel74))
-                        .addGroup(pnlDichVu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlDichVu1Layout.createSequentialGroup()
+                        .addGroup(pnlDichVuCTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlDichVuCTLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
                                 .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlDichVu1Layout.createSequentialGroup()
+                            .addGroup(pnlDichVuCTLayout.createSequentialGroup()
                                 .addGap(153, 153, 153)
-                                .addGroup(pnlDichVu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(pnlDichVuCTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cboTenBN, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(txtNgayDangKi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDichVu1Layout.createSequentialGroup()
-                        .addGroup(pnlDichVu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDichVuCTLayout.createSequentialGroup()
+                        .addGroup(pnlDichVuCTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel73)
                             .addComponent(jLabel75))
                         .addGap(145, 145, 145)
                         .addComponent(cboTenDichVu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDichVu1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDichVuCTLayout.createSequentialGroup()
                         .addComponent(btnNewVDCT, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnThemDVCT, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -437,24 +437,24 @@ public class DichVuJPanel extends javax.swing.JPanel {
                         .addComponent(btnXoaDVCT, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
-        pnlDichVu1Layout.setVerticalGroup(
-            pnlDichVu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlDichVu1Layout.createSequentialGroup()
+        pnlDichVuCTLayout.setVerticalGroup(
+            pnlDichVuCTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDichVuCTLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(pnlDichVu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlDichVuCTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel75)
                     .addComponent(cboTenDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
-                .addGroup(pnlDichVu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlDichVuCTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel73)
                     .addComponent(cboTenBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(pnlDichVu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlDichVuCTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel76)
                     .addComponent(txtNgayDangKi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(pnlDichVu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlDichVu1Layout.createSequentialGroup()
+                .addGroup(pnlDichVuCTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlDichVuCTLayout.createSequentialGroup()
                         .addComponent(jLabel74)
                         .addGap(70, 70, 70))
                     .addComponent(jScrollPane16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -463,7 +463,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
                 .addGap(15, 15, 15)
                 .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlDichVu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlDichVuCTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNewVDCT, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnThemDVCT, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnXoaDVCT, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -478,7 +478,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pnlDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnlDichVu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlDichVuCT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -488,7 +488,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel65)
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pnlDichVu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlDichVuCT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pnlDichVu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
@@ -576,7 +576,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JPanel pnlDichVu;
-    private javax.swing.JPanel pnlDichVu1;
+    private javax.swing.JPanel pnlDichVuCT;
     private javax.swing.JTable tblDichVu;
     private javax.swing.JTable tblDichVuCT;
     private javax.swing.JTextArea txtGhiChu;

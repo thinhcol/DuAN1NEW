@@ -28,7 +28,7 @@
           <Group type="102" attributes="0">
               <Component id="pnlDichVu" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="pnlDichVu1" min="-2" max="-2" attributes="0"/>
+              <Component id="pnlDichVuCT" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -40,7 +40,7 @@
               <Component id="jLabel65" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="pnlDichVu1" max="32767" attributes="0"/>
+                  <Component id="pnlDichVuCT" max="32767" attributes="0"/>
                   <Component id="pnlDichVu" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="75" max="32767" attributes="0"/>
@@ -464,7 +464,7 @@
         </Container>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="pnlDichVu1">
+    <Container class="javax.swing.JPanel" name="pnlDichVuCT">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">

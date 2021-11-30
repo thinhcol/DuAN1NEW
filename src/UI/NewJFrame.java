@@ -30,9 +30,9 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
-        map3 = new UI.Map();
+        map3 = new UI.MapJpanel();
         jPanel4 = new javax.swing.JPanel();
-        map2 = new UI.Map();
+        map2 = new UI.MapJpanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -144,7 +144,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private UI.Map map2;
-    private UI.Map map3;
+    private UI.MapJpanel map2;
+    private UI.MapJpanel map3;
     // End of variables declaration//GEN-END:variables
 }

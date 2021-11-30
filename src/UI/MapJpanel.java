@@ -11,12 +11,12 @@ import Helper.MapHelper;
  *
  * @author Admin
  */
-public class Map extends javax.swing.JPanel {
+public class MapJpanel extends javax.swing.JPanel {
 
     /**
      * Creates new form Map
      */
-    public Map() {
+    public MapJpanel() {
         initComponents();
      
         jPanel2 = new MapHelper();
@@ -38,19 +38,20 @@ public class Map extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
 
-        setMaximumSize(new java.awt.Dimension(640, 480));
-        setMinimumSize(new java.awt.Dimension(640, 480));
-        setPreferredSize(new java.awt.Dimension(640, 480));
+        setMaximumSize(new java.awt.Dimension(1600, 1000));
+        setMinimumSize(new java.awt.Dimension(0, 0));
+        setPreferredSize(new java.awt.Dimension(1400, 875));
 
-        jPanel1.setMaximumSize(new java.awt.Dimension(640, 480));
-        jPanel1.setMinimumSize(new java.awt.Dimension(640, 480));
-        jPanel1.setPreferredSize(new java.awt.Dimension(640, 480));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1600, 1000));
+        jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
+        jPanel1.setPreferredSize(new java.awt.Dimension(100, 200));
         jPanel1.setLayout(new java.awt.CardLayout());
 
-        jPanel2.setMaximumSize(new java.awt.Dimension(640, 480));
-        jPanel2.setMinimumSize(new java.awt.Dimension(640, 480));
-        jPanel2.setPreferredSize(new java.awt.Dimension(640, 480));
-        jPanel2.setRequestFocusEnabled(false);
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setMaximumSize(new java.awt.Dimension(1600, 1000));
+        jPanel2.setMinimumSize(new java.awt.Dimension(0, 0));
+        jPanel2.setPreferredSize(new java.awt.Dimension(100, 200));
         jPanel2.setLayout(new java.awt.BorderLayout());
         jPanel1.add(jPanel2, "card2");
 
