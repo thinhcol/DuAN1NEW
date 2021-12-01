@@ -284,7 +284,7 @@ public class KhuonMatJDialog extends javax.swing.JDialog {
                                 } else {
                                     rectangle(frame, dadosFace, new Scalar(0, 255, 0, 3), 3, 0, 0);
                                     id = prediction;
-//                                    System.out.println(confidence.get(0));
+                                    System.out.println(confidence.get(0));
                                     lblid.setText(String.valueOf(id));
                                     rec();
 

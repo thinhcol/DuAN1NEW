@@ -7,7 +7,6 @@ package Helper;
 
 import com.sun.javafx.application.PlatformImpl;
 import java.awt.BorderLayout;
-import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -41,7 +40,7 @@ public class MapHelper extends JPanel{
     public MapHelper(){  
         initComponents();  
          createScene(); 
-           add(jfxPanel);  
+           add(jfxPanel, BorderLayout.CENTER);  
     }  
   
     public static void main(String ...args){  
@@ -51,7 +50,8 @@ public class MapHelper extends JPanel{
                 final JFrame frame = new JFrame();  
                  
                 frame.getContentPane().add(new MapHelper());  
-          
+                 
+                frame.setMinimumSize(new Dimension(1652, 1445));  
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
                 frame.setVisible(true);  
             }  
@@ -60,7 +60,7 @@ public class MapHelper extends JPanel{
      
     private void initComponents(){  
         jfxPanel = new JFXPanel();  
-        setLayout(new CardLayout());  
+        setLayout(new BorderLayout());  
         swingButton = new JButton();  
         swingButton.addActionListener(new ActionListener() {
             @Override

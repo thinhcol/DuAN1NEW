@@ -11,19 +11,19 @@ import Helper.MapHelper;
  *
  * @author Admin
  */
-public class MapJpanel extends javax.swing.JPanel {
+public class Map extends javax.swing.JPanel {
 
     /**
      * Creates new form Map
      */
-    public MapJpanel() {
+    public Map() {
         initComponents();
      
         jPanel2 = new MapHelper();
         jPanel1.removeAll();
         jPanel1.add(jPanel2);
         jPanel1.repaint();
-        
+        jPanel1.revalidate();
     }
 
     /**
@@ -38,21 +38,19 @@ public class MapJpanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
 
-        setMaximumSize(new java.awt.Dimension(1600, 1000));
-        setMinimumSize(new java.awt.Dimension(0, 0));
-        setPreferredSize(new java.awt.Dimension(1400, 875));
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1600, 1000));
-        jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
-        jPanel1.setPreferredSize(new java.awt.Dimension(100, 200));
         jPanel1.setLayout(new java.awt.CardLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setMaximumSize(new java.awt.Dimension(1600, 1000));
-        jPanel2.setMinimumSize(new java.awt.Dimension(0, 0));
-        jPanel2.setPreferredSize(new java.awt.Dimension(100, 200));
-        jPanel2.setLayout(new java.awt.BorderLayout());
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 540, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 410, Short.MAX_VALUE)
+        );
+
         jPanel1.add(jPanel2, "card2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
