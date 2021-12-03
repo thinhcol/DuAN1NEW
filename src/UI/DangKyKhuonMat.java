@@ -153,7 +153,7 @@ public class DangKyKhuonMat extends javax.swing.JDialog {
         lblid.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.add(lblid, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 70, 30));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/5e9ccdf3d3886a5784f7c38d_5e84ba890813bd37c3c60fdf_Medica20Template20-201 (1).jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/z2948422196427_da90f7097cddad96de76f9bab4d0e64a.jpg"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 380, 420));
 
         lbldem.setFont(new java.awt.Font("Monospaced", 2, 13)); // NOI18N

@@ -6,7 +6,6 @@
 package UI;
 
 import Helper.DialogHelper;
-import Helper.MapHelper;
 import Helper.ShareHelper;
 import java.awt.Color;
 import java.awt.Frame;
@@ -335,7 +334,7 @@ public class Home extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Monospaced", 1, 48)); // NOI18N
-        jLabel6.setText("Địa điểm");
+        jLabel6.setText("Giới thiệu");
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/map_125px.png"))); // NOI18N
 
@@ -346,7 +345,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6)
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(78, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel14)
@@ -1751,36 +1750,7 @@ public class Home extends javax.swing.JFrame {
 
     private void kGradientPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel1MouseClicked
         // TODO add your handling code here:
-        HideMenu();
-        map();
-        pnlBody.removeAll();
-        pnlBody.add(pnlDiaChi);
-        pnlBody.repaint();
-        pnlBody.revalidate();
-
-        lblHome.setBackground(new Color(209, 209, 209));
-        lblQuanLy.setBackground(new Color(209, 209, 209));
-        lblGioiThieu.setBackground(new Color(209, 209, 209));
-        lblDichVu.setBackground(new Color(209, 209, 209));
-        lblHoaDon.setBackground(new Color(209, 209, 209));
-        lblHoatDong.setBackground(new Color(209, 209, 209));
-        lblThanNhan.setBackground(new Color(153, 153, 153));
-
-        btnHome.setForeground(new Color(0, 0, 0));
-        btnQuanLy.setForeground(new Color(0, 0, 0));
-        btnGioiThieu.setForeground(new Color(0, 0, 0));
-        btnDichVu.setForeground(new Color(0, 0, 0));
-        btnHoaDon.setForeground(new Color(0, 0, 0));
-        btnHoatDong.setForeground(new Color(0, 0, 0));
-        btnThanNhan.setForeground(new Color(1, 156, 246));
-
-        pnlHome.setBackground(new Color(209, 209, 209));
-        pnlQuanLy.setBackground(new Color(209, 209, 209));
-        pnlGioiThieu.setBackground(new Color(209, 209, 209));
-        pnlDichVu.setBackground(new Color(209, 209, 209));
-        pnlHoaDon.setBackground(new Color(209, 209, 209));
-        pnlHoatDong.setBackground(new Color(209, 209, 209));
-        pnlThanNhan.setBackground(new Color(255, 255, 255));
+        
     }//GEN-LAST:event_kGradientPanel1MouseClicked
 
     /**
@@ -1946,14 +1916,6 @@ public class Home extends javax.swing.JFrame {
 
         tm.start();
 
-    }
-
-    public void map() {
-
-        pnlDiaChi = new MapHelper();
-        pnlBody.add(pnlDiaChi);
-        pnlBody.removeAll();
-        pnlBody.validate();
     }
 
     public void AI() {

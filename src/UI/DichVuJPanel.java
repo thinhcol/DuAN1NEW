@@ -756,7 +756,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
             DialogHelper.alert(this, "Giá không được để trống");
             txtGia.requestFocus();
             return false;
-        } else if (!CheckHelper.checkHocPhi(txtGia)) {
+        } else if (!CheckHelper.checkGia(txtGia)) {
             txtGia.requestFocus();
             return false;
         } else if (txtMoTa.getText().isEmpty()) {

@@ -74,8 +74,8 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         jLabel74 = new javax.swing.JLabel();
         jScrollPane18 = new javax.swing.JScrollPane();
         txtGhiChu2 = new javax.swing.JTextArea();
-        cboTenBN = new javax.swing.JComboBox<>();
-        cboTenHoatDong = new javax.swing.JComboBox<>();
+        cboTenBN = new javax.swing.JComboBox<String>();
+        cboTenHoatDong = new javax.swing.JComboBox<String>();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(1400, 875));
@@ -133,6 +133,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             }
         });
         tblHoatDong.setFocusable(false);
+        tblHoatDong.setGridColor(new java.awt.Color(255, 255, 255));
         tblHoatDong.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tblHoatDong.setRowHeight(30);
         tblHoatDong.setSelectionBackground(new java.awt.Color(245, 165, 165));
@@ -379,6 +380,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             }
         });
         tblCTHoatDong.setFocusable(false);
+        tblCTHoatDong.setGridColor(new java.awt.Color(255, 255, 255));
         tblCTHoatDong.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tblCTHoatDong.setRowHeight(30);
         tblCTHoatDong.setSelectionBackground(new java.awt.Color(245, 165, 165));
@@ -500,7 +502,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
                 .addGap(25, 25, 25)
                 .addGroup(pnlHoatDong1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlHoatDong1Layout.createSequentialGroup()
-                        .addComponent(jLabel74, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel74, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
                         .addGap(84, 84, 84))
                     .addGroup(pnlHoatDong1Layout.createSequentialGroup()
                         .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -513,7 +515,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
                     .addComponent(btnDelete1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnInsert1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnNew1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

@@ -9,6 +9,7 @@ import DuAnDAO.BenhAnDAO;
 import DuAnDAO.BenhNhanDAO;
 import Entity.BenhAn;
 import Entity.BenhNhan;
+import Helper.CheckHelper;
 import Helper.DateHelper;
 import Helper.DialogHelper;
 import Helper.ShareHelper;
@@ -43,12 +44,10 @@ public class BenhAnJPanel extends javax.swing.JPanel {
         this.setStatus(true);
         fillComboBox();
         if (ShareHelper.isLogin1()) {
-            btnInsert.setVisible(false);
             btnUpdate.setVisible(false);
             btnDelete.setVisible(false);
             btnNew.setVisible(false);
         } else {
-            btnInsert.setVisible(true);
             btnUpdate.setVisible(true);
             btnDelete.setVisible(true);
         }
@@ -179,7 +178,6 @@ public class BenhAnJPanel extends javax.swing.JPanel {
         jScrollPane5 = new javax.swing.JScrollPane();
         txtGhiChu = new javax.swing.JTextArea();
         btnNew = new javax.swing.JButton();
-        btnInsert = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
@@ -188,7 +186,7 @@ public class BenhAnJPanel extends javax.swing.JPanel {
         btnPrev = new javax.swing.JButton();
         btnNext = new javax.swing.JButton();
         btnLast = new javax.swing.JButton();
-        cbxTenBN = new javax.swing.JComboBox<>();
+        cbxTenBN = new javax.swing.JComboBox<String>();
         btnExcel = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -256,26 +254,6 @@ public class BenhAnJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnInsert.setBackground(new java.awt.Color(255, 255, 255));
-        btnInsert.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
-        btnInsert.setText("THÊM");
-        btnInsert.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnInsert.setContentAreaFilled(false);
-        btnInsert.setOpaque(true);
-        btnInsert.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnInsertMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnInsertMouseExited(evt);
-            }
-        });
-        btnInsert.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertActionPerformed(evt);
-            }
-        });
-
         btnUpdate.setBackground(new java.awt.Color(255, 255, 255));
         btnUpdate.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
         btnUpdate.setText("CẬP NHẬT");
@@ -333,6 +311,9 @@ public class BenhAnJPanel extends javax.swing.JPanel {
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {
@@ -348,6 +329,7 @@ public class BenhAnJPanel extends javax.swing.JPanel {
             }
         });
         tblBenhAn.setFocusable(false);
+        tblBenhAn.setGridColor(new java.awt.Color(255, 255, 255));
         tblBenhAn.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tblBenhAn.setRowHeight(30);
         tblBenhAn.setSelectionBackground(new java.awt.Color(245, 165, 165));
@@ -465,30 +447,34 @@ public class BenhAnJPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel26)
-                                    .addComponent(jLabel24)
-                                    .addComponent(jLabel21)
-                                    .addComponent(jLabel19))
-                                .addGap(15, 15, 15)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(cbxTenBN, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane4)
+                                            .addComponent(jScrollPane5)))
+                                    .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(25, 25, 25))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
-                                    .addComponent(jScrollPane4)
-                                    .addComponent(jScrollPane5)
-                                    .addComponent(cbxTenBN, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(jSeparator3))
-                        .addGap(25, 25, 25)
+                                    .addComponent(jLabel21)
+                                    .addComponent(jLabel19)
+                                    .addComponent(jLabel24)
+                                    .addComponent(jLabel26))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane8)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE))
                                     .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 304, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -517,37 +503,35 @@ public class BenhAnJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel19)
-                            .addComponent(cbxTenBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel21)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel24)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel26)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(25, 25, 25)
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel19)
+                        .addGap(10, 10, 10)
+                        .addComponent(cbxTenBN, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel21)
+                        .addGap(10, 10, 10)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel24)
+                        .addGap(10, 10, 10)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel26)
+                        .addGap(10, 10, 10)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane8))
+                .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -556,7 +540,7 @@ public class BenhAnJPanel extends javax.swing.JPanel {
                             .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -569,16 +553,6 @@ public class BenhAnJPanel extends javax.swing.JPanel {
         btnNew.setBackground(new Color(255, 255, 255));
         btnNew.setForeground(new Color(0, 0, 0));
     }//GEN-LAST:event_btnNewMouseExited
-
-    private void btnInsertMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseEntered
-        btnInsert.setBackground(new Color(229, 229, 229));
-        btnInsert.setForeground(new Color(0, 204, 106));
-    }//GEN-LAST:event_btnInsertMouseEntered
-
-    private void btnInsertMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseExited
-        btnInsert.setBackground(new Color(255, 255, 255));
-        btnInsert.setForeground(new Color(0, 0, 0));
-    }//GEN-LAST:event_btnInsertMouseExited
 
     private void btnUpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseEntered
         btnUpdate.setBackground(new Color(229, 229, 229));
@@ -659,11 +633,6 @@ public class BenhAnJPanel extends javax.swing.JPanel {
         clear();
     }//GEN-LAST:event_btnNewActionPerformed
 
-    private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
-        // TODO add your handling code here:
-        insert();
-    }//GEN-LAST:event_btnInsertActionPerformed
-
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
         update();
@@ -707,7 +676,6 @@ public class BenhAnJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnExcel;
     private javax.swing.JButton btnFirst;
-    private javax.swing.JButton btnInsert;
     private javax.swing.JButton btnLast;
     private javax.swing.JButton btnNew;
     private javax.swing.JButton btnNext;
@@ -781,8 +749,6 @@ public class BenhAnJPanel extends javax.swing.JPanel {
     }
 
     void setStatus(boolean insertable) {
-
-        btnInsert.setEnabled(insertable);
         btnUpdate.setEnabled(!insertable);
         btnDelete.setEnabled(!insertable);
         boolean first = this.index > 0;
@@ -814,15 +780,19 @@ public class BenhAnJPanel extends javax.swing.JPanel {
     }
 
     void insert() {
-        BenhAn model = getModel();
-        try {
-            dao.insert(model);
-            this.load();
-            this.clear();
-            DialogHelper.alert(this, "Thêm mới thành công!");
-        } catch (Exception e) {
-            DialogHelper.alert(this, "Thêm mới thất bại!");
-            e.printStackTrace();
+        if (CheckHelper.checkNullText(txtBieuHien)
+                && CheckHelper.checkNullText(txtDieuTri)) {
+            BenhAn model = getModel();
+            try {
+                dao.insert(model);
+                this.load();
+                this.clear();
+                DialogHelper.alert(this, "Thêm mới thành công!");
+            } catch (Exception e) {
+                DialogHelper.alert(this, "Thêm mới thất bại!");
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -866,15 +836,19 @@ public class BenhAnJPanel extends javax.swing.JPanel {
     }
 
     void update() {
-        BenhAn model = getModel();
-        try {
-            dao.update(model);
-            this.load();
-            this.clear();
-            DialogHelper.alert(this, "Cập nhật thành công!");
-        } catch (Exception e) {
-            DialogHelper.alert(this, "Cập nhật thất bại!");
-            e.printStackTrace();
+        if (CheckHelper.checkNullText(txtBieuHien)
+                && CheckHelper.checkNullText(txtDieuTri)) {
+            BenhAn model = getModel();
+            try {
+                dao.update(model);
+                this.load();
+                this.clear();
+                DialogHelper.alert(this, "Cập nhật thành công!");
+            } catch (Exception e) {
+                DialogHelper.alert(this, "Cập nhật thất bại!");
+                e.printStackTrace();
+            }
+
         }
     }
 

@@ -28,6 +28,8 @@ public class PhongDAO {
                 model.getHinh()
         );
     }
+    
+    String selectByID = "SELECT * FROM Phong WHERE MaPhong=?";
 
     public void update(Phong model) {
         String sql = "Update Phong set  Gia = ?,Hinh = ? Where MaPhong = ?";
@@ -51,6 +53,14 @@ public class PhongDAO {
         String sql = "SELECT * FROM Phong WHERE MaPhong=?";
         List<Phong> list = SelectBySQL(sql, id);
         return list.size() > 0 ? list.get(0) : null;
+    }
+    
+    public Phong selectByID(String id) {
+        List<Phong> list = this.SelectBySQL(selectByID, id);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list.get(0);
     }
 
     public List<Phong> selectByKeyword(String keyword,String keyword1,String keyword2) {

@@ -15,10 +15,13 @@ import Entity.ThanNhan;
 import Entity.Nghe;
 import Entity.Phong;
 import Entity.ThanNhan;
+import Helper.CheckHelper;
 import Helper.DateHelper;
 import Helper.DialogHelper;
 import Helper.ShareHelper;
 import java.awt.Color;
+import static java.awt.Color.pink;
+import static java.awt.Color.white;
 import java.awt.Image;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -31,6 +34,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import org.apache.poi.ss.usermodel.BorderStyle;
@@ -184,29 +188,53 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
     }
 
     void insert() {
-        ThanNhan model = getModel();
-        try {
-            dao.insert(model);
-            this.load();
-            this.clear();
-            DialogHelper.alert(this, "Thêm mới thành công!");
-        } catch (Exception e) {
-            DialogHelper.alert(this, "Thêm mới thất bại!");
-            e.printStackTrace();
+        if (CheckHelper.checkNullText(txtMaTN)
+                && CheckHelper.checkNullPass(txtpass)
+                && CheckHelper.checkNullText(txtHoten)
+                && CheckHelper.checkNullText(txtEmail)) {
+            if (CheckHelper.checkMaTN(txtMaTN)
+                    && CheckHelper.checkPass(txtpass)
+                    && CheckHelper.checkName(txtHoten)
+                    && CheckHelper.checkEmail(txtEmail)) {
+                if (checkTrungMa(txtMaTN)) {
+                    ThanNhan model = getModel();
+                    try {
+                        dao.insert(model);
+                        this.load();
+                        this.clear();
+                        DialogHelper.alert(this, "Thêm mới thành công!");
+                    } catch (Exception e) {
+                        DialogHelper.alert(this, "Thêm mới thất bại!");
+                        e.printStackTrace();
+                    }
+                }
+            }
         }
     }
 
     void update() {
-        String matn = (String) tblGridView.getValueAt(this.index, 0);
-        ThanNhan model = getModel();
-        try {
-            dao.update(model);
-            this.load();
-            this.clear();
-            DialogHelper.alert(this, "Cập nhật thành công!");
-        } catch (Exception e) {
-            DialogHelper.alert(this, "Cập nhật thất bại!");
-            e.printStackTrace();
+        if (CheckHelper.checkNullText(txtMaTN)
+                && CheckHelper.checkNullPass(txtpass)
+                && CheckHelper.checkNullText(txtHoten)
+                && CheckHelper.checkNullText(txtEmail)) {
+            if (CheckHelper.checkMaTN(txtMaTN)
+                    && CheckHelper.checkPass(txtpass)
+                    && CheckHelper.checkName(txtHoten)
+                    && CheckHelper.checkEmail(txtEmail)) {
+                if (checkTrungMa(txtMaTN)) {
+                    String matn = (String) tblGridView.getValueAt(this.index, 0);
+                    ThanNhan model = getModel();
+                    try {
+                        dao.update(model);
+                        this.load();
+                        this.clear();
+                        DialogHelper.alert(this, "Cập nhật thành công!");
+                    } catch (Exception e) {
+                        DialogHelper.alert(this, "Cập nhật thất bại!");
+                        e.printStackTrace();
+                    }
+                }
+            }
         }
     }
 
@@ -293,6 +321,17 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
         btnPrev.setEnabled(!insertable && first);
         btnNext.setEnabled(!insertable && last);
         btnLast.setEnabled(!insertable && last);
+    }
+    
+    public boolean checkTrungMa(JTextField txt) {
+        txtMaTN.setBackground(white);
+        if (dao.selectByID(txt.getText()) == null) {
+            return true;
+        } else {
+            txt.setBackground(pink);
+            DialogHelper.alert(this, "Mã thân nhân đã tồn tại.");
+            return false;
+        }
     }
 
     /**
@@ -483,6 +522,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
             }
         });
         tblGridView.setFocusable(false);
+        tblGridView.setGridColor(new java.awt.Color(255, 255, 255));
         tblGridView.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tblGridView.setRowHeight(30);
         tblGridView.setSelectionBackground(new java.awt.Color(245, 165, 165));
@@ -596,19 +636,17 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblCMND)
                             .addComponent(lblGioiTinh)
                             .addComponent(lblHoTen)
                             .addComponent(lblEmailThanNhan1)
-                            .addComponent(lblDiaChi))
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblDiaChi)
+                            .addComponent(cboTenBN, 0, 547, Short.MAX_VALUE)
                             .addComponent(txtMaTN)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
-                            .addComponent(cboTenBN, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtHoten)
-                            .addComponent(txtpass))
+                            .addComponent(txtpass)
+                            .addComponent(txtEmail)
+                            .addComponent(txtHoten))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -656,25 +694,25 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblGioiTinh)
-                            .addComponent(cboTenBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblGioiTinh)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cboTenBN, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblDiaChi)
-                            .addComponent(txtMaTN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblDiaChi)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtMaTN, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblCMND)
-                            .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblCMND)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblHoTen)
-                            .addComponent(txtHoten, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblHoTen)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtHoten, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblEmailThanNhan1)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblEmailThanNhan1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

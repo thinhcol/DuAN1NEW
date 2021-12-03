@@ -8,6 +8,7 @@ package UI;
 import DuAnDAO.NgheDAO;
 import Entity.Nghe;
 import Entity.Phong;
+import Helper.CheckHelper;
 import Helper.DialogHelper;
 import Helper.ShareHelper;
 import java.awt.Color;
@@ -300,6 +301,7 @@ public class NgheJPanel extends javax.swing.JPanel {
             }
         });
         tblNghe.setFocusable(false);
+        tblNghe.setGridColor(new java.awt.Color(255, 255, 255));
         tblNghe.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tblNghe.setRowHeight(30);
         tblNghe.setSelectionBackground(new java.awt.Color(245, 165, 165));
@@ -322,19 +324,13 @@ public class NgheJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel42)
-                                .addGap(25, 25, 25)
-                                .addComponent(txtTenNghe, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel50)
-                                    .addComponent(jLabel51))
-                                .addGap(35, 35, 35)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)))
-                            .addComponent(jSeparator6))
+                            .addComponent(jLabel42)
+                            .addComponent(jLabel50)
+                            .addComponent(jLabel51)
+                            .addComponent(jSeparator6)
+                            .addComponent(txtTenNghe)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2))
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -373,17 +369,17 @@ public class NgheJPanel extends javax.swing.JPanel {
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel42)
-                            .addComponent(txtTenNghe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel42)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTenNghe, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel50)
+                        .addGap(2, 2, 2)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel50)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel51)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel51)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -601,14 +597,20 @@ public class NgheJPanel extends javax.swing.JPanel {
     }
 
     void insert() {
-        Nghe model = getModel();
-        try {
-            dao.insert(model);
-            this.load();
-            this.clear();
-            DialogHelper.alert(this, "Thêm mới thành công!");
-        } catch (Exception e) {
-            DialogHelper.alert(this, "Thêm mới thất bại!");
+        if (CheckHelper.checkNullText(txtTenNghe)
+                && CheckHelper.checkNullText(txtMoTa)) {
+            if (CheckHelper.checkTenNghe(txtTenNghe)) {
+                Nghe model = getModel();
+                try {
+                    dao.insert(model);
+                    this.load();
+                    this.clear();
+                    DialogHelper.alert(this, "Thêm mới thành công!");
+                } catch (Exception e) {
+                    DialogHelper.alert(this, "Thêm mới thất bại!");
+                }
+
+            }
         }
     }
 
@@ -645,17 +647,22 @@ public class NgheJPanel extends javax.swing.JPanel {
     }
 
     void update() {
-        int manghe = (int) tblNghe.getValueAt(index, 0);
-        Nghe model = getModel();
-        model.setManghe(manghe);
-        try {
-            dao.update(model);
-            this.load();
-            this.clear();
-            DialogHelper.alert(this, "Cập nhật thành công!");
-        } catch (Exception e) {
-            DialogHelper.alert(this, "Cập nhật thất bại!");
-            e.printStackTrace();
+        if (CheckHelper.checkNullText(txtTenNghe)
+                && CheckHelper.checkNullText(txtMoTa)) {
+            if (CheckHelper.checkTenNghe(txtTenNghe)) {
+                int manghe = (int) tblNghe.getValueAt(index, 0);
+                Nghe model = getModel();
+                model.setManghe(manghe);
+                try {
+                    dao.update(model);
+                    this.load();
+                    this.clear();
+                    DialogHelper.alert(this, "Cập nhật thành công!");
+                } catch (Exception e) {
+                    DialogHelper.alert(this, "Cập nhật thất bại!");
+                    e.printStackTrace();
+                }
+            }
         }
     }
 

@@ -7,14 +7,18 @@ package UI;
 
 import DuAnDAO.PhongDAO;
 import Entity.Phong;
+import Helper.CheckHelper;
 import Helper.DialogHelper;
 import Helper.ShareHelper;
 import java.awt.Color;
+import static java.awt.Color.pink;
+import static java.awt.Color.white;
 import java.awt.Image;
 import java.io.File;
 import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -207,6 +211,7 @@ public class PhongJPanel extends javax.swing.JPanel {
             }
         });
         tblPhong.setFocusable(false);
+        tblPhong.setGridColor(new java.awt.Color(255, 255, 255));
         tblPhong.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tblPhong.setRowHeight(30);
         tblPhong.setSelectionBackground(new java.awt.Color(245, 165, 165));
@@ -329,20 +334,23 @@ public class PhongJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel39)
-                            .addComponent(jLabel38)
-                            .addComponent(jLabel47))
-                        .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jSeparator5)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtMaNV, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                            .addComponent(txtMaPhong, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtGia))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel38)
+                                .addGap(225, 225, 225))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtMaPhong)
+                                .addGap(12, 12, 12))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel39)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel47)
+                    .addComponent(txtMaNV)
+                    .addComponent(txtGia))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 494, Short.MAX_VALUE)
@@ -384,21 +392,21 @@ public class PhongJPanel extends javax.swing.JPanel {
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel38)
-                                    .addComponent(txtMaPhong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(25, 25, 25)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel39)
-                                    .addComponent(txtMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(25, 25, 25)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel47)
-                                    .addComponent(txtGia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(376, 376, 376)
+                                .addComponent(jLabel38)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtMaPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel39))
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel47)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtGia, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(238, 238, 238)
                         .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane10))
                 .addGap(25, 25, 25)
@@ -665,14 +673,26 @@ public class PhongJPanel extends javax.swing.JPanel {
     }
 
     void insert() {
-        Phong model = getModel();
-        try {
-            dao.insert(model);
-            this.load();
-            this.clear();
-            DialogHelper.alert(this, "Thêm mới thành công!");
-        } catch (Exception e) {
-            DialogHelper.alert(this, "Thêm mới thất bại!");
+        if (CheckHelper.checkNullText(txtMaPhong)
+                && CheckHelper.checkNullText(txtMaNV)
+                && CheckHelper.checkNullText(txtGia)
+                && checkNullHinh()) {
+            if (CheckHelper.checkMaPhong(txtMaPhong)
+                    && CheckHelper.checkMaNV(txtMaNV)
+                    && CheckHelper.checkGia(txtGia)) {
+                if (checkTrungMa(txtMaPhong)) {
+                    Phong model = getModel();
+                    try {
+                        dao.insert(model);
+                        this.load();
+                        this.clear();
+                        DialogHelper.alert(this, "Thêm mới thành công!");
+                    } catch (Exception e) {
+                        DialogHelper.alert(this, "Thêm mới thất bại!");
+                    }
+                }
+
+            }
         }
     }
 
@@ -692,14 +712,21 @@ public class PhongJPanel extends javax.swing.JPanel {
     }
 
     void update() {
-        Phong model = getModel();
-        try {
-            dao.update(model);
-            this.load();
-            clear();
-            DialogHelper.alert(this, "Cập nhật thành công!");
-        } catch (Exception e) {
-            DialogHelper.alert(this, "Cập nhật thất bại!");
+        if (CheckHelper.checkNullText(txtMaNV)
+                && CheckHelper.checkNullText(txtGia)
+                && checkNullHinh()) {
+            if (CheckHelper.checkMaNV(txtMaNV)
+                    && CheckHelper.checkGia(txtGia)) {
+                Phong model = getModel();
+                try {
+                    dao.update(model);
+                    this.load();
+                    clear();
+                    DialogHelper.alert(this, "Cập nhật thành công!");
+                } catch (Exception e) {
+                    DialogHelper.alert(this, "Cập nhật thất bại!");
+                }
+            }
         }
     }
 
@@ -714,6 +741,26 @@ public class PhongJPanel extends javax.swing.JPanel {
             } catch (Exception e) {
                 DialogHelper.alert(this, "Xóa thất bại!");
             }
+        }
+    }
+    
+    public boolean checkNullHinh() {
+        if (lblHinh.getToolTipText() != null) {
+            return true;
+        } else {
+            DialogHelper.alert(this, "Không được để trống hình.");
+            return false;
+        }
+    }
+
+    public boolean checkTrungMa(JTextField txt) {
+        txtMaNV.setBackground(white);
+        if (dao.selectByID(txt.getText()) == null) {
+            return true;
+        } else {
+            txt.setBackground(pink);
+            DialogHelper.alert(this, "Mã phòng đã tồn tại.");
+            return false;
         }
     }
 }

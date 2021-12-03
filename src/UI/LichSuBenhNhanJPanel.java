@@ -98,6 +98,7 @@ public class LichSuBenhNhanJPanel extends javax.swing.JPanel {
             }
         });
         tblGridView.setFocusable(false);
+        tblGridView.setGridColor(new java.awt.Color(255, 255, 255));
         tblGridView.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tblGridView.setRowHeight(30);
         tblGridView.setSelectionBackground(new java.awt.Color(245, 165, 165));
