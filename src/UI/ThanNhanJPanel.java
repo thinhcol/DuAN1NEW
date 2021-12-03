@@ -65,7 +65,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
     int index = 0;
     ThanNhanDAO dao = new ThanNhanDAO();
     BenhNhanDAO bndao = new BenhNhanDAO();
-     XSSFWorkbook workbook;
+    XSSFWorkbook workbook;
 
     private CellStyle headerCellStyle() {
         CellStyle cellStyle = workbook.createCellStyle();
@@ -132,7 +132,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
                 cells1 = rows1.createCell(3, CellType.STRING);
                 cells1.setCellValue("Email");
                 cells1.setCellStyle(cs);
-                
+
                 List<ThanNhan> list = dao.selectAll();
                 for (int i = 0; i < list.size(); i++) {
                     ThanNhan dt = list.get(i);
@@ -150,7 +150,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
                     cells1 = rows1.createCell(3);
                     cells1.setCellValue(dt.getEmail());
                     cells1.setCellStyle(csc);
-                    
+
                 }
                 for (int i = 0; i < 4; i++) {
                     spreadsheet1.autoSizeColumn(i);
@@ -166,6 +166,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Vui lòng chọn ổ đĩa");
         }
     }
+
     void load() {
         DefaultTableModel model = (DefaultTableModel) tblGridView.getModel();
         model.setRowCount(0);
@@ -239,16 +240,20 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
     }
 
     void delete() {
-        if (DialogHelper.confirm(this, "Bạn có muốn xóa hay không?")) {
-            String matn = (String) tblGridView.getValueAt(this.index, 0);
-            try {
-                dao.delete(matn);
-                this.load();
-                this.clear();
-                DialogHelper.alert(this, "Xóa thành công!");
-            } catch (Exception e) {
-                DialogHelper.alert(this, "Xóa thất bại!");
+        if (ShareHelper.isManager()) {
+            if (DialogHelper.confirm(this, "Bạn có muốn xóa hay không?")) {
+                String matn = (String) tblGridView.getValueAt(this.index, 0);
+                try {
+                    dao.delete(matn);
+                    this.load();
+                    this.clear();
+                    DialogHelper.alert(this, "Xóa thành công!");
+                } catch (Exception e) {
+                    DialogHelper.alert(this, "Xóa thất bại!");
+                }
             }
+        }else{
+            DialogHelper.alert(this, "Bạn không có quyền xóa");
         }
     }
 
@@ -276,7 +281,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
         DefaultComboBoxModel model = (DefaultComboBoxModel) cboTenBN.getModel();
         model.removeAllElements();
         try {
-             List<BenhNhan> list = bndao.selectAll();
+            List<BenhNhan> list = bndao.selectAll();
             for (BenhNhan cd : list) {
                 model.addElement(cd);
             }
@@ -311,7 +316,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
     }
 
     void setStatus(boolean insertable) {
-      
+
         btnInsert.setEnabled(insertable);
         btnUpdate.setEnabled(!insertable);
         btnDelete.setEnabled(!insertable);
@@ -322,7 +327,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
         btnNext.setEnabled(!insertable && last);
         btnLast.setEnabled(!insertable && last);
     }
-    
+
     public boolean checkTrungMa(JTextField txt) {
         txtMaTN.setBackground(white);
         if (dao.selectByID(txt.getText()) == null) {

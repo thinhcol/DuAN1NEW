@@ -74,8 +74,8 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         jLabel74 = new javax.swing.JLabel();
         jScrollPane18 = new javax.swing.JScrollPane();
         txtGhiChu2 = new javax.swing.JTextArea();
-        cboTenBN = new javax.swing.JComboBox<String>();
-        cboTenHoatDong = new javax.swing.JComboBox<String>();
+        cboTenBN = new javax.swing.JComboBox<>();
+        cboTenHoatDong = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(1400, 875));
@@ -96,7 +96,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
 
         jLabel70.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
         jLabel70.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_term_35px_1.png"))); // NOI18N
-        jLabel70.setText("Ghi chú");
+        jLabel70.setText("Mô tả");
 
         txtGhiChu.setBackground(new java.awt.Color(240, 240, 240));
         txtGhiChu.setColumns(20);
@@ -263,14 +263,6 @@ public class HoatDongJPanel extends javax.swing.JPanel {
                 .addGroup(pnlHoatDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane14)
                     .addGroup(pnlHoatDongLayout.createSequentialGroup()
-                        .addComponent(jLabel67)
-                        .addGap(43, 43, 43)
-                        .addComponent(txtTenHD))
-                    .addGroup(pnlHoatDongLayout.createSequentialGroup()
-                        .addComponent(jLabel70)
-                        .addGap(91, 91, 91)
-                        .addComponent(jScrollPane15))
-                    .addGroup(pnlHoatDongLayout.createSequentialGroup()
                         .addGroup(pnlHoatDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(btnNew, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -293,7 +285,15 @@ public class HoatDongJPanel extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel68)
                         .addGap(0, 0, 0)
-                        .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlHoatDongLayout.createSequentialGroup()
+                        .addGroup(pnlHoatDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel70)
+                            .addComponent(jLabel67))
+                        .addGap(27, 27, 27)
+                        .addGroup(pnlHoatDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtTenHD)
+                            .addComponent(jScrollPane15))))
                 .addContainerGap())
             .addGroup(pnlHoatDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlHoatDongLayout.createSequentialGroup()
@@ -737,13 +737,15 @@ public class HoatDongJPanel extends javax.swing.JPanel {
 
     void insert() {
         HoatDong model = getModel();
-        try {
-            dao.insert(model);
-            this.load();
-            this.clear();
-            DialogHelper.alert(this, "Thêm mới thành công!");
-        } catch (Exception e) {
-            DialogHelper.alert(this, "Thêm mới thất bại!");
+        if (validateData()) {
+            try {
+                dao.insert(model);
+                this.load();
+                this.clear();
+                DialogHelper.alert(this, "Thêm mới thành công!");
+            } catch (Exception e) {
+                DialogHelper.alert(this, "Thêm mới thất bại!");
+            }
         }
     }
 
@@ -782,31 +784,38 @@ public class HoatDongJPanel extends javax.swing.JPanel {
     }
 
     void update() {
-        int maHD = (int) tblHoatDong.getValueAt(index, 0);
-        HoatDong model = getModel();
-        model.setMaHoatDong(maHD);
-        try {
-            dao.update(model);
-            this.load();
-            this.clear();
-            DialogHelper.alert(this, "Cập nhật thành công!");
-        } catch (Exception e) {
-            DialogHelper.alert(this, "Cập nhật thất bại!");
-            e.printStackTrace();
+        if (validateData()) {
+            int maHD = (int) tblHoatDong.getValueAt(index, 0);
+            HoatDong model = getModel();
+            model.setMaHoatDong(maHD);
+            try {
+                dao.update(model);
+                this.load();
+                this.clear();
+                DialogHelper.alert(this, "Cập nhật thành công!");
+            } catch (Exception e) {
+                DialogHelper.alert(this, "Cập nhật thất bại!");
+                e.printStackTrace();
+            }
         }
     }
 
     void delete() {
-        if (DialogHelper.confirm(this, "Bạn có muốn xóa hay không?")) {
-            int maHD = (int) tblHoatDong.getValueAt(this.index, 0);
-            try {
-                dao.delete(maHD);
-                this.load();
-                clear();
-                DialogHelper.alert(this, "Xóa thành công!");
-            } catch (Exception e) {
-                DialogHelper.alert(this, "Xóa thất bại!");
+        if (ShareHelper.isManager()) {
+            if (DialogHelper.confirm(this, "Bạn có muốn xóa hay không?")) {
+                int maHD = (int) tblHoatDong.getValueAt(this.index, 0);
+                try {
+                    dao.delete(maHD);
+                    this.load();
+                    clear();
+                    DialogHelper.alert(this, "Xóa thành công!");
+                } catch (Exception e) {
+                    DialogHelper.alert(this, "Xóa thất bại!");
+                }
+
             }
+        } else {
+            DialogHelper.alert(this, "Bạn không có quyền xóa");
         }
     }
 
@@ -814,6 +823,20 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         this.load();
         this.clear();
         this.index = -1;
+    }
+
+    private boolean validateData() {
+        if (txtTenHD.getText().isEmpty()) {
+            DialogHelper.alert(this, "Tên hoạt động không được để trống");
+            txtTenHD.requestFocus();
+            return false;
+        } else if (txtGhiChu.getText().isEmpty()) {
+            DialogHelper.alert(this, "Giá không được để trống");
+            txtGhiChu.requestFocus();
+            return false;
+        } else {
+            return true;
+        }
     }
 
     void clearFormHDCT() {
@@ -841,17 +864,21 @@ public class HoatDongJPanel extends javax.swing.JPanel {
     }
 
     void deleteHDCT() {
-        int maHDCT = (Integer) tblCTHoatDong.getValueAt(rowHDCT, 0);
-        if (DialogHelper.confirm(this, "Bạn có muốn xóa không")) {
-            try {
-                hdctdao.delete(maHDCT);
-                this.fillTableHDCT();
-                this.clearFormHDCT();
-                DialogHelper.alert(this, "Đã xóa thành công");
-            } catch (Exception e) {
-                DialogHelper.alert(this, "Xóa thất bại");
-                System.out.println(e);
+        if (ShareHelper.isManager()) {
+            int maHDCT = (Integer) tblCTHoatDong.getValueAt(rowHDCT, 0);
+            if (DialogHelper.confirm(this, "Bạn có muốn xóa không")) {
+                try {
+                    hdctdao.delete(maHDCT);
+                    this.fillTableHDCT();
+                    this.clearFormHDCT();
+                    DialogHelper.alert(this, "Đã xóa thành công");
+                } catch (Exception e) {
+                    DialogHelper.alert(this, "Xóa thất bại");
+                    System.out.println(e);
+                }
             }
+        }else{
+            DialogHelper.alert(this, "Bạn không có quyền xóa");
         }
     }
 

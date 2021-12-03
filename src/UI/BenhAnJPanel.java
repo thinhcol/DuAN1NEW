@@ -119,7 +119,7 @@ public class BenhAnJPanel extends javax.swing.JPanel {
                 cells1 = rows1.createCell(3, CellType.STRING);
                 cells1.setCellValue("Ghi chú");
                 cells1.setCellStyle(cs);
-           
+
                 List<BenhAn> list = dao.select();
                 for (int i = 0; i < list.size(); i++) {
                     BenhAn dt = list.get(i);
@@ -137,7 +137,7 @@ public class BenhAnJPanel extends javax.swing.JPanel {
                     cells1 = rows1.createCell(3);
                     cells1.setCellValue(dt.getGhichu());
                     cells1.setCellStyle(csc);
-                    
+
                 }
                 for (int i = 0; i < 4; i++) {
                     spreadsheet1.autoSizeColumn(i);
@@ -853,17 +853,21 @@ public class BenhAnJPanel extends javax.swing.JPanel {
     }
 
     void delete() {
-        if (DialogHelper.confirm(this, "Bạn có muốn xóa hay không?")) {
-            int maba = (int) tblBenhAn.getValueAt(index, 0);
-            try {
-                dao.delete(maba);
-                System.out.println(maba);
-                this.load();
-                this.clear();
-                DialogHelper.alert(this, "Xóa thành công!");
-            } catch (Exception e) {
-                DialogHelper.alert(this, "Xóa thất bại!");
+        if (ShareHelper.isManager()) {
+            if (DialogHelper.confirm(this, "Bạn có muốn xóa hay không?")) {
+                int maba = (int) tblBenhAn.getValueAt(index, 0);
+                try {
+                    dao.delete(maba);
+                    System.out.println(maba);
+                    this.load();
+                    this.clear();
+                    DialogHelper.alert(this, "Xóa thành công!");
+                } catch (Exception e) {
+                    DialogHelper.alert(this, "Xóa thất bại!");
+                }
             }
+        }else{
+            DialogHelper.alert(this, "Bạn không có quyền xóa");
         }
     }
 }

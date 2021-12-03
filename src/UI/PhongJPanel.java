@@ -731,19 +731,23 @@ public class PhongJPanel extends javax.swing.JPanel {
     }
 
     void delete() {
-        if (DialogHelper.confirm(this, "Bạn có muốn xóa hay không?")) {
-            String maba = (String) tblPhong.getValueAt(this.index, 0);
-            try {
-                dao.delete(maba);
-                this.load();
-                clear();
-                DialogHelper.alert(this, "Xóa thành công!");
-            } catch (Exception e) {
-                DialogHelper.alert(this, "Xóa thất bại!");
+        if (ShareHelper.isManager()) {
+            if (DialogHelper.confirm(this, "Bạn có muốn xóa hay không?")) {
+                String maba = (String) tblPhong.getValueAt(this.index, 0);
+                try {
+                    dao.delete(maba);
+                    this.load();
+                    clear();
+                    DialogHelper.alert(this, "Xóa thành công!");
+                } catch (Exception e) {
+                    DialogHelper.alert(this, "Xóa thất bại!");
+                }
             }
+        } else {
+            DialogHelper.alert(this, "Bạn không có quyền xóa");
         }
     }
-    
+
     public boolean checkNullHinh() {
         if (lblHinh.getToolTipText() != null) {
             return true;

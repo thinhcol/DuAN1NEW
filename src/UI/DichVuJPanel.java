@@ -643,17 +643,21 @@ public class DichVuJPanel extends javax.swing.JPanel {
     }
 
     void delete() {
-        int maDV = (Integer) tblDichVu.getValueAt(rowdv, 0);
-        if (DialogHelper.confirm(this, "Bạn có muốn xóa không")) {
-            try {
-                dvdao.delete(maDV);
-                this.fillTable();
-                this.clearForm();
-                DialogHelper.alert(this, "Đã xóa thành công");
-            } catch (Exception e) {
-                DialogHelper.alert(this, "Xóa thất bại");
-                System.out.println(e);
+        if (ShareHelper.isManager()) {
+            int maDV = (Integer) tblDichVu.getValueAt(rowdv, 0);
+            if (DialogHelper.confirm(this, "Bạn có muốn xóa không")) {
+                try {
+                    dvdao.delete(maDV);
+                    this.fillTable();
+                    this.clearForm();
+                    DialogHelper.alert(this, "Đã xóa thành công");
+                } catch (Exception e) {
+                    DialogHelper.alert(this, "Xóa thất bại");
+                    System.out.println(e);
+                }
             }
+        } else {
+            DialogHelper.alert(this, "Bạn không có quyền xóa");
         }
     }
 
@@ -735,6 +739,8 @@ public class DichVuJPanel extends javax.swing.JPanel {
         int maDV = (Integer) tblDichVu.getValueAt(this.rowdv, 0);
         DichVu dv = dvdao.selectByID(maDV);
         this.setForm(dv);
+        cboTenDichVu.getModel().setSelectedItem(dv);
+        this.fillTableDVCT();
         this.updateStatus();
     }
 
@@ -799,17 +805,21 @@ public class DichVuJPanel extends javax.swing.JPanel {
     }
 
     void deleteDVCT() {
-        int maDVCT = (Integer) tblDichVuCT.getValueAt(rowdvct, 0);
-        if (DialogHelper.confirm(this, "Bạn có muốn xóa không")) {
-            try {
-                dvctdao.delete(maDVCT);
-                this.fillTableDVCT();
-                this.clearFormDVCT();
-                DialogHelper.alert(this, "Đã xóa thành công");
-            } catch (Exception e) {
-                DialogHelper.alert(this, "Xóa thất bại");
-                System.out.println(e);
+        if (ShareHelper.isManager()) {
+            int maDVCT = (Integer) tblDichVuCT.getValueAt(rowdvct, 0);
+            if (DialogHelper.confirm(this, "Bạn có muốn xóa không")) {
+                try {
+                    dvctdao.delete(maDVCT);
+                    this.fillTableDVCT();
+                    this.clearFormDVCT();
+                    DialogHelper.alert(this, "Đã xóa thành công");
+                } catch (Exception e) {
+                    DialogHelper.alert(this, "Xóa thất bại");
+                    System.out.println(e);
+                }
             }
+        } else {
+            DialogHelper.alert(this, "Bạn không có quyền xóa");
         }
     }
 
@@ -931,11 +941,11 @@ public class DichVuJPanel extends javax.swing.JPanel {
     boolean validateDataDVCT() {
         BenhNhan bn = (BenhNhan) cboTenBN.getSelectedItem();
         DichVu dv = (DichVu) cboTenDichVu.getSelectedItem();
-        
+
         if (dv.getMaDV() == -1) {
             DialogHelper.alert(this, "Bạn chưa chọn dịch vụ");
             return false;
-        } else if (bn.getMaBN()== -1) {
+        } else if (bn.getMaBN() == -1) {
             DialogHelper.alert(this, "Bạn chưa chọn bệnh nhân");
             return false;
         } else {

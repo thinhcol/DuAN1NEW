@@ -31,11 +31,10 @@ public class BenhNhanDAO {
                 entity.getMaNghe(),
                 entity.getHoTen(),
                 entity.isGioiTinh(),
-                 entity.getNgayVT(),
+                entity.getNgayVT(),
                 entity.getThoiGianO(),
                 entity.getDiaChi(),
                 entity.getCMND(),
-               
                 entity.getHinh()
         );
     }
@@ -50,10 +49,10 @@ public class BenhNhanDAO {
                 entity.getMaNghe(),
                 entity.getHoTen(),
                 entity.isGioiTinh(),
-                 entity.getNgayVT(),
+                entity.getNgayVT(),
                 entity.getThoiGianO(),
                 entity.getDiaChi(),
-                entity.getCMND(),              
+                entity.getCMND(),
                 entity.getHinh(),
                 entity.getMaBN()
         );
@@ -70,14 +69,15 @@ public class BenhNhanDAO {
         }
         return list.get(0);
     }
-     public List<BenhNhan> findlistById(int id) {
+
+    public List<BenhNhan> findlistById(int id) {
         List<BenhNhan> list = selectBySql(selectByID, id);
         return list;
     }
-     
-    public List<BenhNhan> selectByKeyword(String keyword,String keyword1,String keyword2) {
+
+    public List<BenhNhan> selectByKeyword(String keyword, String keyword1, String keyword2) {
         String sql = "SELECT * FROM BenhNhan WHERE HoTen LIKE ? or MaBN LIKE ? or MaPhong LIKE ?";
-        return selectBySql(sql,"%" + keyword + "%","%" + keyword1 + "%","%" + keyword2 + "%");      
+        return selectBySql(sql, "%" + keyword + "%", "%" + keyword1 + "%", "%" + keyword2 + "%");
     }
 
     protected List<BenhNhan> selectBySql(String sql, Object... args) {
@@ -103,5 +103,14 @@ public class BenhNhanDAO {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public BenhNhan findlistByCMND(String cmnd) {
+        String sql = "select * from BenhNhan where CMND like ?";
+        List<BenhNhan> list = this.selectBySql(sql, cmnd);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list.get(0);
     }
 }

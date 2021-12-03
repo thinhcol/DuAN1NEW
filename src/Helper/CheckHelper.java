@@ -204,7 +204,7 @@ public class CheckHelper {
             return false;
         }
     }
-    
+
     public static boolean checkMaTN(JTextField txt) {
 
         String id = txt.getText();
@@ -219,6 +219,5 @@ public class CheckHelper {
             return false;
         }
     }
-
 
 }
