@@ -34,17 +34,19 @@ import org.bytedeco.opencv.opencv_objdetect.CascadeClassifier;
 import org.bytedeco.opencv.opencv_videoio.VideoCapture;
 import org.opencv.core.Core;
 
-
 public class DangKyKhuonMat extends javax.swing.JDialog {
-
-    
 
     public DangKyKhuonMat(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
 //        recognizer.read("src\\photo\\classifierLBPH.yml");
 //        recognizer.setThreshold(80);
-        lblid.setText(String.valueOf(ShareHelper.user.getMaid()));
+        if (ShareHelper.isLogin()) {
+            lblid.setText(String.valueOf(ShareHelper.user.getMaid()));
+        }else{
+            JOptionPane.showMessageDialog(null, "Bạn không có quyền dùng");
+        }
+        
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 20, 20));
         webSource = new VideoCapture(0);
         myThread = new DaemonThread();
@@ -63,6 +65,7 @@ public class DangKyKhuonMat extends javax.swing.JDialog {
 //    BytePointer mem = new BytePointer();
 //    RectVector detectedFaces = new RectVector();
     JdbcHelper acp = new JdbcHelper();
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -158,7 +161,7 @@ public class DangKyKhuonMat extends javax.swing.JDialog {
 
         lbldem.setFont(new java.awt.Font("Monospaced", 2, 13)); // NOI18N
         lbldem.setForeground(new java.awt.Color(50, 133, 253));
-        lbldem.setText("jLabel5");
+        lbldem.setText("0/25");
         jPanel1.add(lbldem, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, -1, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 420));
@@ -168,7 +171,7 @@ public class DangKyKhuonMat extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
- 
+
     }//GEN-LAST:event_btnsaveActionPerformed
 
     private void btnsaveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnsaveMouseEntered
@@ -178,7 +181,7 @@ public class DangKyKhuonMat extends javax.swing.JDialog {
 
     private void btnsaveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnsaveMouseExited
         btnsave.setForeground(new Color(255, 255, 255));
-        btnsave.setBackground(new Color(51,0,153));
+        btnsave.setBackground(new Color(51, 0, 153));
     }//GEN-LAST:event_btnsaveMouseExited
 
     private void btnThoatMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThoatMouseEntered
@@ -192,7 +195,7 @@ public class DangKyKhuonMat extends javax.swing.JDialog {
     private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
         // TODO add your handling code here:
         myThread.runnable = false;
-         webSource.release();
+        webSource.release();
         this.dispose();
     }//GEN-LAST:event_btnThoatActionPerformed
 
@@ -318,8 +321,7 @@ public class DangKyKhuonMat extends javax.swing.JDialog {
             }
         }
     }
-     
-       
+
 //    public void initWebcam() {
 //        Dimension size = WebcamResolution.QVGA.getSize();
 //
@@ -376,7 +378,6 @@ public class DangKyKhuonMat extends javax.swing.JDialog {
 //        t.setDaemon(true);
 //        return t;
 //    }
-
     void exit() {
         if (DialogHelper.confirm(this, "Bạn có muốn thoát khỏi ứng dụng không?")) {
             System.exit(0);

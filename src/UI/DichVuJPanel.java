@@ -26,7 +26,6 @@ public class DichVuJPanel extends javax.swing.JPanel {
      */
     public DichVuJPanel() {
         initComponents();
-
         this.init();
     }
 
@@ -717,6 +716,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
     void fillTable() {
         DefaultTableModel model = (DefaultTableModel) tblDichVu.getModel();
         model.setRowCount(0);
+
         try {
             String timKiem = txtTimKiemDV.getText();
             List<DichVu> list = dvdao.selectByKeyword(timKiem);
@@ -733,6 +733,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
             DialogHelper.alert(this, "Lỗi truy vấn dữ liệu");
             System.out.println(e);
         }
+
     }
 
     void edit() {
@@ -904,22 +905,43 @@ public class DichVuJPanel extends javax.swing.JPanel {
             list.clear();
             list = dvctdao.selectByMaBNAndDV(bn.getMaBN(), dv.getMaDV());
         }
-        try {
-            for (DichVuCT dvct : list) {
-                Object[] rowdvct = {
-                    dvct.getMaDVCT(),
-                    dvdao.selectByID(dvct.getMaDV()),
-                    bndao.selectByID(dvct.getMaBN()),
-                    DateHelper.toString(dvct.getNgayDK()),
-                    dvct.getGhiChu()
-                };
-                model.addRow(rowdvct);
+        if (ShareHelper.isLogin()) {
+            try {
+                for (DichVuCT dvct : list) {
+                    Object[] rowdvct = {
+                        dvct.getMaDVCT(),
+                        dvdao.selectByID(dvct.getMaDV()),
+                        bndao.selectByID(dvct.getMaBN()),
+                        DateHelper.toString(dvct.getNgayDK()),
+                        dvct.getGhiChu()
+                    };
+                    model.addRow(rowdvct);
+                }
+                isLoad = true;
+            } catch (Exception e) {
+                DialogHelper.alert(this, "Lỗi truy vấn dữ liệu");
+                System.out.println(e);
             }
-            isLoad = true;
-        } catch (Exception e) {
-            DialogHelper.alert(this, "Lỗi truy vấn dữ liệu");
-            System.out.println(e);
+        } else {
+            List<DichVuCT> list1 = dvctdao.findlistByBN(ShareHelper.nguoidung.getMabn());
+            try {
+                for (DichVuCT dvct : list1) {
+                    Object[] rowdvct = {
+                        dvct.getMaDVCT(),
+                        dvdao.selectByID(dvct.getMaDV()),
+                        bndao.selectByID(ShareHelper.nguoidung.getMabn()),
+                        DateHelper.toString(dvct.getNgayDK()),
+                        dvct.getGhiChu()
+                    };
+                    model.addRow(rowdvct);
+                }
+                isLoad = true;
+            } catch (Exception e) {
+                DialogHelper.alert(this, "Lỗi truy vấn dữ liệu");
+                System.out.println(e);
+            }
         }
+
     }
 
     void editDVCT() {
@@ -973,10 +995,18 @@ public class DichVuJPanel extends javax.swing.JPanel {
         benhNhan.setHoTen("Tất cả");
         benhNhan.setMaBN(-1);
         model.addElement(benhNhan);
-        List<BenhNhan> list = bndao.selectAll();
-        for (BenhNhan bn : list) {
-            model.addElement(bn);
+        if (ShareHelper.isLogin()) {
+            List<BenhNhan> list = bndao.selectAll();
+            for (BenhNhan bn : list) {
+                model.addElement(bn);
+            }
+        } else {
+            List<BenhNhan> list = bndao.findlistById(ShareHelper.nguoidung.getMabn());
+            for (BenhNhan bn : list) {
+                model.addElement(bn);
+            }
         }
+
     }
 
     void selectCbo() {

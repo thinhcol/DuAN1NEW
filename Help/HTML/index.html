@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <!-- <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    /> -->
+    <link href="https://fonts.googleapis.com/css2?
+    family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <a href="../HTML/index.html"><img src="../Image/Poly.png" alt="" class="menu-logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="../HTML/Nhanvien.html">Quản lý nhân viên</a></li>
+                    <li><a href="../HTML/NguoiHoc.html">Quản lý người học</a></li>
+                    <li><a href="../HTML/ChuyenDe.html">Quản lý chuyên đề</a></li>
+                    <li><a href="../HTML/KhoaHoc.html">Quản lý khóa học</a></li>
+                    <li><a href="../HTML/HocVien.html">Quản lý học viên</a></li>
+                   
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="rol">
+                <h1>Chương trình Edusys</h1>
+                <p>Được làm bởi 1 người</p>
+                <button type="button">Xem</button>
+            </div>
+            <div class="menu">
+                <div class="togg">
+                    <ion-icon name="add-circle-outline"></ion-icon>
+                </div>
+                <li style="--i:0;">
+                    <a href="#"><ion-icon name="home-outline"></ion-icon></a>
+                </li>
+                <li style="--i:1;">
+                    <a href="#"><ion-icon name="person-outline"></ion-icon></a>
+                </li>
+                <li style="--i:2;">
+                    <a href="#"><ion-icon name="settings-outline"></ion-icon></a>
+                </li>
+                <li style="--i:3;">
+                    <a href="#"><ion-icon name="mail-outline"></ion-icon></a>
+                </li>
+                <li style="--i:4;">
+                    <a href="#"><ion-icon name="key-outline"></ion-icon></a>
+                </li>
+                <li style="--i:5;">
+                    <a href="#"><ion-icon name="home-outline"></ion-icon></a>
+                </li>
+                <li style="--i:6;">
+                    <a href="#"><ion-icon name="home-outline"></ion-icon></a>
+                </li>
+                <li style="--i:7;">
+                    <a href="#"><ion-icon name="home-outline"></ion-icon></a>
+                </li>
+            </div>
+            
+        </div>
+
+    </div>
+    <footer class="footer">
+        <div class="bot">
+            <div class="hang">
+                <div class="cot">
+                    <h4>Tìm kiếm
+                    </h4>
+                    <ul>
+                        <li><a href="">Liên hệ</a></li>
+                        <li><a href="">Quản lý người học</a></li>
+                        <li><a href="">Quản lý chuyên đề</a></li>
+                        <li><a href="">Quản lý khóa học</a></li>
+                        <li><a href="">Quản lý học viên</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="cot">
+                    <h4>Chi tiết
+                    </h4>
+                    <ul>
+                        <li><a href="">Chi tiết của web</a></li>
+                        <li><a href="">Quản lý người học</a></li>
+                        <li><a href="">Quản lý chuyên đề</a></li>
+                        <li><a href="">Quản lý khóa học</a></li>
+                        <li><a href="">Quản lý học viên</a></li>
+                       
+                    </ul>
+                </div>
+                <div class="cot">
+                    <h4>Hỗ trợ
+                    </h4>
+                    <ul>
+                        <li><a href="">Quản lý người học</a></li>
+                        <li><a href="">Quản lý chuyên đề</a></li>
+                        <li><a href="">Quản lý khóa học</a></li>
+                        <li><a href="">Quản lý học viên</a></li>
+                    </ul>
+                </div>
+                <div class="cot">
+                    <h4>Trung tâm dạy học tin học ngắn hạn
+                    </h4>
+                    <!-- <ul>
+                        <li><a href="">Chi tiết của web</a></li>
+                        <li><a href="">Quản lý người học</a></li>
+                        <li><a href="">Quản lý chuyên đề</a></li>
+                        <li><a href="">Quản lý khóa học</a></li>
+                        <li><a href="">Quản lý học viên</a></li>
+                        <li><a href="">Quản lý tổng hợp - thống kê</a></li>
+                    </ul> -->
+                    <div class="poly">
+                        <a href="#">
+                            <i class="ong">
+                                <img src="../Image/ongvang.png" alt="">
+                            </i>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        let togg = document.querySelector('.togg');
+        let menu = document.querySelector('.menu');
+        togg.onclick = function(){
+            menu.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>

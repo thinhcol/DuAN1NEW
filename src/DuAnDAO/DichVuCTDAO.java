@@ -66,7 +66,10 @@ public class DichVuCTDAO {
         }
         return list.get(0);
     }
-
+    public List<DichVuCT> findlistByBN(int id) {
+        List<DichVuCT> list = selectBySql("SELECT * FROM DichVuCT WHERE MaBN=?", id);
+        return list;
+    }
     protected List<DichVuCT> selectBySql(String sql, Object... args) {
         List<DichVuCT> list = new ArrayList<DichVuCT>();
         try {

@@ -82,6 +82,11 @@ public class HoatDongCTDAO {
         List<HoatDongCT> list = this.selectBySql(sql, maHD);
         return list;
     }
+    public List<HoatDongCT> selectByMaBN1(Integer maBN) {
+        String sql = "select * from HoatDongCT where MaBN like ?";
+        List<HoatDongCT> list = this.selectBySql(sql, maBN);
+        return list;
+    }
 
 //    public List<DichVuCT> selectByKeyword(String keyword) {
 //        String sql = "select * from DichVuCT where MaDV like ? or MaBN like ? or NgayDK like ?";

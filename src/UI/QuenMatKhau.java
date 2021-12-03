@@ -6,7 +6,9 @@
 package UI;
 
 import DuAnDAO.NhanVienDAO;
+import DuAnDAO.ThanNhanDAO;
 import Entity.NhanVien;
+import Entity.ThanNhan;
 import Helper.DialogHelper;
 import Helper.RandomStringExmple;
 import java.awt.Color;
@@ -37,7 +39,7 @@ public class QuenMatKhau extends javax.swing.JDialog {
     public QuenMatKhau(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-
+ 
         this.init();
     }
 
@@ -275,6 +277,8 @@ public class QuenMatKhau extends javax.swing.JDialog {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -316,6 +320,7 @@ public class QuenMatKhau extends javax.swing.JDialog {
     boolean testTime = false;
     String code;
     NhanVienDAO dao = new NhanVienDAO();
+    ThanNhanDAO tndao = new ThanNhanDAO();
 
     public void init() {
         updateStatus();
@@ -343,8 +348,8 @@ public class QuenMatKhau extends javax.swing.JDialog {
     public boolean checkExistID() {
         String maNV = txtMaNV.getText();
         if (!maNV.isEmpty()) {
-            if (dao.selectByID(maNV) == null) {
-                Helper.DialogHelper.alert(this, "Không tìm thấy mã nhân viên");
+            if (dao.selectByID(maNV) == null && tndao.selectByID(maNV) == null) {
+                Helper.DialogHelper.alert(this, "Không tìm thấy mã nhân viên hoặc thân nhân");
                 return false;
             } else {
                 return true;
@@ -355,43 +360,82 @@ public class QuenMatKhau extends javax.swing.JDialog {
         }
     }
 
-    public String getEmailByID() {
+    public String getEmailByIDNV() {
         String maNV = txtMaNV.getText();
         return dao.selectEmailByID(maNV).getEmail();
     }
 
+    public String getTNEmailTN() {
+        String matn = txtMaNV.getText();
+        return tndao.selectEmailByID(matn).getEmail();
+    }
+
     public void sendCodeToEmail() {
         code = new RandomStringExmple().randomAlphaNumeric(4);
-        String to = getEmailByID();
-        String emailGui = "vuthien130902@gmail.com";
-        String passGui = "phuonglinh1309";
-        String subject = "Đây là mã code để đổi mật khẩu" + "\nVui lòng nhập trong vòng 270 giây";
-        try {
-            Properties p = new Properties();
-            p.put("mail.smtp.auth", "true");
-            p.put("mail.smtp.starttls.enable", "true");
-            p.put("mail.smtp.host", "smtp.gmail.com");
-            p.put("mail.smtp.port", 587);
+        if (txtMaNV.getText().contains("TN")) {
+            String to = getTNEmailTN();
+            String emailGui = "vuthien130902@gmail.com";
+            String passGui = "phuonglinh1309";
+            String subject = "Đây là mã code để đổi mật khẩu" + "\nVui lòng nhập trong vòng 270 giây";
+            try {
+                Properties p = new Properties();
+                p.put("mail.smtp.auth", "true");
+                p.put("mail.smtp.starttls.enable", "true");
+                p.put("mail.smtp.host", "smtp.gmail.com");
+                p.put("mail.smtp.port", 587);
 
-            Session s = Session.getInstance(p,
-                    new javax.mail.Authenticator() {
-                        protected PasswordAuthentication getPasswordAuthentication() {
-                            return new PasswordAuthentication(emailGui, passGui);
-                        }
-                    });
+                Session s = Session.getInstance(p,
+                        new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(emailGui, passGui);
+                    }
+                });
 
-            Message msg = new MimeMessage(s);
-            msg.setFrom(new InternetAddress(emailGui));
-            msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
-            msg.setSubject(subject);
-            msg.setText(code);
+                Message msg = new MimeMessage(s);
+                msg.setFrom(new InternetAddress(emailGui));
+                msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+                msg.setSubject(subject);
+                msg.setText(code);
 
-            Transport.send(msg);
+                Transport.send(msg);
+                System.out.print(code);
+                JOptionPane.showMessageDialog(this, "Kiểm tra mã code tại email");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            String to = getEmailByIDNV();
+            String emailGui = "vuthien130902@gmail.com";
+            String passGui = "phuonglinh1309";
+            String subject = "Đây là mã code để đổi mật khẩu" + "\nVui lòng nhập trong vòng 270 giây";
+            try {
+                Properties p = new Properties();
+                p.put("mail.smtp.auth", "true");
+                p.put("mail.smtp.starttls.enable", "true");
+                p.put("mail.smtp.host", "smtp.gmail.com");
+                p.put("mail.smtp.port", 587);
 
-            JOptionPane.showMessageDialog(this, "Kiểm tra mã code tại email");
-        } catch (Exception e) {
-            e.printStackTrace();
+                Session s = Session.getInstance(p,
+                        new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(emailGui, passGui);
+                    }
+                });
+
+                Message msg = new MimeMessage(s);
+                msg.setFrom(new InternetAddress(emailGui));
+                msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+                msg.setSubject(subject);
+                msg.setText(code);
+
+                Transport.send(msg);
+                System.out.print(code);
+                JOptionPane.showMessageDialog(this, "Kiểm tra mã code tại email");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
+
     }
 
     public void sendCodeEmail() {
@@ -407,27 +451,34 @@ public class QuenMatKhau extends javax.swing.JDialog {
     }
 
     public void sendCodeToSDT() {
-        try {
-            String maNV = txtMaNV.getText();
-            String to = getSDTByID();
-            System.out.println(to);
-            code = new RandomStringExmple().randomAlphaNumeric(4);
-            String str = "" + code + "";
-            String str2 = str.replaceAll("\\s", "+");
-            URL url = new URL("http://192.168.1.7:8080/v1/sms/send/?phone=" + to + "&message=" + str2 + "");
-            InputStream i = null;
-            JOptionPane.showMessageDialog(this, "Mã code được gửi thành công. \n Vui lòng kiểm tra số điện thoại");
+        if (txtMaNV.getText().contains("TN") ||txtMaNV.getText().contains("tn")|| txtMaNV.getText().contains("tN") || txtMaNV.getText().contains("Tn")) {
+            JOptionPane.showMessageDialog(this, "Thân nhân không được sử dụng chức năng này");
+            return;
+        } else {
             try {
-                i = url.openStream();
-            } catch (Exception e) {
+                String maNV = txtMaNV.getText();
+                String to = getSDTByID();
+                System.out.println(to);
+                code = new RandomStringExmple().randomAlphaNumeric(4);
+                String str = "" + code + "";
+                String str2 = str.replaceAll("\\s", "+");
+                URL url = new URL("http://192.168.1.7:8080/v1/sms/send/?phone=" + to + "&message=" + str2 + "");
+                InputStream i = null;
+                JOptionPane.showMessageDialog(this, "Mã code được gửi thành công. \n Vui lòng kiểm tra số điện thoại");
+                
+                try {
+                    i = url.openStream();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                if (i != null) {
+
+                }
+            } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
-            if (i != null) {
-
-            }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
         }
+        
 
     }
 
@@ -469,10 +520,18 @@ public class QuenMatKhau extends javax.swing.JDialog {
     }
 
     public void updatePassInDB() {
-        NhanVien nv = dao.selectByID(txtMaNV.getText());
-        String matKhauMoi = new String(txtMatKhauMoi.getPassword());
-        nv.setMatKhau(matKhauMoi);
-        dao.update(nv);
+        if (txtMaNV.getText().contains("TN")) {
+            ThanNhan tn = tndao.selectByID(txtMaNV.getText());
+            String matKhauMoi = new String(txtMatKhauMoi.getPassword());
+            tn.setPass(matKhauMoi);
+            tndao.update(tn);
+        } else {
+            NhanVien nv = dao.selectByID(txtMaNV.getText());
+            String matKhauMoi = new String(txtMatKhauMoi.getPassword());
+            nv.setMatKhau(matKhauMoi);
+            dao.update(nv);
+        }
+
     }
 
     public void updateStatus() {

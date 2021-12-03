@@ -6,14 +6,18 @@
 package UI;
 
 import Helper.DialogHelper;
+import Helper.MapHelper;
 import Helper.ShareHelper;
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.Frame;
 import java.awt.GraphicsEnvironment;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javafx.embed.swing.JFXPanel;
@@ -51,6 +55,10 @@ public class Home extends javax.swing.JFrame {
             lblMaNV.setText(ShareHelper.nguoidung.getHoten());
             pnlPhong.setVisible(false);
             pnlQuanLyNhanVien.setVisible(false);
+            pnlThanNhan.setVisible(false);
+            btnTN.setVisible(false);
+            btnTK.setVisible(false);
+            btnFACE.setVisible(false);
 //            pnlTN.setVisible(false);
         }
     }
@@ -63,6 +71,7 @@ public class Home extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel4 = new javax.swing.JPanel();
         pnlForm = new javax.swing.JPanel();
@@ -82,19 +91,19 @@ public class Home extends javax.swing.JFrame {
         kGradientPanel1 = new keeptoo.KGradientPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        kGradientPanel3 = new keeptoo.KGradientPanel();
+        btnTN = new keeptoo.KGradientPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         kGradientPanel4 = new keeptoo.KGradientPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        kGradientPanel5 = new keeptoo.KGradientPanel();
+        btnTK = new keeptoo.KGradientPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        kGradientPanel6 = new keeptoo.KGradientPanel();
+        btnFACE = new keeptoo.KGradientPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        kGradientPanel7 = new keeptoo.KGradientPanel();
+        btnHD = new keeptoo.KGradientPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         pnlQuanLyBN = new javax.swing.JPanel();
@@ -109,6 +118,7 @@ public class Home extends javax.swing.JFrame {
         pnlThongTin = new javax.swing.JPanel();
         pnlQuanLyTN = new javax.swing.JPanel();
         pnlDiaChi = new javax.swing.JPanel();
+        pnlThongKe = new javax.swing.JPanel();
         pnlMenu = new javax.swing.JPanel();
         pnlQuanLyItem = new javax.swing.JPanel();
         pnlQuanLyBenhNhan = new javax.swing.JPanel();
@@ -164,9 +174,7 @@ public class Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(1400, 800));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1400, 800));
         setSize(new java.awt.Dimension(1400, 800));
 
         pnlForm.setBackground(new java.awt.Color(255, 255, 255));
@@ -347,7 +355,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addContainerGap(78, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(234, Short.MAX_VALUE)
                 .addComponent(jLabel14)
                 .addContainerGap())
         );
@@ -361,11 +369,11 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(41, Short.MAX_VALUE))
         );
 
-        kGradientPanel3.setkEndColor(new java.awt.Color(255, 102, 204));
-        kGradientPanel3.setkStartColor(new java.awt.Color(153, 102, 255));
-        kGradientPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnTN.setkEndColor(new java.awt.Color(255, 102, 204));
+        btnTN.setkStartColor(new java.awt.Color(153, 102, 255));
+        btnTN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                kGradientPanel3MouseClicked(evt);
+                btnTNMouseClicked(evt);
             }
         });
 
@@ -374,22 +382,22 @@ public class Home extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/family_125px.png"))); // NOI18N
 
-        javax.swing.GroupLayout kGradientPanel3Layout = new javax.swing.GroupLayout(kGradientPanel3);
-        kGradientPanel3.setLayout(kGradientPanel3Layout);
-        kGradientPanel3Layout.setHorizontalGroup(
-            kGradientPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout btnTNLayout = new javax.swing.GroupLayout(btnTN);
+        btnTN.setLayout(btnTNLayout);
+        btnTNLayout.setHorizontalGroup(
+            btnTNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnTNLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addContainerGap(107, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnTNLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        kGradientPanel3Layout.setVerticalGroup(
-            kGradientPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel3Layout.createSequentialGroup()
+        btnTNLayout.setVerticalGroup(
+            btnTNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnTNLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -428,29 +436,34 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(45, Short.MAX_VALUE))
         );
 
-        kGradientPanel5.setkStartColor(new java.awt.Color(0, 204, 255));
+        btnTK.setkStartColor(new java.awt.Color(0, 204, 255));
+        btnTK.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnTKMouseClicked(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Monospaced", 1, 48)); // NOI18N
         jLabel8.setText("Thống kê");
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/bar_chart_125px.png"))); // NOI18N
 
-        javax.swing.GroupLayout kGradientPanel5Layout = new javax.swing.GroupLayout(kGradientPanel5);
-        kGradientPanel5.setLayout(kGradientPanel5Layout);
-        kGradientPanel5Layout.setHorizontalGroup(
-            kGradientPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout btnTKLayout = new javax.swing.GroupLayout(btnTK);
+        btnTK.setLayout(btnTKLayout);
+        btnTKLayout.setHorizontalGroup(
+            btnTKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnTKLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel8)
                 .addContainerGap(136, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel5Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnTKLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel15)
                 .addContainerGap())
         );
-        kGradientPanel5Layout.setVerticalGroup(
-            kGradientPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel5Layout.createSequentialGroup()
+        btnTKLayout.setVerticalGroup(
+            btnTKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnTKLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -458,65 +471,62 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        kGradientPanel6.setkEndColor(new java.awt.Color(51, 204, 255));
-        kGradientPanel6.setkStartColor(new java.awt.Color(102, 255, 255));
-        kGradientPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnFACE.setEnabled(false);
+        btnFACE.setkEndColor(new java.awt.Color(51, 204, 255));
+        btnFACE.setkStartColor(new java.awt.Color(102, 255, 255));
+        btnFACE.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                kGradientPanel6MouseClicked(evt);
+                btnFACEMouseClicked(evt);
             }
         });
+        btnFACE.setLayout(new java.awt.GridBagLayout());
 
         jLabel4.setFont(new java.awt.Font("Monospaced", 1, 48)); // NOI18N
         jLabel4.setText("Tài khoản");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(13, 12, 0, 0);
+        btnFACE.add(jLabel4, gridBagConstraints);
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/user_female_red_hair_125px.png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(7, 243, 71, 12);
+        btnFACE.add(jLabel12, gridBagConstraints);
 
-        javax.swing.GroupLayout kGradientPanel6Layout = new javax.swing.GroupLayout(kGradientPanel6);
-        kGradientPanel6.setLayout(kGradientPanel6Layout);
-        kGradientPanel6Layout.setHorizontalGroup(
-            kGradientPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4)
-                .addContainerGap(107, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel12)
-                .addContainerGap())
-        );
-        kGradientPanel6Layout.setVerticalGroup(
-            kGradientPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel12)
-                .addContainerGap(71, Short.MAX_VALUE))
-        );
-
-        kGradientPanel7.setkEndColor(new java.awt.Color(255, 255, 51));
+        btnHD.setkEndColor(new java.awt.Color(255, 255, 51));
+        btnHD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnHDMouseClicked(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Monospaced", 1, 48)); // NOI18N
         jLabel5.setText("Hướng dẫn");
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/training_125px.png"))); // NOI18N
 
-        javax.swing.GroupLayout kGradientPanel7Layout = new javax.swing.GroupLayout(kGradientPanel7);
-        kGradientPanel7.setLayout(kGradientPanel7Layout);
-        kGradientPanel7Layout.setHorizontalGroup(
-            kGradientPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel7Layout.createSequentialGroup()
+        javax.swing.GroupLayout btnHDLayout = new javax.swing.GroupLayout(btnHD);
+        btnHD.setLayout(btnHDLayout);
+        btnHDLayout.setHorizontalGroup(
+            btnHDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnHDLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5)
                 .addContainerGap(107, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel7Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnHDLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        kGradientPanel7Layout.setVerticalGroup(
-            kGradientPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel7Layout.createSequentialGroup()
+        btnHDLayout.setVerticalGroup(
+            btnHDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnHDLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -548,15 +558,15 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(pnlTrangChuLayout.createSequentialGroup()
                         .addGroup(pnlTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(kGradientPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(pnlTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(kGradientPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(kGradientPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnTK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnlTrangChuLayout.createSequentialGroup()
-                        .addComponent(kGradientPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnFACE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(kGradientPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnHD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         pnlTrangChuLayout.setVerticalGroup(
@@ -567,15 +577,15 @@ public class Home extends javax.swing.JFrame {
                         .addGap(36, 36, 36)
                         .addGroup(pnlTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(kGradientPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
-                            .addComponent(kGradientPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE))
+                            .addComponent(btnTN, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(pnlTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(kGradientPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(kGradientPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnFACE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnHD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                            .addComponent(kGradientPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)))
+                            .addComponent(btnTK, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)))
                     .addGroup(pnlTrangChuLayout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -766,6 +776,19 @@ public class Home extends javax.swing.JFrame {
         );
 
         pnlBody.add(pnlDiaChi, "card14");
+
+        javax.swing.GroupLayout pnlThongKeLayout = new javax.swing.GroupLayout(pnlThongKe);
+        pnlThongKe.setLayout(pnlThongKeLayout);
+        pnlThongKeLayout.setHorizontalGroup(
+            pnlThongKeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1652, Short.MAX_VALUE)
+        );
+        pnlThongKeLayout.setVerticalGroup(
+            pnlThongKeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1445, Short.MAX_VALUE)
+        );
+
+        pnlBody.add(pnlThongKe, "card15");
 
         pnlMenu.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1697,19 +1720,19 @@ public class Home extends javax.swing.JFrame {
     private void btnHomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseExited
     }//GEN-LAST:event_btnHomeMouseExited
 
-    private void kGradientPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel6MouseClicked
+    private void btnFACEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFACEMouseClicked
         // TODO add your handling code here:
         AI();
-    }//GEN-LAST:event_kGradientPanel6MouseClicked
+    }//GEN-LAST:event_btnFACEMouseClicked
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
         // TODO add your handling code here:
         exit();
     }//GEN-LAST:event_btnMenuActionPerformed
 
-    private void kGradientPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel3MouseClicked
+    private void btnTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTNMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_kGradientPanel3MouseClicked
+    }//GEN-LAST:event_btnTNMouseClicked
 
     private void btnThanNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThanNhanActionPerformed
         HideMenu();
@@ -1750,8 +1773,47 @@ public class Home extends javax.swing.JFrame {
 
     private void kGradientPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel1MouseClicked
         // TODO add your handling code here:
-        
+      
     }//GEN-LAST:event_kGradientPanel1MouseClicked
+
+    private void btnTKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTKMouseClicked
+        // TODO add your handling code here:
+         HideMenu();
+        ThongKe();
+        pnlBody.removeAll();
+        pnlBody.add(pnlThongKe);
+        pnlBody.repaint();
+        pnlBody.revalidate();
+
+        lblHome.setBackground(new Color(153, 153, 153));
+        lblQuanLy.setBackground(new Color(209, 209, 209));
+        lblGioiThieu.setBackground(new Color(209, 209, 209));
+        lblDichVu.setBackground(new Color(209, 209, 209));
+        lblHoaDon.setBackground(new Color(209, 209, 209));
+        lblHoatDong.setBackground(new Color(209, 209, 209));
+        lblThanNhan.setBackground(new Color(209, 209, 209));
+
+        btnHome.setForeground(new Color(1, 156, 246));
+        btnQuanLy.setForeground(new Color(0, 0, 0));
+        btnGioiThieu.setForeground(new Color(0, 0, 0));
+        btnDichVu.setForeground(new Color(0, 0, 0));
+        btnHoaDon.setForeground(new Color(0, 0, 0));
+        btnHoatDong.setForeground(new Color(0, 0, 0));
+        btnThanNhan.setForeground(new Color(0, 0, 0));
+
+        pnlHome.setBackground(new Color(255, 255, 255));
+        pnlQuanLy.setBackground(new Color(209, 209, 209));
+        pnlGioiThieu.setBackground(new Color(209, 209, 209));
+        pnlDichVu.setBackground(new Color(209, 209, 209));
+        pnlHoaDon.setBackground(new Color(209, 209, 209));
+        pnlHoatDong.setBackground(new Color(209, 209, 209));
+        pnlThanNhan.setBackground(new Color(209, 209, 209));
+    }//GEN-LAST:event_btnTKMouseClicked
+
+    private void btnHDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHDMouseClicked
+        // TODO add your handling code here:
+        openWebsite();
+    }//GEN-LAST:event_btnHDMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1779,6 +1841,7 @@ public class Home extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -1791,7 +1854,9 @@ public class Home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDichVu;
     private javax.swing.JLabel btnDoiMK;
+    private keeptoo.KGradientPanel btnFACE;
     private javax.swing.JButton btnGioiThieu;
+    private keeptoo.KGradientPanel btnHD;
     private javax.swing.JButton btnHoaDon;
     private javax.swing.JButton btnHoatDong;
     private javax.swing.JButton btnHome;
@@ -1803,6 +1868,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton btnQuanLyNV;
     private javax.swing.JButton btnQuanLyNghe;
     private javax.swing.JButton btnQuanLyPhong;
+    private keeptoo.KGradientPanel btnTK;
+    private keeptoo.KGradientPanel btnTN;
     private javax.swing.JButton btnThanNhan;
     private javax.swing.JButton btnThoat;
     private javax.swing.JLabel jLabel1;
@@ -1825,11 +1892,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private keeptoo.KGradientPanel kGradientPanel1;
-    private keeptoo.KGradientPanel kGradientPanel3;
     private keeptoo.KGradientPanel kGradientPanel4;
-    private keeptoo.KGradientPanel kGradientPanel5;
-    private keeptoo.KGradientPanel kGradientPanel6;
-    private keeptoo.KGradientPanel kGradientPanel7;
     private javax.swing.JLabel lblAvatar;
     private javax.swing.JLabel lblDichVu;
     private javax.swing.JLabel lblDongHo;
@@ -1871,6 +1934,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel pnlQuanLyPhong;
     private javax.swing.JPanel pnlQuanLyTN;
     private javax.swing.JPanel pnlThanNhan;
+    private javax.swing.JPanel pnlThongKe;
     private javax.swing.JPanel pnlThongTin;
     private javax.swing.JPanel pnlTrangChu;
     private javax.swing.JLabel txtMaNV;
@@ -1917,6 +1981,14 @@ public class Home extends javax.swing.JFrame {
         tm.start();
 
     }
+      public void ThongKe() {
+        pnlThongKe = new ThongKe();
+        pnlBody.add(pnlThongKe);
+        pnlBody.removeAll();
+        pnlBody.validate();
+    }
+
+  
 
     public void AI() {
         new DangKyKhuonMat(null, true).setVisible(true);
@@ -1936,7 +2008,14 @@ public class Home extends javax.swing.JFrame {
         pnlBody.removeAll();
         pnlBody.validate();
     }
-
+     void openWebsite() {
+        try {
+            Desktop.getDesktop().browse(new File("Help/index.html").toURI());
+        } catch (IOException ex) {
+            DialogHelper.alert(this, "Không tìm thấy file hướng dẫn!");
+            ex.printStackTrace();
+        }
+    }
     public void BenhAn() {
         pnlQuanLyBA = new BenhAnJPanel();
         pnlBody.add(pnlQuanLyBA);

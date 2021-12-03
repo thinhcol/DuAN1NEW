@@ -222,7 +222,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
                     && CheckHelper.checkPass(txtpass)
                     && CheckHelper.checkName(txtHoten)
                     && CheckHelper.checkEmail(txtEmail)) {
-                if (checkTrungMa(txtMaTN)) {
+               
                     String matn = (String) tblGridView.getValueAt(this.index, 0);
                     ThanNhan model = getModel();
                     try {
@@ -234,7 +234,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
                         DialogHelper.alert(this, "Cập nhật thất bại!");
                         e.printStackTrace();
                     }
-                }
+                
             }
         }
     }

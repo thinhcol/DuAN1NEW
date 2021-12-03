@@ -78,4 +78,12 @@ public class ThanNhanDAO {
             throw new RuntimeException(e);
         }
     }
+    public ThanNhan selectEmailByID(String id) {
+        String selectEmailByID = "SELECT * from ThanNhan where MaTN = ?";
+        List<ThanNhan> list = this.selectBySql(selectEmailByID, id);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list.get(0);
+    }
 }

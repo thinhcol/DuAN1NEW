@@ -10,6 +10,8 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.geom.RoundRectangle2D;
 import java.awt.image.BufferedImage;
+import static java.awt.image.ImageObserver.HEIGHT;
+import static java.awt.image.ImageObserver.WIDTH;
 import java.io.ByteArrayInputStream;
 import java.sql.Array;
 import javax.imageio.ImageIO;
@@ -22,7 +24,9 @@ import org.bytedeco.opencv.global.opencv_imgproc;
 import static org.bytedeco.opencv.global.opencv_imgproc.COLOR_BGRA2GRAY;
 import static org.bytedeco.opencv.global.opencv_imgproc.cvtColor;
 import static org.bytedeco.opencv.global.opencv_imgproc.rectangle;
+import org.bytedeco.opencv.opencv_core.AbstractScalar;
 import org.bytedeco.opencv.opencv_core.Mat;
+import org.bytedeco.opencv.opencv_core.Point;
 import org.bytedeco.opencv.opencv_core.Rect;
 import org.bytedeco.opencv.opencv_core.RectVector;
 import org.bytedeco.opencv.opencv_core.Scalar;
@@ -66,7 +70,6 @@ public class KhuonMatJDialog extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lblphoto = new javax.swing.JLabel();
-        btnDangNhap = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         btnThoat = new javax.swing.JButton();
@@ -91,28 +94,6 @@ public class KhuonMatJDialog extends javax.swing.JDialog {
         jPanel2.add(lblphoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 290));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 360, 290));
-
-        btnDangNhap.setBackground(new java.awt.Color(0, 0, 204));
-        btnDangNhap.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
-        btnDangNhap.setForeground(new java.awt.Color(255, 255, 255));
-        btnDangNhap.setText("Đăng nhập");
-        btnDangNhap.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btnDangNhap.setContentAreaFilled(false);
-        btnDangNhap.setOpaque(true);
-        btnDangNhap.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnDangNhapMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnDangNhapMouseExited(evt);
-            }
-        });
-        btnDangNhap.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDangNhapActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnDangNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 370, 90, -1));
 
         jLabel2.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 255));
@@ -169,20 +150,6 @@ public class KhuonMatJDialog extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
-        login();
-    }//GEN-LAST:event_btnDangNhapActionPerformed
-
-    private void btnDangNhapMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDangNhapMouseEntered
-        btnDangNhap.setForeground(new Color(231, 255, 1));
-        btnDangNhap.setBackground(new Color(247, 149, 157));
-    }//GEN-LAST:event_btnDangNhapMouseEntered
-
-    private void btnDangNhapMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDangNhapMouseExited
-        btnDangNhap.setForeground(new Color(255, 255, 255));
-        btnDangNhap.setBackground(new Color(51, 0, 153));
-    }//GEN-LAST:event_btnDangNhapMouseExited
-
     private void btnThoatMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThoatMouseEntered
 
     }//GEN-LAST:event_btnThoatMouseEntered
@@ -220,6 +187,10 @@ public class KhuonMatJDialog extends javax.swing.JDialog {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         //</editor-fold>
 
@@ -237,7 +208,6 @@ public class KhuonMatJDialog extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDangNhap;
     private javax.swing.JButton btnThoat;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -280,11 +250,11 @@ public class KhuonMatJDialog extends javax.swing.JDialog {
                                     rectangle(frame, dadosFace, new Scalar(0, 0, 255, 3), 3, 0, 0);
                                     id = 0;
                                     lblMaNV.setText("NULL");
-                                 
+
                                 } else {
                                     rectangle(frame, dadosFace, new Scalar(0, 255, 0, 3), 3, 0, 0);
                                     id = prediction;
-                                    System.out.println(confidence.get(0));
+//                                    System.out.println(confidence.get(0));
                                     lblid.setText(String.valueOf(id));
                                     rec();
 
@@ -318,10 +288,12 @@ public class KhuonMatJDialog extends javax.swing.JDialog {
             public void run() {
                 acp.conn();
                 try {
+
                     String sql = "SELECT * FROM NhanVien WHERE MaNhanDien = " + String.valueOf(id);
                     acp.executeSQL(sql);
                     while (acp.rs.next()) {
                         lblMaNV.setText(acp.rs.getString("MaNV"));
+                        login();
 //                        txt_email.setText(acp.rs.getString("email"));
 //                        txt_dienthoi.setText(acp.rs.getString("sdt"));
 //                        System.out.println("Họ và tên : " + acp.rs.getString("MaNV") + "Id : " + acp.rs.getInt("MaNhanDien"));
@@ -404,9 +376,9 @@ public class KhuonMatJDialog extends javax.swing.JDialog {
             NhanVien nhanVien = dao.selectByID(manv);
             if (nhanVien != null) {
                 ShareHelper.user = nhanVien;
-                DialogHelper.alert(this, "Đăng nhập thành công!");
                 myThread.runnable = false;
                 webSource.release();
+
                 this.dispose();
 //                webcam.close();
             } else {

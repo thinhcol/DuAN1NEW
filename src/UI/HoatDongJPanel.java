@@ -877,7 +877,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
                     System.out.println(e);
                 }
             }
-        }else{
+        } else {
             DialogHelper.alert(this, "Bạn không có quyền xóa");
         }
     }
@@ -923,22 +923,43 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             list.clear();
             list = hdctdao.selectByMaBNAndHD(bn.getMaBN(), hd.getMaHoatDong());
         }
-        try {
-            for (HoatDongCT HDCT : list) {
-                Object[] rowHDCT = {
-                    HDCT.getMaHDCT(),
-                    dao.findById(HDCT.getMaHD()),
-                    bndao.selectByID(HDCT.getMaBN()),
-                    DateHelper.toString(HDCT.getNgayThucHien()),
-                    HDCT.getGhiChu()
-                };
-                model.addRow(rowHDCT);
+        if (ShareHelper.isLogin()) {
+            try {
+                for (HoatDongCT HDCT : list) {
+                    Object[] rowHDCT = {
+                        HDCT.getMaHDCT(),
+                        dao.findById(HDCT.getMaHD()),
+                        bndao.selectByID(HDCT.getMaBN()),
+                        DateHelper.toString(HDCT.getNgayThucHien()),
+                        HDCT.getGhiChu()
+                    };
+                    model.addRow(rowHDCT);
+                }
+                isLoad = true;
+            } catch (Exception e) {
+                DialogHelper.alert(this, "Lỗi truy vấn dữ liệu");
+                System.out.println(e);
             }
-            isLoad = true;
-        } catch (Exception e) {
-            DialogHelper.alert(this, "Lỗi truy vấn dữ liệu");
-            System.out.println(e);
+        }else{
+             List<HoatDongCT> list1 = hdctdao.selectByMaBN1(ShareHelper.nguoidung.getMabn());
+             try {
+                for (HoatDongCT HDCT : list1) {
+                    Object[] rowHDCT = {
+                        HDCT.getMaHDCT(),
+                        dao.findById(HDCT.getMaHD()),
+                        bndao.selectByID(ShareHelper.nguoidung.getMabn()),
+                        DateHelper.toString(HDCT.getNgayThucHien()),
+                        HDCT.getGhiChu()
+                    };
+                    model.addRow(rowHDCT);
+                }
+                isLoad = true;
+            } catch (Exception e) {
+                DialogHelper.alert(this, "Lỗi truy vấn dữ liệu");
+                System.out.println(e);
+            }
         }
+
     }
 
     void editHDCT() {
@@ -992,10 +1013,18 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         benhNhan.setHoTen("Tất cả");
         benhNhan.setMaBN(-1);
         model.addElement(benhNhan);
-        List<BenhNhan> list = bndao.selectAll();
-        for (BenhNhan bn : list) {
-            model.addElement(bn);
+        if(ShareHelper.isLogin()){
+            List<BenhNhan> list = bndao.selectAll();
+            for (BenhNhan bn : list) {
+                model.addElement(bn);
+            }
+        }else{
+            List<BenhNhan> list = bndao.findlistById(ShareHelper.nguoidung.getMabn());
+            for (BenhNhan bn : list) {
+                model.addElement(bn);
+            }
         }
+        
     }
 
     void selectCbo() {

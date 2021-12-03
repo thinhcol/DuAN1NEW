@@ -6,6 +6,7 @@
 package UI;
 
 import DuAnDAO.NhanVienDAO;
+import DuAnDAO.ThanNhanDAO;
 import Helper.DialogHelper;
 import Helper.ShareHelper;
 import java.awt.Color;
@@ -260,12 +261,12 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_btnThoatMouseEntered
 
     private void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed
-        doiMatKhau();   
+        doiMatKhau();
     }//GEN-LAST:event_btnXacNhanActionPerformed
 
     private void btnXacNhanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXacNhanMouseExited
         btnXacNhan.setForeground(new Color(255, 255, 255));
-        btnXacNhan.setBackground(new Color(51,0,153));
+        btnXacNhan.setBackground(new Color(51, 0, 153));
     }//GEN-LAST:event_btnXacNhanMouseExited
 
     private void btnXacNhanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXacNhanMouseEntered
@@ -298,6 +299,8 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(DoiMatKhauJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
@@ -336,30 +339,49 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
     private javax.swing.JPasswordField txtXacNhanMKM;
     // End of variables declaration//GEN-END:variables
 
-    NhanVienDAO dao=new NhanVienDAO();
-    public void init(){
+    NhanVienDAO dao = new NhanVienDAO();
+    ThanNhanDAO tndao = new ThanNhanDAO();
+    public void init() {
         txtMaNV.setText(ShareHelper.user.getMaNV());
     }
-    
-    public void doiMatKhau(){
+
+    public void doiMatKhau() {
         txtXacNhanMKM.setBackground(Color.white);
         txtMatKhau.setBackground(Color.white);
-        String matKhau=new String(txtMatKhau.getPassword());
-        String matKhauMoi=new String(txtMatKhauMoi.getPassword());
-        String xacNhanMKM=new String(txtXacNhanMKM.getPassword());
-        if(matKhau.equals(ShareHelper.user.getMatKhau())){
-            if(matKhauMoi.equals(xacNhanMKM)){
-                ShareHelper.user.setMatKhau(matKhauMoi);
-                dao.update(ShareHelper.user);
-                DialogHelper.alert(this, "Đổi mật khẩu thành công!!");
-                this.dispose();
-            }else{
-                txtXacNhanMKM.setBackground(Color.pink);
-                DialogHelper.alert(this, "Mật khẩu xác nhận không trùng mật khẩu");
+        String matKhau = new String(txtMatKhau.getPassword());
+        String matKhauMoi = new String(txtMatKhauMoi.getPassword());
+        String xacNhanMKM = new String(txtXacNhanMKM.getPassword());
+        if (ShareHelper.isLogin()) {
+            if (matKhau.equals(ShareHelper.user.getMatKhau())) {
+                if (matKhauMoi.equals(xacNhanMKM)) {
+                    ShareHelper.user.setMatKhau(matKhauMoi);
+                    dao.update(ShareHelper.user);
+                    DialogHelper.alert(this, "Đổi mật khẩu thành công!!");
+                    this.dispose();
+                } else {
+                    txtXacNhanMKM.setBackground(Color.pink);
+                    DialogHelper.alert(this, "Mật khẩu xác nhận không trùng mật khẩu");
+                }
+            } else {
+                txtMatKhau.setBackground(Color.pink);
+                DialogHelper.alert(this, "Mật khẩu cũ nhập không chính xác!");
             }
-        }else{
-            txtMatKhau.setBackground(Color.pink);
-            DialogHelper.alert(this, "Mật khẩu cũ nhập không chính xác!");
+        }else if(ShareHelper.isLogin1()){
+             if (matKhau.equals(ShareHelper.nguoidung.getPass())) {
+                if (matKhauMoi.equals(xacNhanMKM)) {
+                    ShareHelper.nguoidung.setPass(matKhauMoi);
+                    tndao.update(ShareHelper.nguoidung);
+                    DialogHelper.alert(this, "Đổi mật khẩu thành công!!");
+                    this.dispose();
+                } else {
+                    txtXacNhanMKM.setBackground(Color.pink);
+                    DialogHelper.alert(this, "Mật khẩu xác nhận không trùng mật khẩu");
+                }
+            } else {
+                txtMatKhau.setBackground(Color.pink);
+                DialogHelper.alert(this, "Mật khẩu cũ nhập không chính xác!");
+            }
         }
+
     }
 }

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn</title>
+    <link rel="stylesheet" href="../CSS/java.css">
+    <!-- <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    /> -->
+    <link href="https://fonts.googleapis.com/css2?
+    family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <a href="../HTML/index.html"><img src="../Image/Poly.png" alt="" class="menu-logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="../HTML/Nhanvien.html">Quản lý nhân viên</a></li>
+                    <li><a href="../HTML/NguoiHoc.html">Quản lý người học</a></li>
+                    <li><a href="../HTML/ChuyenDe.html">Quản lý chuyên đề</a></li>
+                    <li><a href="../HTML/KhoaHoc.html">Quản lý khóa học</a></li>
+                    <li><a href="../HTML/HocVien.html">Quản lý học viên</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="rol">
+                <h1>Công nghệ Spring MVC</h1>
+            </div>
+            <div class="text">
+                <p>
+                    Các lợi ích của Spring MVC là gì?
+Hiện nay, Spring MVC được sử dụng vô cùng phổ biến và được đánh giá cao nhờ sở hữu những điểm mạnh như: 
+
+Các tầng có trong Spring MVC thường độc lập nên việc unit test sẽ trở nên dễ dàng hơn rất nhiều. 
+Phần view của chúng sẽ được tích hợp với nhiều Framework về UI như là: JSF, Freemarker hoặc Themeleaf,…
+Spring MVC base có trên các POJO class nên hành động của chúng thường sẽ đơn giản hơn. 
+Có thể hỗ trợ được cả Annotation và XML config giúp cho quá trình phát triển trở nên sạch hơn và nhanh hơn rất nhiều. 
+Có thể cung cấp giúp việc phân chia trở nên rõ ràng, linh hoạt hơn giữa các controller, service, data access layer.
+Cách hoạt động của Spring MVC là gì?
+Tương tự như các Framework khác, Spring MVC cần phải request thông quan cho một Front-controller. Mỗi một controller sẽ đại diện về trách nhiệm và yêu cầu của các thành phần khác của ứng dụng để có thể thực hiện cho việc xử lý thực tế. Trong Spring MVC DispatcherServlet chính là một font-controller. 
+
+Đầu tiên, các request đến sẽ được đón nhận cũng như xử lý bởi DispatcherServlet, về cơ bản thì DispatcherServlet sẽ được sử dụng giúp xử lý các HTTP request vì nó được kế thừa từ HTTPServlet. DispatcherServlet này sẽ gửi các request tới cho các controller và quyết định hồi đáp chúng bằng biện pháp gửi lại view. 
+
+[1] Sau khi đã nhận được yêu cầu của HTTP, DispatcherServlet sẽ liên lạc với HandlerMapping nhằm xác định controller nào sẽ xử lý yêu cầu này. 
+
+[2] DispatcherServlet sẽ gửi yêu cầu đến cho controller, nếu đã biết được controller nào sẽ xử lý yêu cầu thì nó sẽ lập tức nhận yêu cầu và gọi phương thức thích hợp bằng cách dùng phương thức POST hoặc GET. Tại đây, sau khi phương thức thích hợp được gọi ra thì nó sẽ thiết lập model dữ liệu rồi trả về tên view cho DispatcherServlet. 
+
+[3] DispatcherServlet sẽ tiếp nhận sử dụng trợ giúp từ ViewResolver để xác định view cho các yêu cầu từ người dùng. 
+
+[4] Sau khi quá trình lựa chọn view hoàn thành, DispatcherServlet sẽ chuyển model dữ liệu đến view đó rồi chuyển tới trình duyệt. 
+
+Và trạng thái cấu hình của DispatcherServlet trong file web.xml sẽ như sau: 
+
+<servlet><servlet-name>books</servlet-name>
+<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+
+</servlet>
+
+<servlet-mapping>
+
+<servlet-name>books</servlet-name>
+
+<url-pattern>*.htm</url-pattern>
+
+</servlet-mapping>
+
+ 
+
+Tìm hiểu về Flow trong Spring MVC
+Các request bất kỳ tới ứng dụng web đều sẽ được gửi tới Front Controller. 
+Khi đó, Front Controller sẽ sử dụng Handler Mapping để nắm rõ controller nào sẽ xử lý request đó. 
+Controller sẽ nhận request rồi gọi ới class service thích hợp để thực hiện xử lý yêu cầu. 
+Sau khi hoàn thành xử lý, Controller sẽ nhận model từ tầng Service hoặc tầng DAO. 
+Controller sẽ tiến hành gửi model vừa mới nhận được đến Front Controller. 
+Dispatcher Servlet sẽ tìm kiếm các mẫu view rồi sử dụng viewresolver và truyền model vào cho nó. 
+View template, view page và model sẽ được build và gửi trả chúng trở lại Front Controller. 
+Front Controller giữa một page view tới trình duyệt để chúng có thể hiển thị nó cho người dùng. 
+Đối với mô hình MVC: 
+
+View: là các file JSP, html,…
+Model: những file như POJO Service, DAO sẽ thực hiện cho việc truy cập database và xử lý business. 
+Control: Chính là Dispatcher Controller, Controller và Handler Mapping: Nó sẽ thực hiện việc điều hướng cho các request. 
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <footer class="footer">
+        <div class="bot">
+            <div class="hang">
+                <div class="cot">
+                    <h4>Tìm kiếm
+                    </h4>
+                    <ul>
+                        <li><a href="">Chi tiết của web</a></li>
+                        <li><a href="">Quản lý người học</a></li>
+                        <li><a href="">Quản lý chuyên đề</a></li>
+                        <li><a href="">Quản lý khóa học</a></li>
+                        <li><a href="">Quản lý học viên</a></li>
+                        <li><a href="">Quản lý tổng hợp - thống kê</a></li>
+                    </ul>
+                </div>
+                <div class="cot">
+                    <h4>Chi tiết
+                    </h4>
+                    <ul>
+                        <li><a href="">Chi tiết của web</a></li>
+                        <li><a href="">Quản lý người học</a></li>
+                        <li><a href="">Quản lý chuyên đề</a></li>
+                        <li><a href="">Quản lý khóa học</a></li>
+                        <li><a href="">Quản lý học viên</a></li>
+                        <li><a href="">Quản lý tổng hợp - thống kê</a></li>
+                    </ul>
+                </div>
+                <div class="cot">
+                    <h4>Hỗ trợ
+                    </h4>
+                    <ul>
+                        <li><a href="">Chi tiết của web</a></li>
+                        <li><a href="">Quản lý người học</a></li>
+                        <li><a href="">Quản lý chuyên đề</a></li>
+                        <li><a href="">Quản lý khóa học</a></li>
+                        <li><a href="">Quản lý học viên</a></li>
+                        <li><a href="">Quản lý tổng hợp - thống kê</a></li>
+                    </ul>
+                </div>
+                <div class="cot">
+                    <h4>Trung tâm dạy học tin học ngắn hạn
+                    </h4>
+                    <!-- <ul>
+                        <li><a href="">Chi tiết của web</a></li>
+                        <li><a href="">Quản lý người học</a></li>
+                        <li><a href="">Quản lý chuyên đề</a></li>
+                        <li><a href="">Quản lý khóa học</a></li>
+                        <li><a href="">Quản lý học viên</a></li>
+                        <li><a href="">Quản lý tổng hợp - thống kê</a></li>
+                    </ul> -->
+                    <div class="poly">
+                        <a href="#">
+                            <i class="ong">
+                                <img src="../Image/ongvang.png" alt="">
+                            </i>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
