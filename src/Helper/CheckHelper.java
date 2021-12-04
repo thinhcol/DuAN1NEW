@@ -96,9 +96,8 @@ public class CheckHelper {
     }
 
     public static boolean checkCMND(JTextField txt) {
-
         String id = txt.getText();
-        String rgx = "[0-9]{9, 12}";
+        String rgx = "[0-9]{9}";
         if (id.matches(rgx)) {
             txt.setBackground(white);
             return true;

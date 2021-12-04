@@ -34,6 +34,7 @@ public class PhongJPanel extends javax.swing.JPanel {
         initComponents();
         this.load();
         this.setStatus(true);
+        txtMaNV.setText(ShareHelper.user.getMaNV());
     }
 
     /**
@@ -87,6 +88,7 @@ public class PhongJPanel extends javax.swing.JPanel {
         jLabel39.setText("Mã nhân viên");
 
         txtMaNV.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtMaNV.setEnabled(false);
 
         jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_search_more_35px.png"))); // NOI18N
 
@@ -657,6 +659,7 @@ public class PhongJPanel extends javax.swing.JPanel {
     void clear() {
         this.setModel(new Phong());
         this.setStatus(true);
+        txtMaNV.setText(ShareHelper.user.getMaNV());
     }
 
     void setStatus(boolean insertable) {
