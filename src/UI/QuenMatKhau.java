@@ -139,7 +139,7 @@ public class QuenMatKhau extends javax.swing.JDialog {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 370, 450));
 
         jLabel4.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(253, 174, 143));
+        jLabel4.setForeground(new java.awt.Color(0, 0, 153));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Đổi mật khẩu bằng email");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 390, 20));

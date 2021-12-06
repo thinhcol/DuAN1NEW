@@ -85,56 +85,77 @@ public class NhanVienJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(1400, 875));
 
-        jLabel23.setFont(new java.awt.Font("Monospaced", 1, 36)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(255, 153, 153));
+        jLabel23.setFont(new java.awt.Font("Monospaced", 1, 48)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(50, 133, 253));
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel23.setText("QUẢN LÝ NHÂN VIÊN");
 
-        jLabel25.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_orcid_35px.png"))); // NOI18N
+        jLabel25.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel25.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/maNhanVien.png"))); // NOI18N
         jLabel25.setText("Mã nhân viên");
 
-        txtMaNV.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtMaNV.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtMaNV.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
 
-        jLabel30.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_name_35px_1.png"))); // NOI18N
+        jLabel30.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel30.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/hoTen.png"))); // NOI18N
         jLabel30.setText("Họ tên");
 
-        txtHoTen.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtHoTen.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtHoTen.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
 
-        jLabel31.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_gender_35px.png"))); // NOI18N
+        jLabel31.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel31.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/gioiTinh.png"))); // NOI18N
         jLabel31.setText("Giới tính");
 
-        txtEmail.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtEmail.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
 
-        jLabel32.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_new_message_35px.png"))); // NOI18N
+        jLabel32.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel32.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/email.png"))); // NOI18N
         jLabel32.setText("Email");
 
-        txtSDT.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtSDT.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtSDT.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
 
-        jLabel33.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_phone_35px_1.png"))); // NOI18N
+        jLabel33.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel33.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/dienThoai.png"))); // NOI18N
         jLabel33.setText("Số điện thoại");
 
-        jLabel34.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_resume_35px_1.png"))); // NOI18N
+        jLabel34.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel34.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/chucVu.png"))); // NOI18N
         jLabel34.setText("Chức vụ");
 
         CboGioiTinh.setEditable(true);
-        CboGioiTinh.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        CboGioiTinh.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         CboGioiTinh.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nam", "Nữ" }));
+        CboGioiTinh.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
 
         CboVaiTro.setEditable(true);
-        CboVaiTro.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        CboVaiTro.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         CboVaiTro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cán bộ", "Quản giáo" }));
+        CboVaiTro.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
 
-        jLabel29.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_secure_35px_1.png"))); // NOI18N
+        jLabel29.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel29.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/matKhau.png"))); // NOI18N
         jLabel29.setText("Mật khẩu");
 
-        txtMatKhau.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtMatKhau.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtMatKhau.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
 
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_search_more_35px.png"))); // NOI18N
 
@@ -146,8 +167,9 @@ public class NhanVienJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnNew.setBackground(new java.awt.Color(255, 255, 255));
-        btnNew.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnNew.setBackground(new java.awt.Color(50, 133, 253));
+        btnNew.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnNew.setForeground(new java.awt.Color(255, 255, 255));
         btnNew.setText("MỚI");
         btnNew.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnNew.setContentAreaFilled(false);
@@ -166,8 +188,9 @@ public class NhanVienJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnInsert.setBackground(new java.awt.Color(255, 255, 255));
-        btnInsert.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnInsert.setBackground(new java.awt.Color(50, 133, 253));
+        btnInsert.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnInsert.setForeground(new java.awt.Color(255, 255, 255));
         btnInsert.setText("THÊM");
         btnInsert.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnInsert.setContentAreaFilled(false);
@@ -186,8 +209,9 @@ public class NhanVienJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnUpdate.setBackground(new java.awt.Color(255, 255, 255));
-        btnUpdate.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnUpdate.setBackground(new java.awt.Color(50, 133, 253));
+        btnUpdate.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("CẬP NHẬT");
         btnUpdate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnUpdate.setContentAreaFilled(false);
@@ -206,8 +230,9 @@ public class NhanVienJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnDelete.setBackground(new java.awt.Color(255, 255, 255));
-        btnDelete.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnDelete.setBackground(new java.awt.Color(50, 133, 253));
+        btnDelete.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("XÓA");
         btnDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnDelete.setContentAreaFilled(false);
@@ -226,7 +251,8 @@ public class NhanVienJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnQR.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnQR.setBackground(new java.awt.Color(50, 133, 253));
+        btnQR.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         btnQR.setText("Tạo QR CODE");
         btnQR.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnQR.setContentAreaFilled(false);
@@ -236,7 +262,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
             }
         });
 
-        tblNhanVien.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        tblNhanVien.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         tblNhanVien.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -280,7 +306,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
         });
         jScrollPane9.setViewportView(tblNhanVien);
 
-        btnFirst.setBackground(new java.awt.Color(255, 255, 255));
+        btnFirst.setBackground(new java.awt.Color(50, 133, 253));
         btnFirst.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         btnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_first_1_35px.png"))); // NOI18N
         btnFirst.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -300,7 +326,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnPrev.setBackground(new java.awt.Color(255, 255, 255));
+        btnPrev.setBackground(new java.awt.Color(50, 133, 253));
         btnPrev.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         btnPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_left_35px.png"))); // NOI18N
         btnPrev.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -320,7 +346,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnNext.setBackground(new java.awt.Color(255, 255, 255));
+        btnNext.setBackground(new java.awt.Color(50, 133, 253));
         btnNext.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_right_35px.png"))); // NOI18N
         btnNext.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -340,7 +366,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnLast.setBackground(new java.awt.Color(255, 255, 255));
+        btnLast.setBackground(new java.awt.Color(50, 133, 253));
         btnLast.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_last_1_35px.png"))); // NOI18N
         btnLast.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -364,7 +390,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
 
         lblHinh.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lblHinh.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblHinh.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.gray));
+        lblHinh.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
         lblHinh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblHinhMouseClicked(evt);
@@ -440,7 +466,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
                                     .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addComponent(btnQR, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
                                 .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -454,9 +480,8 @@ public class NhanVienJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(25, 25, 25)
                 .addComponent(jLabel23)
-                .addGap(25, 25, 25)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -511,7 +536,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
                     .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -747,6 +772,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
                 try {
                     dao.update(model);
                     this.load();
+                    this.clear();
                     DialogHelper.alert(this, "Cập nhật thành công!");
                 } catch (Exception e) {
                     DialogHelper.alert(this, "Cập nhật thất bại!");
@@ -774,6 +800,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
     void clear() {
         this.setModel(new NhanVien());
         this.setStatus(true);
+        lblHinh.setIcon(null);
     }
 
     void edit() {

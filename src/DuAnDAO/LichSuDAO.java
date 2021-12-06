@@ -18,18 +18,18 @@ import java.util.List;
 public class LichSuDAO {
     
     String insert = "INSERT INTO LichSuBenhNhan VALUES (?, ?, ?, ?)";
-    String delete = "DELETE FROM LichSuBenhNhan WHERE MaBN like ?";
+    String delete = "DELETE FROM LichSuBenhNhan WHERE STT like ?";
     String update = "Update LichSuBenhNhan set HoTen=?"
-            +  "NgayVT = ?, NgayRT = ? Where MaBN=?";
+            +  "NgayVT = ?, ThoiGianO = ? Where STT=?";
     String selectAll = "SELECT * FROM LichSuBenhNhan";
-    String selectByID = "SELECT * FROM LichSuBenhNhan WHERE MaBN=?";
+    String selectByID = "SELECT * FROM LichSuBenhNhan WHERE STT=?";
 
     public void insert(LichSu entity) {
         JdbcHelper.executeUpdate(insert,
                 entity.getMaBN(),
                 entity.getHoTen(),
                 entity.getNgayVT(),
-                entity.getNgayRT()
+                entity.getThoiGianO()
         );
     }
 
@@ -46,7 +46,7 @@ public class LichSuDAO {
         JdbcHelper.executeUpdate(update,
                 entity.getHoTen(),
                 entity.getNgayVT(),
-                entity.getNgayRT(),
+                entity.getThoiGianO(),
                  entity.getMaBN()
         );
     }
@@ -73,7 +73,7 @@ public class LichSuDAO {
                 entity.setMaBN(rs.getInt("MaBN"));
                 entity.setHoTen(rs.getString("HoTen"));
                 entity.setNgayVT(rs.getDate("NgayVT"));
-                entity.setNgayRT(rs.getDate("NgayRT"));
+                entity.setThoiGianO(rs.getInt("ThoiGianO"));
                 list.add(entity);
             }
             rs.getStatement().getConnection().close();

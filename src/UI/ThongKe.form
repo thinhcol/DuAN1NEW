@@ -41,11 +41,9 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="pnlDoanhThu" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="cboDT" alignment="0" pref="801" max="32767" attributes="0"/>
-                          <Component id="pnlDV" alignment="0" max="32767" attributes="0"/>
-                          <Component id="cboDV" alignment="0" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="cboDT" alignment="0" pref="801" max="32767" attributes="0"/>
+                      <Component id="pnlDV" alignment="0" max="32767" attributes="0"/>
+                      <Component id="cboDV" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">

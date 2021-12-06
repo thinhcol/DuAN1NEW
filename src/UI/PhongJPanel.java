@@ -72,22 +72,26 @@ public class PhongJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(1400, 875));
 
-        jLabel35.setFont(new java.awt.Font("Monospaced", 1, 36)); // NOI18N
-        jLabel35.setForeground(new java.awt.Color(255, 153, 153));
+        jLabel35.setFont(new java.awt.Font("Monospaced", 1, 48)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(50, 133, 253));
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel35.setText("QUẢN LÝ PHÒNG");
 
-        jLabel38.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_home_35px.png"))); // NOI18N
+        jLabel38.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/maPhong.png"))); // NOI18N
         jLabel38.setText("Mã phòng");
 
-        txtMaPhong.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtMaPhong.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtMaPhong.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
 
-        jLabel39.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_binary_file_35px.png"))); // NOI18N
+        jLabel39.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/maNhanVien.png"))); // NOI18N
         jLabel39.setText("Mã nhân viên");
 
-        txtMaNV.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtMaNV.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtMaNV.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
         txtMaNV.setEnabled(false);
 
         jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_search_more_35px.png"))); // NOI18N
@@ -100,12 +104,14 @@ public class PhongJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel47.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_Numbers_35px.png"))); // NOI18N
+        jLabel47.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/gia.png"))); // NOI18N
         jLabel47.setText("Giá");
 
-        btnNew.setBackground(new java.awt.Color(255, 255, 255));
-        btnNew.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnNew.setBackground(new java.awt.Color(50, 133, 253));
+        btnNew.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnNew.setForeground(new java.awt.Color(255, 255, 255));
         btnNew.setText("MỚI");
         btnNew.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnNew.setContentAreaFilled(false);
@@ -124,8 +130,9 @@ public class PhongJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnInsert.setBackground(new java.awt.Color(255, 255, 255));
-        btnInsert.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnInsert.setBackground(new java.awt.Color(50, 133, 253));
+        btnInsert.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnInsert.setForeground(new java.awt.Color(255, 255, 255));
         btnInsert.setText("THÊM");
         btnInsert.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnInsert.setContentAreaFilled(false);
@@ -144,8 +151,9 @@ public class PhongJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnUpdate.setBackground(new java.awt.Color(255, 255, 255));
-        btnUpdate.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnUpdate.setBackground(new java.awt.Color(50, 133, 253));
+        btnUpdate.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("CẬP NHẬT");
         btnUpdate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnUpdate.setContentAreaFilled(false);
@@ -164,8 +172,9 @@ public class PhongJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnDelete.setBackground(new java.awt.Color(255, 255, 255));
-        btnDelete.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnDelete.setBackground(new java.awt.Color(50, 133, 253));
+        btnDelete.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("XÓA");
         btnDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnDelete.setContentAreaFilled(false);
@@ -184,7 +193,7 @@ public class PhongJPanel extends javax.swing.JPanel {
             }
         });
 
-        tblPhong.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        tblPhong.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         tblPhong.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -226,8 +235,9 @@ public class PhongJPanel extends javax.swing.JPanel {
         });
         jScrollPane10.setViewportView(tblPhong);
 
-        btnFirst.setBackground(new java.awt.Color(255, 255, 255));
+        btnFirst.setBackground(new java.awt.Color(50, 133, 253));
         btnFirst.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnFirst.setForeground(new java.awt.Color(255, 255, 255));
         btnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_first_1_35px.png"))); // NOI18N
         btnFirst.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnFirst.setContentAreaFilled(false);
@@ -246,8 +256,9 @@ public class PhongJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnPrev.setBackground(new java.awt.Color(255, 255, 255));
+        btnPrev.setBackground(new java.awt.Color(50, 133, 253));
         btnPrev.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnPrev.setForeground(new java.awt.Color(255, 255, 255));
         btnPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_left_35px.png"))); // NOI18N
         btnPrev.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnPrev.setContentAreaFilled(false);
@@ -266,8 +277,9 @@ public class PhongJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnNext.setBackground(new java.awt.Color(255, 255, 255));
+        btnNext.setBackground(new java.awt.Color(50, 133, 253));
         btnNext.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnNext.setForeground(new java.awt.Color(255, 255, 255));
         btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_right_35px.png"))); // NOI18N
         btnNext.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnNext.setContentAreaFilled(false);
@@ -286,8 +298,9 @@ public class PhongJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnLast.setBackground(new java.awt.Color(255, 255, 255));
+        btnLast.setBackground(new java.awt.Color(50, 133, 253));
         btnLast.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnLast.setForeground(new java.awt.Color(255, 255, 255));
         btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_last_1_35px.png"))); // NOI18N
         btnLast.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnLast.setContentAreaFilled(false);
@@ -306,13 +319,14 @@ public class PhongJPanel extends javax.swing.JPanel {
             }
         });
 
-        txtGia.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtGia.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtGia.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         lblHinh.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lblHinh.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblHinh.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.gray));
+        lblHinh.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
         lblHinh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblHinhMouseClicked(evt);
@@ -355,7 +369,7 @@ public class PhongJPanel extends javax.swing.JPanel {
                     .addComponent(txtGia))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 494, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 488, Short.MAX_VALUE)
                         .addComponent(jLabel45)
                         .addGap(0, 0, 0)
                         .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -385,9 +399,8 @@ public class PhongJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(25, 25, 25)
                 .addComponent(jLabel35)
-                .addGap(25, 25, 25)
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -423,7 +436,7 @@ public class PhongJPanel extends javax.swing.JPanel {
                         .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -659,6 +672,7 @@ public class PhongJPanel extends javax.swing.JPanel {
     void clear() {
         this.setModel(new Phong());
         this.setStatus(true);
+        lblHinh.setIcon(null);
         txtMaNV.setText(ShareHelper.user.getMaNV());
     }
 

@@ -15,7 +15,7 @@ public class LichSu {
     private int MaBN,STT;
     private String HoTen;
     private Date NgayVT;
-    private Date NgayRT;
+    private int ThoiGianO;
 
     public int getSTT() {
         return STT;
@@ -49,11 +49,13 @@ public class LichSu {
         this.NgayVT = NgayVT;
     }
 
-    public Date getNgayRT() {
-        return NgayRT;
+    public int getThoiGianO() {
+        return ThoiGianO;
     }
 
-    public void setNgayRT(Date NgayRT) {
-        this.NgayRT = NgayRT;
+    public void setThoiGianO(int ThoiGianO) {
+        this.ThoiGianO = ThoiGianO;
     }
+
+    
 }

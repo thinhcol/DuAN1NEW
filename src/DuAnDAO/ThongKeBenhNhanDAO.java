@@ -9,7 +9,9 @@ import Entity.ThongKeBenhNhan;
 import Entity.ThongKeDoanhThu;
 import Helper.JdbcHelper;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -34,5 +36,28 @@ public class ThongKeBenhNhanDAO {
             return null;
         }
 
+    }
+      public List<Object[]> getBenhNhan(int nam) {
+        List<Object[]> list = new ArrayList<>();
+        try {
+            ResultSet rs = null;
+            try {
+                String sql = "{call sp_ThongKeSoLuongBN (?)}";
+                rs = JdbcHelper.executeQuery(sql,nam);
+                while (rs.next()) {
+                    Object[] model = {
+                        rs.getString("MaPhong"),
+                        rs.getInt("Soluongbenhnhan")
+                       
+                    };
+                    list.add(model);
+                }
+            } finally {
+                rs.getStatement().getConnection().close();
+            }
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+        return list;
     }
 }

@@ -8,7 +8,9 @@ package DuAnDAO;
 import Entity.ThongKeDoanhThu;
 import Helper.JdbcHelper;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -36,5 +38,30 @@ public class ThongKeDoanhThuDAO {
             return null;
         }
 
+    }
+     public List<Object[]> getDoanhThu(int nam) {
+        List<Object[]> list = new ArrayList<>();
+        try {
+            ResultSet rs = null;
+            try {
+                String sql = "{call sp_ThongKeDoanhThu (?)}";
+                rs = JdbcHelper.executeQuery(sql, nam);
+                while (rs.next()) {
+                    Object[] model = {
+                        rs.getString("Phong"),
+                        rs.getInt("Soluongbenhnhan"),
+                        rs.getDouble("TongTien"),
+                        rs.getDouble("TienNhoNhat"),
+                        rs.getDouble("TienLonNhat")
+                    };
+                    list.add(model);
+                }
+            } finally {
+                rs.getStatement().getConnection().close();
+            }
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+        return list;
     }
 }

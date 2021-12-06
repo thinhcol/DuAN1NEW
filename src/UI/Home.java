@@ -225,14 +225,14 @@ public class Home extends javax.swing.JFrame {
         btnMenu.setOpaque(true);
         btnMenu.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_menu_25px_1.png"))); // NOI18N
         btnMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnMenuMouseClicked(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnMenuMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnMenuMouseExited(evt);
+            }
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMenuMouseClicked(evt);
             }
         });
         btnMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -277,7 +277,7 @@ public class Home extends javax.swing.JFrame {
         });
         pnlBody.setLayout(new java.awt.CardLayout());
 
-        pnlTrangChu.setBackground(new java.awt.Color(255, 255, 255));
+        pnlTrangChu.setBackground(new java.awt.Color(51, 204, 255));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 1, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(1, 156, 246));
@@ -596,19 +596,6 @@ public class Home extends javax.swing.JFrame {
 
         pnlQuanLyBN.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout pnlQuanLyBNLayout = new javax.swing.GroupLayout(pnlQuanLyBN);
-        pnlQuanLyBN.setLayout(pnlQuanLyBNLayout);
-        pnlQuanLyBNLayout.setHorizontalGroup(
-            pnlQuanLyBNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        pnlQuanLyBNLayout.setVerticalGroup(
-            pnlQuanLyBNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1445, Short.MAX_VALUE)
-        );
-
-        pnlBody.add(pnlQuanLyBN, "card2");
-
         pnlQuanLyBA.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout pnlQuanLyBALayout = new javax.swing.GroupLayout(pnlQuanLyBA);
@@ -622,7 +609,28 @@ public class Home extends javax.swing.JFrame {
             .addGap(0, 1445, Short.MAX_VALUE)
         );
 
-        pnlBody.add(pnlQuanLyBA, "card3");
+        javax.swing.GroupLayout pnlQuanLyBNLayout = new javax.swing.GroupLayout(pnlQuanLyBN);
+        pnlQuanLyBN.setLayout(pnlQuanLyBNLayout);
+        pnlQuanLyBNLayout.setHorizontalGroup(
+            pnlQuanLyBNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(pnlQuanLyBNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlQuanLyBNLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(pnlQuanLyBA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        pnlQuanLyBNLayout.setVerticalGroup(
+            pnlQuanLyBNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1445, Short.MAX_VALUE)
+            .addGroup(pnlQuanLyBNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlQuanLyBNLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(pnlQuanLyBA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        pnlBody.add(pnlQuanLyBN, "card2");
 
         pnlQuanLyNV.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1338,8 +1346,8 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(pnlHoaDon, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
                     .addComponent(pnlThanNhan, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-                    .addComponent(pnlAvatar, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-                    .addComponent(pnlQuanLyItem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(pnlQuanLyItem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(pnlMenuLayout.createSequentialGroup()
                 .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1395,7 +1403,6 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(pnlFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pnlBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlFormLayout.createSequentialGroup()
-                        .addGap(0, 0, 0)
                         .addComponent(pnlMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 855, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
@@ -1408,12 +1415,10 @@ public class Home extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(pnlForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        setSize(new java.awt.Dimension(1900, 890));
+        setSize(new java.awt.Dimension(1900, 906));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

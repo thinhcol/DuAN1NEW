@@ -80,30 +80,36 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(1400, 875));
 
-        jLabel65.setFont(new java.awt.Font("Monospaced", 1, 36)); // NOI18N
-        jLabel65.setForeground(new java.awt.Color(255, 153, 153));
+        jLabel65.setFont(new java.awt.Font("Monospaced", 1, 48)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(50, 133, 253));
         jLabel65.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel65.setText("QUẢN LÝ HOẠT ĐỘNG");
 
+        pnlHoatDong.setBackground(new java.awt.Color(255, 255, 255));
         pnlHoatDong.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204)));
 
-        jLabel67.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel67.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_paid_bill_35px.png"))); // NOI18N
+        jLabel67.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel67.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel67.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/tenHoatDong.png"))); // NOI18N
         jLabel67.setText("Tên hoạt động");
 
         txtTenHD.setBackground(new java.awt.Color(240, 240, 240));
-        txtTenHD.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtTenHD.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtTenHD.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
 
-        jLabel70.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel70.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_term_35px_1.png"))); // NOI18N
+        jLabel70.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel70.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel70.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/moTa.png"))); // NOI18N
         jLabel70.setText("Mô tả");
 
         txtGhiChu.setBackground(new java.awt.Color(240, 240, 240));
         txtGhiChu.setColumns(20);
+        txtGhiChu.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         txtGhiChu.setRows(5);
+        txtGhiChu.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
         jScrollPane15.setViewportView(txtGhiChu);
 
-        tblHoatDong.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        tblHoatDong.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         tblHoatDong.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -147,8 +153,9 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         });
         jScrollPane14.setViewportView(tblHoatDong);
 
-        btnNew.setBackground(new java.awt.Color(255, 255, 255));
-        btnNew.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnNew.setBackground(new java.awt.Color(50, 133, 253));
+        btnNew.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnNew.setForeground(new java.awt.Color(255, 255, 255));
         btnNew.setText("MỚI");
         btnNew.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnNew.setContentAreaFilled(false);
@@ -159,8 +166,9 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnInsert.setBackground(new java.awt.Color(255, 255, 255));
-        btnInsert.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnInsert.setBackground(new java.awt.Color(50, 133, 253));
+        btnInsert.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnInsert.setForeground(new java.awt.Color(255, 255, 255));
         btnInsert.setText("THÊM");
         btnInsert.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnInsert.setContentAreaFilled(false);
@@ -171,8 +179,9 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnUpdate.setBackground(new java.awt.Color(255, 255, 255));
-        btnUpdate.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnUpdate.setBackground(new java.awt.Color(50, 133, 253));
+        btnUpdate.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("CẬP NHẬT");
         btnUpdate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnUpdate.setContentAreaFilled(false);
@@ -183,8 +192,9 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnDelete.setBackground(new java.awt.Color(255, 255, 255));
-        btnDelete.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnDelete.setBackground(new java.awt.Color(50, 133, 253));
+        btnDelete.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("XÓA");
         btnDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnDelete.setContentAreaFilled(false);
@@ -195,8 +205,9 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnFirst.setBackground(new java.awt.Color(255, 255, 255));
+        btnFirst.setBackground(new java.awt.Color(50, 133, 253));
         btnFirst.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnFirst.setForeground(new java.awt.Color(255, 255, 255));
         btnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_first_1_35px.png"))); // NOI18N
         btnFirst.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnFirst.setContentAreaFilled(false);
@@ -207,8 +218,9 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnPrev.setBackground(new java.awt.Color(255, 255, 255));
+        btnPrev.setBackground(new java.awt.Color(50, 133, 253));
         btnPrev.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnPrev.setForeground(new java.awt.Color(255, 255, 255));
         btnPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_left_35px.png"))); // NOI18N
         btnPrev.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnPrev.setContentAreaFilled(false);
@@ -219,8 +231,9 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnNext.setBackground(new java.awt.Color(255, 255, 255));
+        btnNext.setBackground(new java.awt.Color(50, 133, 253));
         btnNext.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnNext.setForeground(new java.awt.Color(255, 255, 255));
         btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_right_35px.png"))); // NOI18N
         btnNext.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnNext.setContentAreaFilled(false);
@@ -231,8 +244,9 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnLast.setBackground(new java.awt.Color(255, 255, 255));
+        btnLast.setBackground(new java.awt.Color(50, 133, 253));
         btnLast.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnLast.setForeground(new java.awt.Color(255, 255, 255));
         btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_last_1_35px.png"))); // NOI18N
         btnLast.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnLast.setContentAreaFilled(false);
@@ -340,17 +354,20 @@ public class HoatDongJPanel extends javax.swing.JPanel {
                     .addContainerGap(168, Short.MAX_VALUE)))
         );
 
+        pnlHoatDong1.setBackground(new java.awt.Color(255, 255, 255));
         pnlHoatDong1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204)));
 
-        jLabel69.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel69.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_orcid_35px.png"))); // NOI18N
+        jLabel69.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel69.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel69.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/tenBN.png"))); // NOI18N
         jLabel69.setText("Tên bệnh nhân");
 
-        jLabel71.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel71.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_theme_park_35px.png"))); // NOI18N
+        jLabel71.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel71.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel71.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/tenHoatDong.png"))); // NOI18N
         jLabel71.setText("Tên hoạt động");
 
-        tblCTHoatDong.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        tblCTHoatDong.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         tblCTHoatDong.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -394,8 +411,9 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         });
         jScrollPane17.setViewportView(tblCTHoatDong);
 
-        btnNew1.setBackground(new java.awt.Color(255, 255, 255));
-        btnNew1.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnNew1.setBackground(new java.awt.Color(50, 133, 253));
+        btnNew1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnNew1.setForeground(new java.awt.Color(255, 255, 255));
         btnNew1.setText("MỚI");
         btnNew1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnNew1.setContentAreaFilled(false);
@@ -406,8 +424,9 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnInsert1.setBackground(new java.awt.Color(255, 255, 255));
-        btnInsert1.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnInsert1.setBackground(new java.awt.Color(50, 133, 253));
+        btnInsert1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnInsert1.setForeground(new java.awt.Color(255, 255, 255));
         btnInsert1.setText("THÊM");
         btnInsert1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnInsert1.setContentAreaFilled(false);
@@ -418,8 +437,9 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnDelete1.setBackground(new java.awt.Color(255, 255, 255));
-        btnDelete1.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnDelete1.setBackground(new java.awt.Color(50, 133, 253));
+        btnDelete1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnDelete1.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete1.setText("XÓA");
         btnDelete1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnDelete1.setContentAreaFilled(false);
@@ -430,25 +450,37 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel73.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel73.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_timeline_week_35px_1.png"))); // NOI18N
+        jLabel73.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel73.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel73.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/ngayThucHien.png"))); // NOI18N
         jLabel73.setText("Ngày thực hiện");
 
-        jLabel74.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel74.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_term_35px_1.png"))); // NOI18N
+        txtNgayThucHien.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
+        txtNgayThucHien.setDateFormatString("dd/MM/yyyy");
+        txtNgayThucHien.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+
+        jLabel74.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel74.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel74.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/ghiChu.png"))); // NOI18N
         jLabel74.setText("Ghi chú");
 
         txtGhiChu2.setBackground(new java.awt.Color(240, 240, 240));
         txtGhiChu2.setColumns(20);
+        txtGhiChu2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         txtGhiChu2.setRows(5);
+        txtGhiChu2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
         jScrollPane18.setViewportView(txtGhiChu2);
 
+        cboTenBN.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        cboTenBN.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
         cboTenBN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboTenBNActionPerformed(evt);
             }
         });
 
+        cboTenHoatDong.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        cboTenHoatDong.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
         cboTenHoatDong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboTenHoatDongActionPerformed(evt);
@@ -533,13 +565,12 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(25, 25, 25)
                 .addComponent(jLabel65)
-                .addGap(25, 25, 25)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(pnlHoatDong1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pnlHoatDong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

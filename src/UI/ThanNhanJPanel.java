@@ -375,33 +375,40 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel17.setFont(new java.awt.Font("Monospaced", 1, 36)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 153, 153));
+        jLabel17.setFont(new java.awt.Font("Monospaced", 1, 48)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(50, 133, 253));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("QUẢN LÝ THÂN NHÂN");
 
-        lblHoTen.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        lblHoTen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_name_35px_1.png"))); // NOI18N
+        lblHoTen.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lblHoTen.setForeground(new java.awt.Color(102, 102, 102));
+        lblHoTen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/hoTen.png"))); // NOI18N
         lblHoTen.setText("Họ tên");
 
-        txtHoten.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtHoten.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtHoten.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
 
-        lblGioiTinh.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        lblGioiTinh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_gender_35px.png"))); // NOI18N
+        lblGioiTinh.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lblGioiTinh.setForeground(new java.awt.Color(102, 102, 102));
+        lblGioiTinh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/maBN.png"))); // NOI18N
         lblGioiTinh.setText("Bệnh nhân");
 
-        txtMaTN.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtMaTN.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtMaTN.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
 
-        lblDiaChi.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        lblDiaChi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_address_35px.png"))); // NOI18N
+        lblDiaChi.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lblDiaChi.setForeground(new java.awt.Color(102, 102, 102));
+        lblDiaChi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/maThanNhan.png"))); // NOI18N
         lblDiaChi.setText("Mã thân nhân");
 
-        lblCMND.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        lblCMND.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_term_35px_1.png"))); // NOI18N
+        lblCMND.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lblCMND.setForeground(new java.awt.Color(102, 102, 102));
+        lblCMND.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/matKhau.png"))); // NOI18N
         lblCMND.setText("Mật khẩu");
 
         cboTenBN.setEditable(true);
-        cboTenBN.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        cboTenBN.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        cboTenBN.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
         cboTenBN.setFocusable(false);
         cboTenBN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -409,8 +416,9 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnClear.setBackground(new java.awt.Color(255, 255, 255));
-        btnClear.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnClear.setBackground(new java.awt.Color(50, 133, 253));
+        btnClear.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnClear.setForeground(new java.awt.Color(255, 255, 255));
         btnClear.setText("MỚI");
         btnClear.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnClear.setContentAreaFilled(false);
@@ -429,8 +437,9 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnInsert.setBackground(new java.awt.Color(255, 255, 255));
-        btnInsert.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnInsert.setBackground(new java.awt.Color(50, 133, 253));
+        btnInsert.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnInsert.setForeground(new java.awt.Color(255, 255, 255));
         btnInsert.setText("THÊM");
         btnInsert.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnInsert.setContentAreaFilled(false);
@@ -449,8 +458,9 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnUpdate.setBackground(new java.awt.Color(255, 255, 255));
-        btnUpdate.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnUpdate.setBackground(new java.awt.Color(50, 133, 253));
+        btnUpdate.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("CẬP NHẬT");
         btnUpdate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnUpdate.setContentAreaFilled(false);
@@ -469,8 +479,9 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnDelete.setBackground(new java.awt.Color(255, 255, 255));
-        btnDelete.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnDelete.setBackground(new java.awt.Color(50, 133, 253));
+        btnDelete.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("XÓA");
         btnDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnDelete.setContentAreaFilled(false);
@@ -495,7 +506,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
         txtTimKiem.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
         txtTimKiem.setMaximumSize(new java.awt.Dimension(100, 100));
 
-        tblGridView.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        tblGridView.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         tblGridView.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"01", "01", "01", "Nguyễn Văn Sơn", "Nam"},
@@ -540,8 +551,9 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
         });
         jScrollPane7.setViewportView(tblGridView);
 
-        btnNext.setBackground(new java.awt.Color(255, 255, 255));
+        btnNext.setBackground(new java.awt.Color(50, 133, 253));
         btnNext.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnNext.setForeground(new java.awt.Color(255, 255, 255));
         btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_right_35px.png"))); // NOI18N
         btnNext.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnNext.setContentAreaFilled(false);
@@ -560,8 +572,9 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnLast.setBackground(new java.awt.Color(255, 255, 255));
+        btnLast.setBackground(new java.awt.Color(50, 133, 253));
         btnLast.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnLast.setForeground(new java.awt.Color(255, 255, 255));
         btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_last_1_35px.png"))); // NOI18N
         btnLast.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnLast.setContentAreaFilled(false);
@@ -580,8 +593,9 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnFirst.setBackground(new java.awt.Color(255, 255, 255));
+        btnFirst.setBackground(new java.awt.Color(50, 133, 253));
         btnFirst.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnFirst.setForeground(new java.awt.Color(255, 255, 255));
         btnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_first_1_35px.png"))); // NOI18N
         btnFirst.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnFirst.setContentAreaFilled(false);
@@ -600,8 +614,9 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnPrev.setBackground(new java.awt.Color(255, 255, 255));
+        btnPrev.setBackground(new java.awt.Color(50, 133, 253));
         btnPrev.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnPrev.setForeground(new java.awt.Color(255, 255, 255));
         btnPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_left_35px.png"))); // NOI18N
         btnPrev.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnPrev.setContentAreaFilled(false);
@@ -620,14 +635,20 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblEmailThanNhan1.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        lblEmailThanNhan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_new_message_35px.png"))); // NOI18N
+        lblEmailThanNhan1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lblEmailThanNhan1.setForeground(new java.awt.Color(102, 102, 102));
+        lblEmailThanNhan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/email.png"))); // NOI18N
         lblEmailThanNhan1.setText("Email");
 
-        txtEmail.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtEmail.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
 
-        btnExcel1.setBackground(new java.awt.Color(255, 255, 255));
-        btnExcel1.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        txtpass.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtpass.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
+
+        btnExcel1.setBackground(new java.awt.Color(50, 133, 253));
+        btnExcel1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnExcel1.setForeground(new java.awt.Color(255, 255, 255));
         btnExcel1.setText("Excel");
         btnExcel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnExcel1.setContentAreaFilled(false);
@@ -690,9 +711,8 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel17)
-                .addGap(44, 44, 44)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -734,7 +754,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
                     .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnExcel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -81,7 +81,7 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
 
         lblChucNang.setBackground(new java.awt.Color(0, 0, 153));
         lblChucNang.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        lblChucNang.setForeground(new java.awt.Color(153, 43, 31));
+        lblChucNang.setForeground(new java.awt.Color(0, 0, 153));
         lblChucNang.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblChucNang.setText("ĐỔI MẬT KHẨU");
 
@@ -97,7 +97,7 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
         lblName.setText("Xin chào ! Chúng tôi là Euphoria");
 
         lblDangNhap.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        lblDangNhap.setForeground(new java.awt.Color(223, 86, 38));
+        lblDangNhap.setForeground(new java.awt.Color(0, 0, 153));
         lblDangNhap.setText("Tên đăng nhập");
 
         txtMaNV.setEditable(false);
@@ -105,19 +105,19 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
         txtMaNV.setForeground(new java.awt.Color(0, 102, 51));
 
         lblMK.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        lblMK.setForeground(new java.awt.Color(223, 86, 38));
+        lblMK.setForeground(new java.awt.Color(0, 0, 153));
         lblMK.setText("Mật khẩu hiện tại");
 
         txtMatKhau.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
 
         lblNewMK.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        lblNewMK.setForeground(new java.awt.Color(223, 86, 38));
+        lblNewMK.setForeground(new java.awt.Color(0, 0, 153));
         lblNewMK.setText("Mật khẩu mới");
 
         txtMatKhauMoi.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
 
         lblXNMK.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        lblXNMK.setForeground(new java.awt.Color(223, 86, 38));
+        lblXNMK.setForeground(new java.awt.Color(0, 0, 153));
         lblXNMK.setText("Xác nhận mật khẩu mới");
 
         txtXacNhanMKM.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N

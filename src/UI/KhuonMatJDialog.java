@@ -86,7 +86,7 @@ public class KhuonMatJDialog extends javax.swing.JDialog {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Monospaced", 2, 13)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(50, 133, 253));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 153));
         jLabel1.setText("Mã đăng nhập");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, 20));
 
@@ -96,13 +96,13 @@ public class KhuonMatJDialog extends javax.swing.JDialog {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 360, 290));
 
         jLabel2.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 102, 255));
+        jLabel2.setForeground(new java.awt.Color(0, 0, 153));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Xin chào! Chúng tôi là Euphoria");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, -1));
 
         jLabel3.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(92, 107, 192));
+        jLabel3.setForeground(new java.awt.Color(0, 0, 153));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Quét tài khoản để truy cập ứng dụng ");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 370, -1));
@@ -140,7 +140,7 @@ public class KhuonMatJDialog extends javax.swing.JDialog {
         jPanel1.add(lblid, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 150, 20));
 
         jLabel5.setFont(new java.awt.Font("Monospaced", 2, 13)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(50, 133, 253));
+        jLabel5.setForeground(new java.awt.Color(0, 0, 153));
         jLabel5.setText("Mã nhận diện");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, 20));
 

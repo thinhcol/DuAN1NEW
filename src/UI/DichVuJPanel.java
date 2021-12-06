@@ -76,19 +76,22 @@ public class DichVuJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(1400, 875));
 
-        jLabel65.setFont(new java.awt.Font("Monospaced", 1, 36)); // NOI18N
-        jLabel65.setForeground(new java.awt.Color(255, 153, 153));
+        jLabel65.setFont(new java.awt.Font("Monospaced", 1, 48)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(50, 133, 253));
         jLabel65.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel65.setText("QUẢN LÝ DỊCH VỤ");
 
+        pnlDichVu.setBackground(new java.awt.Color(255, 255, 255));
         pnlDichVu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204)));
 
-        jLabel67.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel67.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_paid_bill_35px.png"))); // NOI18N
+        jLabel67.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel67.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel67.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/tenDV.png"))); // NOI18N
         jLabel67.setText("Tên dịch vụ");
 
         txtTenDichVu.setBackground(new java.awt.Color(240, 240, 240));
-        txtTenDichVu.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtTenDichVu.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtTenDichVu.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
 
         jLabel68.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_search_more_35px.png"))); // NOI18N
 
@@ -101,12 +104,14 @@ public class DichVuJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel69.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel69.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_money_bill_wave_35px.png"))); // NOI18N
+        jLabel69.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel69.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel69.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/gia.png"))); // NOI18N
         jLabel69.setText("Giá dịch vụ");
 
-        btnNewDV.setBackground(new java.awt.Color(255, 255, 255));
-        btnNewDV.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnNewDV.setBackground(new java.awt.Color(50, 133, 253));
+        btnNewDV.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnNewDV.setForeground(new java.awt.Color(255, 255, 255));
         btnNewDV.setText("MỚI");
         btnNewDV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnNewDV.setContentAreaFilled(false);
@@ -117,8 +122,9 @@ public class DichVuJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnThemDV.setBackground(new java.awt.Color(255, 255, 255));
-        btnThemDV.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnThemDV.setBackground(new java.awt.Color(50, 133, 253));
+        btnThemDV.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnThemDV.setForeground(new java.awt.Color(255, 255, 255));
         btnThemDV.setText("THÊM");
         btnThemDV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnThemDV.setContentAreaFilled(false);
@@ -129,8 +135,9 @@ public class DichVuJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnCapNhatDV.setBackground(new java.awt.Color(255, 255, 255));
-        btnCapNhatDV.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnCapNhatDV.setBackground(new java.awt.Color(50, 133, 253));
+        btnCapNhatDV.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnCapNhatDV.setForeground(new java.awt.Color(255, 255, 255));
         btnCapNhatDV.setText("CẬP NHẬT");
         btnCapNhatDV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnCapNhatDV.setContentAreaFilled(false);
@@ -141,20 +148,25 @@ public class DichVuJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel70.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel70.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_collaboration_35px.png"))); // NOI18N
+        jLabel70.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel70.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel70.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/moTa.png"))); // NOI18N
         jLabel70.setText("Mô tả");
 
         txtGia.setBackground(new java.awt.Color(240, 240, 240));
-        txtGia.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtGia.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtGia.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
 
         txtMoTa.setBackground(new java.awt.Color(240, 240, 240));
         txtMoTa.setColumns(20);
+        txtMoTa.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         txtMoTa.setRows(5);
+        txtMoTa.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
         jScrollPane15.setViewportView(txtMoTa);
 
-        btnXoaDV.setBackground(new java.awt.Color(255, 255, 255));
-        btnXoaDV.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnXoaDV.setBackground(new java.awt.Color(50, 133, 253));
+        btnXoaDV.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnXoaDV.setForeground(new java.awt.Color(255, 255, 255));
         btnXoaDV.setText("XÓA");
         btnXoaDV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnXoaDV.setContentAreaFilled(false);
@@ -165,7 +177,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
             }
         });
 
-        tblDichVu.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        tblDichVu.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         tblDichVu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, "Karoke", "500000", "Thoải mái"},
@@ -283,14 +295,17 @@ public class DichVuJPanel extends javax.swing.JPanel {
                     .addContainerGap(95, Short.MAX_VALUE)))
         );
 
+        pnlDichVu1.setBackground(new java.awt.Color(255, 255, 255));
         pnlDichVu1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204)));
 
-        jLabel73.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel73.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_orcid_35px.png"))); // NOI18N
+        jLabel73.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel73.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel73.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/tenBN.png"))); // NOI18N
         jLabel73.setText("Tên bệnh nhân");
 
-        btnNewVDCT.setBackground(new java.awt.Color(255, 255, 255));
-        btnNewVDCT.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnNewVDCT.setBackground(new java.awt.Color(50, 133, 253));
+        btnNewVDCT.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnNewVDCT.setForeground(new java.awt.Color(255, 255, 255));
         btnNewVDCT.setText("MỚI");
         btnNewVDCT.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnNewVDCT.setContentAreaFilled(false);
@@ -301,8 +316,9 @@ public class DichVuJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnThemDVCT.setBackground(new java.awt.Color(255, 255, 255));
-        btnThemDVCT.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnThemDVCT.setBackground(new java.awt.Color(50, 133, 253));
+        btnThemDVCT.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnThemDVCT.setForeground(new java.awt.Color(255, 255, 255));
         btnThemDVCT.setText("THÊM");
         btnThemDVCT.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnThemDVCT.setContentAreaFilled(false);
@@ -313,8 +329,9 @@ public class DichVuJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnXoaDVCT.setBackground(new java.awt.Color(255, 255, 255));
-        btnXoaDVCT.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        btnXoaDVCT.setBackground(new java.awt.Color(50, 133, 253));
+        btnXoaDVCT.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnXoaDVCT.setForeground(new java.awt.Color(255, 255, 255));
         btnXoaDVCT.setText("XÓA");
         btnXoaDVCT.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnXoaDVCT.setContentAreaFilled(false);
@@ -325,7 +342,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
             }
         });
 
-        tblDichVuCT.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        tblDichVuCT.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         tblDichVuCT.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, "Karoke", "500000", "Thoải mái"},
@@ -369,31 +386,41 @@ public class DichVuJPanel extends javax.swing.JPanel {
         });
         jScrollPane13.setViewportView(tblDichVuCT);
 
-        jLabel75.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel75.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_paid_bill_35px.png"))); // NOI18N
+        jLabel75.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel75.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel75.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/tenDV.png"))); // NOI18N
         jLabel75.setText("Tên dịch vụ");
 
-        jLabel76.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel76.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_binary_file_35px.png"))); // NOI18N
+        jLabel76.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel76.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel76.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/ngayDangKy.png"))); // NOI18N
         jLabel76.setText("Ngày đăng ký");
 
-        jLabel74.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jLabel74.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_collaboration_35px.png"))); // NOI18N
+        jLabel74.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel74.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel74.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/ghiChu.png"))); // NOI18N
         jLabel74.setText("Ghi chú");
 
         txtGhiChu.setBackground(new java.awt.Color(240, 240, 240));
         txtGhiChu.setColumns(20);
+        txtGhiChu.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         txtGhiChu.setRows(5);
         jScrollPane16.setViewportView(txtGhiChu);
 
+        txtNgayDangKi.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
         txtNgayDangKi.setDateFormatString("dd/MM/yyyy");
+        txtNgayDangKi.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
 
+        cboTenDichVu.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        cboTenDichVu.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
         cboTenDichVu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboTenDichVuActionPerformed(evt);
             }
         });
 
+        cboTenBN.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        cboTenBN.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
         cboTenBN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboTenBNActionPerformed(evt);
@@ -426,7 +453,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
                         .addGroup(pnlDichVu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel73)
                             .addComponent(jLabel75))
-                        .addGap(145, 145, 145)
+                        .addGap(140, 140, 140)
                         .addComponent(cboTenDichVu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDichVu1Layout.createSequentialGroup()
                         .addComponent(btnNewVDCT, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -466,7 +493,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
                     .addComponent(btnNewVDCT, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnThemDVCT, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnXoaDVCT, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -483,13 +510,12 @@ public class DichVuJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(25, 25, 25)
                 .addComponent(jLabel65)
-                .addGap(25, 25, 25)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(pnlDichVu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pnlDichVu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

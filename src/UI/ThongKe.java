@@ -74,7 +74,7 @@ public class ThongKe extends javax.swing.JPanel {
         model.removeAllElements();
         List<HoaDon> list = hd.selectAll();
         for (HoaDon kh : list) {
-           int nam = kh.getNgayThanhToan().getYear() + 1900;
+            int nam = kh.getNgayThanhToan().getYear() + 1900;
             if (model.getIndexOf(nam) < 0) {
                 model.addElement(nam);
             }
@@ -87,7 +87,7 @@ public class ThongKe extends javax.swing.JPanel {
         model.removeAllElements();
         List<DichVuCT> list = dvct.selectAll();
         for (DichVuCT kh : list) {
-           int nam = kh.getNgayDK().getYear() + 1900;
+            int nam = kh.getNgayDK().getYear() + 1900;
             if (model.getIndexOf(nam) < 0) {
                 model.addElement(nam);
             }
@@ -115,7 +115,7 @@ public class ThongKe extends javax.swing.JPanel {
         if (nc != null) {
             for (ThongKeDoanhThu sv : nc) {
                 dataset.addValue(sv.getSum(), "Năm", sv.getPhong());
-                
+
             }
         }
         String fontName = "BertholdScript I";
@@ -134,8 +134,13 @@ public class ThongKe extends javax.swing.JPanel {
         theme.setBarPainter(new StandardBarPainter());
         theme.setAxisLabelPaint(Color.decode("#482247"));
         theme.apply(barChart);
+        CategoryPlot cplot = (CategoryPlot) barChart.getPlot();
+        ((BarRenderer) cplot.getRenderer()).setBarPainter(new StandardBarPainter());
+        BarRenderer r = (BarRenderer) barChart.getCategoryPlot().getRenderer();
+        //Đổi màu cột 1 
+        r.setSeriesPaint(0, new Color(49, 132, 252));
         TextTitle chartinfo = new TextTitle("Chú thích", new Font(fontName, Font.BOLD, 18), TextTitle.DEFAULT_TEXT_PAINT, RectangleEdge.BOTTOM, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, RectangleInsets.ZERO_INSETS);
-        barChart.addSubtitle(chartinfo);        
+        barChart.addSubtitle(chartinfo);
         ChartPanel chartPanel = new ChartPanel(barChart);
         chartPanel.setPreferredSize(new Dimension(jpnItem.getWidth(), 350));
         jpnItem.removeAll();
@@ -152,14 +157,14 @@ public class ThongKe extends javax.swing.JPanel {
         if (nc != null) {
             for (ThongKeDichVu sv : nc) {
                 dataset.setValue(sv.getTenDV(), sv.getSoluongBN());
-                
+
             }
         }
         String fontName = "BertholdScript I";
         JFreeChart barChart = ChartFactory.createPieChart3D("Biểu đồ thống kê dịch vụ", dataset, true, true, true);
         PiePlot3D p = (PiePlot3D) barChart.getPlot();
         StandardChartTheme theme = (StandardChartTheme) org.jfree.chart.StandardChartTheme.createJFreeTheme();
-        
+
         theme.setTitlePaint(Color.decode("#4572a7"));
         theme.setExtraLargeFont(new Font(fontName, Font.PLAIN, 16)); //title
         theme.setLargeFont(new Font(fontName, Font.BOLD, 15)); //axis-title
@@ -190,7 +195,7 @@ public class ThongKe extends javax.swing.JPanel {
         if (nc != null) {
             for (ThongKeBenhNhan sv : nc) {
                 dataset.addValue(sv.getSoluongBN(), "Phòng", sv.getTenDV());
-                
+
             }
         }
         String fontName = "BertholdScript I";
@@ -210,7 +215,7 @@ public class ThongKe extends javax.swing.JPanel {
         theme.setAxisLabelPaint(Color.decode("#482247"));
         theme.apply(barChart);
         TextTitle chartinfo = new TextTitle("Chú thích", new Font(fontName, Font.BOLD, 18), TextTitle.DEFAULT_TEXT_PAINT, RectangleEdge.BOTTOM, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, RectangleInsets.ZERO_INSETS);
-        barChart.addSubtitle(chartinfo);        
+        barChart.addSubtitle(chartinfo);
         ChartPanel chartPanel = new ChartPanel(barChart);
         chartPanel.setPreferredSize(new Dimension(jpnItem.getWidth(), 337));
         jpnItem.removeAll();
@@ -364,4 +369,7 @@ public class ThongKe extends javax.swing.JPanel {
     private javax.swing.JPanel pnlDV;
     private javax.swing.JPanel pnlDoanhThu;
     // End of variables declaration//GEN-END:variables
+
+   
+    
 }
