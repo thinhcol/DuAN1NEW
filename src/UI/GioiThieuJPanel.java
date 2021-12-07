@@ -28,9 +28,7 @@ public class GioiThieuJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jComboBox1 = new javax.swing.JComboBox<String>();
-        jLabel4 = new javax.swing.JLabel();
         pnlDichVu = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -43,10 +41,8 @@ public class GioiThieuJPanel extends javax.swing.JPanel {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        setBackground(new java.awt.Color(1, 156, 246));
+        setBackground(new java.awt.Color(69, 179, 230));
         setMaximumSize(new java.awt.Dimension(1900, 890));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/MaTuy.jpg"))); // NOI18N
 
         pnlDichVu.setBackground(new java.awt.Color(0, 51, 102));
 
@@ -61,42 +57,38 @@ public class GioiThieuJPanel extends javax.swing.JPanel {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        jLabel1.setFont(new java.awt.Font("Monospaced", 2, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Cai nghiện hôm nay, cuộc sống ngày mai");
-
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Monospaced", 0, 16)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("TRUNG TÂM CAI NGHIỆN TPHCM");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/MaTuyDa.jpg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/midgets-medication-concept_1284-16209.jpg"))); // NOI18N
 
-        jTextArea1.setBackground(new java.awt.Color(1, 156, 246));
+        jTextArea1.setBackground(new java.awt.Color(69, 179, 230));
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 15)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("SansSerif", 0, 15)); // NOI18N
         jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea1.setRows(5);
-        jTextArea1.setText("Mục đích của phần mềm nhằm giúp bệnh nhân\ncó thể tiết kiệm được thời gian trong việc \nđiều trị, nhận được liệu trình, sự quản lý \ncủa những cán bộ để họ có thể tái hòa \nnhập cộng đồng.");
+        jTextArea1.setText("Mục đích của phần mềm nhằm giúp bệnh nhân có thể\ntiết kiệm được thời gian trong việc điều trị, nhận được\nliệu trình, sự quản lý của những cán bộ để họ có thể\ntái hòa nhập cộng đồng.");
         jScrollPane1.setViewportView(jTextArea1);
 
-        jTextArea2.setBackground(new java.awt.Color(1, 156, 246));
+        jTextArea2.setBackground(new java.awt.Color(69, 179, 230));
         jTextArea2.setColumns(20);
-        jTextArea2.setFont(new java.awt.Font("Monospaced", 0, 15)); // NOI18N
+        jTextArea2.setFont(new java.awt.Font("SansSerif", 0, 15)); // NOI18N
         jTextArea2.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea2.setRows(5);
-        jTextArea2.setText("Khi mà tình trạng nghiện ma túy của giới\ntrẻ Việt Nam đang có chiều hướng gia tăng \ntrong những năm gần đây thúc đẩy sự thay đổi\ncủa chính xã hội. Euphoria giúp cho những \nbệnh nhân có thể tự tin hơn về năng lực của\nmình, giúp họ có thể nhận ra giá trị sống \ncủa bản thân.");
+        jTextArea2.setText("Khi mà tình trạng nghiện ma túy của giới trẻ Việt Nam đang có \nchiều hướng gia tăng trong những năm gần đây thúc đẩy sự thay \nđổi của chính xã hội. Euphoria giúp cho những bệnh nhân có thể \ntự tin hơn về năng lực của mình, giúp họ có thể nhận ra giá trị \nsống của bản thân.\n");
         jScrollPane2.setViewportView(jTextArea2);
 
-        jTextArea3.setBackground(new java.awt.Color(1, 156, 246));
+        jTextArea3.setBackground(new java.awt.Color(69, 179, 230));
         jTextArea3.setColumns(20);
-        jTextArea3.setFont(new java.awt.Font("Monospaced", 0, 15)); // NOI18N
+        jTextArea3.setFont(new java.awt.Font("SansSerif", 0, 15)); // NOI18N
         jTextArea3.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea3.setRows(5);
-        jTextArea3.setText("Với châm ngôn \"Cai nghiện hôm nay,\ncuộc sống ngày mai\", những bệnh \nnhân của Euphoria có khả năng tự \nlo cho cuộc sống của mình. Với \nchương trình cai nghiện được mô \nphỏng từ những trại cai nghiện \nnổi tiếng trên thế giới. Bên cạnh\nviệc điều trị, hướng nghiệp cho \nnhững con người sa ngã cũng là \nmục tiêu mà trung tâm hướng đến.\nVới những mục đích ấy, Euphoria\ncó thể tự hào trong việc điều \ntrị những bệnh nhân nghiện ma túy.");
+        jTextArea3.setText("Với châm ngôn \"Cai nghiện hôm nay,cuộc sống ngày mai\", những bệnh  nhân của Euphoria có khả năng tự lo cho cuộc\nsống của mình. Với chương trình cai nghiện được mô phỏng từ những trại cai nghiện nổi tiếng trên thế giới. Bên cạnh việc\nđiều trị, hướng nghiệp cho những con người sa ngã cũng là mục tiêu mà trung tâm hướng đến.\nVới những mục đích ấy, Euphoria có thể tự hào trong việc điều trị những bệnh nhân nghiện ma túy.");
         jScrollPane3.setViewportView(jTextArea3);
 
-        jLabel3.setFont(new java.awt.Font("Monospaced", 1, 48)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("SansSerif", 1, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Euphoria");
 
@@ -105,71 +97,61 @@ public class GioiThieuJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addComponent(pnlDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(pnlDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel2)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(39, 39, 39)
                     .addComponent(jLabel3)
-                    .addContainerGap(1629, Short.MAX_VALUE)))
+                    .addContainerGap(1155, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(39, 39, 39)
-                        .addComponent(jScrollPane3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(pnlDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel5)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(449, 449, 449)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(105, 105, 105)
+                                .addGap(107, 107, 107)
                                 .addComponent(jLabel2)
-                                .addGap(53, 53, 53)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(105, 105, 105)
-                        .addComponent(jLabel1)))
-                .addContainerGap(70, Short.MAX_VALUE))
+                                .addGap(59, 59, 59)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addComponent(pnlDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(37, 37, 37)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(259, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(44, 44, 44)
                     .addComponent(jLabel3)
-                    .addContainerGap(782, Short.MAX_VALUE)))
+                    .addContainerGap(780, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

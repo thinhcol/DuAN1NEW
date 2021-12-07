@@ -54,24 +54,24 @@ public class DichVuJPanel extends javax.swing.JPanel {
         jScrollPane15 = new javax.swing.JScrollPane();
         txtMoTa = new javax.swing.JTextArea();
         btnXoaDV = new javax.swing.JButton();
-        jScrollPane12 = new javax.swing.JScrollPane();
-        tblDichVu = new javax.swing.JTable();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblDichVu = new rojeru_san.complementos.RSTableMetro();
         pnlDichVu1 = new javax.swing.JPanel();
         jSeparator10 = new javax.swing.JSeparator();
         jLabel73 = new javax.swing.JLabel();
         btnNewVDCT = new javax.swing.JButton();
         btnThemDVCT = new javax.swing.JButton();
         btnXoaDVCT = new javax.swing.JButton();
-        jScrollPane13 = new javax.swing.JScrollPane();
-        tblDichVuCT = new javax.swing.JTable();
         jLabel75 = new javax.swing.JLabel();
         jLabel76 = new javax.swing.JLabel();
         jLabel74 = new javax.swing.JLabel();
         jScrollPane16 = new javax.swing.JScrollPane();
         txtGhiChu = new javax.swing.JTextArea();
         txtNgayDangKi = new com.toedter.calendar.JDateChooser();
-        cboTenDichVu = new javax.swing.JComboBox<>();
-        cboTenBN = new javax.swing.JComboBox<>();
+        cboTenDichVu = new javax.swing.JComboBox<String>();
+        cboTenBN = new javax.swing.JComboBox<String>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblDichVuCT = new rojeru_san.complementos.RSTableMetro();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(1400, 875));
@@ -93,11 +93,10 @@ public class DichVuJPanel extends javax.swing.JPanel {
         txtTenDichVu.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         txtTenDichVu.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
 
-        jLabel68.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_search_more_35px.png"))); // NOI18N
+        jLabel68.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/timKiem.png"))); // NOI18N
 
-        txtTimKiemDV.setBackground(new java.awt.Color(240, 240, 240));
         txtTimKiemDV.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        txtTimKiemDV.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(0, 0, 0)));
+        txtTimKiemDV.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(50, 133, 253)));
         txtTimKiemDV.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtTimKiemDVKeyReleased(evt);
@@ -116,6 +115,14 @@ public class DichVuJPanel extends javax.swing.JPanel {
         btnNewDV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnNewDV.setContentAreaFilled(false);
         btnNewDV.setOpaque(true);
+        btnNewDV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnNewDVMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnNewDVMouseExited(evt);
+            }
+        });
         btnNewDV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewDVActionPerformed(evt);
@@ -129,6 +136,14 @@ public class DichVuJPanel extends javax.swing.JPanel {
         btnThemDV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnThemDV.setContentAreaFilled(false);
         btnThemDV.setOpaque(true);
+        btnThemDV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnThemDVMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnThemDVMouseExited(evt);
+            }
+        });
         btnThemDV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnThemDVActionPerformed(evt);
@@ -142,6 +157,14 @@ public class DichVuJPanel extends javax.swing.JPanel {
         btnCapNhatDV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnCapNhatDV.setContentAreaFilled(false);
         btnCapNhatDV.setOpaque(true);
+        btnCapNhatDV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCapNhatDVMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCapNhatDVMouseExited(evt);
+            }
+        });
         btnCapNhatDV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCapNhatDVActionPerformed(evt);
@@ -171,17 +194,24 @@ public class DichVuJPanel extends javax.swing.JPanel {
         btnXoaDV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnXoaDV.setContentAreaFilled(false);
         btnXoaDV.setOpaque(true);
+        btnXoaDV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnXoaDVMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnXoaDVMouseExited(evt);
+            }
+        });
         btnXoaDV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnXoaDVActionPerformed(evt);
             }
         });
 
-        tblDichVu.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         tblDichVu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, "Karoke", "500000", "Thoải mái"},
-                {null, "Phòng tổng thống", "700000", "Ngon"},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -196,7 +226,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Mã Dịch Vụ", "Tên dịch vụ", "Giá dịch vụ", "Mô tả"
+                "Mã dịch vụ", "Tên dịch vụ", "Giá dịch vụ", "Mô tả"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -207,74 +237,85 @@ public class DichVuJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblDichVu.setFocusable(false);
-        tblDichVu.setGridColor(new java.awt.Color(255, 255, 255));
+        tblDichVu.setColorBackgoundHead(new java.awt.Color(51, 133, 253));
+        tblDichVu.setColorBordeFilas(new java.awt.Color(255, 255, 255));
+        tblDichVu.setColorBordeHead(new java.awt.Color(51, 133, 253));
+        tblDichVu.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tblDichVu.setColorFilasForeground1(new java.awt.Color(51, 133, 253));
+        tblDichVu.setColorFilasForeground2(new java.awt.Color(51, 133, 253));
+        tblDichVu.setColorSelBackgound(new java.awt.Color(51, 133, 253));
+        tblDichVu.setFuenteFilas(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tblDichVu.setFuenteFilasSelect(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tblDichVu.setFuenteHead(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
         tblDichVu.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        tblDichVu.setRowHeight(30);
-        tblDichVu.setSelectionBackground(new java.awt.Color(245, 165, 165));
-        tblDichVu.setShowVerticalLines(false);
-        tblDichVu.getTableHeader().setReorderingAllowed(false);
+        tblDichVu.setRowHeight(25);
         tblDichVu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblDichVuMouseClicked(evt);
             }
         });
-        jScrollPane12.setViewportView(tblDichVu);
+        jScrollPane1.setViewportView(tblDichVu);
 
         javax.swing.GroupLayout pnlDichVuLayout = new javax.swing.GroupLayout(pnlDichVu);
         pnlDichVu.setLayout(pnlDichVuLayout);
         pnlDichVuLayout.setHorizontalGroup(
             pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlDichVuLayout.createSequentialGroup()
-                .addContainerGap(419, Short.MAX_VALUE)
-                .addComponent(btnThemDV, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCapNhatDV, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnXoaDV, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59))
-            .addGroup(pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlDichVuLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(pnlDichVuLayout.createSequentialGroup()
-                            .addComponent(jLabel68)
-                            .addGap(0, 0, 0)
-                            .addComponent(txtTimKiemDV, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane12)
+                .addContainerGap()
+                .addGroup(pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 760, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDichVuLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDichVuLayout.createSequentialGroup()
-                                .addGroup(pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel67)
-                                    .addComponent(jLabel69)
-                                    .addComponent(jLabel70))
-                                .addGap(55, 55, 55)
-                                .addGroup(pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtTenDichVu)
-                                    .addComponent(txtGia)
-                                    .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jSeparator9)
-                            .addGroup(pnlDichVuLayout.createSequentialGroup()
-                                .addComponent(btnNewDV, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 616, Short.MAX_VALUE))))
-                    .addContainerGap(55, Short.MAX_VALUE)))
-        );
-        pnlDichVuLayout.setVerticalGroup(
-            pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDichVuLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnThemDV, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnXoaDV, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCapNhatDV, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(98, 98, 98))
+                                .addComponent(jLabel68)
+                                .addGap(0, 0, 0)
+                                .addComponent(txtTimKiemDV, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDichVuLayout.createSequentialGroup()
+                                .addComponent(btnThemDV, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnCapNhatDV, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnXoaDV, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap())
             .addGroup(pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlDichVuLayout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtTimKiemDV, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(25, 25, 25)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDichVuLayout.createSequentialGroup()
+                            .addGroup(pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel67)
+                                .addComponent(jLabel69)
+                                .addComponent(jLabel70))
+                            .addGap(55, 55, 55)
+                            .addGroup(pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtTenDichVu)
+                                .addComponent(txtGia)
+                                .addComponent(jScrollPane15, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)))
+                        .addComponent(jSeparator9)
+                        .addGroup(pnlDichVuLayout.createSequentialGroup()
+                            .addComponent(btnNewDV, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 616, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        pnlDichVuLayout.setVerticalGroup(
+            pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDichVuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTimKiemDV, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
+                .addGroup(pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnThemDV, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnXoaDV, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCapNhatDV, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(97, 97, 97))
+            .addGroup(pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlDichVuLayout.createSequentialGroup()
+                    .addGap(72, 72, 72)
                     .addGroup(pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel67)
                         .addComponent(txtTenDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -286,9 +327,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
                     .addGroup(pnlDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel70)
                         .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(18, 18, 18)
-                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(25, 25, 25)
+                    .addGap(258, 258, 258)
                     .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(25, 25, 25)
                     .addComponent(btnNewDV, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -310,6 +349,14 @@ public class DichVuJPanel extends javax.swing.JPanel {
         btnNewVDCT.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnNewVDCT.setContentAreaFilled(false);
         btnNewVDCT.setOpaque(true);
+        btnNewVDCT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnNewVDCTMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnNewVDCTMouseExited(evt);
+            }
+        });
         btnNewVDCT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewVDCTActionPerformed(evt);
@@ -323,6 +370,14 @@ public class DichVuJPanel extends javax.swing.JPanel {
         btnThemDVCT.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnThemDVCT.setContentAreaFilled(false);
         btnThemDVCT.setOpaque(true);
+        btnThemDVCT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnThemDVCTMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnThemDVCTMouseExited(evt);
+            }
+        });
         btnThemDVCT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnThemDVCTActionPerformed(evt);
@@ -336,55 +391,19 @@ public class DichVuJPanel extends javax.swing.JPanel {
         btnXoaDVCT.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnXoaDVCT.setContentAreaFilled(false);
         btnXoaDVCT.setOpaque(true);
+        btnXoaDVCT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnXoaDVCTMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnXoaDVCTMouseExited(evt);
+            }
+        });
         btnXoaDVCT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnXoaDVCTActionPerformed(evt);
             }
         });
-
-        tblDichVuCT.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        tblDichVuCT.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, "Karoke", "500000", "Thoải mái"},
-                {null, null, "Phòng tổng thống", "700000", "Ngon"},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Mã DV Chi Tiết", "Tên Dịch Vụ", "Tên Bệnh Nhân", "Ngày Đăng Kí", "Ghi chú"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblDichVuCT.setFocusable(false);
-        tblDichVuCT.setGridColor(new java.awt.Color(255, 255, 255));
-        tblDichVuCT.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        tblDichVuCT.setRowHeight(30);
-        tblDichVuCT.setSelectionBackground(new java.awt.Color(245, 165, 165));
-        tblDichVuCT.setShowVerticalLines(false);
-        tblDichVuCT.getTableHeader().setReorderingAllowed(false);
-        tblDichVuCT.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblDichVuCTMouseClicked(evt);
-            }
-        });
-        jScrollPane13.setViewportView(tblDichVuCT);
 
         jLabel75.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel75.setForeground(new java.awt.Color(102, 102, 102));
@@ -427,6 +446,54 @@ public class DichVuJPanel extends javax.swing.JPanel {
             }
         });
 
+        tblDichVuCT.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Mã dịch vụ chi tiết", "Tên dịch vụ", "Tên bệnh nhân", "Ngày đăng ký", "Ghi chú"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblDichVuCT.setColorBackgoundHead(new java.awt.Color(51, 133, 253));
+        tblDichVuCT.setColorBordeFilas(new java.awt.Color(255, 255, 255));
+        tblDichVuCT.setColorBordeHead(new java.awt.Color(51, 133, 253));
+        tblDichVuCT.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tblDichVuCT.setColorFilasForeground1(new java.awt.Color(51, 133, 253));
+        tblDichVuCT.setColorFilasForeground2(new java.awt.Color(51, 133, 253));
+        tblDichVuCT.setColorSelBackgound(new java.awt.Color(51, 133, 253));
+        tblDichVuCT.setFuenteFilas(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tblDichVuCT.setFuenteFilasSelect(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tblDichVuCT.setFuenteHead(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
+        tblDichVuCT.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblDichVuCT.setRowHeight(25);
+        tblDichVuCT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblDichVuCTMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tblDichVuCT);
+
         javax.swing.GroupLayout pnlDichVu1Layout = new javax.swing.GroupLayout(pnlDichVu1);
         pnlDichVu1.setLayout(pnlDichVu1Layout);
         pnlDichVu1Layout.setHorizontalGroup(
@@ -434,7 +501,6 @@ public class DichVuJPanel extends javax.swing.JPanel {
             .addGroup(pnlDichVu1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlDichVu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane13)
                     .addComponent(jSeparator10, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDichVu1Layout.createSequentialGroup()
                         .addGroup(pnlDichVu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -462,6 +528,11 @@ public class DichVuJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(btnXoaDVCT, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(pnlDichVu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlDichVu1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 764, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         pnlDichVu1Layout.setVerticalGroup(
             pnlDichVu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -484,9 +555,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
                         .addComponent(jLabel74)
                         .addGap(70, 70, 70))
                     .addComponent(jScrollPane16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
+                .addGap(302, 302, 302)
                 .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDichVu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -494,6 +563,11 @@ public class DichVuJPanel extends javax.swing.JPanel {
                     .addComponent(btnThemDVCT, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnXoaDVCT, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(74, Short.MAX_VALUE))
+            .addGroup(pnlDichVu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlDichVu1Layout.createSequentialGroup()
+                    .addGap(320, 320, 320)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(137, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -518,13 +592,6 @@ public class DichVuJPanel extends javax.swing.JPanel {
                 .addContainerGap(72, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void tblDichVuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDichVuMouseClicked
-        if (evt.getClickCount() == 2) {
-            this.rowdv = tblDichVu.getSelectedRow();
-            this.edit();
-        }
-    }//GEN-LAST:event_tblDichVuMouseClicked
 
     private void btnNewDVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewDVActionPerformed
         this.clearForm();
@@ -558,14 +625,6 @@ public class DichVuJPanel extends javax.swing.JPanel {
         this.timKiem();
     }//GEN-LAST:event_txtTimKiemDVKeyReleased
 
-    private void tblDichVuCTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDichVuCTMouseClicked
-        if (evt.getClickCount() == 2) {
-            isLoad = false;
-            this.rowdvct = tblDichVuCT.getSelectedRow();
-            this.editDVCT();
-        }
-    }//GEN-LAST:event_tblDichVuCTMouseClicked
-
     private void btnNewVDCTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewVDCTActionPerformed
         this.clearFormDVCT();
     }//GEN-LAST:event_btnNewVDCTActionPerformed
@@ -585,6 +644,77 @@ public class DichVuJPanel extends javax.swing.JPanel {
     private void cboTenBNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboTenBNActionPerformed
         this.selectCbo();
     }//GEN-LAST:event_cboTenBNActionPerformed
+
+    private void tblDichVuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDichVuMouseClicked
+        if (evt.getClickCount() == 2) {
+            this.rowdv = tblDichVu.getSelectedRow();
+            this.edit();
+        }
+    }//GEN-LAST:event_tblDichVuMouseClicked
+
+    private void btnNewDVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNewDVMouseEntered
+        btnNewDV.setBackground(new Color(0, 0, 153));
+    }//GEN-LAST:event_btnNewDVMouseEntered
+
+    private void btnThemDVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThemDVMouseEntered
+        btnThemDV.setBackground(new Color(0, 0, 153));
+    }//GEN-LAST:event_btnThemDVMouseEntered
+
+    private void btnCapNhatDVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCapNhatDVMouseEntered
+        btnCapNhatDV.setBackground(new Color(0, 0, 153));
+    }//GEN-LAST:event_btnCapNhatDVMouseEntered
+
+    private void btnXoaDVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXoaDVMouseEntered
+       btnXoaDV.setBackground(new Color(0, 0, 153));
+    }//GEN-LAST:event_btnXoaDVMouseEntered
+
+    private void btnNewDVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNewDVMouseExited
+                btnNewDV.setBackground(new Color(51,133,253));
+    }//GEN-LAST:event_btnNewDVMouseExited
+
+    private void btnThemDVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThemDVMouseExited
+                btnThemDV.setBackground(new Color(51,133,253));
+    }//GEN-LAST:event_btnThemDVMouseExited
+
+    private void btnCapNhatDVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCapNhatDVMouseExited
+                btnCapNhatDV.setBackground(new Color(51,133,253));
+    }//GEN-LAST:event_btnCapNhatDVMouseExited
+
+    private void btnXoaDVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXoaDVMouseExited
+                btnXoaDV.setBackground(new Color(51,133,253));
+    }//GEN-LAST:event_btnXoaDVMouseExited
+
+    private void tblDichVuCTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDichVuCTMouseClicked
+        if (evt.getClickCount() == 2) {
+            isLoad = false;
+            this.rowdvct = tblDichVuCT.getSelectedRow();
+            this.editDVCT();
+        }
+    }//GEN-LAST:event_tblDichVuCTMouseClicked
+
+    private void btnNewVDCTMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNewVDCTMouseEntered
+        btnNewVDCT.setBackground(new Color(0, 0, 153));
+    }//GEN-LAST:event_btnNewVDCTMouseEntered
+
+    private void btnThemDVCTMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThemDVCTMouseEntered
+        btnThemDVCT.setBackground(new Color(0, 0, 153));
+    }//GEN-LAST:event_btnThemDVCTMouseEntered
+
+    private void btnXoaDVCTMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXoaDVCTMouseEntered
+        btnXoaDVCT.setBackground(new Color(0, 0, 153));
+    }//GEN-LAST:event_btnXoaDVCTMouseEntered
+
+    private void btnNewVDCTMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNewVDCTMouseExited
+        btnNewVDCT.setBackground(new Color(51,133,253));
+    }//GEN-LAST:event_btnNewVDCTMouseExited
+
+    private void btnThemDVCTMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThemDVCTMouseExited
+        btnThemDVCT.setBackground(new Color(51,133,253));
+    }//GEN-LAST:event_btnThemDVCTMouseExited
+
+    private void btnXoaDVCTMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXoaDVCTMouseExited
+        btnXoaDVCT.setBackground(new Color(51,133,253));
+    }//GEN-LAST:event_btnXoaDVCTMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -606,16 +736,16 @@ public class DichVuJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
-    private javax.swing.JScrollPane jScrollPane12;
-    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JPanel pnlDichVu;
     private javax.swing.JPanel pnlDichVu1;
-    private javax.swing.JTable tblDichVu;
-    private javax.swing.JTable tblDichVuCT;
+    private rojeru_san.complementos.RSTableMetro tblDichVu;
+    private rojeru_san.complementos.RSTableMetro tblDichVuCT;
     private javax.swing.JTextArea txtGhiChu;
     private javax.swing.JTextField txtGia;
     private javax.swing.JTextArea txtMoTa;

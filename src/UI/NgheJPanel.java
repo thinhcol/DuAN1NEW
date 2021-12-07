@@ -69,8 +69,8 @@ public class NgheJPanel extends javax.swing.JPanel {
         btnPrev = new javax.swing.JButton();
         btnNext = new javax.swing.JButton();
         btnLast = new javax.swing.JButton();
-        jScrollPane14 = new javax.swing.JScrollPane();
-        tblNghe = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblNghe = new rojeru_san.complementos.RSTableMetro();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(1400, 875));
@@ -88,9 +88,10 @@ public class NgheJPanel extends javax.swing.JPanel {
         txtTenNghe.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         txtTenNghe.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
 
-        jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_search_more_35px.png"))); // NOI18N
+        jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/timKiem.png"))); // NOI18N
 
         txtTimKiem.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtTimKiem.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(50, 133, 253)));
         txtTimKiem.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtTimKiemKeyReleased(evt);
@@ -206,7 +207,7 @@ public class NgheJPanel extends javax.swing.JPanel {
         btnFirst.setBackground(new java.awt.Color(50, 133, 253));
         btnFirst.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         btnFirst.setForeground(new java.awt.Color(255, 255, 255));
-        btnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_first_1_35px.png"))); // NOI18N
+        btnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/start.png"))); // NOI18N
         btnFirst.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnFirst.setContentAreaFilled(false);
         btnFirst.setOpaque(true);
@@ -227,7 +228,7 @@ public class NgheJPanel extends javax.swing.JPanel {
         btnPrev.setBackground(new java.awt.Color(50, 133, 253));
         btnPrev.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         btnPrev.setForeground(new java.awt.Color(255, 255, 255));
-        btnPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_left_35px.png"))); // NOI18N
+        btnPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/back.png"))); // NOI18N
         btnPrev.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnPrev.setContentAreaFilled(false);
         btnPrev.setOpaque(true);
@@ -248,7 +249,7 @@ public class NgheJPanel extends javax.swing.JPanel {
         btnNext.setBackground(new java.awt.Color(50, 133, 253));
         btnNext.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         btnNext.setForeground(new java.awt.Color(255, 255, 255));
-        btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_right_35px.png"))); // NOI18N
+        btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/next.png"))); // NOI18N
         btnNext.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnNext.setContentAreaFilled(false);
         btnNext.setOpaque(true);
@@ -269,7 +270,7 @@ public class NgheJPanel extends javax.swing.JPanel {
         btnLast.setBackground(new java.awt.Color(50, 133, 253));
         btnLast.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         btnLast.setForeground(new java.awt.Color(255, 255, 255));
-        btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_last_1_35px.png"))); // NOI18N
+        btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/end.png"))); // NOI18N
         btnLast.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnLast.setContentAreaFilled(false);
         btnLast.setOpaque(true);
@@ -287,9 +288,9 @@ public class NgheJPanel extends javax.swing.JPanel {
             }
         });
 
-        tblNghe.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         tblNghe.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -316,19 +317,24 @@ public class NgheJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblNghe.setFocusable(false);
-        tblNghe.setGridColor(new java.awt.Color(255, 255, 255));
+        tblNghe.setColorBackgoundHead(new java.awt.Color(51, 133, 253));
+        tblNghe.setColorBordeFilas(new java.awt.Color(255, 255, 255));
+        tblNghe.setColorBordeHead(new java.awt.Color(51, 133, 253));
+        tblNghe.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tblNghe.setColorFilasForeground1(new java.awt.Color(51, 133, 253));
+        tblNghe.setColorFilasForeground2(new java.awt.Color(51, 133, 253));
+        tblNghe.setColorSelBackgound(new java.awt.Color(51, 133, 253));
+        tblNghe.setFuenteFilas(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tblNghe.setFuenteFilasSelect(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tblNghe.setFuenteHead(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
         tblNghe.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        tblNghe.setRowHeight(30);
-        tblNghe.setSelectionBackground(new java.awt.Color(245, 165, 165));
-        tblNghe.setShowVerticalLines(false);
-        tblNghe.getTableHeader().setReorderingAllowed(false);
+        tblNghe.setRowHeight(25);
         tblNghe.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblNgheMouseClicked(evt);
             }
         });
-        jScrollPane14.setViewportView(tblNghe);
+        jScrollPane3.setViewportView(tblNghe);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -348,30 +354,32 @@ public class NgheJPanel extends javax.swing.JPanel {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
                             .addComponent(jScrollPane2))
                         .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
-                                .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane14)))
+                        .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                        .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel48)
                         .addGap(0, 0, 0)
                         .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGap(477, 477, 477)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 909, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -382,22 +390,19 @@ public class NgheJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel42)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtTenNghe, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel50)
-                        .addGap(2, 2, 2)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel51)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel42)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtTenNghe, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel50)
+                .addGap(2, 2, 2)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
+                .addComponent(jLabel51)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -410,47 +415,44 @@ public class NgheJPanel extends javax.swing.JPanel {
                     .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(209, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(144, 144, 144)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(269, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNewMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNewMouseEntered
-        btnNew.setBackground(new Color(229, 229, 229));
-        btnNew.setForeground(new Color(0, 204, 106));
+        btnNew.setBackground(new Color(0, 0, 153));
     }//GEN-LAST:event_btnNewMouseEntered
 
     private void btnNewMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNewMouseExited
-        btnNew.setBackground(new Color(255, 255, 255));
-        btnNew.setForeground(new Color(0, 0, 0));
+        btnNew.setBackground(new Color(51,133,253));
     }//GEN-LAST:event_btnNewMouseExited
 
     private void btnInsertMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseEntered
-        btnInsert.setBackground(new Color(229, 229, 229));
-        btnInsert.setForeground(new Color(0, 204, 106));
+        btnInsert.setBackground(new Color(0, 0, 153));
     }//GEN-LAST:event_btnInsertMouseEntered
 
     private void btnInsertMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseExited
-        btnInsert.setBackground(new Color(255, 255, 255));
-        btnInsert.setForeground(new Color(0, 0, 0));
+        btnInsert.setBackground(new Color(51,133,253));
     }//GEN-LAST:event_btnInsertMouseExited
 
     private void btnUpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseEntered
-        btnUpdate.setBackground(new Color(229, 229, 229));
-        btnUpdate.setForeground(new Color(0, 204, 106));
+        btnUpdate.setBackground(new Color(0, 0, 153));
     }//GEN-LAST:event_btnUpdateMouseEntered
 
     private void btnUpdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseExited
-        btnUpdate.setBackground(new Color(255, 255, 255));
-        btnUpdate.setForeground(new Color(0, 0, 0));
+        btnUpdate.setBackground(new Color(51,133,253));
     }//GEN-LAST:event_btnUpdateMouseExited
 
     private void btnDeleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseEntered
-        btnDelete.setBackground(new Color(229, 229, 229));
-        btnDelete.setForeground(new Color(0, 204, 106));
+        btnDelete.setBackground(new Color(0, 0, 153));
     }//GEN-LAST:event_btnDeleteMouseEntered
 
     private void btnDeleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseExited
-        btnDelete.setBackground(new Color(255, 255, 255));
-        btnDelete.setForeground(new Color(0, 0, 0));
+        btnDelete.setBackground(new Color(51,133,253));
     }//GEN-LAST:event_btnDeleteMouseExited
 
     private void btnFirstMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFirstMouseEntered
@@ -490,17 +492,6 @@ public class NgheJPanel extends javax.swing.JPanel {
         this.index = tblNghe.getRowCount() - 1;
         this.edit();
     }//GEN-LAST:event_btnLastActionPerformed
-
-    private void tblNgheMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNgheMouseClicked
-        // TODO add your handling code here:
-        if (evt.getClickCount() == 2) {
-            this.index = tblNghe.rowAtPoint(evt.getPoint());
-            if (this.index >= 0) {
-                this.edit();
-
-            }
-        }
-    }//GEN-LAST:event_tblNgheMouseClicked
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
         // TODO add your handling code here:
@@ -545,6 +536,16 @@ public class NgheJPanel extends javax.swing.JPanel {
         this.clear();
     }//GEN-LAST:event_txtTimKiemKeyReleased
 
+    private void tblNgheMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNgheMouseClicked
+        if (evt.getClickCount() == 2) {
+            this.index = tblNghe.rowAtPoint(evt.getPoint());
+            if (this.index >= 0) {
+                this.edit();
+
+            }
+        }
+    }//GEN-LAST:event_tblNgheMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
@@ -561,10 +562,10 @@ public class NgheJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JTable tblNghe;
+    private rojeru_san.complementos.RSTableMetro tblNghe;
     private javax.swing.JTextArea txtGhiChu;
     private javax.swing.JTextArea txtMoTa;
     private javax.swing.JTextField txtTenNghe;

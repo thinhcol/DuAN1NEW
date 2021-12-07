@@ -362,8 +362,6 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
         btnDelete = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         txtTimKiem = new javax.swing.JTextField();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        tblGridView = new javax.swing.JTable();
         btnNext = new javax.swing.JButton();
         btnLast = new javax.swing.JButton();
         btnFirst = new javax.swing.JButton();
@@ -372,6 +370,8 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
         txtEmail = new javax.swing.JTextField();
         txtpass = new javax.swing.JPasswordField();
         btnExcel1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblGridView = new rojeru_san.complementos.RSTableMetro();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -501,60 +501,16 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
         });
 
         jLabel16.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_search_more_35px.png"))); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/timKiem.png"))); // NOI18N
 
         txtTimKiem.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtTimKiem.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(50, 133, 253)));
         txtTimKiem.setMaximumSize(new java.awt.Dimension(100, 100));
-
-        tblGridView.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        tblGridView.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"01", "01", "01", "Nguyễn Văn Sơn", "Nam"},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Mã thân nhân", "Mật khẩu", "Họ tên", "Email", "Bệnh nhân"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblGridView.setFocusable(false);
-        tblGridView.setGridColor(new java.awt.Color(255, 255, 255));
-        tblGridView.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        tblGridView.setRowHeight(30);
-        tblGridView.setSelectionBackground(new java.awt.Color(245, 165, 165));
-        tblGridView.setShowVerticalLines(false);
-        tblGridView.getTableHeader().setReorderingAllowed(false);
-        tblGridView.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblGridViewMouseClicked(evt);
-            }
-        });
-        jScrollPane7.setViewportView(tblGridView);
 
         btnNext.setBackground(new java.awt.Color(50, 133, 253));
         btnNext.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         btnNext.setForeground(new java.awt.Color(255, 255, 255));
-        btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_right_35px.png"))); // NOI18N
+        btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/next.png"))); // NOI18N
         btnNext.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnNext.setContentAreaFilled(false);
         btnNext.setOpaque(true);
@@ -575,7 +531,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
         btnLast.setBackground(new java.awt.Color(50, 133, 253));
         btnLast.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         btnLast.setForeground(new java.awt.Color(255, 255, 255));
-        btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_last_1_35px.png"))); // NOI18N
+        btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/end.png"))); // NOI18N
         btnLast.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnLast.setContentAreaFilled(false);
         btnLast.setOpaque(true);
@@ -596,7 +552,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
         btnFirst.setBackground(new java.awt.Color(50, 133, 253));
         btnFirst.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         btnFirst.setForeground(new java.awt.Color(255, 255, 255));
-        btnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_first_1_35px.png"))); // NOI18N
+        btnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/start.png"))); // NOI18N
         btnFirst.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnFirst.setContentAreaFilled(false);
         btnFirst.setOpaque(true);
@@ -617,7 +573,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
         btnPrev.setBackground(new java.awt.Color(50, 133, 253));
         btnPrev.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         btnPrev.setForeground(new java.awt.Color(255, 255, 255));
-        btnPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_left_35px.png"))); // NOI18N
+        btnPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/back.png"))); // NOI18N
         btnPrev.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnPrev.setContentAreaFilled(false);
         btnPrev.setOpaque(true);
@@ -653,6 +609,62 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
         btnExcel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnExcel1.setContentAreaFilled(false);
         btnExcel1.setOpaque(true);
+        btnExcel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnExcel1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnExcel1MouseExited(evt);
+            }
+        });
+
+        tblGridView.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Mã thân nhân", "Mật khẩu", "Họ tên", "Email", "Bệnh nhân"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblGridView.setColorBackgoundHead(new java.awt.Color(51, 133, 253));
+        tblGridView.setColorBordeFilas(new java.awt.Color(255, 255, 255));
+        tblGridView.setColorBordeHead(new java.awt.Color(51, 133, 253));
+        tblGridView.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tblGridView.setColorFilasForeground1(new java.awt.Color(51, 133, 253));
+        tblGridView.setColorFilasForeground2(new java.awt.Color(51, 133, 253));
+        tblGridView.setColorSelBackgound(new java.awt.Color(51, 133, 253));
+        tblGridView.setFuenteFilas(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tblGridView.setFuenteFilasSelect(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tblGridView.setFuenteHead(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        tblGridView.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblGridView.setRowHeight(25);
+        tblGridView.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblGridViewMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblGridView);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -675,38 +687,40 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
                             .addComponent(txtHoten))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(409, 409, 409)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(btnExcel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(jScrollPane7)))
+                                .addGap(1, 1, 1)
+                                .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(409, 409, 409)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnExcel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 1236, Short.MAX_VALUE)
+                        .addGap(0, 1241, Short.MAX_VALUE)
                         .addComponent(jLabel16)
                         .addGap(0, 0, 0)
                         .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGap(588, 588, 588)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1020, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -717,29 +731,26 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
                     .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblGioiTinh)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cboTenBN, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblDiaChi)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtMaTN, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblCMND)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblHoTen)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtHoten, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblEmailThanNhan1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addComponent(lblGioiTinh)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cboTenBN, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblDiaChi)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtMaTN, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblCMND)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblHoTen)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtHoten, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblEmailThanNhan1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(132, 132, 132)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -755,47 +766,44 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
                     .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnExcel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(68, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(155, 155, 155)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(207, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnClearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClearMouseEntered
-        btnClear.setBackground(new Color(229, 229, 229));
-        btnClear.setForeground(new Color(0, 204, 106));
+        btnClear.setBackground(new Color(0, 0, 153));
     }//GEN-LAST:event_btnClearMouseEntered
 
     private void btnClearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClearMouseExited
-        btnClear.setBackground(new Color(255, 255, 255));
-        btnClear.setForeground(new Color(0, 0, 0));
+        btnClear.setBackground(new Color(51,133,253));
     }//GEN-LAST:event_btnClearMouseExited
 
     private void btnInsertMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseEntered
-        btnInsert.setBackground(new Color(229, 229, 229));
-        btnInsert.setForeground(new Color(0, 204, 106));
+        btnInsert.setBackground(new Color(0, 0, 153));
     }//GEN-LAST:event_btnInsertMouseEntered
 
     private void btnInsertMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseExited
-        btnInsert.setBackground(new Color(255, 255, 255));
-        btnInsert.setForeground(new Color(0, 0, 0));
+        btnInsert.setBackground(new Color(51,133,253));
     }//GEN-LAST:event_btnInsertMouseExited
 
     private void btnUpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseEntered
-        btnUpdate.setBackground(new Color(229, 229, 229));
-        btnUpdate.setForeground(new Color(0, 204, 106));
+        btnUpdate.setBackground(new Color(0, 0, 153));
     }//GEN-LAST:event_btnUpdateMouseEntered
 
     private void btnUpdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseExited
-        btnUpdate.setBackground(new Color(255, 255, 255));
-        btnUpdate.setForeground(new Color(0, 0, 0));
+        btnUpdate.setBackground(new Color(51,133,253));
     }//GEN-LAST:event_btnUpdateMouseExited
 
     private void btnDeleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseEntered
-        btnDelete.setBackground(new Color(229, 229, 229));
-        btnDelete.setForeground(new Color(0, 204, 106));
+        btnDelete.setBackground(new Color(0, 0, 153));
     }//GEN-LAST:event_btnDeleteMouseEntered
 
     private void btnDeleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseExited
-        btnDelete.setBackground(new Color(255, 255, 255));
-        btnDelete.setForeground(new Color(0, 0, 0));
+        btnDelete.setBackground(new Color(51,133,253));
     }//GEN-LAST:event_btnDeleteMouseExited
 
     private void btnNextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNextMouseEntered
@@ -874,8 +882,11 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
         this.edit();
     }//GEN-LAST:event_btnLastActionPerformed
 
+    private void cboTenBNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboTenBNActionPerformed
+        
+    }//GEN-LAST:event_cboTenBNActionPerformed
+
     private void tblGridViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblGridViewMouseClicked
-        // TODO add your handling code here:
         if (evt.getClickCount() == 2) {
             this.index = tblGridView.rowAtPoint(evt.getPoint());
             if (this.index >= 0) {
@@ -885,9 +896,13 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_tblGridViewMouseClicked
 
-    private void cboTenBNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboTenBNActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cboTenBNActionPerformed
+    private void btnExcel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExcel1MouseEntered
+        btnExcel1.setBackground(new Color(0, 0, 153));
+    }//GEN-LAST:event_btnExcel1MouseEntered
+
+    private void btnExcel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExcel1MouseExited
+       btnExcel1.setBackground(new Color(51,133,253));
+    }//GEN-LAST:event_btnExcel1MouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -903,13 +918,13 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox cboTenBN;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCMND;
     private javax.swing.JLabel lblDiaChi;
     private javax.swing.JLabel lblEmailThanNhan1;
     private javax.swing.JLabel lblGioiTinh;
     private javax.swing.JLabel lblHoTen;
-    private javax.swing.JTable tblGridView;
+    private rojeru_san.complementos.RSTableMetro tblGridView;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtHoten;
     private javax.swing.JTextField txtMaTN;

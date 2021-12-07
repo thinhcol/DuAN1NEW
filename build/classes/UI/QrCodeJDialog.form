@@ -140,11 +140,11 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Icon/icons8_delete_24px_1.png"/>
+              <Image iconType="3" name="/Icon/New Icon/icons8_delete_24px_1.png"/>
             </Property>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Icon/icons8_delete_24px.png"/>
+              <Image iconType="3" name="/Icon/New Icon/icons8_delete_24px.png"/>
             </Property>
           </Properties>
           <Events>

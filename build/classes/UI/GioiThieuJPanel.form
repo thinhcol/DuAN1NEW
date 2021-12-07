@@ -20,7 +20,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="f6" green="9c" red="1" type="rgb"/>
+      <Color blue="e6" green="b3" red="45" type="rgb"/>
     </Property>
     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[1900, 890]"/>
@@ -42,36 +42,29 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <Component id="pnlDichVu" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="pnlDichVu" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" alignment="0" min="-2" pref="408" max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" min="-2" pref="408" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jScrollPane2" pref="434" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="364" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel4" min="-2" pref="588" max="-2" attributes="0"/>
-                  <Component id="jScrollPane3" min="-2" pref="318" max="-2" attributes="0"/>
-              </Group>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Component id="jLabel5" min="-2" pref="519" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="1629" max="32767" attributes="0"/>
+                  <EmptySpace pref="1155" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -79,54 +72,44 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                      <Component id="pnlDichVu" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="449" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" min="-2" pref="202" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jScrollPane2" min="-2" pref="202" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane1" min="-2" pref="202" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                              <Component id="jScrollPane2" min="-2" pref="202" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                              <Component id="pnlDichVu" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="jScrollPane3" min="-2" pref="155" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" pref="571" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="70" max="32767" attributes="0"/>
+              <EmptySpace pref="259" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="782" max="32767" attributes="0"/>
+                  <EmptySpace pref="780" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel4">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Icon/MaTuy.jpg"/>
-        </Property>
-      </Properties>
-    </Component>
     <Container class="javax.swing.JPanel" name="pnlDichVu">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -147,24 +130,13 @@
         </DimensionLayout>
       </Layout>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Monospaced" size="14" style="2"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Cai nghi&#x1ec7;n h&#xf4;m nay, cu&#x1ed9;c s&#x1ed1;ng ng&#xe0;y mai"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Monospaced" size="16" style="0"/>
+          <Font name="SansSerif" size="16" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -175,7 +147,7 @@
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Icon/MaTuyDa.jpg"/>
+          <Image iconType="3" name="/Image/midgets-medication-concept_1284-16209.jpg"/>
         </Property>
       </Properties>
     </Component>
@@ -189,17 +161,17 @@
         <Component class="javax.swing.JTextArea" name="jTextArea1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f6" green="9c" red="1" type="rgb"/>
+              <Color blue="e6" green="b3" red="45" type="rgb"/>
             </Property>
             <Property name="columns" type="int" value="20"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Monospaced" size="15" style="0"/>
+              <Font name="SansSerif" size="15" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="M&#x1ee5;c &#x111;&#xed;ch c&#x1ee7;a ph&#x1ea7;n m&#x1ec1;m nh&#x1eb1;m gi&#xfa;p b&#x1ec7;nh nh&#xe2;n&#xa;c&#xf3; th&#x1ec3; ti&#x1ebf;t ki&#x1ec7;m &#x111;&#x1b0;&#x1ee3;c th&#x1edd;i gian trong vi&#x1ec7;c &#xa;&#x111;i&#x1ec1;u tr&#x1ecb;, nh&#x1ead;n &#x111;&#x1b0;&#x1ee3;c li&#x1ec7;u tr&#xec;nh, s&#x1ef1; qu&#x1ea3;n l&#xfd; &#xa;c&#x1ee7;a nh&#x1eef;ng c&#xe1;n b&#x1ed9; &#x111;&#x1ec3; h&#x1ecd; c&#xf3; th&#x1ec3; t&#xe1;i h&#xf2;a &#xa;nh&#x1ead;p c&#x1ed9;ng &#x111;&#x1ed3;ng."/>
+            <Property name="text" type="java.lang.String" value="M&#x1ee5;c &#x111;&#xed;ch c&#x1ee7;a ph&#x1ea7;n m&#x1ec1;m nh&#x1eb1;m gi&#xfa;p b&#x1ec7;nh nh&#xe2;n c&#xf3; th&#x1ec3;&#xa;ti&#x1ebf;t ki&#x1ec7;m &#x111;&#x1b0;&#x1ee3;c th&#x1edd;i gian trong vi&#x1ec7;c &#x111;i&#x1ec1;u tr&#x1ecb;, nh&#x1ead;n &#x111;&#x1b0;&#x1ee3;c&#xa;li&#x1ec7;u tr&#xec;nh, s&#x1ef1; qu&#x1ea3;n l&#xfd; c&#x1ee7;a nh&#x1eef;ng c&#xe1;n b&#x1ed9; &#x111;&#x1ec3; h&#x1ecd; c&#xf3; th&#x1ec3;&#xa;t&#xe1;i h&#xf2;a nh&#x1ead;p c&#x1ed9;ng &#x111;&#x1ed3;ng."/>
           </Properties>
         </Component>
       </SubComponents>
@@ -214,17 +186,17 @@
         <Component class="javax.swing.JTextArea" name="jTextArea2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f6" green="9c" red="1" type="rgb"/>
+              <Color blue="e6" green="b3" red="45" type="rgb"/>
             </Property>
             <Property name="columns" type="int" value="20"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Monospaced" size="15" style="0"/>
+              <Font name="SansSerif" size="15" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="Khi m&#xe0; t&#xec;nh tr&#x1ea1;ng nghi&#x1ec7;n ma t&#xfa;y c&#x1ee7;a gi&#x1edb;i&#xa;tr&#x1ebb; Vi&#x1ec7;t Nam &#x111;ang c&#xf3; chi&#x1ec1;u h&#x1b0;&#x1edb;ng gia t&#x103;ng &#xa;trong nh&#x1eef;ng n&#x103;m g&#x1ea7;n &#x111;&#xe2;y th&#xfa;c &#x111;&#x1ea9;y s&#x1ef1; thay &#x111;&#x1ed5;i&#xa;c&#x1ee7;a ch&#xed;nh x&#xe3; h&#x1ed9;i. Euphoria gi&#xfa;p cho nh&#x1eef;ng &#xa;b&#x1ec7;nh nh&#xe2;n c&#xf3; th&#x1ec3; t&#x1ef1; tin h&#x1a1;n v&#x1ec1; n&#x103;ng l&#x1ef1;c c&#x1ee7;a&#xa;m&#xec;nh, gi&#xfa;p h&#x1ecd; c&#xf3; th&#x1ec3; nh&#x1ead;n ra gi&#xe1; tr&#x1ecb; s&#x1ed1;ng &#xa;c&#x1ee7;a b&#x1ea3;n th&#xe2;n."/>
+            <Property name="text" type="java.lang.String" value="Khi m&#xe0; t&#xec;nh tr&#x1ea1;ng nghi&#x1ec7;n ma t&#xfa;y c&#x1ee7;a gi&#x1edb;i tr&#x1ebb; Vi&#x1ec7;t Nam &#x111;ang c&#xf3; &#xa;chi&#x1ec1;u h&#x1b0;&#x1edb;ng gia t&#x103;ng trong nh&#x1eef;ng n&#x103;m g&#x1ea7;n &#x111;&#xe2;y th&#xfa;c &#x111;&#x1ea9;y s&#x1ef1; thay &#xa;&#x111;&#x1ed5;i c&#x1ee7;a ch&#xed;nh x&#xe3; h&#x1ed9;i. Euphoria gi&#xfa;p cho nh&#x1eef;ng b&#x1ec7;nh nh&#xe2;n c&#xf3; th&#x1ec3; &#xa;t&#x1ef1; tin h&#x1a1;n v&#x1ec1; n&#x103;ng l&#x1ef1;c c&#x1ee7;a m&#xec;nh, gi&#xfa;p h&#x1ecd; c&#xf3; th&#x1ec3; nh&#x1ead;n ra gi&#xe1; tr&#x1ecb; &#xa;s&#x1ed1;ng c&#x1ee7;a b&#x1ea3;n th&#xe2;n.&#xa;"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -239,17 +211,17 @@
         <Component class="javax.swing.JTextArea" name="jTextArea3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f6" green="9c" red="1" type="rgb"/>
+              <Color blue="e6" green="b3" red="45" type="rgb"/>
             </Property>
             <Property name="columns" type="int" value="20"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Monospaced" size="15" style="0"/>
+              <Font name="SansSerif" size="15" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="V&#x1edb;i ch&#xe2;m ng&#xf4;n &quot;Cai nghi&#x1ec7;n h&#xf4;m nay,&#xa;cu&#x1ed9;c s&#x1ed1;ng ng&#xe0;y mai&quot;, nh&#x1eef;ng b&#x1ec7;nh &#xa;nh&#xe2;n c&#x1ee7;a Euphoria c&#xf3; kh&#x1ea3; n&#x103;ng t&#x1ef1; &#xa;lo cho cu&#x1ed9;c s&#x1ed1;ng c&#x1ee7;a m&#xec;nh. V&#x1edb;i &#xa;ch&#x1b0;&#x1a1;ng tr&#xec;nh cai nghi&#x1ec7;n &#x111;&#x1b0;&#x1ee3;c m&#xf4; &#xa;ph&#x1ecf;ng t&#x1eeb; nh&#x1eef;ng tr&#x1ea1;i cai nghi&#x1ec7;n &#xa;n&#x1ed5;i ti&#x1ebf;ng tr&#xea;n th&#x1ebf; gi&#x1edb;i. B&#xea;n c&#x1ea1;nh&#xa;vi&#x1ec7;c &#x111;i&#x1ec1;u tr&#x1ecb;, h&#x1b0;&#x1edb;ng nghi&#x1ec7;p cho &#xa;nh&#x1eef;ng con ng&#x1b0;&#x1edd;i sa ng&#xe3; c&#x169;ng l&#xe0; &#xa;m&#x1ee5;c ti&#xea;u m&#xe0; trung t&#xe2;m h&#x1b0;&#x1edb;ng &#x111;&#x1ebf;n.&#xa;V&#x1edb;i nh&#x1eef;ng m&#x1ee5;c &#x111;&#xed;ch &#x1ea5;y, Euphoria&#xa;c&#xf3; th&#x1ec3; t&#x1ef1; h&#xe0;o trong vi&#x1ec7;c &#x111;i&#x1ec1;u &#xa;tr&#x1ecb; nh&#x1eef;ng b&#x1ec7;nh nh&#xe2;n nghi&#x1ec7;n ma t&#xfa;y."/>
+            <Property name="text" type="java.lang.String" value="V&#x1edb;i ch&#xe2;m ng&#xf4;n &quot;Cai nghi&#x1ec7;n h&#xf4;m nay,cu&#x1ed9;c s&#x1ed1;ng ng&#xe0;y mai&quot;, nh&#x1eef;ng b&#x1ec7;nh  nh&#xe2;n c&#x1ee7;a Euphoria c&#xf3; kh&#x1ea3; n&#x103;ng t&#x1ef1; lo cho cu&#x1ed9;c&#xa;s&#x1ed1;ng c&#x1ee7;a m&#xec;nh. V&#x1edb;i ch&#x1b0;&#x1a1;ng tr&#xec;nh cai nghi&#x1ec7;n &#x111;&#x1b0;&#x1ee3;c m&#xf4; ph&#x1ecf;ng t&#x1eeb; nh&#x1eef;ng tr&#x1ea1;i cai nghi&#x1ec7;n n&#x1ed5;i ti&#x1ebf;ng tr&#xea;n th&#x1ebf; gi&#x1edb;i. B&#xea;n c&#x1ea1;nh vi&#x1ec7;c&#xa;&#x111;i&#x1ec1;u tr&#x1ecb;, h&#x1b0;&#x1edb;ng nghi&#x1ec7;p cho nh&#x1eef;ng con ng&#x1b0;&#x1edd;i sa ng&#xe3; c&#x169;ng l&#xe0; m&#x1ee5;c ti&#xea;u m&#xe0; trung t&#xe2;m h&#x1b0;&#x1edb;ng &#x111;&#x1ebf;n.&#xa;V&#x1edb;i nh&#x1eef;ng m&#x1ee5;c &#x111;&#xed;ch &#x1ea5;y, Euphoria c&#xf3; th&#x1ec3; t&#x1ef1; h&#xe0;o trong vi&#x1ec7;c &#x111;i&#x1ec1;u tr&#x1ecb; nh&#x1eef;ng b&#x1ec7;nh nh&#xe2;n nghi&#x1ec7;n ma t&#xfa;y."/>
           </Properties>
         </Component>
       </SubComponents>
@@ -257,7 +229,7 @@
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Monospaced" size="48" style="1"/>
+          <Font name="SansSerif" size="48" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>

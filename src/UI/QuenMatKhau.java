@@ -116,10 +116,10 @@ public class QuenMatKhau extends javax.swing.JDialog {
         jPanel1.add(txtXacNhanMK, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 240, 30));
 
         btnThoat.setBackground(new java.awt.Color(255, 255, 255));
-        btnThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_delete_24px_1.png"))); // NOI18N
+        btnThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/icons8_delete_24px_1.png"))); // NOI18N
         btnThoat.setContentAreaFilled(false);
         btnThoat.setOpaque(true);
-        btnThoat.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_delete_24px.png"))); // NOI18N
+        btnThoat.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/icons8_delete_24px.png"))); // NOI18N
         btnThoat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnThoatMouseEntered(evt);
@@ -180,7 +180,7 @@ public class QuenMatKhau extends javax.swing.JDialog {
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 390, -1));
 
         lblHome.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
-        lblHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/home_25px.png"))); // NOI18N
+        lblHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/home_25px.png"))); // NOI18N
         lblHome.setText("Về trang chủ");
         lblHome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

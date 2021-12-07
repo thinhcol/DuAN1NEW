@@ -133,9 +133,9 @@ public class DangKyKhuonMat extends javax.swing.JDialog {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 370, -1));
 
         btnThoat.setBackground(new java.awt.Color(255, 255, 255));
-        btnThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_delete_24px_1.png"))); // NOI18N
+        btnThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/icons8_delete_24px_1.png"))); // NOI18N
         btnThoat.setContentAreaFilled(false);
-        btnThoat.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_delete_24px.png"))); // NOI18N
+        btnThoat.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/icons8_delete_24px.png"))); // NOI18N
         btnThoat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnThoatMouseEntered(evt);

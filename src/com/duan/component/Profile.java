@@ -28,9 +28,10 @@ public class Profile extends javax.swing.JPanel {
         imageAvatar2 = new com.duan.swing.ImageAvatar();
 
         lblTen.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        lblTen.setForeground(new java.awt.Color(140, 110, 207));
+        lblTen.setForeground(new java.awt.Color(50, 133, 253));
         lblTen.setText("Thịnh");
 
+        lblVaiTro.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lblVaiTro.setForeground(new java.awt.Color(128, 113, 159));
         lblVaiTro.setText("Dashboard Swing");
 

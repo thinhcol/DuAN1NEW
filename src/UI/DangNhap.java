@@ -122,10 +122,10 @@ public class DangNhap extends javax.swing.JDialog {
         jPanel1.add(btnQuenMK, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 110, -1));
 
         btnThoat.setBackground(new java.awt.Color(255, 255, 255));
-        btnThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_delete_24px_1.png"))); // NOI18N
+        btnThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/icons8_delete_24px_1.png"))); // NOI18N
         btnThoat.setContentAreaFilled(false);
         btnThoat.setOpaque(true);
-        btnThoat.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_delete_24px.png"))); // NOI18N
+        btnThoat.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/icons8_delete_24px.png"))); // NOI18N
         btnThoat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnThoatMouseEntered(evt);
@@ -172,7 +172,7 @@ public class DangNhap extends javax.swing.JDialog {
         jLabel4.setText("Xin chào ! Chúng tôi là Euphoria");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 380, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/5e9ccdf3d3886a5784f7c38d_5e84ba890813bd37c3c60fdf_Medica20Template20-201 (1).jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/5e9ccdf3d3886a5784f7c38d_5e84ba890813bd37c3c60fdf_Medica20Template20-201 (1).jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 380, -1));
 
         btnQrCode.setBackground(new java.awt.Color(255, 255, 255));

@@ -179,12 +179,12 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Icon/icons8_delete_24px_1.png"/>
+              <Image iconType="3" name="/Icon/New Icon/icons8_delete_24px_1.png"/>
             </Property>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="opaque" type="boolean" value="true"/>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Icon/icons8_delete_24px.png"/>
+              <Image iconType="3" name="/Icon/New Icon/icons8_delete_24px.png"/>
             </Property>
           </Properties>
           <Events>
@@ -263,7 +263,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Icon/5e9ccdf3d3886a5784f7c38d_5e84ba890813bd37c3c60fdf_Medica20Template20-201 (1).jpg"/>
+              <Image iconType="3" name="/Icon/New Icon/5e9ccdf3d3886a5784f7c38d_5e84ba890813bd37c3c60fdf_Medica20Template20-201 (1).jpg"/>
             </Property>
           </Properties>
           <Constraints>

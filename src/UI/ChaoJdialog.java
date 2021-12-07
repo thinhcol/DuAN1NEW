@@ -67,7 +67,7 @@ public class ChaoJdialog extends javax.swing.JDialog {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Xin chào! Chúng tôi là Euphoria");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/cartel-productos-medicos-coronavirus-foto_23-2148853655.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/cartel-productos-medicos-coronavirus-foto_23-2148853655.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

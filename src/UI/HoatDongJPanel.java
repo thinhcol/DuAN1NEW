@@ -48,8 +48,6 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         jLabel70 = new javax.swing.JLabel();
         jScrollPane15 = new javax.swing.JScrollPane();
         txtGhiChu = new javax.swing.JTextArea();
-        jScrollPane14 = new javax.swing.JScrollPane();
-        tblHoatDong = new javax.swing.JTable();
         btnNew = new javax.swing.JButton();
         btnInsert = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
@@ -60,12 +58,12 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         btnLast = new javax.swing.JButton();
         jLabel68 = new javax.swing.JLabel();
         txtTimKiem = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblHoatDong = new rojeru_san.complementos.RSTableMetro();
         pnlHoatDong1 = new javax.swing.JPanel();
         jSeparator11 = new javax.swing.JSeparator();
         jLabel69 = new javax.swing.JLabel();
         jLabel71 = new javax.swing.JLabel();
-        jScrollPane17 = new javax.swing.JScrollPane();
-        tblCTHoatDong = new javax.swing.JTable();
         btnNew1 = new javax.swing.JButton();
         btnInsert1 = new javax.swing.JButton();
         btnDelete1 = new javax.swing.JButton();
@@ -74,8 +72,10 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         jLabel74 = new javax.swing.JLabel();
         jScrollPane18 = new javax.swing.JScrollPane();
         txtGhiChu2 = new javax.swing.JTextArea();
-        cboTenBN = new javax.swing.JComboBox<>();
-        cboTenHoatDong = new javax.swing.JComboBox<>();
+        cboTenBN = new javax.swing.JComboBox<String>();
+        cboTenHoatDong = new javax.swing.JComboBox<String>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblCTHoatDong = new rojeru_san.complementos.RSTableMetro();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(1400, 875));
@@ -109,9 +109,155 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         txtGhiChu.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
         jScrollPane15.setViewportView(txtGhiChu);
 
-        tblHoatDong.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnNew.setBackground(new java.awt.Color(50, 133, 253));
+        btnNew.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnNew.setForeground(new java.awt.Color(255, 255, 255));
+        btnNew.setText("MỚI");
+        btnNew.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnNew.setContentAreaFilled(false);
+        btnNew.setOpaque(true);
+        btnNew.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnNewMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnNewMouseExited(evt);
+            }
+        });
+        btnNew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewActionPerformed(evt);
+            }
+        });
+
+        btnInsert.setBackground(new java.awt.Color(50, 133, 253));
+        btnInsert.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnInsert.setForeground(new java.awt.Color(255, 255, 255));
+        btnInsert.setText("THÊM");
+        btnInsert.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnInsert.setContentAreaFilled(false);
+        btnInsert.setOpaque(true);
+        btnInsert.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnInsertMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnInsertMouseExited(evt);
+            }
+        });
+        btnInsert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInsertActionPerformed(evt);
+            }
+        });
+
+        btnUpdate.setBackground(new java.awt.Color(50, 133, 253));
+        btnUpdate.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpdate.setText("CẬP NHẬT");
+        btnUpdate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnUpdate.setContentAreaFilled(false);
+        btnUpdate.setOpaque(true);
+        btnUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnUpdateMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnUpdateMouseExited(evt);
+            }
+        });
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
+
+        btnDelete.setBackground(new java.awt.Color(50, 133, 253));
+        btnDelete.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
+        btnDelete.setText("XÓA");
+        btnDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnDelete.setContentAreaFilled(false);
+        btnDelete.setOpaque(true);
+        btnDelete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnDeleteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnDeleteMouseExited(evt);
+            }
+        });
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+
+        btnFirst.setBackground(new java.awt.Color(50, 133, 253));
+        btnFirst.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnFirst.setForeground(new java.awt.Color(255, 255, 255));
+        btnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/start.png"))); // NOI18N
+        btnFirst.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnFirst.setContentAreaFilled(false);
+        btnFirst.setOpaque(true);
+        btnFirst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFirstActionPerformed(evt);
+            }
+        });
+
+        btnPrev.setBackground(new java.awt.Color(50, 133, 253));
+        btnPrev.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnPrev.setForeground(new java.awt.Color(255, 255, 255));
+        btnPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/back.png"))); // NOI18N
+        btnPrev.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnPrev.setContentAreaFilled(false);
+        btnPrev.setOpaque(true);
+        btnPrev.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrevActionPerformed(evt);
+            }
+        });
+
+        btnNext.setBackground(new java.awt.Color(50, 133, 253));
+        btnNext.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnNext.setForeground(new java.awt.Color(255, 255, 255));
+        btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/next.png"))); // NOI18N
+        btnNext.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnNext.setContentAreaFilled(false);
+        btnNext.setOpaque(true);
+        btnNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNextActionPerformed(evt);
+            }
+        });
+
+        btnLast.setBackground(new java.awt.Color(50, 133, 253));
+        btnLast.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnLast.setForeground(new java.awt.Color(255, 255, 255));
+        btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/end.png"))); // NOI18N
+        btnLast.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnLast.setContentAreaFilled(false);
+        btnLast.setOpaque(true);
+        btnLast.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLastActionPerformed(evt);
+            }
+        });
+
+        jLabel68.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/timKiem.png"))); // NOI18N
+
+        txtTimKiem.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        txtTimKiem.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(50, 133, 253)));
+        txtTimKiem.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTimKiemKeyReleased(evt);
+            }
+        });
+
         tblHoatDong.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null},
                 {null, null, null},
                 {null, null, null},
                 {null, null, null},
@@ -131,142 +277,31 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, true
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        tblHoatDong.setFocusable(false);
-        tblHoatDong.setGridColor(new java.awt.Color(255, 255, 255));
+        tblHoatDong.setColorBackgoundHead(new java.awt.Color(51, 133, 253));
+        tblHoatDong.setColorBordeFilas(new java.awt.Color(255, 255, 255));
+        tblHoatDong.setColorBordeHead(new java.awt.Color(51, 133, 253));
+        tblHoatDong.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tblHoatDong.setColorFilasForeground1(new java.awt.Color(51, 133, 253));
+        tblHoatDong.setColorFilasForeground2(new java.awt.Color(51, 133, 253));
+        tblHoatDong.setColorSelBackgound(new java.awt.Color(51, 133, 253));
+        tblHoatDong.setFuenteFilas(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tblHoatDong.setFuenteFilasSelect(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tblHoatDong.setFuenteHead(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
         tblHoatDong.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        tblHoatDong.setRowHeight(30);
-        tblHoatDong.setSelectionBackground(new java.awt.Color(245, 165, 165));
-        tblHoatDong.setSelectionForeground(new java.awt.Color(240, 240, 240));
-        tblHoatDong.setShowVerticalLines(false);
-        tblHoatDong.getTableHeader().setReorderingAllowed(false);
+        tblHoatDong.setRowHeight(25);
         tblHoatDong.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblHoatDongMouseClicked(evt);
             }
         });
-        jScrollPane14.setViewportView(tblHoatDong);
-
-        btnNew.setBackground(new java.awt.Color(50, 133, 253));
-        btnNew.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        btnNew.setForeground(new java.awt.Color(255, 255, 255));
-        btnNew.setText("MỚI");
-        btnNew.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnNew.setContentAreaFilled(false);
-        btnNew.setOpaque(true);
-        btnNew.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNewActionPerformed(evt);
-            }
-        });
-
-        btnInsert.setBackground(new java.awt.Color(50, 133, 253));
-        btnInsert.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        btnInsert.setForeground(new java.awt.Color(255, 255, 255));
-        btnInsert.setText("THÊM");
-        btnInsert.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnInsert.setContentAreaFilled(false);
-        btnInsert.setOpaque(true);
-        btnInsert.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertActionPerformed(evt);
-            }
-        });
-
-        btnUpdate.setBackground(new java.awt.Color(50, 133, 253));
-        btnUpdate.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
-        btnUpdate.setText("CẬP NHẬT");
-        btnUpdate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnUpdate.setContentAreaFilled(false);
-        btnUpdate.setOpaque(true);
-        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateActionPerformed(evt);
-            }
-        });
-
-        btnDelete.setBackground(new java.awt.Color(50, 133, 253));
-        btnDelete.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
-        btnDelete.setText("XÓA");
-        btnDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnDelete.setContentAreaFilled(false);
-        btnDelete.setOpaque(true);
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
-            }
-        });
-
-        btnFirst.setBackground(new java.awt.Color(50, 133, 253));
-        btnFirst.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        btnFirst.setForeground(new java.awt.Color(255, 255, 255));
-        btnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_first_1_35px.png"))); // NOI18N
-        btnFirst.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnFirst.setContentAreaFilled(false);
-        btnFirst.setOpaque(true);
-        btnFirst.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFirstActionPerformed(evt);
-            }
-        });
-
-        btnPrev.setBackground(new java.awt.Color(50, 133, 253));
-        btnPrev.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        btnPrev.setForeground(new java.awt.Color(255, 255, 255));
-        btnPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_left_35px.png"))); // NOI18N
-        btnPrev.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnPrev.setContentAreaFilled(false);
-        btnPrev.setOpaque(true);
-        btnPrev.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPrevActionPerformed(evt);
-            }
-        });
-
-        btnNext.setBackground(new java.awt.Color(50, 133, 253));
-        btnNext.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        btnNext.setForeground(new java.awt.Color(255, 255, 255));
-        btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_right_35px.png"))); // NOI18N
-        btnNext.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnNext.setContentAreaFilled(false);
-        btnNext.setOpaque(true);
-        btnNext.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNextActionPerformed(evt);
-            }
-        });
-
-        btnLast.setBackground(new java.awt.Color(50, 133, 253));
-        btnLast.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        btnLast.setForeground(new java.awt.Color(255, 255, 255));
-        btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_last_1_35px.png"))); // NOI18N
-        btnLast.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnLast.setContentAreaFilled(false);
-        btnLast.setOpaque(true);
-        btnLast.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLastActionPerformed(evt);
-            }
-        });
-
-        jLabel68.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_search_more_35px.png"))); // NOI18N
-
-        txtTimKiem.setBackground(new java.awt.Color(240, 240, 240));
-        txtTimKiem.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        txtTimKiem.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
-        txtTimKiem.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtTimKiemKeyReleased(evt);
-            }
-        });
+        jScrollPane1.setViewportView(tblHoatDong);
 
         javax.swing.GroupLayout pnlHoatDongLayout = new javax.swing.GroupLayout(pnlHoatDong);
         pnlHoatDong.setLayout(pnlHoatDongLayout);
@@ -275,7 +310,6 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             .addGroup(pnlHoatDongLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlHoatDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane14)
                     .addGroup(pnlHoatDongLayout.createSequentialGroup()
                         .addGroup(pnlHoatDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(btnNew, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -287,7 +321,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(pnlHoatDongLayout.createSequentialGroup()
                                 .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
                                 .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -312,7 +346,12 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             .addGroup(pnlHoatDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlHoatDongLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jSeparator10, javax.swing.GroupLayout.DEFAULT_SIZE, 760, Short.MAX_VALUE)
+                    .addComponent(jSeparator10, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(pnlHoatDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlHoatDongLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
                     .addContainerGap()))
         );
         pnlHoatDongLayout.setVerticalGroup(
@@ -330,9 +369,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
                 .addGroup(pnlHoatDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel70)
                     .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
+                .addGap(350, 350, 350)
                 .addGroup(pnlHoatDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlHoatDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -346,12 +383,17 @@ public class HoatDongJPanel extends javax.swing.JPanel {
                 .addGroup(pnlHoatDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
             .addGroup(pnlHoatDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlHoatDongLayout.createSequentialGroup()
                     .addGap(546, 546, 546)
                     .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(168, Short.MAX_VALUE)))
+            .addGroup(pnlHoatDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlHoatDongLayout.createSequentialGroup()
+                    .addGap(248, 248, 248)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(204, Short.MAX_VALUE)))
         );
 
         pnlHoatDong1.setBackground(new java.awt.Color(255, 255, 255));
@@ -367,50 +409,6 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         jLabel71.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/tenHoatDong.png"))); // NOI18N
         jLabel71.setText("Tên hoạt động");
 
-        tblCTHoatDong.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        tblCTHoatDong.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Mã hoạt động chi tiết", "Mã hoạt động", "Tên bệnh nhân", "Ngày Thực hiện", "Ghi chú"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblCTHoatDong.setFocusable(false);
-        tblCTHoatDong.setGridColor(new java.awt.Color(255, 255, 255));
-        tblCTHoatDong.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        tblCTHoatDong.setRowHeight(30);
-        tblCTHoatDong.setSelectionBackground(new java.awt.Color(245, 165, 165));
-        tblCTHoatDong.setSelectionForeground(new java.awt.Color(240, 240, 240));
-        tblCTHoatDong.setShowVerticalLines(false);
-        tblCTHoatDong.getTableHeader().setReorderingAllowed(false);
-        tblCTHoatDong.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblCTHoatDongMouseClicked(evt);
-            }
-        });
-        jScrollPane17.setViewportView(tblCTHoatDong);
-
         btnNew1.setBackground(new java.awt.Color(50, 133, 253));
         btnNew1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         btnNew1.setForeground(new java.awt.Color(255, 255, 255));
@@ -418,6 +416,14 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         btnNew1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnNew1.setContentAreaFilled(false);
         btnNew1.setOpaque(true);
+        btnNew1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnNew1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnNew1MouseExited(evt);
+            }
+        });
         btnNew1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNew1ActionPerformed(evt);
@@ -431,6 +437,14 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         btnInsert1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnInsert1.setContentAreaFilled(false);
         btnInsert1.setOpaque(true);
+        btnInsert1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnInsert1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnInsert1MouseExited(evt);
+            }
+        });
         btnInsert1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInsert1ActionPerformed(evt);
@@ -444,6 +458,14 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         btnDelete1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnDelete1.setContentAreaFilled(false);
         btnDelete1.setOpaque(true);
+        btnDelete1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnDelete1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnDelete1MouseExited(evt);
+            }
+        });
         btnDelete1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDelete1ActionPerformed(evt);
@@ -487,6 +509,54 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             }
         });
 
+        tblCTHoatDong.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Mã hoạt động chi tiết", "Mã hoạt động", "Tên hoạt động", "Ngày thực hiện", "Ghi chú"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblCTHoatDong.setColorBackgoundHead(new java.awt.Color(51, 133, 253));
+        tblCTHoatDong.setColorBordeFilas(new java.awt.Color(255, 255, 255));
+        tblCTHoatDong.setColorBordeHead(new java.awt.Color(51, 133, 253));
+        tblCTHoatDong.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tblCTHoatDong.setColorFilasForeground1(new java.awt.Color(51, 133, 253));
+        tblCTHoatDong.setColorFilasForeground2(new java.awt.Color(51, 133, 253));
+        tblCTHoatDong.setColorSelBackgound(new java.awt.Color(51, 133, 253));
+        tblCTHoatDong.setFuenteFilas(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tblCTHoatDong.setFuenteFilasSelect(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tblCTHoatDong.setFuenteHead(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
+        tblCTHoatDong.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblCTHoatDong.setRowHeight(25);
+        tblCTHoatDong.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblCTHoatDongMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tblCTHoatDong);
+
         javax.swing.GroupLayout pnlHoatDong1Layout = new javax.swing.GroupLayout(pnlHoatDong1);
         pnlHoatDong1.setLayout(pnlHoatDong1Layout);
         pnlHoatDong1Layout.setHorizontalGroup(
@@ -494,14 +564,13 @@ public class HoatDongJPanel extends javax.swing.JPanel {
             .addGroup(pnlHoatDong1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlHoatDong1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane17)
                     .addGroup(pnlHoatDong1Layout.createSequentialGroup()
                         .addComponent(btnNew1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnInsert1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnDelete1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator11, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
+                    .addComponent(jSeparator11)
                     .addGroup(pnlHoatDong1Layout.createSequentialGroup()
                         .addGroup(pnlHoatDong1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel71)
@@ -510,11 +579,16 @@ public class HoatDongJPanel extends javax.swing.JPanel {
                             .addComponent(jLabel69))
                         .addGap(27, 27, 27)
                         .addGroup(pnlHoatDong1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane18)
+                            .addComponent(jScrollPane18, javax.swing.GroupLayout.DEFAULT_SIZE, 602, Short.MAX_VALUE)
                             .addComponent(txtNgayThucHien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cboTenBN, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cboTenHoatDong, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
+            .addGroup(pnlHoatDong1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlHoatDong1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 773, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         pnlHoatDong1Layout.setVerticalGroup(
             pnlHoatDong1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -535,12 +609,10 @@ public class HoatDongJPanel extends javax.swing.JPanel {
                 .addGroup(pnlHoatDong1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlHoatDong1Layout.createSequentialGroup()
                         .addComponent(jLabel74, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                        .addGap(84, 84, 84))
+                        .addGap(330, 330, 330))
                     .addGroup(pnlHoatDong1Layout.createSequentialGroup()
                         .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 272, Short.MAX_VALUE)))
                 .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(pnlHoatDong1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -548,19 +620,26 @@ public class HoatDongJPanel extends javax.swing.JPanel {
                     .addComponent(btnInsert1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnNew1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(54, Short.MAX_VALUE))
+            .addGroup(pnlHoatDong1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlHoatDong1Layout.createSequentialGroup()
+                    .addGap(368, 368, 368)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(117, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel65, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1900, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnlHoatDong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnlHoatDong1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel65, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(pnlHoatDong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(pnlHoatDong1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -573,15 +652,6 @@ public class HoatDongJPanel extends javax.swing.JPanel {
                 .addContainerGap(40, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void tblHoatDongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHoatDongMouseClicked
-        if (evt.getClickCount() == 2) {
-            this.index = tblHoatDong.rowAtPoint(evt.getPoint());
-            if (this.index >= 0) {
-                this.edit();
-            }
-        }
-    }//GEN-LAST:event_tblHoatDongMouseClicked
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
         clear();
@@ -636,14 +706,6 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         this.clear();
     }//GEN-LAST:event_txtTimKiemKeyReleased
 
-    private void tblCTHoatDongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCTHoatDongMouseClicked
-        if (evt.getClickCount() == 2) {
-            isLoad = false;
-            this.rowHDCT = tblCTHoatDong.getSelectedRow();
-            this.editHDCT();
-        }
-    }//GEN-LAST:event_tblCTHoatDongMouseClicked
-
     private void btnNew1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNew1ActionPerformed
         this.clearFormHDCT();
     }//GEN-LAST:event_btnNew1ActionPerformed
@@ -663,6 +725,79 @@ public class HoatDongJPanel extends javax.swing.JPanel {
     private void cboTenHoatDongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboTenHoatDongActionPerformed
         selectCbo();
     }//GEN-LAST:event_cboTenHoatDongActionPerformed
+
+    private void tblHoatDongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHoatDongMouseClicked
+        if (evt.getClickCount() == 2) {
+            this.index = tblHoatDong.rowAtPoint(evt.getPoint());
+            if (this.index >= 0) {
+                this.edit();
+            }
+        }
+    }//GEN-LAST:event_tblHoatDongMouseClicked
+
+    private void btnNewMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNewMouseEntered
+        btnNew.setBackground(new Color(0, 0, 153));
+    }//GEN-LAST:event_btnNewMouseEntered
+
+    private void btnInsertMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseEntered
+        btnInsert.setBackground(new Color(0, 0, 153));
+    }//GEN-LAST:event_btnInsertMouseEntered
+
+    private void btnUpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseEntered
+        btnUpdate.setBackground(new Color(0, 0, 153));
+    }//GEN-LAST:event_btnUpdateMouseEntered
+
+    private void btnDeleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseEntered
+        btnDelete.setBackground(new Color(0, 0, 153));
+    }//GEN-LAST:event_btnDeleteMouseEntered
+
+    private void btnNewMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNewMouseExited
+        btnNew.setBackground(new Color(51, 133, 253));
+    }//GEN-LAST:event_btnNewMouseExited
+
+    private void btnInsertMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseExited
+        btnInsert.setBackground(new Color(51, 133, 253));
+    }//GEN-LAST:event_btnInsertMouseExited
+
+    private void btnUpdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseExited
+        btnUpdate.setBackground(new Color(51, 133, 253));
+    }//GEN-LAST:event_btnUpdateMouseExited
+
+    private void btnDeleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseExited
+        btnDelete.setBackground(new Color(51, 133, 253));
+    }//GEN-LAST:event_btnDeleteMouseExited
+
+    private void tblCTHoatDongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCTHoatDongMouseClicked
+        if (evt.getClickCount() == 2) {
+            isLoad = false;
+            this.rowHDCT = tblCTHoatDong.getSelectedRow();
+            this.editHDCT();
+        }
+    }//GEN-LAST:event_tblCTHoatDongMouseClicked
+
+    private void btnNew1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNew1MouseEntered
+        btnNew1.setBackground(new Color(0, 0, 153));
+    }//GEN-LAST:event_btnNew1MouseEntered
+
+    private void btnInsert1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsert1MouseEntered
+        btnInsert1.setBackground(new Color(0, 0, 153));
+    }//GEN-LAST:event_btnInsert1MouseEntered
+
+    private void btnDelete1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDelete1MouseEntered
+        btnDelete1.setBackground(new Color(0, 0, 153));
+    }//GEN-LAST:event_btnDelete1MouseEntered
+
+    private void btnNew1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNew1MouseExited
+        btnNew1.setBackground(new Color(51, 133, 253));
+    }//GEN-LAST:event_btnNew1MouseExited
+
+    private void btnInsert1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsert1MouseExited
+        btnInsert1.setBackground(new Color(51, 133, 253));
+    }//GEN-LAST:event_btnInsert1MouseExited
+
+    private void btnDelete1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDelete1MouseExited
+        btnDelete1.setBackground(new Color(51, 133, 253));
+    }//GEN-LAST:event_btnDelete1MouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -687,16 +822,16 @@ public class HoatDongJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
-    private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane15;
-    private javax.swing.JScrollPane jScrollPane17;
     private javax.swing.JScrollPane jScrollPane18;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JPanel pnlHoatDong;
     private javax.swing.JPanel pnlHoatDong1;
-    private javax.swing.JTable tblCTHoatDong;
-    private javax.swing.JTable tblHoatDong;
+    private rojeru_san.complementos.RSTableMetro tblCTHoatDong;
+    private rojeru_san.complementos.RSTableMetro tblHoatDong;
     private javax.swing.JTextArea txtGhiChu;
     private javax.swing.JTextArea txtGhiChu2;
     private com.toedter.calendar.JDateChooser txtNgayThucHien;
@@ -728,7 +863,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         this.fillComboxBenhNhan();
         this.fillComboxHoatDong();
         this.fillTableHDCT();
-        this.rowHDCT = -1;
+  //      this.rowHDCT ;
         this.updateStatusHDCT();
         txtNgayThucHien.setDate(new Date());
     }
@@ -971,9 +1106,9 @@ public class HoatDongJPanel extends javax.swing.JPanel {
                 DialogHelper.alert(this, "Lỗi truy vấn dữ liệu");
                 System.out.println(e);
             }
-        }else{
-             List<HoatDongCT> list1 = hdctdao.selectByMaBN1(ShareHelper.nguoidung.getMabn());
-             try {
+        } else {
+            List<HoatDongCT> list1 = hdctdao.selectByMaBN1(ShareHelper.nguoidung.getMabn());
+            try {
                 for (HoatDongCT HDCT : list1) {
                     Object[] rowHDCT = {
                         HDCT.getMaHDCT(),
@@ -1044,18 +1179,18 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         benhNhan.setHoTen("Tất cả");
         benhNhan.setMaBN(-1);
         model.addElement(benhNhan);
-        if(ShareHelper.isLogin()){
+        if (ShareHelper.isLogin()) {
             List<BenhNhan> list = bndao.selectAll();
             for (BenhNhan bn : list) {
                 model.addElement(bn);
             }
-        }else{
+        } else {
             List<BenhNhan> list = bndao.findlistById(ShareHelper.nguoidung.getMabn());
             for (BenhNhan bn : list) {
                 model.addElement(bn);
             }
         }
-        
+
     }
 
     void selectCbo() {
