@@ -857,14 +857,14 @@ public class DichVuJPanel extends javax.swing.JPanel {
 
     void setForm(DichVu dv) {
         txtTenDichVu.setText(dv.getTenDV());
-        txtGia.setText(String.valueOf(dv.getGia()));
+        txtGia.setText(FormatHepler.formatMoney(dv.getGia()));
         txtMoTa.setText(dv.getMoTa());
     }
 
     DichVu getForm() {
         DichVu dv = new DichVu();
         dv.setTenDV(txtTenDichVu.getText());
-        dv.setGia(Double.parseDouble(txtGia.getText()));
+        dv.setGia(FormatHepler.formatMoneyToDouble(txtGia.getText()));
         dv.setMoTa(txtMoTa.getText());
         return dv;
     }
@@ -880,7 +880,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
                 Object[] rowdv = {
                     dv.getMaDV(),
                     dv.getTenDV(),
-                    dv.getGia(),
+                    FormatHepler.formatMoney(dv.getGia()),
                     dv.getMoTa()
                 };
                 model.addRow(rowdv);

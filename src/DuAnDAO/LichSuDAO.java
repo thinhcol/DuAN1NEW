@@ -19,8 +19,7 @@ public class LichSuDAO {
     
     String insert = "INSERT INTO LichSuBenhNhan VALUES (?, ?, ?, ?)";
     String delete = "DELETE FROM LichSuBenhNhan WHERE STT like ?";
-    String update = "Update LichSuBenhNhan set HoTen=?"
-            +  "NgayVT = ?, ThoiGianO = ? Where STT=?";
+    String update = "update LichSuBenhNhan set MaBN= ?, HoTen=?, NgayVT = ?, ThoiGianO = ? Where MaBN=?";
     String selectAll = "SELECT * FROM LichSuBenhNhan";
     String selectByID = "SELECT * FROM LichSuBenhNhan WHERE STT=?";
 
@@ -42,12 +41,13 @@ public class LichSuDAO {
         return list;
     }
 
-    public void update(LichSu entity) {
+    public void update(LichSu entity, String maBN) {
         JdbcHelper.executeUpdate(update,
+                maBN,
                 entity.getHoTen(),
                 entity.getNgayVT(),
                 entity.getThoiGianO(),
-                 entity.getMaBN()
+                entity.getMaBN()
         );
     }
 

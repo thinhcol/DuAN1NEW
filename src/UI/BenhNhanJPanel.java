@@ -298,6 +298,58 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
         }
 
     }
+    
+//    void insert() {
+//        if (CheckHelper.checkNullText(txtHoTen)
+//                && CheckHelper.checkNullText(txtCMND)
+//                && CheckHelper.checkNullText(txtThoiGianO)
+//                && CheckHelper.checkNullText(txtDiaChi)
+//                && checkNullHinh()) {
+//            if (CheckHelper.checkName(txtHoTen)
+//                    && CheckHelper.checkCMND(txtCMND)
+//                    && CheckHelper.checkThoiGianO(txtThoiGianO)) {
+//                BenhNhan model = getModel();
+//                String cmnd = model.getCMND();
+//                BenhNhan benhNhan = dao.findlistByCMND(cmnd);
+//                if (benhNhan == null) {
+//                    try {
+//                        dao.insert(model);
+//                        BenhNhan bn = dao.findlistByCMND(cmnd);
+//                        model.setMaBN(bn.getMaBN());
+//                        System.out.println(model.getMaBN());
+//                        insertLichSu(model);
+//                        this.load();
+//                        this.clear();
+//                        DialogHelper.alert(this, "Thêm mới thành công!");
+//                    } catch (Exception e) {
+//                        DialogHelper.alert(this, "Thêm mới thất bại!");
+//                        e.printStackTrace();
+//                    }
+//                } else {
+//                    if (isBNRaTrai(benhNhan)) {
+//                        try {
+//                            BenhNhan bnOld = 
+//                            
+//                            model.setMaBN(benhNhan.getMaBN());
+//                            insertLichSu(model);
+//                            updateLichSu(model, );
+//                            dao.update(model);
+//                            this.load();
+//                            this.clear();
+//                            DialogHelper.alert(this, "Thêm mới thành công!");
+//                        } catch (Exception e) {
+//                            DialogHelper.alert(this, "Thêm mới thất bại!");
+//                            e.printStackTrace();
+//                        }
+//                    } else {
+//                        DialogHelper.alert(this, "Bệnh nhân đang trong trại");
+//                    }
+//                }
+//            }
+//
+//        }
+//
+//    }
 
     boolean isBNRaTrai(BenhNhan bn) {
         Date ngayVaoTrai = bn.getNgayVT();
@@ -320,6 +372,20 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
         lichSu.setThoiGianO(bn.getThoiGianO());
         try {
             lsdao.insert(lichSu);
+        } catch (Exception e) {
+            System.out.println("Không thể thêm vào lịch sử");
+            System.out.println(e);
+        }
+    }
+    
+    void updateLichSu(BenhNhan bn, String maBN) {
+        LichSu lichSu = new LichSu();
+        lichSu.setMaBN(bn.getMaBN());
+        lichSu.setHoTen(bn.getHoTen());
+        lichSu.setNgayVT(bn.getNgayVT());
+        lichSu.setThoiGianO(bn.getThoiGianO());
+        try {
+            lsdao.update(lichSu, maBN);
         } catch (Exception e) {
             System.out.println("Không thể thêm vào lịch sử");
             System.out.println(e);
@@ -798,7 +864,7 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
         lblEmailThanNhan1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblEmailThanNhan1.setForeground(new java.awt.Color(102, 102, 102));
         lblEmailThanNhan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/New Icon/thoiGianO.png"))); // NOI18N
-        lblEmailThanNhan1.setText("Thời gian ở");
+        lblEmailThanNhan1.setText("Số tháng ở");
 
         txtThoiGianO.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         txtThoiGianO.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
@@ -984,7 +1050,7 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Mã bệnh nhân", "Mã phòng", "Mã nghề", "Họ tên", "Giới tính", "Ngày vô trại", "Thời gian ở", "Trạng thái", "Địa chỉ", "CMND"
+                "Mã bệnh nhân", "Mã phòng", "Mã nghề", "Họ tên", "Giới tính", "Ngày vô trại", "Số tháng ở", "Trạng thái", "Địa chỉ", "CMND"
             }
         ) {
             boolean[] canEdit = new boolean [] {

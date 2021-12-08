@@ -10,6 +10,7 @@ import Entity.*;
 import Helper.CheckHelper;
 import Helper.DateHelper;
 import Helper.DialogHelper;
+import Helper.FormatHepler;
 import Helper.ShareHelper;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Element;
@@ -1094,7 +1095,7 @@ public class HoaDonJPanel extends javax.swing.JPanel {
                             hd.getThoiGian(),
                             DateHelper.toString(hd.getNgayBDTT()),
                             DateHelper.toString(hd.getNgayKTTT()),
-                            hd.getTongTien()
+                            FormatHepler.formatMoney(hd.getTongTien())
                         };
                         model.addRow(row);
                     }
@@ -1113,7 +1114,7 @@ public class HoaDonJPanel extends javax.swing.JPanel {
                             hd.getThoiGian(),
                             DateHelper.toString(hd.getNgayBDTT()),
                             DateHelper.toString(hd.getNgayKTTT()),
-                            hd.getTongTien()
+                            FormatHepler.formatMoney(hd.getTongTien())
                         };
                         model.addRow(row);
                     }
@@ -1133,7 +1134,7 @@ public class HoaDonJPanel extends javax.swing.JPanel {
                         hd.getThoiGian(),
                         DateHelper.toString(hd.getNgayBDTT()),
                         DateHelper.toString(hd.getNgayKTTT()),
-                        hd.getTongTien()
+                        FormatHepler.formatMoney(hd.getTongTien())
                     };
                     model.addRow(row);
                 }
@@ -1224,15 +1225,15 @@ public class HoaDonJPanel extends javax.swing.JPanel {
             Phong phong = phongDAO.findById(benhNhan.getMaPhong());
             List<DichVuCT> listDV = dvctDAO.selectByMaBNAndNgayDK(benhNhan.getMaBN(), ngayBD, ngayKT);
 
-            double tongTien = 0;
+//            double tongTien = 0;
             int soThangTT = Integer.parseInt(txtSoThangTT.getText());
 
-            tongTien += phong.getGia() * soThangTT;
+            double tongTien = phong.getGia() * soThangTT;
             for (DichVuCT dichVu : listDV) {
                 DichVu dv = dichVuDAO.selectByID(dichVu.getMaDV());
                 tongTien += dv.getGia();
             }
-            lblTongTien.setText(String.valueOf(tongTien));
+            lblTongTien.setText(FormatHepler.formatMoney(tongTien));
         }
     }
 
@@ -1292,7 +1293,7 @@ public class HoaDonJPanel extends javax.swing.JPanel {
 
         txtNgayThanhToan.setDate(hd.getNgayThanhToan());
         txtSoThangTT.setText(String.valueOf(hd.getThoiGian()));
-        lblTongTien.setText(String.valueOf(hd.getTongTien()));
+        lblTongTien.setText(FormatHepler.formatMoney(hd.getTongTien()));
         lblNgayBatDau.setText(DateHelper.toString(hd.getNgayBDTT()));
         lblNgayKetThuc.setText(DateHelper.toString(hd.getNgayKTTT()));
     }
@@ -1311,7 +1312,7 @@ public class HoaDonJPanel extends javax.swing.JPanel {
         hd.setNgayBDTT(DateHelper.toDate(lblNgayBatDau.getText(), "dd/MM/yyyy"));
         hd.setNgayKTTT(DateHelper.toDate(lblNgayKetThuc.getText(), "dd/MM/yyyy"));
         hd.setNgayThanhToan(txtNgayThanhToan.getDate());
-        hd.setTongTien(Double.parseDouble(lblTongTien.getText()));
+        hd.setTongTien(FormatHepler.formatMoneyToDouble(lblTongTien.getText()));
 
         return hd;
     }
@@ -1426,7 +1427,7 @@ public class HoaDonJPanel extends javax.swing.JPanel {
         lblSoThangTT.setText(String.valueOf(hd.getThoiGian()));
         lblNgayBatDau2.setText(DateHelper.toString(hd.getNgayBDTT()));
         lblNgayKetThuc2.setText(DateHelper.toString(hd.getNgayKTTT()));
-        lblTongTien2.setText(String.valueOf(hd.getTongTien()));
+        lblTongTien2.setText(FormatHepler.formatMoney(hd.getTongTien()));
         if (lblTienThua.getText().equals("") && txtTienKhachDua.getText().equals("")) {
             billsaukhithanhtoan();
         } else {
@@ -1447,7 +1448,7 @@ public class HoaDonJPanel extends javax.swing.JPanel {
                     dv.getMaDV(),
                     dv.getTenDV(),
                     DateHelper.toString(dichVuCT.getNgayDK()),
-                    dv.getGia()
+                    FormatHepler.formatMoney(dv.getGia())
                 };
                 model.addRow(row);
             }
@@ -1477,10 +1478,10 @@ public class HoaDonJPanel extends javax.swing.JPanel {
         if (!txtTienKhachDua.getText().isEmpty()) {
             if (CheckHelper.checkGia(txtTienKhachDua)) {
                 if (!lblTongTien.getText().isEmpty()) {
-                    double tienKhachDua = Double.parseDouble(txtTienKhachDua.getText());
-                    double tongTien = Double.parseDouble(lblTongTien.getText());
+                    double tienKhachDua = FormatHepler.formatMoneyToDouble(txtTienKhachDua.getText());
+                    double tongTien = FormatHepler.formatMoneyToDouble(lblTongTien.getText());
                     if (tienKhachDua > tongTien) {
-                        lblTienThua.setText(String.valueOf(tienKhachDua - tongTien));
+                        lblTienThua.setText(FormatHepler.formatMoney(tienKhachDua - tongTien));
                     }
                 } else {
                     DialogHelper.alert(this, "Bạn cần nhập số tháng muốn được thanh toán trước");

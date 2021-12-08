@@ -9,6 +9,7 @@ import DuAnDAO.PhongDAO;
 import Entity.Phong;
 import Helper.CheckHelper;
 import Helper.DialogHelper;
+import Helper.FormatHepler;
 import Helper.ShareHelper;
 import java.awt.Color;
 import static java.awt.Color.pink;
@@ -285,6 +286,7 @@ public class PhongJPanel extends javax.swing.JPanel {
 
         lblHinh.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lblHinh.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHinh.setToolTipText("");
         lblHinh.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(50, 133, 253)));
         lblHinh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -621,7 +623,7 @@ public class PhongJPanel extends javax.swing.JPanel {
                 Object[] row = {
                     cd.getMaPhong(),
                     cd.getMaNV(),
-                    cd.getGia(),
+                    FormatHepler.formatMoney(cd.getGia()),
                     cd.getHinh()
                 };
                 model.addRow(row);
@@ -635,7 +637,7 @@ public class PhongJPanel extends javax.swing.JPanel {
     void setModel(Phong model) {
         txtMaPhong.setText(model.getMaPhong());
         txtMaNV.setText(String.valueOf(model.getMaNV()));
-        txtGia.setText(String.valueOf(model.getGia()));
+        txtGia.setText(FormatHepler.formatMoney(model.getGia()));
         lblHinh.setToolTipText(model.getHinh());
         if (model.getHinh() != null) {
             lblHinh.setToolTipText(model.getHinh());
@@ -665,7 +667,7 @@ public class PhongJPanel extends javax.swing.JPanel {
     Phong getModel() {
         Phong model = new Phong();
         model.setMaPhong(txtMaPhong.getText());
-        model.setGia(Double.valueOf(txtGia.getText()));
+        model.setGia(FormatHepler.formatMoneyToDouble(txtGia.getText()));
         model.setMaNV(txtMaNV.getText());
         model.setHinh(lblHinh.getToolTipText());
         return model;
