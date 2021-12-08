@@ -7,6 +7,7 @@ import UI.BenhNhanJPanel;
 import UI.ChaoJdialog;
 import UI.DangNhap;
 import UI.DichVuJPanel;
+import UI.DoiMatKhauJDialog;
 import UI.GioiThieuJPanel;
 import UI.Hm;
 import UI.HoaDonJPanel;
@@ -34,8 +35,8 @@ public class Main extends javax.swing.JFrame {
         init();
         setBackground(new Color(0, 0, 0, 0));
         showForm(new Hm());
-         ImageIcon icon = ShareHelper.read(ShareHelper.user.getHinh());
-        menu1.nicknam(ShareHelper.user.getHoTen(), ShareHelper.user.isChucVu() ? "Cán bộ" : "Quản giáo",icon);
+        ImageIcon icon = ShareHelper.read(ShareHelper.user.getHinh());
+        menu1.nicknam(ShareHelper.user.getHoTen(), ShareHelper.user.isChucVu() ? "Cán bộ" : "Quản giáo", icon);
     }
 
     private void showForm(Component com) {
@@ -124,12 +125,17 @@ public class Main extends javax.swing.JFrame {
                         showForm(new HoatDongJPanel());
                     } else if (index == 10) {
                         showForm(new ThanNhanJPanel());
-                    }else if(index == 11){
+                    } else if (index == 11) {
                         exit();
-                    }else if(index == 12){
-                        System.exit(0);
+                    } else if (index == 12) {
+                        new DoiMatKhauJDialog(null, true).setVisible(true);
+                    } else if (index == 13) {
+                        if (DialogHelper.confirm(null, "Bạn có muốn thoát khỏi ứng dụng không?")) {
+                            System.exit(0);
+                            new Main().setVisible(true);
+                        }
                     }
-                }else  if (ShareHelper.isLogin1()) {
+                } else if (ShareHelper.isLogin1()) {
                     if (index == 0) {
                         showForm(new Hm());
                     } else if (index == 1) {
@@ -152,10 +158,15 @@ public class Main extends javax.swing.JFrame {
                         showForm(new HoatDongJPanel());
                     } else if (index == 10) {
                         JOptionPane.showMessageDialog(null, "Mục dành cho ban quan lý");
-                    }else if(index == 11){
+                    } else if (index == 11) {
                         exit();
-                    }else if(index == 12){
-                        System.exit(0);
+                    } else if (index == 12) {
+                        new DoiMatKhauJDialog(null, true).setVisible(true);
+                    } else if (index == 13) {
+                        if (DialogHelper.confirm(null, "Bạn có muốn thoát khỏi ứng dụng không?")) {
+                            System.exit(0);
+                            new Main().setVisible(true);
+                        }
                     }
                 }
 
@@ -216,6 +227,7 @@ public class Main extends javax.swing.JFrame {
         "src\\Image\\10.jpg",
         "src\\Image\\12.jpg"
     };
+
     void exit() {
         if (DialogHelper.confirm(this, "Bạn có muốn đăng xuất khỏi ứng dụng không?")) {
             this.dispose();

@@ -32,7 +32,7 @@ public class Profile extends javax.swing.JPanel {
         lblTen.setText("Thịnh");
 
         lblVaiTro.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        lblVaiTro.setForeground(new java.awt.Color(128, 113, 159));
+        lblVaiTro.setForeground(new java.awt.Color(50, 133, 253));
         lblVaiTro.setText("Dashboard Swing");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

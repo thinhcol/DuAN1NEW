@@ -229,7 +229,7 @@ public class Hm extends javax.swing.JPanel {
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Monospaced", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel1.setForeground(new java.awt.Color(50, 133, 253));
         jLabel1.setText("Xin chào! Chúng tôi là Euphoria");
 
         javax.swing.GroupLayout jXMapViewerLayout = new javax.swing.GroupLayout(jXMapViewer);

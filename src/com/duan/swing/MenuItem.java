@@ -23,10 +23,10 @@ public class MenuItem extends javax.swing.JPanel {
         if (data.getType() == Model_Menu.MenuType.MENU) {
             if (selected) {
                 lbIcon.setIcon(data.toIconSelected());
-                lbName.setForeground(new Color(60, 60, 60));
+                lbName.setForeground(new Color(50,133,253));
             } else {
                 lbIcon.setIcon(data.toIcon());
-                lbName.setForeground(new Color(0, 0, 0));
+                lbName.setForeground(new Color(102,102,102));
             }
         }
     }

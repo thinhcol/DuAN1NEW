@@ -364,7 +364,7 @@
               <Font name="Monospaced" size="48" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="0" red="0" type="rgb"/>
+              <Color blue="fd" green="85" red="32" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Xin ch&#xe0;o! Ch&#xfa;ng t&#xf4;i l&#xe0; Euphoria"/>
           </Properties>

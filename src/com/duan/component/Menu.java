@@ -27,10 +27,10 @@ public class Menu extends PanelShadow {
     private EventMenu event;
 
     public Menu() {
-       
+
         initComponents();
         init();
-        
+
     }
 
     private void init() {
@@ -80,8 +80,9 @@ public class Menu extends PanelShadow {
         listMenu.selectedIndex(index);
         repaint();
     }
-    public void nicknam(String ten,String vaitro,Icon icon){
-        profile1.name(ten, vaitro,icon);
+
+    public void nicknam(String ten, String vaitro, Icon icon) {
+        profile1.name(ten, vaitro, icon);
     }
 
     private void initData() {
@@ -96,8 +97,9 @@ public class Menu extends PanelShadow {
         listMenu.addItem(new Model_Menu("9", "Dịch vụ", Model_Menu.MenuType.MENU));
         listMenu.addItem(new Model_Menu("10", "Hoạt động", Model_Menu.MenuType.MENU));
         listMenu.addItem(new Model_Menu("11", "Thân nhân", Model_Menu.MenuType.MENU));
-         listMenu.addItem(new Model_Menu("12", "Đăng xuất", Model_Menu.MenuType.MENU));
-          listMenu.addItem(new Model_Menu("13", "Thoát", Model_Menu.MenuType.MENU));
+        listMenu.addItem(new Model_Menu("12", "Đăng xuất", Model_Menu.MenuType.MENU));
+        listMenu.addItem(new Model_Menu("13", "Đổi mật khẩu", Model_Menu.MenuType.MENU));
+        listMenu.addItem(new Model_Menu("14", "Thoát", Model_Menu.MenuType.MENU));
         listMenu.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
     }
 
