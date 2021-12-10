@@ -2,6 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/JAVA_NETBEAN/DuAN1NEW/src/UI/PhongJPanel.java</file>
+            <file>file:/D:/JAVA_NETBEAN/DuAN1NEW/src/DuAnDAO/LichSuDAO.java</file>
+            <file>file:/D:/JAVA_NETBEAN/DuAN1NEW/src/UI/XemThongKe.java</file>
+            <file>file:/D:/JAVA_NETBEAN/DuAN1NEW/src/DuAnDAO/ThongKeDoanhThuDAO.java</file>
+            <file>file:/D:/JAVA_NETBEAN/DuAN1NEW/src/DuAnDAO/BenhNhanDAO.java</file>
+            <file>file:/D:/JAVA_NETBEAN/DuAN1NEW/src/Helper/FormatHepler.java</file>
+            <file>file:/D:/JAVA_NETBEAN/DuAN1NEW/src/UI/HoaDonJPanel.java</file>
+            <file>file:/D:/JAVA_NETBEAN/DuAN1NEW/src/com/duan/main/Main.java</file>
+            <file>file:/D:/JAVA_NETBEAN/DuAN1NEW/src/UI/BenhNhanJPanel.java</file>
+            <file>file:/D:/JAVA_NETBEAN/DuAN1NEW/src/UI/DichVuJPanel.java</file>
+        </group>
     </open-files>
 </project-private>

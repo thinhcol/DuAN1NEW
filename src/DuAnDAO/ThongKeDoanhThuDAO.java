@@ -6,6 +6,7 @@
 package DuAnDAO;
 
 import Entity.ThongKeDoanhThu;
+import Helper.FormatHepler;
 import Helper.JdbcHelper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -50,9 +51,9 @@ public class ThongKeDoanhThuDAO {
                     Object[] model = {
                         rs.getString("Phong"),
                         rs.getInt("Soluongbenhnhan"),
-                        rs.getDouble("TongTien"),
-                        rs.getDouble("TienNhoNhat"),
-                        rs.getDouble("TienLonNhat")
+                        FormatHepler.formatMoney(rs.getDouble("TongTien")),
+                        FormatHepler.formatMoney(rs.getDouble("TienNhoNhat")),
+                        FormatHepler.formatMoney(rs.getDouble("TienLonNhat"))
                     };
                     list.add(model);
                 }

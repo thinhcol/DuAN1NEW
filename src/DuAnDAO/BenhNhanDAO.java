@@ -22,7 +22,7 @@ public class BenhNhanDAO {
     String delete = "DELETE FROM BenhNhan WHERE MaBN like ?";
     String update = "Update BenhNhan set MaPhong=?, MaNghe=?, HoTen=? ,GioiTinh = ?, "
             + "NgayVT = ?, ThoiGianO = ?, DiaChi = ?, CMND = ?, Hinh = ?  Where MaBN like ?";
-    String selectAll = "SELECT * FROM BenhNhan";
+    String selectAll = "SELECT * FROM BenhNhan order by NgayVT asc";
     String selectByID = "SELECT * FROM BenhNhan WHERE MaBN=?";
 
     public void insert(BenhNhan entity) {
@@ -76,7 +76,7 @@ public class BenhNhanDAO {
     }
 
     public List<BenhNhan> selectByKeyword(String keyword, String keyword1, String keyword2) {
-        String sql = "SELECT * FROM BenhNhan WHERE HoTen LIKE ? or MaBN LIKE ? or MaPhong LIKE ?";
+        String sql = "SELECT * FROM BenhNhan WHERE HoTen LIKE ? or MaBN LIKE ? or MaPhong LIKE ? order by NgayVT asc";
         return selectBySql(sql, "%" + keyword + "%", "%" + keyword1 + "%", "%" + keyword2 + "%");
     }
 
@@ -105,12 +105,21 @@ public class BenhNhanDAO {
         }
     }
 
-    public BenhNhan findlistByCMND(String cmnd) {
+    public BenhNhan findlistByCMNDdau(String cmnd) {
         String sql = "select * from BenhNhan where CMND like ?";
         List<BenhNhan> list = this.selectBySql(sql, cmnd);
         if (list.isEmpty()) {
             return null;
         }
         return list.get(0);
+    }
+    
+    public BenhNhan findlistByCMNDcuoi(String cmnd) {
+        String sql = "select * from BenhNhan where CMND like ?";
+        List<BenhNhan> list = this.selectBySql(sql, cmnd);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list.get(list.size()-1);
     }
 }

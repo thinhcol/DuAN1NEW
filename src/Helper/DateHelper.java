@@ -73,7 +73,7 @@ public class DateHelper {
             int khoangNam = yearNgayBiTru - yearNgayTru;
             thang = khoangNam * 12 + monthNgayBiTru - monthNgayTru;
         }
-        if (dateNgayTru >= dateNgayBiTru) {
+        if (dateNgayTru > dateNgayBiTru) {
             thang--;
         }
         return thang;

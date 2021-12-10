@@ -41,7 +41,7 @@ public class LichSuDAO {
         return list;
     }
 
-    public void update(LichSu entity, String maBN) {
+    public void update(LichSu entity, int maBN) {
         JdbcHelper.executeUpdate(update,
                 maBN,
                 entity.getHoTen(),

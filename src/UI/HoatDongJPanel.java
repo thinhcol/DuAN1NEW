@@ -863,7 +863,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         this.fillComboxBenhNhan();
         this.fillComboxHoatDong();
         this.fillTableHDCT();
-  //      this.rowHDCT ;
+        //      this.rowHDCT ;
         this.updateStatusHDCT();
         txtNgayThucHien.setDate(new Date());
     }
@@ -942,6 +942,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
                 this.setStatus(false);
                 tblHoatDong.setRowSelectionInterval(index, index);
             }
+            this.clearFormHDCT();
             cboTenHoatDong.getModel().setSelectedItem(model);
             this.fillTableHDCT();
         } catch (Exception e) {
@@ -1054,7 +1055,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         cboTenHoatDong.getModel().setSelectedItem(hd);
         cboTenBN.getModel().setSelectedItem(bn);
         txtNgayThucHien.setDate(HDCT.getNgayThucHien());
-        txtGhiChu.setText(HDCT.getGhiChu());
+        txtGhiChu2.setText(HDCT.getGhiChu());
     }
 
     HoatDongCT getFormHDCT() {
@@ -1064,7 +1065,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         HDCT.setMaHD(hd.getMaHoatDong());
         HDCT.setMaBN(bn.getMaBN());
         HDCT.setNgayThucHien(txtNgayThucHien.getDate());
-        HDCT.setGhiChu(txtGhiChu.getText());
+        HDCT.setGhiChu(txtGhiChu2.getText());
         return HDCT;
     }
 
@@ -1092,14 +1093,16 @@ public class HoatDongJPanel extends javax.swing.JPanel {
         if (ShareHelper.isLogin()) {
             try {
                 for (HoatDongCT HDCT : list) {
-                    Object[] rowHDCT = {
-                        HDCT.getMaHDCT(),
-                        dao.findById(HDCT.getMaHD()),
-                        bndao.selectByID(HDCT.getMaBN()),
-                        DateHelper.toString(HDCT.getNgayThucHien()),
-                        HDCT.getGhiChu()
-                    };
-                    model.addRow(rowHDCT);
+                    if (HDCT.getMaBN() >= 1) {
+                        Object[] rowHDCT = {
+                            HDCT.getMaHDCT(),
+                            dao.findById(HDCT.getMaHD()),
+                            bndao.selectByID(HDCT.getMaBN()),
+                            DateHelper.toString(HDCT.getNgayThucHien()),
+                            HDCT.getGhiChu()
+                        };
+                        model.addRow(rowHDCT);
+                    }
                 }
                 isLoad = true;
             } catch (Exception e) {

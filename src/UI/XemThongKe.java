@@ -23,6 +23,7 @@ import Entity.ThongKeDoanhThu;
 import Entity.ThongKeHoatDong;
 import Helper.DateHelper;
 import Helper.DialogHelper;
+import Helper.FormatHepler;
 import Helper.ShareHelper;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
@@ -115,7 +116,7 @@ public class XemThongKe extends javax.swing.JDialog {
         int nam = Integer.parseInt(cboNam.getSelectedItem().toString());
         List<ThongKeDoanhThu> list1 = dtdao.getAllList(nam);
         for (ThongKeDoanhThu ns : list1) {
-            ns.getSum();
+            FormatHepler.formatMoney(ns.getSum());
             ns.getPhong();
         }
         pnlDoanhThu.setModel(list1);
@@ -155,9 +156,9 @@ public class XemThongKe extends javax.swing.JDialog {
             model.addRow(row);
             doanhv.getPhong();
             doanhv.getSoluongbn();
-            doanhv.getSum();
-            doanhv.getMin();
-            doanhv.getMax();
+            FormatHepler.formatMoney(doanhv.getSum());
+            FormatHepler.formatMoney(doanhv.getMin());
+            FormatHepler.formatMoney(doanhv.getMax());
         }
     }    
     void loadtableHD() {

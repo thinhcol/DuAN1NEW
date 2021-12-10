@@ -1088,16 +1088,18 @@ public class HoaDonJPanel extends javax.swing.JPanel {
                 try {
                     list = hoaDonDAO.selectByMaBN(benhNhan.getMaBN());
                     for (HoaDon hd : list) {
-                        Object[] row = {
-                            hd.getMaHD(),
-                            benhNhanDAO.selectByID(hd.getMaBN()).getHoTen(),
-                            DateHelper.toString(hd.getNgayThanhToan()),
-                            hd.getThoiGian(),
-                            DateHelper.toString(hd.getNgayBDTT()),
-                            DateHelper.toString(hd.getNgayKTTT()),
-                            FormatHepler.formatMoney(hd.getTongTien())
-                        };
-                        model.addRow(row);
+                        if (hd.getMaBN() >= 1) {
+                            Object[] row = {
+                                hd.getMaHD(),
+                                benhNhanDAO.selectByID(hd.getMaBN()).getHoTen(),
+                                DateHelper.toString(hd.getNgayThanhToan()),
+                                hd.getThoiGian(),
+                                DateHelper.toString(hd.getNgayBDTT()),
+                                DateHelper.toString(hd.getNgayKTTT()),
+                                FormatHepler.formatMoney(hd.getTongTien())
+                            };
+                            model.addRow(row);
+                        }
                     }
                 } catch (Exception e) {
                     DialogHelper.alert(this, "Lỗi truy vấn dữ liệu");
@@ -1107,16 +1109,18 @@ public class HoaDonJPanel extends javax.swing.JPanel {
                 try {
                     list = hoaDonDAO.selectAll();
                     for (HoaDon hd : list) {
-                        Object[] row = {
-                            hd.getMaHD(),
-                            benhNhanDAO.selectByID(hd.getMaBN()).getHoTen(),
-                            DateHelper.toString(hd.getNgayThanhToan()),
-                            hd.getThoiGian(),
-                            DateHelper.toString(hd.getNgayBDTT()),
-                            DateHelper.toString(hd.getNgayKTTT()),
-                            FormatHepler.formatMoney(hd.getTongTien())
-                        };
-                        model.addRow(row);
+                        if (hd.getMaBN() >= 1) {
+                            Object[] row = {
+                                hd.getMaHD(),
+                                benhNhanDAO.selectByID(hd.getMaBN()).getHoTen(),
+                                DateHelper.toString(hd.getNgayThanhToan()),
+                                hd.getThoiGian(),
+                                DateHelper.toString(hd.getNgayBDTT()),
+                                DateHelper.toString(hd.getNgayKTTT()),
+                                FormatHepler.formatMoney(hd.getTongTien())
+                            };
+                            model.addRow(row);
+                        }
                     }
                 } catch (Exception e) {
                     DialogHelper.alert(this, "Lỗi truy vấn dữ liệu");
@@ -1213,7 +1217,7 @@ public class HoaDonJPanel extends javax.swing.JPanel {
         }
         int soThang = DateHelper.subtrDateToMonth(ngayHienTai, ngayVoTrai);
         int tongSoThang = soThang < soThangO ? soThang : soThangO;
-
+        
         lblSoThangCanTT.setText(String.valueOf(tongSoThang - soThangDaTT));
     }
 
@@ -1423,7 +1427,7 @@ public class HoaDonJPanel extends javax.swing.JPanel {
 
         lblTenBN.setText(bn.getHoTen());
         lblMaPhong2.setText(bn.getMaPhong());
-        lblGiaPhong.setText(String.valueOf(phong.getGia() * hd.getThoiGian()));
+        lblGiaPhong.setText(FormatHepler.formatMoney(phong.getGia() * hd.getThoiGian()));
         lblSoThangTT.setText(String.valueOf(hd.getThoiGian()));
         lblNgayBatDau2.setText(DateHelper.toString(hd.getNgayBDTT()));
         lblNgayKetThuc2.setText(DateHelper.toString(hd.getNgayKTTT()));
@@ -1480,8 +1484,10 @@ public class HoaDonJPanel extends javax.swing.JPanel {
                 if (!lblTongTien.getText().isEmpty()) {
                     double tienKhachDua = FormatHepler.formatMoneyToDouble(txtTienKhachDua.getText());
                     double tongTien = FormatHepler.formatMoneyToDouble(lblTongTien.getText());
-                    if (tienKhachDua > tongTien) {
+                    if (tienKhachDua >= tongTien) {
                         lblTienThua.setText(FormatHepler.formatMoney(tienKhachDua - tongTien));
+                    }else{
+                        lblTienThua.setText("");
                     }
                 } else {
                     DialogHelper.alert(this, "Bạn cần nhập số tháng muốn được thanh toán trước");

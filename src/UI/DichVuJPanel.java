@@ -665,23 +665,23 @@ public class DichVuJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCapNhatDVMouseEntered
 
     private void btnXoaDVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXoaDVMouseEntered
-       btnXoaDV.setBackground(new Color(0, 0, 153));
+        btnXoaDV.setBackground(new Color(0, 0, 153));
     }//GEN-LAST:event_btnXoaDVMouseEntered
 
     private void btnNewDVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNewDVMouseExited
-                btnNewDV.setBackground(new Color(51,133,253));
+        btnNewDV.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnNewDVMouseExited
 
     private void btnThemDVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThemDVMouseExited
-                btnThemDV.setBackground(new Color(51,133,253));
+        btnThemDV.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnThemDVMouseExited
 
     private void btnCapNhatDVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCapNhatDVMouseExited
-                btnCapNhatDV.setBackground(new Color(51,133,253));
+        btnCapNhatDV.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnCapNhatDVMouseExited
 
     private void btnXoaDVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXoaDVMouseExited
-                btnXoaDV.setBackground(new Color(51,133,253));
+        btnXoaDV.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnXoaDVMouseExited
 
     private void tblDichVuCTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDichVuCTMouseClicked
@@ -705,15 +705,15 @@ public class DichVuJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnXoaDVCTMouseEntered
 
     private void btnNewVDCTMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNewVDCTMouseExited
-        btnNewVDCT.setBackground(new Color(51,133,253));
+        btnNewVDCT.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnNewVDCTMouseExited
 
     private void btnThemDVCTMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThemDVCTMouseExited
-        btnThemDVCT.setBackground(new Color(51,133,253));
+        btnThemDVCT.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnThemDVCTMouseExited
 
     private void btnXoaDVCTMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXoaDVCTMouseExited
-        btnXoaDVCT.setBackground(new Color(51,133,253));
+        btnXoaDVCT.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnXoaDVCTMouseExited
 
 
@@ -896,6 +896,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
         int maDV = (Integer) tblDichVu.getValueAt(this.rowdv, 0);
         DichVu dv = dvdao.selectByID(maDV);
         this.setForm(dv);
+        this.clearFormDVCT();
         cboTenDichVu.getModel().setSelectedItem(dv);
         this.fillTableDVCT();
         this.updateStatus();
@@ -1064,14 +1065,16 @@ public class DichVuJPanel extends javax.swing.JPanel {
         if (ShareHelper.isLogin()) {
             try {
                 for (DichVuCT dvct : list) {
-                    Object[] rowdvct = {
-                        dvct.getMaDVCT(),
-                        dvdao.selectByID(dvct.getMaDV()),
-                        bndao.selectByID(dvct.getMaBN()),
-                        DateHelper.toString(dvct.getNgayDK()),
-                        dvct.getGhiChu()
-                    };
-                    model.addRow(rowdvct);
+                    if (dvct.getMaBN() >= 1) {
+                        Object[] rowdvct = {
+                            dvct.getMaDVCT(),
+                            dvdao.selectByID(dvct.getMaDV()),
+                            bndao.selectByID(dvct.getMaBN()),
+                            DateHelper.toString(dvct.getNgayDK()),
+                            dvct.getGhiChu()
+                        };
+                        model.addRow(rowdvct);
+                    }
                 }
                 isLoad = true;
             } catch (Exception e) {

@@ -250,55 +250,6 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
         }
     }
 
-    void insert() {
-        if (CheckHelper.checkNullText(txtHoTen)
-                && CheckHelper.checkNullText(txtCMND)
-                && CheckHelper.checkNullText(txtThoiGianO)
-                && CheckHelper.checkNullText(txtDiaChi)
-                && checkNullHinh()) {
-            if (CheckHelper.checkName(txtHoTen)
-                    && CheckHelper.checkCMND(txtCMND)
-                    && CheckHelper.checkThoiGianO(txtThoiGianO)) {
-                BenhNhan model = getModel();
-                String cmnd = model.getCMND();
-                BenhNhan benhNhan = dao.findlistByCMND(cmnd);
-                if (benhNhan == null) {
-                    try {
-                        dao.insert(model);
-                        BenhNhan bn = dao.findlistByCMND(cmnd);
-                        model.setMaBN(bn.getMaBN());
-                        System.out.println(model.getMaBN());
-                        insertLichSu(model);
-                        this.load();
-                        this.clear();
-                        DialogHelper.alert(this, "Thêm mới thành công!");
-                    } catch (Exception e) {
-                        DialogHelper.alert(this, "Thêm mới thất bại!");
-                        e.printStackTrace();
-                    }
-                } else {
-                    if (isBNRaTrai(benhNhan)) {
-                        try {
-                            model.setMaBN(benhNhan.getMaBN());
-                            dao.update(model);
-                            insertLichSu(model);
-                            this.load();
-                            this.clear();
-                            DialogHelper.alert(this, "Thêm mới thành công!");
-                        } catch (Exception e) {
-                            DialogHelper.alert(this, "Thêm mới thất bại!");
-                            e.printStackTrace();
-                        }
-                    } else {
-                        DialogHelper.alert(this, "Bệnh nhân đang trong trại");
-                    }
-                }
-            }
-
-        }
-
-    }
-    
 //    void insert() {
 //        if (CheckHelper.checkNullText(txtHoTen)
 //                && CheckHelper.checkNullText(txtCMND)
@@ -328,12 +279,9 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
 //                } else {
 //                    if (isBNRaTrai(benhNhan)) {
 //                        try {
-//                            BenhNhan bnOld = 
-//                            
 //                            model.setMaBN(benhNhan.getMaBN());
-//                            insertLichSu(model);
-//                            updateLichSu(model, );
 //                            dao.update(model);
+//                            insertLichSu(model);
 //                            this.load();
 //                            this.clear();
 //                            DialogHelper.alert(this, "Thêm mới thành công!");
@@ -350,6 +298,57 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
 //        }
 //
 //    }
+    
+    void insert() {
+        if (CheckHelper.checkNullText(txtHoTen)
+                && CheckHelper.checkNullText(txtCMND)
+                && CheckHelper.checkNullText(txtThoiGianO)
+                && CheckHelper.checkNullText(txtDiaChi)
+                && checkNullHinh()) {
+            if (CheckHelper.checkName(txtHoTen)
+                    && CheckHelper.checkCMND(txtCMND)
+                    && CheckHelper.checkThoiGianO(txtThoiGianO)) {
+                BenhNhan model = getModel();
+                String cmnd = model.getCMND();
+                BenhNhan benhNhan = dao.findlistByCMNDdau(cmnd);
+                if (benhNhan == null) {
+                    try {
+                        dao.insert(model);
+                        BenhNhan bn = dao.findlistByCMNDdau(cmnd);
+                        model.setMaBN(bn.getMaBN());
+                        insertLichSu(model);
+                        this.load();
+                        this.clear();
+                        DialogHelper.alert(this, "Thêm mới thành công!");
+                    } catch (Exception e) {
+                        DialogHelper.alert(this, "Thêm mới thất bại!");
+                        e.printStackTrace();
+                    }
+                } else {
+                    if (isBNRaTrai(benhNhan)) {
+                        try {
+                            dao.insert(model);
+                            BenhNhan bn = dao.findlistByCMNDcuoi(cmnd);
+                            model.setMaBN(bn.getMaBN());
+                            insertLichSu(model);
+                            updateLichSu(benhNhan, model.getMaBN());
+                            dao.delete(benhNhan.getMaBN());
+                            this.load();
+                            this.clear();
+                            DialogHelper.alert(this, "Thêm mới thành công!");
+                        } catch (Exception e) {
+                            DialogHelper.alert(this, "Thêm mới thất bại!");
+                            e.printStackTrace();
+                        }
+                    } else {
+                        DialogHelper.alert(this, "Bệnh nhân đang trong trại");
+                    }
+                }
+            }
+
+        }
+
+    }
 
     boolean isBNRaTrai(BenhNhan bn) {
         Date ngayVaoTrai = bn.getNgayVT();
@@ -378,16 +377,16 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
         }
     }
     
-    void updateLichSu(BenhNhan bn, String maBN) {
+    void updateLichSu(BenhNhan bn, int maBNMoi) {
         LichSu lichSu = new LichSu();
         lichSu.setMaBN(bn.getMaBN());
         lichSu.setHoTen(bn.getHoTen());
         lichSu.setNgayVT(bn.getNgayVT());
         lichSu.setThoiGianO(bn.getThoiGianO());
         try {
-            lsdao.update(lichSu, maBN);
+            lsdao.update(lichSu, maBNMoi);
         } catch (Exception e) {
-            System.out.println("Không thể thêm vào lịch sử");
+            System.out.println("Không thể sửa vào lịch sử");
             System.out.println(e);
         }
     }
@@ -544,6 +543,7 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
         btnInsert.setEnabled(insertable);
         btnUpdate.setEnabled(!insertable);
         btnDelete.setEnabled(!insertable);
+        datevotrai.setEnabled(insertable);
         boolean first = this.index > 0;
         boolean last = this.index < tblGridView.getRowCount() - 1;
         btnFirst.setEnabled(!insertable && first);
@@ -1054,7 +1054,7 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
