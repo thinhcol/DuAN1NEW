@@ -38,7 +38,11 @@ public class NhanVienJPanel extends javax.swing.JPanel {
         initComponents();
         this.load();
         this.setStatus(true);
-
+        if(ShareHelper.isManager()){
+            CboVaiTro.setEnabled(false);
+        }else{
+             CboVaiTro.setEnabled(true);
+        }
     }
 
     /**
@@ -801,18 +805,23 @@ public class NhanVienJPanel extends javax.swing.JPanel {
     }
 
     void delete() {
-        if (DialogHelper.confirm(this, "Bạn có muốn xóa hay không?")) {
-            String macd = txtMaNV.getText();
-            try {
-                dao.delete(macd);
-                this.load();
-                this.clear();
-                DialogHelper.alert(this, "Xóa thành công!");
-            } catch (Exception e) {
-                DialogHelper.alert(this, "Xóa thất bại!");
-                e.printStackTrace();
+        if (ShareHelper.isManager()) {
+            DialogHelper.alert(this, "Bạn không có quyền xóa");
+        } else {
+            if (DialogHelper.confirm(this, "Bạn có muốn xóa hay không?")) {
+                String macd = txtMaNV.getText();
+                try {
+                    dao.delete(macd);
+                    this.load();
+                    this.clear();
+                    DialogHelper.alert(this, "Xóa thành công!");
+                } catch (Exception e) {
+                    DialogHelper.alert(this, "Xóa thất bại!");
+                    e.printStackTrace();
+                }
             }
         }
+
     }
 
     void clear() {

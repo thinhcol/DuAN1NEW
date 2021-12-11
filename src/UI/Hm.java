@@ -10,6 +10,8 @@ import Helper.ShareHelper;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
 import javax.swing.JOptionPane;
 import javax.swing.event.MouseInputListener;
 import org.jxmapviewer.OSMTileFactoryInfo;
@@ -18,6 +20,10 @@ import org.jxmapviewer.input.ZoomMouseWheelListenerCenter;
 import org.jxmapviewer.viewer.DefaultTileFactory;
 import org.jxmapviewer.viewer.GeoPosition;
 import org.jxmapviewer.viewer.TileFactoryInfo;
+import org.jxmapviewer.viewer.WaypointPainter;
+import waypoint.EventWaypoint;
+import waypoint.MyWaypoint;
+import waypoint.WaypointRender;
 
 /**
  *
@@ -422,17 +428,56 @@ public class Hm extends javax.swing.JPanel {
             ex.printStackTrace();
         }
     }
+  private final Set<MyWaypoint> waypoints = new HashSet<>();
+    private EventWaypoint event;
     private void map() {
         TileFactoryInfo info = new OSMTileFactoryInfo();
         DefaultTileFactory tileFactory = new DefaultTileFactory(info);
         jXMapViewer.setTileFactory(tileFactory);
-        GeoPosition geo = new GeoPosition(10.8222, 106.73001);
+       GeoPosition geo = new GeoPosition(10.8222, 106.73001);
         jXMapViewer.setAddressLocation(geo);
         jXMapViewer.setZoom(50);
+
+        //  Create event mouse move
         MouseInputListener mm = new PanMouseInputListener(jXMapViewer);
         jXMapViewer.addMouseListener(mm);
         jXMapViewer.addMouseMotionListener(mm);
         jXMapViewer.addMouseWheelListener(new ZoomMouseWheelListenerCenter(jXMapViewer));
+        event = getEvent();
+         addWaypoint(new MyWaypoint("245 Bình Quới, Phường 28, Bình Thạnh, Thành phố Hồ Chí Minh, Việt Nam", event, new GeoPosition(10.8222, 106.73001)));
+    }
+       private void addWaypoint(MyWaypoint waypoint) {
+        for (MyWaypoint d : waypoints) {
+            jXMapViewer.remove(d.getButton());
+        }
+        waypoints.add(waypoint);
+        initWaypoint();
+    }
+
+    private void initWaypoint() {
+        WaypointPainter<MyWaypoint> wp = new WaypointRender();
+        wp.setWaypoints(waypoints);
+        jXMapViewer.setOverlayPainter(wp);
+        for (MyWaypoint d : waypoints) {
+            jXMapViewer.add(d.getButton());
+        }
+    }
+
+    private void clearWaypoint() {
+        for (MyWaypoint d : waypoints) {
+            jXMapViewer.remove(d.getButton());
+        }
+        waypoints.clear();
+        initWaypoint();
+    }
+
+    private EventWaypoint getEvent() {
+        return new EventWaypoint() {
+            @Override
+            public void selected(MyWaypoint waypoint) {
+                JOptionPane.showMessageDialog(Hm.this, waypoint.getName());
+            }
+        };
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -458,7 +458,7 @@ public class PhongJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnNewMouseEntered
 
     private void btnNewMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNewMouseExited
-        btnNew.setBackground(new Color(51,133,253));
+        btnNew.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnNewMouseExited
 
     private void btnInsertMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseEntered
@@ -466,7 +466,7 @@ public class PhongJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnInsertMouseEntered
 
     private void btnInsertMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseExited
-        btnInsert.setBackground(new Color(51,133,253));
+        btnInsert.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnInsertMouseExited
 
     private void btnUpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseEntered
@@ -474,7 +474,7 @@ public class PhongJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnUpdateMouseEntered
 
     private void btnUpdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseExited
-        btnUpdate.setBackground(new Color(51,133,253));
+        btnUpdate.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnUpdateMouseExited
 
     private void btnDeleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseEntered
@@ -482,7 +482,7 @@ public class PhongJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnDeleteMouseEntered
 
     private void btnDeleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseExited
-        btnDelete.setBackground(new Color(51,133,253));
+        btnDelete.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnDeleteMouseExited
 
     private void btnFirstMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFirstMouseEntered
@@ -753,6 +753,8 @@ public class PhongJPanel extends javax.swing.JPanel {
 
     void delete() {
         if (ShareHelper.isManager()) {
+            DialogHelper.alert(this, "Bạn không có quyền xóa");
+        } else {
             if (DialogHelper.confirm(this, "Bạn có muốn xóa hay không?")) {
                 String maba = (String) tblPhong.getValueAt(this.index, 0);
                 try {
@@ -764,8 +766,7 @@ public class PhongJPanel extends javax.swing.JPanel {
                     DialogHelper.alert(this, "Xóa thất bại!");
                 }
             }
-        } else {
-            DialogHelper.alert(this, "Bạn không có quyền xóa");
+
         }
     }
 

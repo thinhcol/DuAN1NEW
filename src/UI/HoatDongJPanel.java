@@ -969,6 +969,8 @@ public class HoatDongJPanel extends javax.swing.JPanel {
 
     void delete() {
         if (ShareHelper.isManager()) {
+            DialogHelper.alert(this, "Bạn không có quyền xóa");
+        } else {
             if (DialogHelper.confirm(this, "Bạn có muốn xóa hay không?")) {
                 int maHD = (int) tblHoatDong.getValueAt(this.index, 0);
                 try {
@@ -981,8 +983,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
                 }
 
             }
-        } else {
-            DialogHelper.alert(this, "Bạn không có quyền xóa");
+
         }
     }
 
@@ -1032,6 +1033,8 @@ public class HoatDongJPanel extends javax.swing.JPanel {
 
     void deleteHDCT() {
         if (ShareHelper.isManager()) {
+            DialogHelper.alert(this, "Bạn không có quyền xóa");
+        } else {
             int maHDCT = (Integer) tblCTHoatDong.getValueAt(rowHDCT, 0);
             if (DialogHelper.confirm(this, "Bạn có muốn xóa không")) {
                 try {
@@ -1044,8 +1047,7 @@ public class HoatDongJPanel extends javax.swing.JPanel {
                     System.out.println(e);
                 }
             }
-        } else {
-            DialogHelper.alert(this, "Bạn không có quyền xóa");
+
         }
     }
 

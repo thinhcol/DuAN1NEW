@@ -860,6 +860,8 @@ public class BenhAnJPanel extends javax.swing.JPanel {
 
     void delete() {
         if (ShareHelper.isManager()) {
+            DialogHelper.alert(this, "Bạn không có quyền xóa");
+        } else {
             if (DialogHelper.confirm(this, "Bạn có muốn xóa hay không?")) {
                 int maba = (int) tblBenhAn.getValueAt(index, 0);
                 try {
@@ -872,8 +874,7 @@ public class BenhAnJPanel extends javax.swing.JPanel {
                     DialogHelper.alert(this, "Xóa thất bại!");
                 }
             }
-        } else {
-            DialogHelper.alert(this, "Bạn không có quyền xóa");
+
         }
     }
 }

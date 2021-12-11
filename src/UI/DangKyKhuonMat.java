@@ -261,7 +261,7 @@ public class DangKyKhuonMat extends javax.swing.JDialog {
     VideoCapture webSource = null;
     Mat frame = new Mat();
     RectVector faceDetections = new RectVector();
-    CascadeClassifier faceDetector = new CascadeClassifier("src\\photo\\haarcascade_frontalface_alt.xml");
+    CascadeClassifier faceDetector = new CascadeClassifier("photo\\haarcascade_frontalface_alt.xml");
 
     BytePointer mem = new BytePointer();
     RectVector detectedFaces = new RectVector();
@@ -291,7 +291,7 @@ public class DangKyKhuonMat extends javax.swing.JDialog {
                                 opencv_imgproc.resize(mat, mat, new Size(160, 160));
                                 if (btnsave.getModel().isPressed()) {
                                     if (count <= 25) {
-                                        String cropped = "src\\photo\\person." + lblid.getText() + "." + count + ".jpg";
+                                        String cropped = "photo\\person." + lblid.getText() + "." + count + ".jpg";
                                         boolean imwrite = imwrite(cropped, mat);
                                         lbldem.setText(String.valueOf(count) + "/25");
                                         count++;

@@ -222,25 +222,27 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
                     && CheckHelper.checkPass(txtpass)
                     && CheckHelper.checkName(txtHoten)
                     && CheckHelper.checkEmail(txtEmail)) {
-               
-                    String matn = (String) tblGridView.getValueAt(this.index, 0);
-                    ThanNhan model = getModel();
-                    try {
-                        dao.update(model);
-                        this.load();
-                        this.clear();
-                        DialogHelper.alert(this, "Cập nhật thành công!");
-                    } catch (Exception e) {
-                        DialogHelper.alert(this, "Cập nhật thất bại!");
-                        e.printStackTrace();
-                    }
-                
+
+                String matn = (String) tblGridView.getValueAt(this.index, 0);
+                ThanNhan model = getModel();
+                try {
+                    dao.update(model);
+                    this.load();
+                    this.clear();
+                    DialogHelper.alert(this, "Cập nhật thành công!");
+                } catch (Exception e) {
+                    DialogHelper.alert(this, "Cập nhật thất bại!");
+                    e.printStackTrace();
+                }
+
             }
         }
     }
 
     void delete() {
         if (ShareHelper.isManager()) {
+            DialogHelper.alert(this, "Bạn không có quyền xóa");
+        } else {
             if (DialogHelper.confirm(this, "Bạn có muốn xóa hay không?")) {
                 String matn = (String) tblGridView.getValueAt(this.index, 0);
                 try {
@@ -252,8 +254,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
                     DialogHelper.alert(this, "Xóa thất bại!");
                 }
             }
-        }else{
-            DialogHelper.alert(this, "Bạn không có quyền xóa");
+
         }
     }
 
@@ -779,7 +780,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnClearMouseEntered
 
     private void btnClearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClearMouseExited
-        btnClear.setBackground(new Color(51,133,253));
+        btnClear.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnClearMouseExited
 
     private void btnInsertMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseEntered
@@ -787,7 +788,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnInsertMouseEntered
 
     private void btnInsertMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseExited
-        btnInsert.setBackground(new Color(51,133,253));
+        btnInsert.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnInsertMouseExited
 
     private void btnUpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseEntered
@@ -795,7 +796,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnUpdateMouseEntered
 
     private void btnUpdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseExited
-        btnUpdate.setBackground(new Color(51,133,253));
+        btnUpdate.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnUpdateMouseExited
 
     private void btnDeleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseEntered
@@ -803,7 +804,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnDeleteMouseEntered
 
     private void btnDeleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseExited
-        btnDelete.setBackground(new Color(51,133,253));
+        btnDelete.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnDeleteMouseExited
 
     private void btnNextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNextMouseEntered
@@ -883,7 +884,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnLastActionPerformed
 
     private void cboTenBNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboTenBNActionPerformed
-        
+
     }//GEN-LAST:event_cboTenBNActionPerformed
 
     private void tblGridViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblGridViewMouseClicked
@@ -901,7 +902,7 @@ public class ThanNhanJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnExcel1MouseEntered
 
     private void btnExcel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExcel1MouseExited
-       btnExcel1.setBackground(new Color(51,133,253));
+        btnExcel1.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnExcel1MouseExited
 
 

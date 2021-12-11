@@ -24,7 +24,7 @@ import org.bytedeco.opencv.opencv_face.LBPHFaceRecognizer;
  */
 public class luufile {
     public void luu() {
-        File file = new File("src\\photo\\");
+        File file = new File("photo\\");
         FilenameFilter filter = new FilenameFilter() {
             @Override
             public boolean accept(File dir, String name) {

@@ -298,7 +298,6 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
 //        }
 //
 //    }
-    
     void insert() {
         if (CheckHelper.checkNullText(txtHoTen)
                 && CheckHelper.checkNullText(txtCMND)
@@ -376,7 +375,7 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
             System.out.println(e);
         }
     }
-    
+
     void updateLichSu(BenhNhan bn, int maBNMoi) {
         LichSu lichSu = new LichSu();
         lichSu.setMaBN(bn.getMaBN());
@@ -415,6 +414,9 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
 
     void delete() {
         if (ShareHelper.isManager()) {
+            DialogHelper.alert(this, "Bạn không có quyền xóa");
+
+        } else {
             if (DialogHelper.confirm(this, "Bạn có muốn xóa hay không?")) {
                 int mabn = (Integer) tblGridView.getValueAt(this.index, 0);
                 try {
@@ -427,8 +429,6 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
                 }
             }
 
-        } else {
-            DialogHelper.alert(this, "Bạn không có quyền xóa");
         }
 
     }
@@ -1431,7 +1431,7 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnLichSuMouseEntered
 
     private void btnLichSuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLichSuMouseExited
-        btnLichSu.setBackground(new Color(51,133,253));
+        btnLichSu.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnLichSuMouseExited
 
     private void btnLichSuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLichSuActionPerformed
@@ -1446,7 +1446,7 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnExcelMouseEntered
 
     private void btnExcelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExcelMouseExited
-        btnExcel.setBackground(new Color(51,133,253));
+        btnExcel.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnExcelMouseExited
 
     private void btnExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcelActionPerformed
@@ -1498,7 +1498,7 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnUpdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseExited
-        btnUpdate.setBackground(new Color(51,133,253));
+        btnUpdate.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnUpdateMouseExited
 
     private void btnUpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseEntered
@@ -1514,7 +1514,7 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnInsertActionPerformed
 
     private void btnInsertMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseExited
-        btnInsert.setBackground(new Color(51,133,253));
+        btnInsert.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnInsertMouseExited
 
     private void btnInsertMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseEntered
@@ -1530,7 +1530,7 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnDeleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseExited
-        btnDelete.setBackground(new Color(51,133,253));
+        btnDelete.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnDeleteMouseExited
 
     private void btnDeleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseEntered
@@ -1543,7 +1543,7 @@ public class BenhNhanJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnClearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClearMouseExited
-        btnClear.setBackground(new Color(51,133,253));
+        btnClear.setBackground(new Color(51, 133, 253));
     }//GEN-LAST:event_btnClearMouseExited
 
     private void btnClearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClearMouseEntered

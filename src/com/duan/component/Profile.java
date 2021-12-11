@@ -18,6 +18,10 @@ public class Profile extends javax.swing.JPanel {
         lblVaiTro.setText(vaitro);
         imageAvatar2.setIcon(icon);
     }
+    public void name1(String name,int vaitro){
+        lblTen.setText(name);
+        lblVaiTro.setText(String.valueOf(vaitro));
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

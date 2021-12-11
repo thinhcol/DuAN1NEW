@@ -35,8 +35,13 @@ public class Main extends javax.swing.JFrame {
         init();
         setBackground(new Color(0, 0, 0, 0));
         showForm(new Hm());
-        ImageIcon icon = ShareHelper.read(ShareHelper.user.getHinh());
-        menu1.nicknam(ShareHelper.user.getHoTen(), ShareHelper.user.isChucVu() ? "Cán bộ" : "Quản giáo", icon);
+       if (ShareHelper.isLogin()) {
+            ImageIcon icon = ShareHelper.read(ShareHelper.user.getHinh());
+            menu1.nicknam(ShareHelper.user.getHoTen(), ShareHelper.user.isChucVu() ? "Cán bộ" : "Quản giáo", icon);
+        } else if (ShareHelper.isLogin1()) {
+            menu1.thannhan(ShareHelper.nguoidung.getHoten(), ShareHelper.nguoidung.getMabn());
+        }
+
     }
 
     private void showForm(Component com) {
@@ -230,6 +235,7 @@ public class Main extends javax.swing.JFrame {
 
     void exit() {
         if (DialogHelper.confirm(this, "Bạn có muốn đăng xuất khỏi ứng dụng không?")) {
+            ShareHelper.clear();
             this.dispose();
             new Main().setVisible(true);
         }

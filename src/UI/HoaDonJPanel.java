@@ -52,6 +52,7 @@ public class HoaDonJPanel extends javax.swing.JPanel {
             btnNewHD.setVisible(true);
         }
     }
+    PhongDAO phongdao = new PhongDAO();
 
     public String thongtinbill() {
         String thongtin = "===========================================================================================" + "\n"
@@ -61,6 +62,7 @@ public class HoaDonJPanel extends javax.swing.JPanel {
                 + "===========================================================================================" + "\n"
                 + "Họ tên bệnh nhân : " + lblTenBN.getText() + "\n"
                 + "Mã phòng : " + lblMaPhong2.getText() + "\n"
+                + "Giá phòng 1 tháng : " + phongdao.findById(lblMaPhong2.getText()).getGia()
                 + "Số tháng thanh toán : " + lblSoThangTT.getText() + "\n"
                 + "Ngày bắt đầu : " + lblNgayBatDau2.getText() + "\n"
                 + "Ngày kết thúc : " + lblNgayKetThuc2.getText() + "\n"
@@ -198,7 +200,7 @@ public class HoaDonJPanel extends javax.swing.JPanel {
 
         lblTitle.setBackground(new java.awt.Color(255, 255, 255));
         lblTitle.setFont(new java.awt.Font("Monospaced", 1, 48)); // NOI18N
-        lblTitle.setForeground(new java.awt.Color(0, 0, 153));
+        lblTitle.setForeground(new java.awt.Color(51, 133, 253));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("QUẢN LÝ HÓA ĐƠN");
 
@@ -626,8 +628,8 @@ public class HoaDonJPanel extends javax.swing.JPanel {
         lblGiaPhong.setText("0.0");
 
         lblTitle1.setBackground(new java.awt.Color(255, 255, 255));
-        lblTitle1.setFont(new java.awt.Font("Monospaced", 1, 36)); // NOI18N
-        lblTitle1.setForeground(new java.awt.Color(255, 153, 153));
+        lblTitle1.setFont(new java.awt.Font("SansSerif", 1, 48)); // NOI18N
+        lblTitle1.setForeground(new java.awt.Color(51, 133, 253));
         lblTitle1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle1.setText("HÓA ĐƠN CHI TIẾT");
 
@@ -825,7 +827,7 @@ public class HoaDonJPanel extends javax.swing.JPanel {
                             .addComponent(btnExcel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnQuayLai, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                     .addContainerGap(764, Short.MAX_VALUE)

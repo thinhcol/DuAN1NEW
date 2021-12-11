@@ -84,6 +84,10 @@ public class Menu extends PanelShadow {
     public void nicknam(String ten, String vaitro, Icon icon) {
         profile1.name(ten, vaitro, icon);
     }
+         public void thannhan(String ten,int mabn){
+        profile1.name1(ten, mabn);
+    }
+
 
     private void initData() {
         listMenu.addItem(new Model_Menu("1", "Trang chủ", Model_Menu.MenuType.MENU));

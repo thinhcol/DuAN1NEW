@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.menu{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin-left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu li{
+    position: absolute;
+    left: 0px;
+    list-style: none;
+    transform-origin: 200px;
+    transition: 0.5s;
+    transform: rotate(0deg) translateX(170px);
+    transition-delay: calc(0.1 * var(--i));
+}
+.menu.active li{
+    transform: rotate(calc(360deg / 8 * var(--i)));
+}
+.menu li a{
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transform: rotate(calc(360deg / -8 * var(--i)));
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+}
+.menu li a:hover{
+    color: red;
+   
+}
+.togg{
+
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+    font-size: 2em;
+    transition: 1s;
+}
+.menu.active .togg{
+    transform: rotate(315deg);
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../Image/classroom-2093743_1920-1000x714.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+}
+
+.box{
+    height: 12%;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    width: 100px;
+    cursor: pointer;
+}
+.menu-logo{
+    width: 100px;
+    cursor: pointer;
+    margin-left: 40px;
+}
+nav{
+    flex: 1;
+    text-align: right;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 10px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 5px;
+    font-size: 15px;
+    border-radius: 15px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+nav ul li a:hover{
+    background: rgb(150, 150, 150);
+    color: #000;
+}
+.row{
+    display: flex;
+    height: 88%;
+    align-items: center;
+}
+h1{
+    color: #fff;
+    font-size: 50px;
+
+}
+p{
+    color: #fff;
+    font-size: 15px;
+    line-height: 15px;
+}
+button{
+    width: 180px;
+    color: #000;
+    font-size: 12px;
+    padding: 12px 0;
+    background: #fff;
+    border: 0;
+    border-radius: 20px;
+    outline: none;
+    margin-top: 30px;
+}
+h2{
+    float: right;
+    color: white;
+}
+.card{
+    width: 300px;
+    height: 230px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 15px;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+    float: right;   
+}
+.box1{
+    background-image: url(../Image/Spring-MVC-là-gì-1.jpg);
+}
+.box2{
+    background-image: url(../Image/java-500x500-15161058475071438730469-65-0-346-500-crop-1516105855171180319860.png);
+}
+.box3{
+    background-image: url(../Image/angular-JS-online-training-nareshit.jpg);
+}
+.box4{
+    background-image: url(../Image/images.png);
+}
+.card:hover{
+    transform: translateY(-10px);
+}
+h5{
+    color: #000;
+    text-shadow: 0 0 5px #999;
+}
+.card p{
+    color: #000;
+    text-shadow: 0 0 5px rgb(138, 138, 138);
+}
+/*Footer của web*/
+.footer{
+    background-color: #24262b;
+    padding: 70px 0;
+}
+.bot{
+    max-width: 1370px;
+    margin: auto;
+
+}
+.cot ul{
+    list-style: none;
+}
+.cot{
+    width: 22%;
+    padding: 0 15px;
+}
+.cot h4{
+    font-size: 14px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-weight: 500;
+    position: relative;
+}
+.cot h4::before{
+    content: '';
+    position:absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.cot ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.cot ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffff;
+    text-decoration: none;
+    font-weight: 100;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+.cot ul li a:hover{
+    color: #ffffff;
+    padding-left: 10px;
+}
+.hang{
+    display: flex;
+    flex-wrap: wrap;
+}
+.ong > img{
+    width: 150px;
+    height: 180px;
+}

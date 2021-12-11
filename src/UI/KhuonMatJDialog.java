@@ -41,7 +41,7 @@ public class KhuonMatJDialog extends javax.swing.JDialog {
     public KhuonMatJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        recognizer.read("src\\photo\\classifierLBPH.yml");
+        recognizer.read("photo\\classifierLBPH.yml");
         recognizer.setThreshold(80);
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 20, 20));
         webSource = new VideoCapture(0);
@@ -56,7 +56,7 @@ public class KhuonMatJDialog extends javax.swing.JDialog {
     int id;
     VideoCapture webSource = null;
     Mat frame = new Mat();
-    CascadeClassifier faceDetector = new CascadeClassifier("src\\photo\\haarcascade_frontalface_alt.xml");
+    CascadeClassifier faceDetector = new CascadeClassifier("photo\\haarcascade_frontalface_alt.xml");
     LBPHFaceRecognizer recognizer = LBPHFaceRecognizer.create();
     BytePointer mem = new BytePointer();
     RectVector detectedFaces = new RectVector();
@@ -312,62 +312,6 @@ public class KhuonMatJDialog extends javax.swing.JDialog {
         }.start();
     }
 
-//    public void initWebcam() {
-//        Dimension size = WebcamResolution.QVGA.getSize();
-//
-//        webcam = Webcam.getWebcams().get(0);
-//        webcam.setViewSize(size);
-//
-//        panel = new WebcamPanel(webcam);
-//        panel.setPreferredSize(size);
-//        panel.setFPSDisplayed(true);
-//
-//        jPanel2.add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 290));
-//
-//        executor.execute(this);
-//
-//    }
-//
-//    @Override
-//    public void run() {
-//        do {
-//            try {
-//                Thread.sleep(100);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//
-//            Result result = null;
-//            BufferedImage image = null;
-//
-//            if (webcam.isOpen()) {
-//                if ((image = webcam.getImage()) == null) {
-//                    continue;
-//                }
-//            }
-//
-//            LuminanceSource source = new BufferedImageLuminanceSource(image);
-//            BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
-//
-//            try {
-//                result = new MultiFormatReader().decode(bitmap);
-//
-//            } catch (NotFoundException e) {
-//
-//            }
-//
-//            if (result != null) {
-//                lblMaNV.setText(result.getText());
-//            }
-//        } while (true);
-//    }
-//
-//    @Override
-//    public Thread newThread(Runnable r) {
-//        Thread t = new Thread(r, "My Thread");
-//        t.setDaemon(true);
-//        return t;
-//    }
     NhanVienDAO dao = new NhanVienDAO();
 
     void login() {
@@ -378,9 +322,9 @@ public class KhuonMatJDialog extends javax.swing.JDialog {
                 ShareHelper.user = nhanVien;
                 myThread.runnable = false;
                 webSource.release();
-
+                DialogHelper.alert(this, "Đăng nhập thành công!");
                 this.dispose();
-//                webcam.close();
+
             } else {
                 DialogHelper.alert(this, "Sai tên đăng nhập!");
             }

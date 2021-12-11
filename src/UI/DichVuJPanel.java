@@ -799,7 +799,9 @@ public class DichVuJPanel extends javax.swing.JPanel {
 
     void delete() {
         if (ShareHelper.isManager()) {
-            int maDV = (Integer) tblDichVu.getValueAt(rowdv, 0);
+            DialogHelper.alert(this, "Bạn không có quyền xóa");
+        } else {
+             int maDV = (Integer) tblDichVu.getValueAt(rowdv, 0);
             if (DialogHelper.confirm(this, "Bạn có muốn xóa không")) {
                 try {
                     dvdao.delete(maDV);
@@ -811,8 +813,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
                     System.out.println(e);
                 }
             }
-        } else {
-            DialogHelper.alert(this, "Bạn không có quyền xóa");
+           
         }
     }
 
@@ -964,7 +965,8 @@ public class DichVuJPanel extends javax.swing.JPanel {
 
     void deleteDVCT() {
         if (ShareHelper.isManager()) {
-            int maDVCT = (Integer) tblDichVuCT.getValueAt(rowdvct, 0);
+            DialogHelper.alert(this, "Bạn không có quyền xóa");
+        } else {  int maDVCT = (Integer) tblDichVuCT.getValueAt(rowdvct, 0);
             if (DialogHelper.confirm(this, "Bạn có muốn xóa không")) {
                 try {
                     dvctdao.delete(maDVCT);
@@ -976,8 +978,7 @@ public class DichVuJPanel extends javax.swing.JPanel {
                     System.out.println(e);
                 }
             }
-        } else {
-            DialogHelper.alert(this, "Bạn không có quyền xóa");
+          
         }
     }
 
